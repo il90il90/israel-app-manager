@@ -32,7 +32,7 @@ apk="app/build/outputs/apk/release/app-release.apk"
 sdk="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-}}"
 tools="$(ls -d "$sdk"/build-tools/* | sort -V | tail -1)"
 expected="$(tr -d '[:space:]' < release/signing-cert.sha256)"
-actual="$("$tools/apksigner" verify --print-certs "$apk" | sed -n 's/^Signer #1 certificate SHA-256 digest: //p' | tr -d '[:space:]')"
+actual="$("$tools/apksigner" verify --print-certs "$apk" | sed -n 's/^.*certificate SHA-256 digest: //p' | head -1 | tr -d '[:space:]')"
 if [ "$expected" != "$actual" ]; then
   echo "The APK is not signed with the release key." >&2
   exit 1

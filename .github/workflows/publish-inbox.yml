@@ -39,7 +39,8 @@ jobs:
           grep -q "name='com.il90.appmanager' versionCode='${code}' versionName='${version}'" badging.txt
           git fetch --quiet --depth 1 origin "$commit"
           expected="$(git show "$commit:release/signing-cert.sha256" | tr -d '[:space:]')"
-          actual="$("$tools/apksigner" verify --print-certs "$apk" | sed -n 's/^Signer #1 certificate SHA-256 digest: //p' | tr -d '[:space:]')"
+          "$tools/apksigner" verify --print-certs "$apk" | tee certs.txt
+          actual="$(sed -n 's/^.*certificate SHA-256 digest: //p' certs.txt | head -1 | tr -d '[:space:]')"
           if [ "$expected" != "$actual" ]; then
             echo "::error::The APK is not signed with the release key (got $actual)."
             exit 1

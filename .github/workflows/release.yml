@@ -70,7 +70,8 @@ jobs:
           cp app/build/outputs/apk/release/app-release.apk "$apk"
           tools="$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)"
           expected="$(tr -d '[:space:]' < release/signing-cert.sha256)"
-          actual="$("$tools/apksigner" verify --print-certs "$apk" | sed -n 's/^Signer #1 certificate SHA-256 digest: //p' | tr -d '[:space:]')"
+          "$tools/apksigner" verify --print-certs "$apk" | tee certs.txt
+          actual="$(sed -n 's/^.*certificate SHA-256 digest: //p' certs.txt | head -1 | tr -d '[:space:]')"
           if [ "$expected" != "$actual" ]; then
             echo "::error::The APK is not signed with the release key (got $actual)."
             exit 1
