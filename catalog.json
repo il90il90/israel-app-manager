@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-15T22:38:44Z",
+ "generatedAt": "2026-11-15T22:45:49Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "apps": [
@@ -689,26 +689,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.appmanager",
-     "versionName": "1.0.0",
-     "versionCode": 10000,
+     "versionName": "1.0.1",
+     "versionCode": 10001,
      "minSdk": 26,
      "targetSdk": 36,
      "tvCapable": false,
      "label": "Israel App Manager",
-     "fileName": "israel-app-manager-1.0.0.apk",
-     "url": "https://github.com/il90il90/israel-app-manager/releases/download/v1.0.0/israel-app-manager-1.0.0.apk",
-     "size": 2182217,
-     "sha256": "9c906cdb7e14a8476198f42545f8ae451de87f64b2be8689257d79eccae7aa2b",
-     "assetId": 752582947,
-     "assetUpdatedAt": "2026-11-15T22:38:20Z"
+     "fileName": "israel-app-manager-1.0.1.apk",
+     "url": "https://github.com/il90il90/israel-app-manager/releases/download/v1.0.1/israel-app-manager-1.0.1.apk",
+     "size": 2198605,
+     "sha256": "4695c56db93d3746b0166fa5cedc3f1fefe04998d149852957d1c2dd6e5149f3",
+     "assetId": 752599244,
+     "assetUpdatedAt": "2026-11-15T22:45:25Z"
     }
    ],
    "release": {
-    "tag": "v1.0.0",
-    "name": "Israel App Manager 1.0.0",
-    "notes": "The first release of Israel App Manager: every app Israel builds, in one place.\n\n- Install any app in one tap, with download progress and an integrity check before installing\n- See what is installed and what has a new version, and update one app or all of them\n- Release notes, size, version and requirements for every app\n- The right build is picked for your device; TV and watch builds can be saved as APK files\n- A notification when new versions are out\n- The manager updates itself the same way\n- English and Hebrew, light and dark",
-    "publishedAt": "2026-11-15T22:38:21Z",
-    "url": "https://github.com/il90il90/israel-app-manager/releases/tag/v1.0.0"
+    "tag": "v1.0.1",
+    "name": "Israel App Manager 1.0.1",
+    "notes": "- Hebrew: versions, sizes and the \"by Israel\" line no longer get scrambled when Hebrew and English meet on one line\n- Release notes are laid out in their own language's direction, so English notes read correctly in the Hebrew interface\n- \"Updated\" on an app's page says \"2 hours ago\" in full and fits its tile",
+    "publishedAt": "2026-11-15T22:45:26Z",
+    "url": "https://github.com/il90il90/israel-app-manager/releases/tag/v1.0.1"
    },
    "repoUrl": "https://github.com/il90il90/israel-app-manager",
    "iconStyle": "adaptive",
