@@ -61,14 +61,13 @@
     <string name="detail_version">Version</string>
     <string name="detail_size">Size</string>
     <string name="detail_updated">Updated</string>
-    <string name="detail_requires">Requires</string>
+    <string name="detail_requires_android">Android</string>
     <string name="detail_package">Package</string>
     <string name="detail_installed_version">Installed version</string>
     <string name="detail_latest_version">Latest version</string>
     <string name="detail_source">Source</string>
     <string name="detail_website">Website</string>
     <string name="detail_category">Category</string>
-    <string name="detail_android">Android %1$s+</string>
     <string name="detail_by">by %1$s</string>
     <string name="detail_releases_page">Releases on GitHub</string>
     <string name="show_more">Show more</string>
@@ -132,6 +131,8 @@
     <string name="settings_auto_check">Check for updates automatically</string>
     <string name="settings_auto_check_desc">Get a notification when a new version of one of your apps is out</string>
     <string name="settings_check_now">Check now</string>
+    <string name="settings_list_title">List of apps</string>
+    <string name="settings_list_updated">Updated %1$s</string>
     <string name="settings_downloads">Downloads</string>
     <string name="settings_delete_after">Delete installers after installing</string>
     <string name="settings_delete_after_desc">Frees the space the downloaded APK takes</string>

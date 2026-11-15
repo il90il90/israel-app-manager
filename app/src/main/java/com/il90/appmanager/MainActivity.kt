@@ -306,6 +306,7 @@ private fun AppContent(viewModel: AppViewModel, requestedFilter: MutableStateFlo
                 cacheSize = cacheSize,
                 selfUpdate = state.selfUpdate,
                 refreshing = state.refreshing,
+                fetchedAt = state.fetchedAt,
                 onBack = { navController.popBackStack() },
                 onAutoCheck = { viewModel.setAutoCheck(it) },
                 onDeleteAfterInstall = { viewModel.setDeleteAfterInstall(it) },

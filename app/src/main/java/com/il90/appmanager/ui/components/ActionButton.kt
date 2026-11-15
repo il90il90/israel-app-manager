@@ -55,8 +55,8 @@ fun ActionButton(row: AppRow, onClick: () -> Unit, modifier: Modifier = Modifier
         label = "action",
         modifier = modifier,
     ) { target ->
-        val padding = PaddingValues(horizontal = 18.dp)
-        val size = Modifier.height(40.dp).defaultMinSize(minWidth = 84.dp)
+        val padding = PaddingValues(horizontal = 14.dp)
+        val size = Modifier.height(40.dp).defaultMinSize(minWidth = 76.dp)
         when (target) {
             "progress" -> {
                 val fraction = (state as? TaskState.Downloading)?.fraction

@@ -6,6 +6,7 @@ import com.il90.appmanager.data.iconUrl
 import com.il90.appmanager.data.localized
 import com.il90.appmanager.ui.components.MdBlock
 import com.il90.appmanager.ui.components.parseMarkdown
+import com.il90.appmanager.ui.details.trimRedundantHeading
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
@@ -57,5 +58,19 @@ class CatalogAndMarkdownTest {
         assertEquals(MdBlock.Bullet("`a.apk`  ·  phone", 0), blocks[5])
         assertEquals(6, blocks.size)
         assertTrue(parseMarkdown("<!-- only a comment -->").isEmpty())
+    }
+}
+
+class ReleaseNotesHeadingTest {
+    private val redundant = listOf("What's new", "3.3.0", "v3.3.0", "Gallery Wall")
+
+    @Test
+    fun `a heading that repeats the card is dropped`() {
+        val trim = ::trimRedundantHeading
+        assertEquals("Body", trim("## What's new\n\nBody", redundant))
+        assertEquals("- a", trim("# v3.3.0\n- a", redundant))
+        assertEquals("text", trim("## Gallery Wall 3.3.0\ntext", redundant))
+        assertEquals("## Sharing\ntext", trim("## Sharing\ntext", redundant))
+        assertEquals("plain first line\nmore", trim("<!-- x -->plain first line\nmore", redundant))
     }
 }

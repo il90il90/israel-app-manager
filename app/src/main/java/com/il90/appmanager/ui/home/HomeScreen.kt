@@ -44,6 +44,7 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
+import androidx.compose.material.icons.rounded.ArrowCircleUp
 import androidx.compose.material.icons.rounded.CheckCircle
 import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material.icons.rounded.CloudOff
@@ -351,9 +352,9 @@ fun AppCard(row: AppRow, language: String, onOpen: () -> Unit, onAction: () -> U
         color = MaterialTheme.colorScheme.surfaceContainerLow,
         modifier = modifier.fillMaxWidth(),
     ) {
-        Row(Modifier.padding(start = 14.dp, top = 14.dp, bottom = 14.dp, end = 12.dp), verticalAlignment = Alignment.CenterVertically) {
-            AppIcon(row.iconUrl, row.app.name, row.app.accent, 60.dp)
-            Spacer(Modifier.width(14.dp))
+        Row(Modifier.padding(start = 12.dp, top = 14.dp, bottom = 14.dp, end = 10.dp), verticalAlignment = Alignment.CenterVertically) {
+            AppIcon(row.iconUrl, row.app.name, row.app.accent, 56.dp)
+            Spacer(Modifier.width(12.dp))
             Column(Modifier.weight(1f)) {
                 Text(row.app.name, style = MaterialTheme.typography.titleMedium, maxLines = 1, overflow = TextOverflow.Ellipsis)
                 val tagline = row.app.tagline.localized(language)
@@ -369,7 +370,7 @@ fun AppCard(row: AppRow, language: String, onOpen: () -> Unit, onAction: () -> U
                 Spacer(Modifier.height(6.dp))
                 StatusLine(row)
             }
-            Spacer(Modifier.width(10.dp))
+            Spacer(Modifier.width(8.dp))
             if (row.status == AppStatus.UNAVAILABLE && row.task == null) {
                 Pill(unavailableLabel(row.compatibility), MaterialTheme.colorScheme.surfaceContainerHighest, MaterialTheme.colorScheme.onSurfaceVariant)
             } else {
@@ -397,10 +398,10 @@ fun StatusLine(row: AppRow, modifier: Modifier = Modifier) {
             is TaskState.Failed -> Text(failureMessage(state.reason), style = small, color = MaterialTheme.colorScheme.error, maxLines = 2, overflow = TextOverflow.Ellipsis)
             null -> when (row.status) {
                 AppStatus.UPDATE_AVAILABLE -> {
-                    Pill(stringResource(R.string.state_update_available), MaterialTheme.colorScheme.primary.copy(alpha = 0.16f), MaterialTheme.colorScheme.primary)
+                    Icon(Icons.Rounded.ArrowCircleUp, null, Modifier.size(14.dp), tint = MaterialTheme.colorScheme.primary)
                     Text(
                         stringResource(R.string.state_update_from_to, row.installed?.versionName.orEmpty(), variant?.versionName.orEmpty()),
-                        style = small, color = muted, maxLines = 1, overflow = TextOverflow.Ellipsis,
+                        style = small, color = MaterialTheme.colorScheme.primary, maxLines = 1, overflow = TextOverflow.Ellipsis,
                     )
                 }
                 AppStatus.UP_TO_DATE -> {
@@ -584,15 +585,15 @@ private fun SkeletonCard() {
     val block = MaterialTheme.colorScheme.surfaceContainerHighest
     Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surfaceContainerLow, modifier = Modifier.fillMaxWidth()) {
         Row(Modifier.padding(14.dp).alpha(alpha), verticalAlignment = Alignment.CenterVertically) {
-            Box(Modifier.size(60.dp).clip(RoundedCornerShape(27)).background(block))
-            Spacer(Modifier.width(14.dp))
+            Box(Modifier.size(56.dp).clip(RoundedCornerShape(27)).background(block))
+            Spacer(Modifier.width(12.dp))
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 Box(Modifier.width(130.dp).height(16.dp).clip(CircleShape).background(block))
                 Box(Modifier.fillMaxWidth(0.85f).height(12.dp).clip(CircleShape).background(block))
                 Box(Modifier.width(90.dp).height(10.dp).clip(CircleShape).background(block))
             }
             Spacer(Modifier.width(12.dp))
-            Box(Modifier.width(84.dp).height(40.dp).clip(CircleShape).background(block))
+            Box(Modifier.width(76.dp).height(40.dp).clip(CircleShape).background(block))
         }
     }
 }

@@ -62,14 +62,13 @@
     <string name="detail_version">גרסה</string>
     <string name="detail_size">גודל</string>
     <string name="detail_updated">עודכנה</string>
-    <string name="detail_requires">דרישות</string>
+    <string name="detail_requires_android">Android</string>
     <string name="detail_package">חבילה</string>
     <string name="detail_installed_version">גרסה מותקנת</string>
     <string name="detail_latest_version">גרסה אחרונה</string>
     <string name="detail_source">מקור</string>
     <string name="detail_website">אתר</string>
     <string name="detail_category">קטגוריה</string>
-    <string name="detail_android">Android %1$s ומעלה</string>
     <string name="detail_by">מאת %1$s</string>
     <string name="detail_releases_page">הגרסאות ב-GitHub</string>
     <string name="show_more">להציג עוד</string>
@@ -134,6 +133,8 @@
     <string name="settings_auto_check">בדיקת עדכונים אוטומטית</string>
     <string name="settings_auto_check_desc">התראה כשיוצאת גרסה חדשה לאחת האפליקציות שלכם</string>
     <string name="settings_check_now">בדיקה עכשיו</string>
+    <string name="settings_list_title">רשימת האפליקציות</string>
+    <string name="settings_list_updated">עודכנה %1$s</string>
     <string name="settings_downloads">הורדות</string>
     <string name="settings_delete_after">מחיקת קובצי ההתקנה אחרי ההתקנה</string>
     <string name="settings_delete_after_desc">מפנה את המקום שקובץ ה-APK תופס</string>

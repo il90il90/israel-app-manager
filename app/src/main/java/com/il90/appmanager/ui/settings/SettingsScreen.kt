@@ -57,6 +57,7 @@ import com.il90.appmanager.ui.AppRow
 import com.il90.appmanager.ui.components.ActionButton
 import com.il90.appmanager.ui.components.AppIcon
 import com.il90.appmanager.util.formatSize
+import com.il90.appmanager.util.relativeTime
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -65,6 +66,7 @@ fun SettingsScreen(
     cacheSize: Long,
     selfUpdate: AppRow?,
     refreshing: Boolean,
+    fetchedAt: Long,
     onBack: () -> Unit,
     onAutoCheck: (Boolean) -> Unit,
     onDeleteAfterInstall: (Boolean) -> Unit,
@@ -97,7 +99,16 @@ fun SettingsScreen(
                     SwitchRow(stringResource(R.string.settings_auto_check), stringResource(R.string.settings_auto_check_desc), settings.autoCheck, onAutoCheck)
                     HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f))
                     Row(Modifier.fillMaxWidth().padding(horizontal = 18.dp, vertical = 12.dp), verticalAlignment = Alignment.CenterVertically) {
-                        Text(stringResource(R.string.settings_check_now), style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
+                        Column(Modifier.weight(1f)) {
+                            Text(stringResource(R.string.settings_list_title), style = MaterialTheme.typography.bodyLarge)
+                            if (fetchedAt > 0) {
+                                Text(
+                                    stringResource(R.string.settings_list_updated, relativeTime(LocalContext.current, fetchedAt)),
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                )
+                            }
+                        }
                         OutlinedButton(onClick = onCheckNow, enabled = !refreshing) { Text(stringResource(R.string.settings_check_now)) }
                     }
                 }

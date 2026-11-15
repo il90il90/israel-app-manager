@@ -314,7 +314,7 @@ private fun Stats(row: AppRow) {
         stringResource(R.string.detail_version) to variant.versionName.ifEmpty { variant.versionCode.toString() },
         formatSize(variant.size).takeIf { it.isNotEmpty() }?.let { stringResource(R.string.detail_size) to it },
         published?.let { stringResource(R.string.detail_updated) to relativeTime(context, it) },
-        stringResource(R.string.detail_requires) to stringResource(R.string.detail_android, androidVersionName(variant.minSdk)),
+        stringResource(R.string.detail_requires_android) to "${androidVersionName(variant.minSdk)}+",
     )
     Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surfaceContainerLow, modifier = Modifier.fillMaxWidth()) {
         Row(Modifier.padding(vertical = 14.dp, horizontal = 6.dp)) {
@@ -347,13 +347,15 @@ private fun Section(title: String, trailing: String? = null, content: @Composabl
 private fun WhatsNew(row: AppRow) {
     val release = row.app.release ?: return
     val context = LocalContext.current
-    val notes = release.notes.trim()
+    val versionName = row.variant?.versionName.orEmpty()
+    val sectionTitle = stringResource(R.string.section_whats_new)
+    val notes = remember(release.notes, versionName) { trimRedundantHeading(release.notes, listOf(sectionTitle, "What's new", versionName, release.tag.orEmpty(), row.app.name)) }
     val blocks = remember(notes) { parseMarkdown(notes).size }
     var expanded by rememberSaveable(row.id) { mutableStateOf(false) }
     val collapsedBlocks = 6
     Section(
-        title = stringResource(R.string.section_whats_new),
-        trailing = listOf(row.variant?.versionName ?: release.tag.orEmpty(), relativeTime(context, parseInstant(release.publishedAt)))
+        title = sectionTitle,
+        trailing = listOf(versionName.ifEmpty { release.tag.orEmpty() }, relativeTime(context, parseInstant(release.publishedAt)))
             .filter { it.isNotEmpty() }.joinToString("  ·  "),
     ) {
         if (blocks == 0) {
@@ -402,6 +404,15 @@ private fun DetailsTable(row: AppRow, onOpenUrl: (String) -> Unit) {
     val variant = row.variant ?: row.app.variants.firstOrNull()
     Section(stringResource(R.string.section_details)) {
         @Composable
+        fun stacked(label: String, value: String) {
+            Column(Modifier.fillMaxWidth().padding(vertical = 7.dp)) {
+                Text(label, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Spacer(Modifier.height(2.dp))
+                SelectionContainer { Text(value, style = MaterialTheme.typography.bodyMedium, fontFamily = FontFamily.Monospace) }
+            }
+        }
+
+        @Composable
         fun line(label: String, value: String, mono: Boolean = false, url: String? = null) {
             Row(Modifier.fillMaxWidth().padding(vertical = 7.dp), verticalAlignment = Alignment.CenterVertically) {
                 Text(label, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.width(132.dp))
@@ -429,10 +440,27 @@ private fun DetailsTable(row: AppRow, onOpenUrl: (String) -> Unit) {
         if (variant != null) {
             line(stringResource(R.string.detail_latest_version), "${variant.versionName} (${variant.versionCode})")
             row.installed?.let { line(stringResource(R.string.detail_installed_version), "${it.versionName} (${it.versionCode})") }
-            line(stringResource(R.string.detail_package), variant.packageName, mono = true)
+            if (variant.packageName.length > 22) stacked(stringResource(R.string.detail_package), variant.packageName)
+            else line(stringResource(R.string.detail_package), variant.packageName, mono = true)
         }
         line(stringResource(R.string.detail_category), categoryLabel(row.app.category))
         row.app.website?.let { line(stringResource(R.string.detail_website), it.removePrefix("https://").removePrefix("http://").trimEnd('/'), url = it) }
         (row.app.release?.url ?: row.app.repoUrl)?.let { line(stringResource(R.string.detail_source), stringResource(R.string.detail_releases_page), url = it) }
     }
+}
+
+/**
+ * Release notes often open with a heading that only repeats what the card already says
+ * ("What's new", the version, the app's name). Drops that first line.
+ */
+internal fun trimRedundantHeading(notes: String, redundant: List<String>): String {
+    val text = notes.replace(Regex("<!--.*?-->", RegexOption.DOT_MATCHES_ALL), "").trim()
+    val first = text.lineSequence().firstOrNull()?.trim().orEmpty()
+    if (!first.startsWith("#")) return text
+    val heading = first.trimStart('#').trim().lowercase()
+    val repeats = redundant.filter { it.isNotBlank() }.any { word ->
+        val w = word.lowercase()
+        heading == w || heading == "v$w" || (w.length >= 3 && heading.contains(w) && heading.length <= w.length + 24)
+    }
+    return if (repeats) text.substringAfter('\n', "").trim() else text
 }
