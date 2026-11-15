@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_title">מנהל האפליקציות</string>
+    <plurals name="home_subtitle_apps">
+        <item quantity="one">אפליקציה אחת של ישראל</item>
+        <item quantity="two">%d אפליקציות של ישראל</item>
+        <item quantity="other">%d אפליקציות של ישראל</item>
+    </plurals>
+
+    <string name="action_install">התקנה</string>
+    <string name="action_update">עדכון</string>
+    <string name="action_open">פתיחה</string>
+    <string name="action_retry">שוב</string>
+    <string name="action_cancel">ביטול</string>
+    <string name="action_uninstall">הסרה</string>
+    <string name="action_update_all">עדכון הכול</string>
+    <string name="action_share">שיתוף</string>
+    <string name="action_settings">הגדרות</string>
+    <string name="action_search">חיפוש</string>
+    <string name="action_back">חזרה</string>
+    <string name="action_clear">ניקוי</string>
+    <string name="action_download_apk">הורדת APK</string>
+    <string name="action_not_now">לא עכשיו</string>
+    <string name="action_open_settings">פתיחת ההגדרות</string>
+    <string name="action_try_again">ניסיון נוסף</string>
+    <string name="action_dismiss">סגירה</string>
+    <string name="action_app_info">פרטי האפליקציה</string>
+    <string name="action_more">עוד</string>
+
+    <string name="status_queued">בהמתנה</string>
+    <string name="status_downloading">מוריד</string>
+    <string name="status_verifying">בודק</string>
+    <string name="status_installing">מתקין</string>
+    <string name="status_confirm">נדרש אישור במסך</string>
+
+    <string name="state_installed">מותקנת</string>
+    <string name="state_update_available">יש עדכון</string>
+    <string name="state_soon">בקרוב</string>
+    <string name="state_tv_only">Android TV</string>
+    <string name="state_watch_only">Wear OS</string>
+    <string name="state_incompatible">לא תואמת</string>
+    <string name="state_installed_version">מותקנת %1$s</string>
+    <string name="state_update_from_to">%1$s ← %2$s</string>
+
+    <string name="filter_all">הכול</string>
+    <string name="filter_installed">מותקנות</string>
+    <string name="filter_updates">עדכונים</string>
+
+    <plurals name="updates_available">
+        <item quantity="one">עדכון אחד זמין</item>
+        <item quantity="two">%d עדכונים זמינים</item>
+        <item quantity="other">%d עדכונים זמינים</item>
+    </plurals>
+    <string name="self_update_title">גרסה חדשה של מנהל האפליקציות מוכנה</string>
+    <string name="self_update_body">גרסה %1$s · %2$s</string>
+    <string name="featured">מומלצות</string>
+
+    <string name="section_about">על האפליקציה</string>
+    <string name="section_whats_new">מה חדש</string>
+    <string name="section_details">פרטים</string>
+    <string name="section_other_devices">זמינה גם עבור</string>
+    <string name="detail_version">גרסה</string>
+    <string name="detail_size">גודל</string>
+    <string name="detail_updated">עודכנה</string>
+    <string name="detail_requires">דרישות</string>
+    <string name="detail_package">חבילה</string>
+    <string name="detail_installed_version">גרסה מותקנת</string>
+    <string name="detail_latest_version">גרסה אחרונה</string>
+    <string name="detail_source">מקור</string>
+    <string name="detail_website">אתר</string>
+    <string name="detail_category">קטגוריה</string>
+    <string name="detail_android">Android %1$s ומעלה</string>
+    <string name="detail_by">מאת %1$s</string>
+    <string name="detail_releases_page">הגרסאות ב-GitHub</string>
+    <string name="show_more">להציג עוד</string>
+    <string name="show_less">להציג פחות</string>
+    <string name="no_release_notes">אין הערות גרסה לגרסה הזו.</string>
+    <string name="incompatible_tv">האפליקציה הזו מיועדת ל-Android TV. אפשר להוריד את קובץ ה-APK ולהתקין אותו בטלוויזיה.</string>
+    <string name="incompatible_watch">האפליקציה הזו מיועדת לשעוני Wear OS.</string>
+    <string name="incompatible_sdk">האפליקציה הזו דורשת Android %1$s ומעלה.</string>
+    <string name="incompatible_abi">האפליקציה הזו לא תומכת במעבד של המכשיר.</string>
+    <string name="no_release_yet">עדיין אין גרסה ציבורית לאפליקציה הזו. היא תופיע כאן ברגע שתפורסם.</string>
+    <string name="newer_installed">מותקנת אצלכם גרסה חדשה יותר מזו שפורסמה.</string>
+
+    <string name="form_phone">טלפון</string>
+    <string name="form_tv">Android TV</string>
+    <string name="form_watch">Wear OS</string>
+
+    <string name="search_hint">חיפוש אפליקציות</string>
+    <string name="empty_search">לא נמצאו אפליקציות עבור „%1$s”</string>
+    <string name="empty_updates_title">הכול מעודכן</string>
+    <string name="empty_updates_body">גרסאות חדשות יופיעו כאן.</string>
+    <string name="empty_installed_title">עדיין לא הותקן דבר</string>
+    <string name="empty_installed_body">אפליקציות שתתקינו יופיעו כאן.</string>
+    <string name="error_offline_title">לא ניתן לטעון את האפליקציות</string>
+    <string name="error_offline_body">בדקו את החיבור לאינטרנט ונסו שוב.</string>
+    <string name="offline_banner">אין חיבור. מוצגת הרשימה האחרונה שנשמרה.</string>
+    <string name="catalog_updated">הרשימה עודכנה %1$s</string>
+
+    <string name="permission_install_title">אישור להתקנת אפליקציות</string>
+    <string name="permission_install_body">אנדרואיד מבקש אישור חד-פעמי לפני ש-Israel App Manager יוכל להתקין ולעדכן אפליקציות. הפעילו את „אישור מהמקור הזה” במסך הבא, ואז חזרו לכאן.</string>
+
+    <string name="fail_network">ההורדה נכשלה. בדקו את החיבור ונסו שוב.</string>
+    <string name="fail_storage">אין מספיק מקום פנוי במכשיר.</string>
+    <string name="fail_corrupt">הקובץ שהורד פגום. נסו שוב.</string>
+    <string name="fail_conflict">מותקן עותק של האפליקציה שנחתם על ידי מקור אחר. הסירו אותו ואז התקינו שוב.</string>
+    <string name="fail_incompatible">האפליקציה לא תואמת למכשיר שלכם.</string>
+    <string name="fail_blocked">המכשיר חסם את ההתקנה.</string>
+    <string name="fail_invalid">אנדרואיד לא הצליח לקרוא את החבילה.</string>
+    <string name="fail_generic">ההתקנה נכשלה.</string>
+    <string name="fail_downgrade">כבר מותקנת גרסה חדשה יותר.</string>
+
+    <string name="msg_installed">%1$s הותקנה</string>
+    <string name="msg_apk_download_started">שומר את %1$s בתיקיית ההורדות</string>
+    <string name="msg_cache_cleared">הקבצים שהורדו נמחקו</string>
+    <string name="msg_cannot_open">לא ניתן לפתוח את האפליקציה</string>
+
+    <string name="channel_updates">עדכוני אפליקציות</string>
+    <string name="channel_downloads">הורדות</string>
+    <string name="channel_install">אישור התקנה</string>
+    <plurals name="notif_updates_title">
+        <item quantity="one">עדכון אחד זמין לאפליקציות</item>
+        <item quantity="two">%d עדכונים זמינים לאפליקציות</item>
+        <item quantity="other">%d עדכונים זמינים לאפליקציות</item>
+    </plurals>
+    <string name="notif_downloading">מוריד את %1$s</string>
+    <string name="notif_installing">מתקין את %1$s</string>
+    <string name="notif_working">מטפל באפליקציות שלכם</string>
+    <string name="notif_confirm_title">להמשך התקנת %1$s</string>
+    <string name="notif_confirm_body">הקישו כדי לאשר את ההתקנה.</string>
+
+    <string name="settings_title">הגדרות</string>
+    <string name="settings_updates">עדכונים</string>
+    <string name="settings_auto_check">בדיקת עדכונים אוטומטית</string>
+    <string name="settings_auto_check_desc">התראה כשיוצאת גרסה חדשה לאחת האפליקציות שלכם</string>
+    <string name="settings_check_now">בדיקה עכשיו</string>
+    <string name="settings_downloads">הורדות</string>
+    <string name="settings_delete_after">מחיקת קובצי ההתקנה אחרי ההתקנה</string>
+    <string name="settings_delete_after_desc">מפנה את המקום שקובץ ה-APK תופס</string>
+    <string name="settings_clear_cache">מחיקת הקבצים שהורדו</string>
+    <string name="settings_cache_size">בשימוש: %1$s</string>
+    <string name="settings_appearance">מראה</string>
+    <string name="settings_theme">ערכת נושא</string>
+    <string name="theme_system">מערכת</string>
+    <string name="theme_light">בהיר</string>
+    <string name="theme_dark">כהה</string>
+    <string name="settings_about">אודות</string>
+    <string name="settings_version">גרסה %1$s</string>
+    <string name="settings_app_up_to_date">מנהל האפליקציות מעודכן</string>
+    <string name="settings_app_update">עדכון לגרסה %1$s</string>
+    <string name="settings_source">קוד המקור ב-GitHub</string>
+    <string name="settings_made_by">נבנה על ידי ישראל</string>
+
+    <string name="cat_ai">AI ואוטומציה</string>
+    <string name="cat_video">וידאו</string>
+    <string name="cat_personalization">התאמה אישית</string>
+    <string name="cat_devtools">כלי פיתוח</string>
+    <string name="cat_communication">תקשורת</string>
+    <string name="cat_photos">תמונות</string>
+    <string name="cat_sports">ספורט</string>
+    <string name="cat_tools">כלים</string>
+    <string name="cat_kids">ילדים</string>
+</resources>

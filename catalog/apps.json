@@ -1,0 +1,215 @@
+{
+  "developer": "Israel",
+  "announcement": null,
+  "apps": [
+    {
+      "id": "touchless",
+      "name": "Touchless",
+      "featured": true,
+      "category": "ai",
+      "website": "https://touchless.tools",
+      "tagline": {
+        "en": "Let AI operate your phone, hands-free",
+        "he": "נותנים ל-AI להפעיל את הטלפון, בלי ידיים"
+      },
+      "description": {
+        "en": "Touchless connects AI assistants such as Claude, ChatGPT and Gemini to your Android phone over MCP. The AI can open apps, read the screen, tap and type, send messages, build automations and run whole tasks for you, while you decide what it is allowed to do.",
+        "he": "Touchless מחברת עוזרי AI כמו Claude, ChatGPT ו-Gemini לטלפון האנדרואיד שלכם דרך MCP. ה-AI יכול לפתוח אפליקציות, לקרוא את המסך, להקיש ולהקליד, לשלוח הודעות, לבנות אוטומציות ולבצע משימות שלמות בשבילכם, ואתם קובעים מה מותר לו."
+      },
+      "sources": [
+        {
+          "repo": "il90il90/touchless-releases",
+          "tag": "^v\\d+(\\.\\d+)*$",
+          "asset": "^touchless-\\d[\\d.]*\\.apk$"
+        }
+      ]
+    },
+    {
+      "id": "seretgram",
+      "name": "SeretGram",
+      "featured": true,
+      "category": "video",
+      "website": "https://seretgram.com",
+      "tagline": {
+        "en": "Your Telegram films as a streaming library",
+        "he": "הסרטים שלכם בטלגרם, כספריית סטרימינג"
+      },
+      "description": {
+        "en": "SeretGram turns the films and series in your Telegram chats into a library with posters, cast and genres. Continue where you stopped, watch together with friends, open Live TV, and use the phone as a remote for SeretGram on Android TV. Your library syncs between the phone and the TV.",
+        "he": "SeretGram הופכת את הסרטים והסדרות שבצ'אטים שלכם בטלגרם לספרייה עם פוסטרים, שחקנים וז'אנרים. ממשיכים מאיפה שעצרתם, צופים יחד עם חברים, פותחים שידורים חיים, ומשתמשים בטלפון כשלט ל-SeretGram ב-Android TV. הספרייה מסתנכרנת בין הטלפון לטלוויזיה."
+      },
+      "sources": [{ "repo": "il90il90/SeretGram-releases", "tag": "^v\\d", "asset": "\\.apk$" }]
+    },
+    {
+      "id": "wallify",
+      "name": "Wallify",
+      "featured": true,
+      "category": "personalization",
+      "tagline": {
+        "en": "Still and live wallpapers in an endless feed",
+        "he": "טפטים רגילים וחיים בפיד אינסופי"
+      },
+      "description": {
+        "en": "An immersive, TikTok-style vertical feed of still and live (video) wallpapers. Double-tap to keep a favourite, set real live wallpapers, search the gallery and turn your own videos into live wallpapers. Fits every screen, foldables included. Free, with no ads.",
+        "he": "פיד אנכי סוחף בסגנון טיקטוק של טפטים רגילים וטפטים חיים (וידאו). הקשה כפולה שומרת למועדפים, אפשר להגדיר טפט חי אמיתי, לחפש בגלריה ולהפוך סרטונים משלכם לטפטים חיים. מתאים לכל מסך, כולל מתקפלים. חינם וללא פרסומות."
+      },
+      "sources": [{ "repo": "il90il90/Wallify-releases", "tag": "^v\\d", "asset": "^wallify-\\d.*\\.apk$" }]
+    },
+    {
+      "id": "trustapk",
+      "name": "TrustAPK",
+      "category": "devtools",
+      "website": "https://trustapk.app",
+      "tagline": {
+        "en": "Patch and inspect APKs right on your phone",
+        "he": "תיקון ובדיקה של קובצי APK ישירות בטלפון"
+      },
+      "description": {
+        "en": "A native, on-device APK patcher and HTTPS traffic inspector for developers and testers. Make an app trust user certificates, remove certificate pinning, look inside and decompile it, and sign it again, all on the phone with no computer.",
+        "he": "כלי מקומי לתיקון קובצי APK ולבדיקת תעבורת HTTPS, למפתחים ולבודקים. גורמים לאפליקציה לסמוך על תעודות משתמש, מסירים certificate pinning, מציצים פנימה ומבצעים דה-קומפילציה, וחותמים מחדש. הכול בטלפון, בלי מחשב."
+      },
+      "sources": [{ "repo": "il90il90/trust-apk-releases", "asset": "\\.apk$" }]
+    },
+    {
+      "id": "onedial",
+      "name": "OneDial",
+      "category": "communication",
+      "tagline": {
+        "en": "A fast dialer that finds anyone in a few taps",
+        "he": "חייגן מהיר שמוצא כל אחד בכמה הקשות"
+      },
+      "description": {
+        "en": "A customizable dialer and contacts app. Search names in Hebrew and English straight from the keypad, swipe a row to call, message or open WhatsApp and Telegram, see who is on each speed-dial key, call by voice and get a call button for each SIM. Themes, your wallpaper behind the dialer and a caller window that shows who is calling.",
+        "he": "חייגן ואנשי קשר שמתאימים את עצמם אליכם. מחפשים שמות בעברית ובאנגלית ישר מהמקלדת, מחליקים על שורה כדי להתקשר, לשלוח הודעה או לפתוח וואטסאפ וטלגרם, רואים מי נמצא על כל מקש חיוג מהיר, מחייגים בקול ומקבלים כפתור חיוג לכל SIM. ערכות נושא, הטפט שלכם ברקע החייגן וחלון שיחה שמראה מי מתקשר."
+      },
+      "sources": [{ "repo": "il90il90/OneDial-releases", "tag": "^v\\d", "asset": "^onedial-.*\\.apk$" }]
+    },
+    {
+      "id": "gallerywall",
+      "name": "Gallery Wall",
+      "category": "photos",
+      "tagline": {
+        "en": "Turn your TVs into a living photo wall",
+        "he": "הופכים את הטלוויזיות לקיר תמונות חי"
+      },
+      "description": {
+        "en": "Install it on your phone and on your TVs: the phone is the remote and the TVs are the displays. Share photos and videos straight from your gallery into albums and they appear on the screens over your home Wi-Fi.",
+        "he": "מתקינים בטלפון ובטלוויזיות: הטלפון הוא השלט והטלוויזיות הן התצוגה. משתפים תמונות וסרטונים ישר מהגלריה לאלבומים, והם מופיעים על המסכים דרך ה-Wi-Fi הביתי."
+      },
+      "sources": [{ "repo": "il90il90/GalleryWall-releases", "tag": "^v\\d", "asset": "\\.apk$" }]
+    },
+    {
+      "id": "watchiptv",
+      "name": "WatchIPTV",
+      "category": "video",
+      "tagline": {
+        "en": "IPTV and camera streams on phone, TV and watch",
+        "he": "IPTV ומצלמות בטלפון, בטלוויזיה ובשעון"
+      },
+      "description": {
+        "en": "Watch IPTV channels and RTSP camera streams on your phone, Android TV and Wear OS watch. Nothing is built in: you add your own playlists and streams, and they are stored encrypted on your device. The phone can send its whole library to the watch and to every TV on your Wi-Fi.",
+        "he": "צופים בערוצי IPTV ובמצלמות RTSP בטלפון, ב-Android TV ובשעון Wear OS. שום דבר לא מובנה מראש: אתם מוסיפים פלייליסטים וזרמים משלכם, והם נשמרים מוצפנים במכשיר. הטלפון יכול לשלוח את כל הספרייה לשעון ולכל טלוויזיה ב-Wi-Fi."
+      },
+      "sources": [{ "mirror": true }]
+    },
+    {
+      "id": "scoreup",
+      "name": "ScoreUp",
+      "category": "sports",
+      "tagline": {
+        "en": "A scoreboard on your phone, watch and TV",
+        "he": "לוח תוצאות בטלפון, בשעון ובטלוויזיה"
+      },
+      "description": {
+        "en": "A sports scoreboard for phones, tablets and foldables. A Wear OS watch works as the scoring remote, the TV shows a live scoreboard, and the app keeps the game clock and saves your scores.",
+        "he": "לוח תוצאות לספורט לטלפונים, לטאבלטים ולמתקפלים. שעון Wear OS משמש כשלט לניקוד, הטלוויזיה מציגה לוח תוצאות חי, והאפליקציה מנהלת את שעון המשחק ושומרת את התוצאות."
+      },
+      "sources": [{ "repo": "il90il90/ScoreUp", "tag": "^v\\d", "asset": "\\.apk$" }]
+    },
+    {
+      "id": "touchless-bridge",
+      "name": "Touchless Bridge",
+      "category": "ai",
+      "tagline": {
+        "en": "Connect HackerAI to your phone through Touchless",
+        "he": "מחברים את HackerAI לטלפון דרך Touchless"
+      },
+      "description": {
+        "en": "Lets a HackerAI chat operate your phone through Touchless, with no computer in the middle. A three-step setup connects the phone, a built-in HackerAI chat does the rest, and the app keeps the connection alive in the background behind a PIN or fingerprint lock. Requires Touchless.",
+        "he": "מאפשרת לצ'אט של HackerAI להפעיל את הטלפון דרך Touchless, בלי מחשב באמצע. הגדרה בשלושה צעדים מחברת את הטלפון, צ'אט HackerAI מובנה עושה את השאר, והאפליקציה שומרת על החיבור ברקע מאחורי נעילת PIN או טביעת אצבע. דורשת את Touchless."
+      },
+      "sources": [{ "repo": "il90il90/touchless-hackerai-bridge", "tag": "^app-v\\d", "asset": "\\.apk$" }]
+    },
+    {
+      "id": "screenawake",
+      "name": "Screen Awake",
+      "category": "tools",
+      "tagline": {
+        "en": "Keep the screen on, always or only in chosen apps",
+        "he": "המסך נשאר דולק, תמיד או רק באפליקציות שבחרתם"
+      },
+      "description": {
+        "en": "Stops the display from turning off, either always or only while the apps you picked are in front. Comes with a floating button, two Quick Settings tiles and an option to start after a reboot. It changes no system setting: turn it off and your normal screen timeout is back.",
+        "he": "מונעת מהמסך להיכבות, תמיד או רק כשאפליקציות שבחרתם פתוחות. כוללת כפתור צף, שני כפתורים בהגדרות המהירות ואפשרות להפעלה אחרי הדלקה מחדש. היא לא משנה שום הגדרת מערכת: מכבים אותה, וזמן כיבוי המסך הרגיל חוזר."
+      },
+      "sources": [{ "mirror": true }]
+    },
+    {
+      "id": "zoopli",
+      "name": "Zoopli",
+      "category": "kids",
+      "tagline": {
+        "en": "Animals for kids, in Hebrew and English",
+        "he": "עולם החיות לילדים, בעברית ובאנגלית"
+      },
+      "description": {
+        "en": "An animal learning game for young children. Ninety-three animals with cartoon icons, real photos, their actual sounds and their names spoken in Hebrew and English, twenty-two countries to travel to and three gentle quiz modes.",
+        "he": "משחק לימוד על בעלי חיים לילדים צעירים. תשעים ושלוש חיות עם איורים, תמונות אמיתיות, הקולות האמיתיים שלהן והשמות שלהן בעברית ובאנגלית, עשרים ושתיים מדינות לטייל בהן ושלושה מצבי חידון עדינים."
+      },
+      "sources": [{ "mirror": true }]
+    },
+    {
+      "id": "abc",
+      "name": "אבג ABC",
+      "category": "kids",
+      "tagline": {
+        "en": "Letters and numbers for ages 2 to 8",
+        "he": "אותיות ומספרים לגילאי 2 עד 8"
+      },
+      "description": {
+        "en": "Teaches reading and writing in Hebrew (with nikud), English and numbers to children aged 2 to 8. Works offline, with no ads, no purchases and no data collection.",
+        "he": "אפליקציה ללימוד קריאה וכתיבה בעברית (כולל ניקוד), אנגלית ומספרים, לגילאי 2 עד 8. עובדת אופליין, בלי פרסומות, בלי רכישות ובלי איסוף מידע."
+      },
+      "sources": [{ "repo": "il90il90/abc-app-releases", "tag": "^v\\d", "asset": "\\.apk$" }]
+    },
+    {
+      "id": "israel-tv",
+      "name": "Israel TV",
+      "category": "video",
+      "tagline": {
+        "en": "Israeli live TV channels for Android TV",
+        "he": "ערוצי טלוויזיה ישראליים ל-Android TV"
+      },
+      "description": {
+        "en": "Live Israeli TV channels in an app made for Android TV and the remote control.",
+        "he": "ערוצי טלוויזיה ישראליים בשידור חי, באפליקציה שנבנתה ל-Android TV ולשלט."
+      },
+      "sources": [{ "repo": "il90il90/hass-israel-tv-release", "tag": "^v\\d", "asset": "\\.apk$" }]
+    },
+    {
+      "id": "israel-app-manager",
+      "name": "Israel App Manager",
+      "self": true,
+      "category": "tools",
+      "tagline": {
+        "en": "All of Israel's apps in one place",
+        "he": "כל האפליקציות של ישראל במקום אחד"
+      },
+      "description": {
+        "en": "Download, install and update every app Israel builds, from one place.",
+        "he": "הורדה, התקנה ועדכון של כל האפליקציות שישראל בונה, ממקום אחד."
+      },
+      "sources": [{ "repo": "il90il90/israel-app-manager", "tag": "^v\\d", "asset": "^israel-app-manager-.*\\.apk$" }]
+    }
+  ]
+}

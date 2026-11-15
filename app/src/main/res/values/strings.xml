@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Israel App Manager</string>
+    <string name="home_title">App Manager</string>
+    <plurals name="home_subtitle_apps">
+        <item quantity="one">%d app by Israel</item>
+        <item quantity="other">%d apps by Israel</item>
+    </plurals>
+
+    <string name="action_install">Install</string>
+    <string name="action_update">Update</string>
+    <string name="action_open">Open</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_uninstall">Uninstall</string>
+    <string name="action_update_all">Update all</string>
+    <string name="action_share">Share</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="action_back">Back</string>
+    <string name="action_clear">Clear</string>
+    <string name="action_download_apk">Download APK</string>
+    <string name="action_not_now">Not now</string>
+    <string name="action_open_settings">Open settings</string>
+    <string name="action_try_again">Try again</string>
+    <string name="action_dismiss">Dismiss</string>
+    <string name="action_app_info">App info</string>
+    <string name="action_more">More</string>
+
+    <string name="status_queued">Waiting</string>
+    <string name="status_downloading">Downloading</string>
+    <string name="status_verifying">Verifying</string>
+    <string name="status_installing">Installing</string>
+    <string name="status_confirm">Confirm on screen</string>
+
+    <string name="state_installed">Installed</string>
+    <string name="state_update_available">Update available</string>
+    <string name="state_soon">Coming soon</string>
+    <string name="state_tv_only">Android TV</string>
+    <string name="state_watch_only">Wear OS</string>
+    <string name="state_incompatible">Not compatible</string>
+    <string name="state_installed_version">Installed %1$s</string>
+    <string name="state_update_from_to">%1$s → %2$s</string>
+
+    <string name="filter_all">All</string>
+    <string name="filter_installed">Installed</string>
+    <string name="filter_updates">Updates</string>
+
+    <plurals name="updates_available">
+        <item quantity="one">%d update available</item>
+        <item quantity="other">%d updates available</item>
+    </plurals>
+    <string name="self_update_title">A new App Manager is ready</string>
+    <string name="self_update_body">Version %1$s · %2$s</string>
+    <string name="featured">Featured</string>
+
+    <string name="section_about">About this app</string>
+    <string name="section_whats_new">What\'s new</string>
+    <string name="section_details">Details</string>
+    <string name="section_other_devices">Also available for</string>
+    <string name="detail_version">Version</string>
+    <string name="detail_size">Size</string>
+    <string name="detail_updated">Updated</string>
+    <string name="detail_requires">Requires</string>
+    <string name="detail_package">Package</string>
+    <string name="detail_installed_version">Installed version</string>
+    <string name="detail_latest_version">Latest version</string>
+    <string name="detail_source">Source</string>
+    <string name="detail_website">Website</string>
+    <string name="detail_category">Category</string>
+    <string name="detail_android">Android %1$s+</string>
+    <string name="detail_by">by %1$s</string>
+    <string name="detail_releases_page">Releases on GitHub</string>
+    <string name="show_more">Show more</string>
+    <string name="show_less">Show less</string>
+    <string name="no_release_notes">No release notes for this version.</string>
+    <string name="incompatible_tv">This app is made for Android TV. You can still download the APK to install it on your TV.</string>
+    <string name="incompatible_watch">This app is made for Wear OS watches.</string>
+    <string name="incompatible_sdk">This app needs Android %1$s or newer.</string>
+    <string name="incompatible_abi">This app does not support this device\'s processor.</string>
+    <string name="no_release_yet">There is no public release of this app yet. It will show up here as soon as one is published.</string>
+    <string name="newer_installed">You have a newer version than the published one.</string>
+
+    <string name="form_phone">Phone</string>
+    <string name="form_tv">Android TV</string>
+    <string name="form_watch">Wear OS</string>
+
+    <string name="search_hint">Search apps</string>
+    <string name="empty_search">No apps match “%1$s”</string>
+    <string name="empty_updates_title">Everything is up to date</string>
+    <string name="empty_updates_body">New versions will show up here.</string>
+    <string name="empty_installed_title">Nothing installed yet</string>
+    <string name="empty_installed_body">Apps you install will show up here.</string>
+    <string name="error_offline_title">Can\'t load the apps</string>
+    <string name="error_offline_body">Check your internet connection and try again.</string>
+    <string name="offline_banner">Offline. Showing the last saved list.</string>
+    <string name="catalog_updated">List updated %1$s</string>
+
+    <string name="permission_install_title">Allow installing apps</string>
+    <string name="permission_install_body">Android asks for a one-time permission before Israel App Manager can install and update apps. Turn on “Allow from this source” on the next screen, then come back.</string>
+
+    <string name="fail_network">Download failed. Check your connection and try again.</string>
+    <string name="fail_storage">Not enough free space on the device.</string>
+    <string name="fail_corrupt">The download was damaged. Try again.</string>
+    <string name="fail_conflict">A copy of this app signed by a different source is installed. Uninstall it first, then install again.</string>
+    <string name="fail_incompatible">This app is not compatible with your device.</string>
+    <string name="fail_blocked">The device blocked this installation.</string>
+    <string name="fail_invalid">The package could not be read by Android.</string>
+    <string name="fail_generic">Installation failed.</string>
+    <string name="fail_downgrade">A newer version is already installed.</string>
+
+    <string name="msg_installed">%1$s is installed</string>
+    <string name="msg_apk_download_started">Saving %1$s to Downloads</string>
+    <string name="msg_cache_cleared">Downloaded files cleared</string>
+    <string name="msg_cannot_open">Can\'t open this app</string>
+
+    <string name="channel_updates">App updates</string>
+    <string name="channel_downloads">Downloads</string>
+    <string name="channel_install">Install confirmation</string>
+    <plurals name="notif_updates_title">
+        <item quantity="one">%d app update available</item>
+        <item quantity="other">%d app updates available</item>
+    </plurals>
+    <string name="notif_downloading">Downloading %1$s</string>
+    <string name="notif_installing">Installing %1$s</string>
+    <string name="notif_working">Working on your apps</string>
+    <string name="notif_confirm_title">Continue installing %1$s</string>
+    <string name="notif_confirm_body">Tap to confirm the installation.</string>
+
+    <string name="settings_title">Settings</string>
+    <string name="settings_updates">Updates</string>
+    <string name="settings_auto_check">Check for updates automatically</string>
+    <string name="settings_auto_check_desc">Get a notification when a new version of one of your apps is out</string>
+    <string name="settings_check_now">Check now</string>
+    <string name="settings_downloads">Downloads</string>
+    <string name="settings_delete_after">Delete installers after installing</string>
+    <string name="settings_delete_after_desc">Frees the space the downloaded APK takes</string>
+    <string name="settings_clear_cache">Clear downloaded files</string>
+    <string name="settings_cache_size">%1$s used</string>
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_theme">Theme</string>
+    <string name="theme_system">System</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="settings_about">About</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="settings_app_up_to_date">App Manager is up to date</string>
+    <string name="settings_app_update">Update to %1$s</string>
+    <string name="settings_source">Source code on GitHub</string>
+    <string name="settings_made_by">Made by Israel</string>
+
+    <string name="cat_ai">AI &amp; Automation</string>
+    <string name="cat_video">Video</string>
+    <string name="cat_personalization">Personalization</string>
+    <string name="cat_devtools">Developer tools</string>
+    <string name="cat_communication">Communication</string>
+    <string name="cat_photos">Photos</string>
+    <string name="cat_sports">Sports</string>
+    <string name="cat_tools">Tools</string>
+    <string name="cat_kids">Kids</string>
+</resources>

@@ -1,0 +1,75 @@
+name: Catalog
+
+# Rebuilds the list of apps the Israel App Manager app shows: the newest release of every
+# app in catalog/apps.json, with versions, sizes, hashes and icons. The result lives on the
+# `catalog` branch and is read by the app from raw.githubusercontent.com.
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  push:
+    branches: [main]
+    paths: ["catalog/**", "tools/catalog/**", ".github/workflows/catalog.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: catalog
+  cancel-in-progress: false
+
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      # Optional, for the apps whose source is {"mirror": true}: where their releases are
+      # (a JSON object, see tools/catalog/README.md) and a token that can read them. With both,
+      # new releases are copied to the `apks` branch by themselves; without them the mirror
+      # only changes when it is updated by hand.
+      PRIVATE_REPOS_TOKEN: ${{ secrets.PRIVATE_REPOS_TOKEN }}
+      PRIVATE_SOURCES_JSON: ${{ secrets.PRIVATE_SOURCES_JSON }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { path: src }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq librsvg2-bin
+          python -m pip install --quiet pillow
+      - name: Check out the data branches
+        run: |
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          for branch in catalog apks; do
+            if git ls-remote --exit-code --heads "$remote" "$branch" > /dev/null; then
+              git clone --quiet --depth 1 --branch "$branch" "$remote" "$branch"
+            else
+              git init --quiet --initial-branch "$branch" "$branch"
+              git -C "$branch" remote add origin "$remote"
+            fi
+          done
+      - name: Mirror private releases
+        if: env.PRIVATE_REPOS_TOKEN != '' && env.PRIVATE_SOURCES_JSON != ''
+        run: |
+          python src/tools/catalog/build_catalog.py mirror --apps src/catalog/apps.json --mirror apks
+          cd apks
+          git add -A
+          if git diff --cached --quiet; then exit 0; fi
+          # One commit, always: the branch holds binaries and must not grow a history.
+          git checkout --quiet --orphan fresh
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit --quiet -m "Mirror app releases"
+          git push --quiet --force origin fresh:apks
+      - name: Build the catalog
+        run: python src/tools/catalog/build_catalog.py build --apps src/catalog/apps.json --out catalog --mirror apks
+      - name: Publish
+        run: |
+          cd catalog
+          git add -A
+          if git diff --cached --quiet; then echo "Catalog unchanged"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit --quiet -m "Update catalog"
+          git push --quiet origin HEAD:catalog
+          echo "Catalog published"

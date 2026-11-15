@@ -1,0 +1,83 @@
+name: Release
+
+# Builds, signs and publishes a release in CI, tagged v<VERSION_NAME> from version.properties.
+#
+# It needs the release key as two repository secrets (see README, "Releasing"):
+#   IAM_KEYSTORE_BASE64    the keystore, base64 encoded
+#   IAM_KEYSTORE_PASSWORD  its password
+# Without them this workflow does nothing and releases are published through the
+# `release-inbox` branch instead (publish-inbox.yml).
+on:
+  push:
+    branches: [main]
+    paths: [version.properties]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      IAM_KEYSTORE_BASE64: ${{ secrets.IAM_KEYSTORE_BASE64 }}
+      IAM_KEYSTORE_PASSWORD: ${{ secrets.IAM_KEYSTORE_PASSWORD }}
+    steps:
+      - name: Is the release key here?
+        id: key
+        run: |
+          if [ -n "$IAM_KEYSTORE_BASE64" ] && [ -n "$IAM_KEYSTORE_PASSWORD" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::No release key in this repository's secrets: nothing to do here. Releases come through the release-inbox branch."
+          fi
+      - uses: actions/checkout@v4
+        if: steps.key.outputs.present == 'true'
+      - name: Version
+        if: steps.key.outputs.present == 'true'
+        id: v
+        run: |
+          version="$(sed -n 's/^VERSION_NAME=//p' version.properties)"
+          echo "name=$version" >> "$GITHUB_OUTPUT"
+          if gh release view "v$version" > /dev/null 2>&1; then echo "skip=true" >> "$GITHUB_OUTPUT"; else echo "skip=false" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/setup-java@v4
+        if: steps.key.outputs.present == 'true' && steps.v.outputs.skip != 'true'
+        with: { distribution: temurin, java-version: "17" }
+      - uses: gradle/actions/setup-gradle@v4
+        if: steps.key.outputs.present == 'true' && steps.v.outputs.skip != 'true'
+      - name: Build and sign
+        if: steps.key.outputs.present == 'true' && steps.v.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          printf '%s' "$IAM_KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/release.jks"
+          export IAM_KEYSTORE_FILE="$RUNNER_TEMP/release.jks"
+          ./gradlew --no-daemon :app:testDebugUnitTest :app:assembleRelease
+          rm -f "$RUNNER_TEMP/release.jks"
+      - name: Publish
+        if: steps.key.outputs.present == 'true' && steps.v.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          version="${{ steps.v.outputs.name }}"
+          apk="israel-app-manager-${version}.apk"
+          cp app/build/outputs/apk/release/app-release.apk "$apk"
+          tools="$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)"
+          expected="$(tr -d '[:space:]' < release/signing-cert.sha256)"
+          actual="$("$tools/apksigner" verify --print-certs "$apk" | sed -n 's/^Signer #1 certificate SHA-256 digest: //p' | tr -d '[:space:]')"
+          if [ "$expected" != "$actual" ]; then
+            echo "::error::The APK is not signed with the release key (got $actual)."
+            exit 1
+          fi
+          cp "$apk" IsraelAppManager.apk
+          sha256sum "$apk" > "$apk.sha256"
+          notes="$(git log -1 --pretty=%B)"
+          gh release create "v$version" "$apk" "$apk.sha256" IsraelAppManager.apk \
+            --target "$GITHUB_SHA" --title "Israel App Manager $version" --notes "$notes" --latest
+          gh workflow run catalog.yml --ref main
