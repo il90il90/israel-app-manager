@@ -1,0 +1,688 @@
+{
+ "schema": 1,
+ "generatedAt": "2026-11-15T22:29:34Z",
+ "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
+ "announcement": null,
+ "apps": [
+  {
+   "id": "touchless",
+   "name": "Touchless",
+   "tagline": {
+    "en": "Let AI operate your phone, hands-free",
+    "he": "נותנים ל-AI להפעיל את הטלפון, בלי ידיים"
+   },
+   "description": {
+    "en": "Touchless connects AI assistants such as Claude, ChatGPT and Gemini to your Android phone over MCP. The AI can open apps, read the screen, tap and type, send messages, build automations and run whole tasks for you, while you decide what it is allowed to do.",
+    "he": "Touchless מחברת עוזרי AI כמו Claude, ChatGPT ו-Gemini לטלפון האנדרואיד שלכם דרך MCP. ה-AI יכול לפתוח אפליקציות, לקרוא את המסך, להקיש ולהקליד, לשלוח הודעות, לבנות אוטומציות ולבצע משימות שלמות בשבילכם, ואתם קובעים מה מותר לו."
+   },
+   "category": "ai",
+   "developer": "Israel",
+   "website": "https://touchless.tools",
+   "featured": true,
+   "self": false,
+   "order": 0,
+   "variants": [
+    {
+     "formFactor": "phone",
+     "abis": [
+      "arm64-v8a",
+      "armeabi-v7a"
+     ],
+     "packageName": "com.il90.touchless",
+     "versionName": "0.2.610",
+     "versionCode": 662,
+     "minSdk": 26,
+     "targetSdk": 37,
+     "tvCapable": true,
+     "label": "Touchless",
+     "fileName": "touchless-0.2.610.apk",
+     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.610/touchless-0.2.610.apk",
+     "size": 39982811,
+     "sha256": "90c61c5e9fa8a3f3b2b84859d96dcfe237d20a1331d4eb38ff1d603052b1bf23",
+     "assetId": 752222374,
+     "assetUpdatedAt": "2026-11-15T20:16:15Z"
+    }
+   ],
+   "release": {
+    "tag": "v0.2.610",
+    "name": "Touchless v0.2.610",
+    "notes": "# v0.2.610\n\nHands-free unlock: a pattern or a password is no longer stopped by one unclear try (#996).\n\n- **Password lock:** Touchless checks that the whole password is in the field before it confirms, and decides \"code\n  refused\" from the field, as it does for a PIN.\n- **Pattern lock:** one try that leaves the phone locked without a clear refusal no longer stops hands-free unlock.\n  It stops only after two such tries in a row, and a successful unlock starts the count again.\n- The same two-try rule covers phones whose lock-screen keys only Shizuku can see.",
+    "publishedAt": "2026-11-15T20:17:23Z",
+    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.610"
+   },
+   "repoUrl": "https://github.com/il90il90/touchless-releases",
+   "iconStyle": "adaptive",
+   "icon": "icons/touchless.png?v=8327713a",
+   "accent": "#DA8F30"
+  },
+  {
+   "id": "seretgram",
+   "name": "SeretGram",
+   "tagline": {
+    "en": "Your Telegram films as a streaming library",
+    "he": "הסרטים שלכם בטלגרם, כספריית סטרימינג"
+   },
+   "description": {
+    "en": "SeretGram turns the films and series in your Telegram chats into a library with posters, cast and genres. Continue where you stopped, watch together with friends, open Live TV, and use the phone as a remote for SeretGram on Android TV. Your library syncs between the phone and the TV.",
+    "he": "SeretGram הופכת את הסרטים והסדרות שבצ'אטים שלכם בטלגרם לספרייה עם פוסטרים, שחקנים וז'אנרים. ממשיכים מאיפה שעצרתם, צופים יחד עם חברים, פותחים שידורים חיים, ומשתמשים בטלפון כשלט ל-SeretGram ב-Android TV. הספרייה מסתנכרנת בין הטלפון לטלוויזיה."
+   },
+   "category": "video",
+   "developer": "Israel",
+   "website": "https://seretgram.com",
+   "featured": true,
+   "self": false,
+   "order": 1,
+   "variants": [
+    {
+     "formFactor": "phone",
+     "abis": [
+      "arm64-v8a"
+     ],
+     "packageName": "com.il90.seretgram",
+     "versionName": "0.2.1073",
+     "versionCode": 21073,
+     "minSdk": 23,
+     "targetSdk": 35,
+     "tvCapable": true,
+     "label": "SeretGram",
+     "fileName": "SeretGram-0.2.1073-21073-arm64-v8a.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1073/SeretGram-0.2.1073-21073-arm64-v8a.apk",
+     "size": 27839191,
+     "sha256": "314b52ac343a902195f63828c695cd7f46de0194f7b5787c3ca36e35fa31753f",
+     "assetId": 730583496,
+     "assetUpdatedAt": "2026-11-10T07:51:33Z"
+    },
+    {
+     "formFactor": "phone",
+     "abis": [
+      "armeabi-v7a"
+     ],
+     "packageName": "com.il90.seretgram",
+     "versionName": "0.2.1073",
+     "versionCode": 21073,
+     "minSdk": 23,
+     "targetSdk": 35,
+     "tvCapable": true,
+     "label": "SeretGram",
+     "fileName": "SeretGram-0.2.1073-21073-armeabi-v7a.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1073/SeretGram-0.2.1073-21073-armeabi-v7a.apk",
+     "size": 21829913,
+     "sha256": "49b495b8c7ba722c95b0a10bf69392755c9161f882953965a7bc5647affd2a47",
+     "assetId": 730583515,
+     "assetUpdatedAt": "2026-11-10T07:51:27Z"
+    },
+    {
+     "formFactor": "phone",
+     "abis": [
+      "x86_64"
+     ],
+     "packageName": "com.il90.seretgram",
+     "versionName": "0.2.1073",
+     "versionCode": 21073,
+     "minSdk": 23,
+     "targetSdk": 35,
+     "tvCapable": true,
+     "label": "SeretGram",
+     "fileName": "SeretGram-0.2.1073-21073-x86_64.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1073/SeretGram-0.2.1073-21073-x86_64.apk",
+     "size": 30272462,
+     "sha256": "87c30bee2a3834d63700dd95fff0d1a7de7f513ca86b6746f432562189f9530b",
+     "assetId": 730583554,
+     "assetUpdatedAt": "2026-11-10T07:51:30Z"
+    },
+    {
+     "formFactor": "phone",
+     "abis": [
+      "arm64-v8a",
+      "armeabi-v7a"
+     ],
+     "packageName": "com.il90.seretgram",
+     "versionName": "0.2.1073",
+     "versionCode": 21073,
+     "minSdk": 23,
+     "targetSdk": 35,
+     "tvCapable": true,
+     "label": "SeretGram",
+     "fileName": "SeretGram-0.2.1073-21073.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1073/SeretGram-0.2.1073-21073.apk",
+     "size": 42703640,
+     "sha256": "22e5566940631355b2e8c1e709234d10addffab4752fa0af203543c1167bf814",
+     "assetId": 730583505,
+     "assetUpdatedAt": "2026-11-10T07:51:32Z"
+    }
+   ],
+   "release": {
+    "tag": "v0.2.1073",
+    "name": "SeretGram 0.2.1073",
+    "notes": "- The TV answers the phone remote with SeretGram closed\n\n<!-- seretgram-release commit=08c6f401b4f1cae0dc9dd377170e343eb592a99f versionCode=21073 -->",
+    "publishedAt": "2026-11-10T07:51:39Z",
+    "url": "https://github.com/il90il90/SeretGram-releases/releases/tag/v0.2.1073"
+   },
+   "repoUrl": "https://github.com/il90il90/SeretGram-releases",
+   "iconStyle": "adaptive",
+   "icon": "icons/seretgram.png?v=85d32655",
+   "accent": "#2E7DFF"
+  },
+  {
+   "id": "wallify",
+   "name": "Wallify",
+   "tagline": {
+    "en": "Still and live wallpapers in an endless feed",
+    "he": "טפטים רגילים וחיים בפיד אינסופי"
+   },
+   "description": {
+    "en": "An immersive, TikTok-style vertical feed of still and live (video) wallpapers. Double-tap to keep a favourite, set real live wallpapers, search the gallery and turn your own videos into live wallpapers. Fits every screen, foldables included. Free, with no ads.",
+    "he": "פיד אנכי סוחף בסגנון טיקטוק של טפטים רגילים וטפטים חיים (וידאו). הקשה כפולה שומרת למועדפים, אפשר להגדיר טפט חי אמיתי, לחפש בגלריה ולהפוך סרטונים משלכם לטפטים חיים. מתאים לכל מסך, כולל מתקפלים. חינם וללא פרסומות."
+   },
+   "category": "personalization",
+   "developer": "Israel",
+   "website": null,
+   "featured": true,
+   "self": false,
+   "order": 2,
+   "variants": [
+    {
+     "formFactor": "phone",
+     "abis": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "x86",
+      "x86_64"
+     ],
+     "packageName": "com.il90.wallify.debug",
+     "versionName": "0.7.2-qa",
+     "versionCode": 7002,
+     "minSdk": 24,
+     "targetSdk": 36,
+     "tvCapable": true,
+     "label": "Wallify",
+     "fileName": "wallify-0.7.2.apk",
+     "url": "https://github.com/il90il90/Wallify-releases/releases/download/v0.7.2/wallify-0.7.2.apk",
+     "size": 35664422,
+     "sha256": "c2b4977924b0f0e836c34dcec705eeebf50f5558089bbc76a5432d9c9f091b22",
+     "assetId": 752471699,
+     "assetUpdatedAt": "2026-11-15T21:55:18Z"
+    }
+   ],
+   "release": {
+    "tag": "v0.7.2",
+    "name": "Wallify 0.7.2",
+    "notes": "- **Everything is open to everyone**: no Premium, no paywall, no ads. The gallery (Discover) with search and\n  filters, and your own videos as live wallpapers (Love it → My videos), work for everyone. Google Play Billing\n  and the AdMob / consent SDKs are gone from the app - no advertising id, no consent form at start.\n- **Updates from the public releases**: Wallify is not in a store, so every version is also published to\n  [il90il90/Wallify-releases](https://github.com/il90il90/Wallify-releases). On launch (at most every few hours)\n  the app looks there and, for a newer version, asks whether to update, with what is new. *Update* downloads it,\n  checks its SHA-256 and that it is Wallify, and opens Android's installer (the first time, Android asks to allow\n  Wallify to install apps). *Later* asks again on the next launch; Settings → *Check for updates* asks now. The TV\n  shows the same question with remote buttons.\n- **Shorter Settings**: no Membership, Privacy or policy texts; the *Personalized* and *Keep history* switches are\n  gone (the feed is always personal, the history always kept on the phone) - *Reset recommendations* and *Clear\n  watch history* remain.\n- **No numbers on the tabs**: the count on the heart in the bottom bar, on the Love it tabs and next to the\n  categories is hidden.\n- **Developer options are hidden**: Settings → tap the version line 10 times (test builds) to show files on the\n  Cloudflare server, *Counts* (categories, Love it tabs, the heart), the temporary *Delete* button and *Hide\n  developer options*. While they are hidden, the counts and the Delete button are off.\n- From 0.7.1: the first version in the public releases; the TV's Settings have *Check for updates* too.\n\n\n---\n- Version: 0.7.2 (code 7002)\n- SHA-256: `c2b4977924b0f0e836c34dcec705eeebf50f5558089bbc76a5432d9c9f091b22`\n- Signing certificate SHA-256: `f56583efbc5c14eaec486caa567dc65fa834314e26d87f554511bc13642fbfc2`\n- Always-latest download: https://github.com/il90il90/Wallify-releases/releases/latest/download/Wallify.apk",
+    "publishedAt": "2026-11-15T21:55:19Z",
+    "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.7.2"
+   },
+   "repoUrl": "https://github.com/il90il90/Wallify-releases",
+   "iconStyle": "adaptive",
+   "icon": "icons/wallify.png?v=4b5cdc0d",
+   "accent": "#FF8771"
+  },
+  {
+   "id": "trustapk",
+   "name": "TrustAPK",
+   "tagline": {
+    "en": "Patch and inspect APKs right on your phone",
+    "he": "תיקון ובדיקה של קובצי APK ישירות בטלפון"
+   },
+   "description": {
+    "en": "A native, on-device APK patcher and HTTPS traffic inspector for developers and testers. Make an app trust user certificates, remove certificate pinning, look inside and decompile it, and sign it again, all on the phone with no computer.",
+    "he": "כלי מקומי לתיקון קובצי APK ולבדיקת תעבורת HTTPS, למפתחים ולבודקים. גורמים לאפליקציה לסמוך על תעודות משתמש, מסירים certificate pinning, מציצים פנימה ומבצעים דה-קומפילציה, וחותמים מחדש. הכול בטלפון, בלי מחשב."
+   },
+   "category": "devtools",
+   "developer": "Israel",
+   "website": "https://trustapk.app",
+   "featured": false,
+   "self": false,
+   "order": 3,
+   "variants": [
+    {
+     "formFactor": "phone",
+     "abis": [],
+     "packageName": "com.trustapk.client",
+     "versionName": "1.8.1066",
+     "versionCode": 2066,
+     "minSdk": 26,
+     "targetSdk": 36,
+     "tvCapable": true,
+     "label": "TrustAPK",
+     "fileName": "trustapk-client.apk",
+     "url": "https://github.com/il90il90/trust-apk-releases/releases/download/v1.8.1066/trustapk-client.apk",
+     "size": 7059288,
+     "sha256": "cedf01a24397c284735a82c209e46d4f1b47cfde5e16e56aecbfbf0f84df5b69",
+     "assetId": 748566093,
+     "assetUpdatedAt": "2026-11-14T19:39:01Z"
+    }
+   ],
+   "release": {
+    "tag": "v1.8.1066",
+    "name": "TrustAPK 1.8.1066",
+    "notes": "TrustAPK 1.8.1066 (build 2066)\n\nPatch NSC: guarantee a base-config that trusts the capture CA for every domain [skip ci]\n\nAn app whose network-security-config only declares domain-configs (with no\ntrust-anchors of their own) inherits the DEFAULT trust set — system CAs only —\nso the embedded capture/user CA is refused there even though the APK carries it.\ncom.yit.evritViewer is exactly this: its single <trust-anchors> sat inside an\ninert <debug-overrides>, and every api.*.e-vrit.co.il handshake rejected the\nMITM leaf with SSLV3_ALERT_CERTIFICATE_UNKNOWN. patchExistingConfig only added\nour cert to trust-anchors that already existed, which here applied to nothing.\n\n- Always ensure a <base-config> whose trust-anchors trust system + user + our\n  cert, inserted FIRST (the framework only lets a domain-config inherit the\n  base-config when base-config precedes it in the document).\n- Also add our cert (and user) to each domain-config that has its OWN\n  trust-anchors, so a domain that overrides the base still trusts us.\n- Idempotent: an existing user entry / cert reference is not duplicated, so a\n  re-patch stays clean.\n\nNew Axml helpers: firstChildElement, hasCertificatesReference, prependElement.\nVerified offline against the real e-vrit APK: the patched NSC now leads with\nbase-config(system,user,@cert) and the e-vrit.co.il domain-config inherits it.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>",
+    "publishedAt": "2026-11-14T19:39:03Z",
+    "url": "https://github.com/il90il90/trust-apk-releases/releases/tag/v1.8.1066"
+   },
+   "repoUrl": "https://github.com/il90il90/trust-apk-releases",
+   "iconStyle": "adaptive",
+   "icon": "icons/trustapk.png?v=bdb7358d",
+   "accent": "#14D9C6"
+  },
+  {
+   "id": "onedial",
+   "name": "OneDial",
+   "tagline": {
+    "en": "A fast dialer that finds anyone in a few taps",
+    "he": "חייגן מהיר שמוצא כל אחד בכמה הקשות"
+   },
+   "description": {
+    "en": "A customizable dialer and contacts app. Search names in Hebrew and English straight from the keypad, swipe a row to call, message or open WhatsApp and Telegram, see who is on each speed-dial key, call by voice and get a call button for each SIM. Themes, your wallpaper behind the dialer and a caller window that shows who is calling.",
+    "he": "חייגן ואנשי קשר שמתאימים את עצמם אליכם. מחפשים שמות בעברית ובאנגלית ישר מהמקלדת, מחליקים על שורה כדי להתקשר, לשלוח הודעה או לפתוח וואטסאפ וטלגרם, רואים מי נמצא על כל מקש חיוג מהיר, מחייגים בקול ומקבלים כפתור חיוג לכל SIM. ערכות נושא, הטפט שלכם ברקע החייגן וחלון שיחה שמראה מי מתקשר."
+   },
+   "category": "communication",
+   "developer": "Israel",
+   "website": null,
+   "featured": false,
+   "self": false,
+   "order": 4,
+   "variants": [
+    {
+     "formFactor": "phone",
+     "abis": [
+      "arm64-v8a"
+     ],
+     "packageName": "com.app360brains.exDialer.mod",
+     "versionName": "3.10.50",
+     "versionCode": 150,
+     "minSdk": 32,
+     "targetSdk": 36,
+     "tvCapable": false,
+     "label": "OneDial",
+     "fileName": "onedial-3.10.50.apk",
+     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.50/onedial-3.10.50.apk",
+     "size": 48093441,
+     "sha256": "086d07f0102c79584daf2b2973155ca96b76eb8cc66c65c6d0b15b322fa524ec",
+     "assetId": 751599277,
+     "assetUpdatedAt": "2026-11-15T16:30:31Z"
+    }
+   ],
+   "release": {
+    "tag": "v3.10.50",
+    "name": "OneDial 3.10.50",
+    "notes": "- Voice dial opens as a dialog over the phone, not on a grey wall\n\nPatched on top of 3.10.49. Same release key as 3.10.5.\n\n<!-- source: 92ff10f92cf7e356661b4f35d2f405c0a21180f4 -->",
+    "publishedAt": "2026-11-15T16:30:32Z",
+    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.50"
+   },
+   "repoUrl": "https://github.com/il90il90/OneDial-releases",
+   "iconStyle": "adaptive",
+   "icon": "icons/onedial.png?v=f291d671",
+   "accent": "#1A9EAE"
+  },
+  {
+   "id": "gallerywall",
+   "name": "Gallery Wall",
+   "tagline": {
+    "en": "Turn your TVs into a living photo wall",
+    "he": "הופכים את הטלוויזיות לקיר תמונות חי"
+   },
+   "description": {
+    "en": "Install it on your phone and on your TVs: the phone is the remote and the TVs are the displays. Share photos and videos straight from your gallery into albums and they appear on the screens over your home Wi-Fi.",
+    "he": "מתקינים בטלפון ובטלוויזיות: הטלפון הוא השלט והטלוויזיות הן התצוגה. משתפים תמונות וסרטונים ישר מהגלריה לאלבומים, והם מופיעים על המסכים דרך ה-Wi-Fi הביתי."
+   },
+   "category": "photos",
+   "developer": "Israel",
+   "website": null,
+   "featured": false,
+   "self": false,
+   "order": 5,
+   "variants": [
+    {
+     "formFactor": "phone",
+     "abis": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "x86",
+      "x86_64"
+     ],
+     "packageName": "com.il90.gallerywall",
+     "versionName": "3.3.0",
+     "versionCode": 178,
+     "minSdk": 26,
+     "targetSdk": 35,
+     "tvCapable": true,
+     "label": "Gallery Wall",
+     "fileName": "GalleryWall-3.3.0.apk",
+     "url": "https://github.com/il90il90/GalleryWall-releases/releases/download/v3.3.0/GalleryWall-3.3.0.apk",
+     "size": 4302573,
+     "sha256": "edc81545c358d657d2f41abab8a104bb744924d36f83bee0cae49663c4c0941b",
+     "assetId": 728762500,
+     "assetUpdatedAt": "2026-11-09T19:51:34Z"
+    }
+   ],
+   "release": {
+    "tag": "v3.3.0",
+    "name": "v3.3.0",
+    "notes": "## What's new\n\n**Share photos straight from your gallery**\nSelect photos (and videos) in your phone's gallery, tap **Share** and pick **Gallery Wall**. Before anything is sent, Gallery Wall asks which album they go into — one of your albums, a **New album**, or **All photos** — then the upload quality, and the photos land in that album on your screen.\n\n- **No limit** on how many you share at once (the in-app picker stops at about 100).\n- It sends to the screen this phone last controlled; if that one can't be reached, you pick a screen (and enter its PIN if it has one). **Change** switches screens.\n- The upload runs in the background with a progress notification, so you can go straight back to your gallery.\n\n**More reliable long uploads**\nA long upload no longer stops part-way when you close Gallery Wall (or the gallery) while it is still sending.",
+    "publishedAt": "2026-11-09T19:51:35Z",
+    "url": "https://github.com/il90il90/GalleryWall-releases/releases/tag/v3.3.0"
+   },
+   "repoUrl": "https://github.com/il90il90/GalleryWall-releases",
+   "iconStyle": "adaptive",
+   "icon": "icons/gallerywall.png?v=2b8dab03",
+   "accent": "#B65B33"
+  },
+  {
+   "id": "watchiptv",
+   "name": "WatchIPTV",
+   "tagline": {
+    "en": "IPTV and camera streams on phone, TV and watch",
+    "he": "IPTV ומצלמות בטלפון, בטלוויזיה ובשעון"
+   },
+   "description": {
+    "en": "Watch IPTV channels and RTSP camera streams on your phone, Android TV and Wear OS watch. Nothing is built in: you add your own playlists and streams, and they are stored encrypted on your device. The phone can send its whole library to the watch and to every TV on your Wi-Fi.",
+    "he": "צופים בערוצי IPTV ובמצלמות RTSP בטלפון, ב-Android TV ובשעון Wear OS. שום דבר לא מובנה מראש: אתם מוסיפים פלייליסטים וזרמים משלכם, והם נשמרים מוצפנים במכשיר. הטלפון יכול לשלוח את כל הספרייה לשעון ולכל טלוויזיה ב-Wi-Fi."
+   },
+   "category": "video",
+   "developer": "Israel",
+   "website": null,
+   "featured": false,
+   "self": false,
+   "order": 6,
+   "variants": [],
+   "release": null,
+   "icon": null,
+   "accent": null
+  },
+  {
+   "id": "scoreup",
+   "name": "ScoreUp",
+   "tagline": {
+    "en": "A scoreboard on your phone, watch and TV",
+    "he": "לוח תוצאות בטלפון, בשעון ובטלוויזיה"
+   },
+   "description": {
+    "en": "A sports scoreboard for phones, tablets and foldables. A Wear OS watch works as the scoring remote, the TV shows a live scoreboard, and the app keeps the game clock and saves your scores.",
+    "he": "לוח תוצאות לספורט לטלפונים, לטאבלטים ולמתקפלים. שעון Wear OS משמש כשלט לניקוד, הטלוויזיה מציגה לוח תוצאות חי, והאפליקציה מנהלת את שעון המשחק ושומרת את התוצאות."
+   },
+   "category": "sports",
+   "developer": "Israel",
+   "website": null,
+   "featured": false,
+   "self": false,
+   "order": 7,
+   "variants": [
+    {
+     "formFactor": "phone",
+     "abis": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "x86",
+      "x86_64"
+     ],
+     "packageName": "com.scoreup.app",
+     "versionName": "1.0.18",
+     "versionCode": 1018,
+     "minSdk": 26,
+     "targetSdk": 35,
+     "tvCapable": false,
+     "label": "ScoreUp",
+     "fileName": "ScoreUp-phone-1.0.18.apk",
+     "url": "https://github.com/il90il90/ScoreUp/releases/download/v1.0.18/ScoreUp-phone-1.0.18.apk",
+     "size": 14096672,
+     "sha256": "0c3044a10da40c442c1515a07e87ef741b29f777a860f3d50790856ae3587446",
+     "assetId": 670445557,
+     "assetUpdatedAt": "2026-10-23T21:22:57Z"
+    },
+    {
+     "formFactor": "watch",
+     "abis": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "x86",
+      "x86_64"
+     ],
+     "packageName": "com.scoreup.app",
+     "versionName": "1.0.18",
+     "versionCode": 1018,
+     "minSdk": 30,
+     "targetSdk": 34,
+     "tvCapable": false,
+     "label": "ScoreUp",
+     "fileName": "ScoreUp-watch-1.0.18.apk",
+     "url": "https://github.com/il90il90/ScoreUp/releases/download/v1.0.18/ScoreUp-watch-1.0.18.apk",
+     "size": 2545474,
+     "sha256": "d3d64891501f54f52d60026c77789e7489b4791d76c9e4e666b196bb3d73b6e9",
+     "assetId": 670445556,
+     "assetUpdatedAt": "2026-10-23T21:22:56Z"
+    }
+   ],
+   "release": {
+    "tag": "v1.0.18",
+    "name": "ScoreUp 1.0.18",
+    "notes": "Heart rate, clock and restart on the watch, saved scores, bigger TV scoreboard\n\nWatch\n- Live heart rate from the watch sensor while ScoreUp is open (asks for sensor\n  access once; on/off switch in the watch controls). Shown on the score page\n  and sent to the phone, which shows it on the scoreboard and the TV.\n- Centre strip: undo | game clock (always visible) over the time of day and\n  heart rate | new restart button. Restart asks first, then saves the score\n  and starts over. Controls also get Reset clock.\n- Saved scores: every restarted match is kept on the watch with its average\n  and peak heart rate; \"Save score\" saves at any time; new Saved scores page.\n- Score digits laid out by glyph height, so both team names fit on round screens.\n\nPhone\n- \"Save score\" in the menu (saving the same match again updates its entry).\n- Watch heart rate next to the period label; period label no longer renders\n  near-black on the dark theme.\n\nTV (TV mode, external display)\n- Redesigned arena board: each score is sized to fill its team panel (about\n  50% of the screen height for two digits), team-colored panels and glow,\n  period + game clock pill, time of day, heart rate and LIVE badge.\n\nAlso: history store moved to :shared for phone + watch; onArchive installed\nbefore sync starts; Release workflow tags the built commit.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_012R4MyALnHdmhhrh9uyHMgQ",
+    "publishedAt": "2026-10-23T21:22:58Z",
+    "url": "https://github.com/il90il90/ScoreUp/releases/tag/v1.0.18"
+   },
+   "repoUrl": "https://github.com/il90il90/ScoreUp",
+   "iconStyle": "adaptive",
+   "icon": "icons/scoreup.png?v=f9059385",
+   "accent": "#369BFF"
+  },
+  {
+   "id": "touchless-bridge",
+   "name": "Touchless Bridge",
+   "tagline": {
+    "en": "Connect HackerAI to your phone through Touchless",
+    "he": "מחברים את HackerAI לטלפון דרך Touchless"
+   },
+   "description": {
+    "en": "Lets a HackerAI chat operate your phone through Touchless, with no computer in the middle. A three-step setup connects the phone, a built-in HackerAI chat does the rest, and the app keeps the connection alive in the background behind a PIN or fingerprint lock. Requires Touchless.",
+    "he": "מאפשרת לצ'אט של HackerAI להפעיל את הטלפון דרך Touchless, בלי מחשב באמצע. הגדרה בשלושה צעדים מחברת את הטלפון, צ'אט HackerAI מובנה עושה את השאר, והאפליקציה שומרת על החיבור ברקע מאחורי נעילת PIN או טביעת אצבע. דורשת את Touchless."
+   },
+   "category": "ai",
+   "developer": "Israel",
+   "website": null,
+   "featured": false,
+   "self": false,
+   "order": 8,
+   "variants": [
+    {
+     "formFactor": "phone",
+     "abis": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "x86",
+      "x86_64"
+     ],
+     "packageName": "com.il90.touchless.hackeraibridge",
+     "versionName": "1.1.21",
+     "versionCode": 23,
+     "minSdk": 26,
+     "targetSdk": 37,
+     "tvCapable": false,
+     "label": "Touchless Bridge",
+     "fileName": "touchless-bridge-1.1.21.apk",
+     "url": "https://github.com/il90il90/touchless-hackerai-bridge/releases/download/app-v23/touchless-bridge-1.1.21.apk",
+     "size": 9386370,
+     "sha256": "9164a5650a99669fe3efcba6074db144626c93b39732f458a5cd600a4ba40de7",
+     "assetId": 743848445,
+     "assetUpdatedAt": "2026-11-13T13:56:39Z"
+    }
+   ],
+   "release": {
+    "tag": "app-v23",
+    "name": "Touchless Bridge 1.1.21",
+    "notes": "Settings now shows the Remote Control (phone-as-bridge) token correctly. The \"Remote Control token\" line read the wrong field, so it said \"not captured yet\" even when the phone was connected as a bridge and auto-reconnecting; it now tracks the actual rc token.\n\nAlso adds a README explaining exactly what the app does.\n\nCarries forward the 1.1.20 edge-to-edge fix (content stays clear of the status bar and the system navigation buttons).",
+    "publishedAt": "2026-11-13T13:56:40Z",
+    "url": "https://github.com/il90il90/touchless-hackerai-bridge/releases/tag/app-v23"
+   },
+   "repoUrl": "https://github.com/il90il90/touchless-hackerai-bridge",
+   "iconStyle": "adaptive",
+   "icon": "icons/touchless-bridge.png?v=987c95de",
+   "accent": "#00B6D6"
+  },
+  {
+   "id": "screenawake",
+   "name": "Screen Awake",
+   "tagline": {
+    "en": "Keep the screen on, always or only in chosen apps",
+    "he": "המסך נשאר דולק, תמיד או רק באפליקציות שבחרתם"
+   },
+   "description": {
+    "en": "Stops the display from turning off, either always or only while the apps you picked are in front. Comes with a floating button, two Quick Settings tiles and an option to start after a reboot. It changes no system setting: turn it off and your normal screen timeout is back.",
+    "he": "מונעת מהמסך להיכבות, תמיד או רק כשאפליקציות שבחרתם פתוחות. כוללת כפתור צף, שני כפתורים בהגדרות המהירות ואפשרות להפעלה אחרי הדלקה מחדש. היא לא משנה שום הגדרת מערכת: מכבים אותה, וזמן כיבוי המסך הרגיל חוזר."
+   },
+   "category": "tools",
+   "developer": "Israel",
+   "website": null,
+   "featured": false,
+   "self": false,
+   "order": 9,
+   "variants": [],
+   "release": null,
+   "icon": null,
+   "accent": null
+  },
+  {
+   "id": "zoopli",
+   "name": "Zoopli",
+   "tagline": {
+    "en": "Animals for kids, in Hebrew and English",
+    "he": "עולם החיות לילדים, בעברית ובאנגלית"
+   },
+   "description": {
+    "en": "An animal learning game for young children. Ninety-three animals with cartoon icons, real photos, their actual sounds and their names spoken in Hebrew and English, twenty-two countries to travel to and three gentle quiz modes.",
+    "he": "משחק לימוד על בעלי חיים לילדים צעירים. תשעים ושלוש חיות עם איורים, תמונות אמיתיות, הקולות האמיתיים שלהן והשמות שלהן בעברית ובאנגלית, עשרים ושתיים מדינות לטייל בהן ושלושה מצבי חידון עדינים."
+   },
+   "category": "kids",
+   "developer": "Israel",
+   "website": null,
+   "featured": false,
+   "self": false,
+   "order": 10,
+   "variants": [],
+   "release": null,
+   "icon": null,
+   "accent": null
+  },
+  {
+   "id": "abc",
+   "name": "אבג ABC",
+   "tagline": {
+    "en": "Letters and numbers for ages 2 to 8",
+    "he": "אותיות ומספרים לגילאי 2 עד 8"
+   },
+   "description": {
+    "en": "Teaches reading and writing in Hebrew (with nikud), English and numbers to children aged 2 to 8. Works offline, with no ads, no purchases and no data collection.",
+    "he": "אפליקציה ללימוד קריאה וכתיבה בעברית (כולל ניקוד), אנגלית ומספרים, לגילאי 2 עד 8. עובדת אופליין, בלי פרסומות, בלי רכישות ובלי איסוף מידע."
+   },
+   "category": "kids",
+   "developer": "Israel",
+   "website": null,
+   "featured": false,
+   "self": false,
+   "order": 11,
+   "variants": [
+    {
+     "formFactor": "phone",
+     "abis": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "x86",
+      "x86_64"
+     ],
+     "packageName": "com.meylon.abc",
+     "versionName": "2.1.2",
+     "versionCode": 6,
+     "minSdk": 24,
+     "targetSdk": 35,
+     "tvCapable": false,
+     "label": "אבג ABC",
+     "fileName": "abc-app-2.1.2.apk",
+     "url": "https://github.com/il90il90/abc-app-releases/releases/download/v2.1.2/abc-app-2.1.2.apk",
+     "size": 9066216,
+     "sha256": "c41039622bf2daa55402ba5aa2b6316a07ce599894b9dc3d76ae0fd9a8dc441e",
+     "assetId": 675618080,
+     "assetUpdatedAt": "2026-10-25T17:07:24Z"
+    }
+   ],
+   "release": {
+    "tag": "v2.1.2",
+    "name": "v2.1.2",
+    "notes": "## אבג ABC 2.1.2\n\n- כשחוזרים אחורה למסך (למשל מאות אחת אל רשימת האותיות), ההוראה שלו לא נשמעת שוב. כל מסך מסביר את עצמו רק בפעם הראשונה שנכנסים אליו.\n- אחרי לחיצה על אריח, שם הפעילות נשמע עד הסוף לפני ההוראה של המסך החדש, ולא נקטע באמצע.",
+    "publishedAt": "2026-10-25T17:07:25Z",
+    "url": "https://github.com/il90il90/abc-app-releases/releases/tag/v2.1.2"
+   },
+   "repoUrl": "https://github.com/il90il90/abc-app-releases",
+   "iconStyle": "adaptive",
+   "icon": "icons/abc.png?v=3c6dc7c2",
+   "accent": "#6C63FF"
+  },
+  {
+   "id": "israel-tv",
+   "name": "Israel TV",
+   "tagline": {
+    "en": "Israeli live TV channels for Android TV",
+    "he": "ערוצי טלוויזיה ישראליים ל-Android TV"
+   },
+   "description": {
+    "en": "Live Israeli TV channels in an app made for Android TV and the remote control.",
+    "he": "ערוצי טלוויזיה ישראליים בשידור חי, באפליקציה שנבנתה ל-Android TV ולשלט."
+   },
+   "category": "video",
+   "developer": "Israel",
+   "website": null,
+   "featured": false,
+   "self": false,
+   "order": 12,
+   "variants": [
+    {
+     "formFactor": "tv",
+     "abis": [],
+     "packageName": "il.israel.tv",
+     "versionName": "1.4",
+     "versionCode": 5,
+     "minSdk": 21,
+     "targetSdk": 35,
+     "tvCapable": true,
+     "label": "Israel TV",
+     "fileName": "israel-tv-tv.apk",
+     "url": "https://github.com/il90il90/hass-israel-tv-release/releases/download/v1.4/israel-tv-tv.apk",
+     "size": 3017735,
+     "sha256": "a30d37dfd13838beb4eaed68f95b258019c9242e2c7d440269f1b159ba19db59",
+     "assetId": 584235491,
+     "assetUpdatedAt": "2026-09-23T17:13:21Z"
+    }
+   ],
+   "release": {
+    "tag": "v1.4",
+    "name": "Israel TV 1.4",
+    "notes": "Loading screen on first open, so the TV no longer shows a blank page while channels load.",
+    "publishedAt": "2026-09-23T17:13:22Z",
+    "url": "https://github.com/il90il90/hass-israel-tv-release/releases/tag/v1.4"
+   },
+   "repoUrl": "https://github.com/il90il90/hass-israel-tv-release",
+   "iconStyle": "legacy",
+   "icon": "icons/israel-tv.png?v=45ff0e21",
+   "accent": "#0B57A3"
+  },
+  {
+   "id": "israel-app-manager",
+   "name": "Israel App Manager",
+   "tagline": {
+    "en": "All of Israel's apps in one place",
+    "he": "כל האפליקציות של ישראל במקום אחד"
+   },
+   "description": {
+    "en": "Download, install and update every app Israel builds, from one place.",
+    "he": "הורדה, התקנה ועדכון של כל האפליקציות שישראל בונה, ממקום אחד."
+   },
+   "category": "tools",
+   "developer": "Israel",
+   "website": null,
+   "featured": false,
+   "self": true,
+   "order": 13,
+   "variants": [],
+   "release": null,
+   "icon": null,
+   "accent": null
+  }
+ ]
+}
