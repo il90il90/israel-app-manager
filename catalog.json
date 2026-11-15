@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-15T22:29:34Z",
+ "generatedAt": "2026-11-15T22:38:44Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "apps": [
@@ -679,10 +679,41 @@
    "featured": false,
    "self": true,
    "order": 13,
-   "variants": [],
-   "release": null,
-   "icon": null,
-   "accent": null
+   "variants": [
+    {
+     "formFactor": "phone",
+     "abis": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "x86",
+      "x86_64"
+     ],
+     "packageName": "com.il90.appmanager",
+     "versionName": "1.0.0",
+     "versionCode": 10000,
+     "minSdk": 26,
+     "targetSdk": 36,
+     "tvCapable": false,
+     "label": "Israel App Manager",
+     "fileName": "israel-app-manager-1.0.0.apk",
+     "url": "https://github.com/il90il90/israel-app-manager/releases/download/v1.0.0/israel-app-manager-1.0.0.apk",
+     "size": 2182217,
+     "sha256": "9c906cdb7e14a8476198f42545f8ae451de87f64b2be8689257d79eccae7aa2b",
+     "assetId": 752582947,
+     "assetUpdatedAt": "2026-11-15T22:38:20Z"
+    }
+   ],
+   "release": {
+    "tag": "v1.0.0",
+    "name": "Israel App Manager 1.0.0",
+    "notes": "The first release of Israel App Manager: every app Israel builds, in one place.\n\n- Install any app in one tap, with download progress and an integrity check before installing\n- See what is installed and what has a new version, and update one app or all of them\n- Release notes, size, version and requirements for every app\n- The right build is picked for your device; TV and watch builds can be saved as APK files\n- A notification when new versions are out\n- The manager updates itself the same way\n- English and Hebrew, light and dark",
+    "publishedAt": "2026-11-15T22:38:21Z",
+    "url": "https://github.com/il90il90/israel-app-manager/releases/tag/v1.0.0"
+   },
+   "repoUrl": "https://github.com/il90il90/israel-app-manager",
+   "iconStyle": "adaptive",
+   "icon": "icons/israel-app-manager.png?v=233b79c0",
+   "accent": "#5C71F0"
   }
  ]
 }
