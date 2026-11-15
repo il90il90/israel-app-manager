@@ -114,7 +114,10 @@ import com.il90.appmanager.ui.components.failureMessage
 import com.il90.appmanager.ui.components.unavailableLabel
 import com.il90.appmanager.ui.primaryAction
 import com.il90.appmanager.util.appLanguage
+import com.il90.appmanager.util.dotJoin
 import com.il90.appmanager.util.formatSize
+import com.il90.appmanager.util.isolate
+import com.il90.appmanager.util.ltr
 import com.il90.appmanager.util.parseColor
 import com.il90.appmanager.util.relativeTime
 
@@ -388,7 +391,7 @@ fun StatusLine(row: AppRow, modifier: Modifier = Modifier) {
     Row(modifier, verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
         when (val state = row.task?.state) {
             is TaskState.Downloading -> Text(
-                if (state.total > 0) "${formatSize(state.bytes)} / ${formatSize(state.total)}" else stringResource(R.string.status_downloading),
+                if (state.total > 0) ltr("${formatSize(state.bytes)} / ${formatSize(state.total)}") else stringResource(R.string.status_downloading),
                 style = small, color = MaterialTheme.colorScheme.primary, maxLines = 1,
             )
             TaskState.Queued -> Text(stringResource(R.string.status_queued), style = small, color = MaterialTheme.colorScheme.primary)
@@ -400,19 +403,19 @@ fun StatusLine(row: AppRow, modifier: Modifier = Modifier) {
                 AppStatus.UPDATE_AVAILABLE -> {
                     Icon(Icons.Rounded.ArrowCircleUp, null, Modifier.size(14.dp), tint = MaterialTheme.colorScheme.primary)
                     Text(
-                        stringResource(R.string.state_update_from_to, row.installed?.versionName.orEmpty(), variant?.versionName.orEmpty()),
+                        stringResource(R.string.state_update_from_to, ltr(row.installed?.versionName.orEmpty()), ltr(variant?.versionName.orEmpty())),
                         style = small, color = MaterialTheme.colorScheme.primary, maxLines = 1, overflow = TextOverflow.Ellipsis,
                     )
                 }
                 AppStatus.UP_TO_DATE -> {
                     Icon(Icons.Rounded.CheckCircle, null, Modifier.size(14.dp), tint = MaterialTheme.colorScheme.tertiary)
                     Text(
-                        stringResource(R.string.state_installed_version, row.installed?.versionName.orEmpty()),
+                        stringResource(R.string.state_installed_version, ltr(row.installed?.versionName.orEmpty())),
                         style = small, color = MaterialTheme.colorScheme.tertiary, maxLines = 1, overflow = TextOverflow.Ellipsis,
                     )
                 }
                 AppStatus.NOT_INSTALLED -> Text(
-                    listOf(variant?.versionName.orEmpty(), formatSize(variant?.size ?: 0)).filter { it.isNotEmpty() }.joinToString("  ·  "),
+                    dotJoin(ltr(variant?.versionName.orEmpty()), formatSize(variant?.size ?: 0)),
                     style = small, color = muted, maxLines = 1, overflow = TextOverflow.Ellipsis,
                 )
                 AppStatus.UNAVAILABLE -> Text(categoryLabel(row.app.category), style = small, color = muted, maxLines = 1)
@@ -438,7 +441,7 @@ private fun UpdatesCard(updates: List<AppRow>, onUpdateAll: () -> Unit, onShow: 
                     color = MaterialTheme.colorScheme.onPrimaryContainer,
                 )
                 Text(
-                    updates.joinToString(", ") { it.app.name },
+                    updates.joinToString(", ") { isolate(it.app.name) },
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.75f),
                     maxLines = 1,
@@ -463,7 +466,7 @@ private fun SelfUpdateBanner(row: AppRow, onAction: () -> Unit) {
             Column(Modifier.weight(1f)) {
                 Text(stringResource(R.string.self_update_title), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onTertiaryContainer)
                 Text(
-                    stringResource(R.string.self_update_body, row.variant?.versionName.orEmpty(), formatSize(row.variant?.size ?: 0)),
+                    stringResource(R.string.self_update_body, ltr(row.variant?.versionName.orEmpty()), formatSize(row.variant?.size ?: 0)),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onTertiaryContainer.copy(alpha = 0.75f),
                 )
@@ -552,7 +555,7 @@ private fun FeaturedCard(row: AppRow, language: String, onOpen: () -> Unit, onAc
                     row.task != null -> stringResource(R.string.status_downloading)
                     row.status == AppStatus.UP_TO_DATE -> stringResource(R.string.state_installed)
                     row.status == AppStatus.UPDATE_AVAILABLE -> stringResource(R.string.state_update_available)
-                    row.variant != null -> listOf(row.variant.versionName, formatSize(row.variant.size)).filter { it.isNotEmpty() }.joinToString("  ·  ")
+                    row.variant != null -> dotJoin(ltr(row.variant.versionName), formatSize(row.variant.size))
                     else -> unavailableLabel(row.compatibility)
                 }
                 Text(caption, style = MaterialTheme.typography.labelMedium, color = Color.White.copy(alpha = 0.7f), maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f))

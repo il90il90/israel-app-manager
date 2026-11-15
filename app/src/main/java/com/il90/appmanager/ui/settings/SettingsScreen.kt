@@ -57,6 +57,7 @@ import com.il90.appmanager.ui.AppRow
 import com.il90.appmanager.ui.components.ActionButton
 import com.il90.appmanager.ui.components.AppIcon
 import com.il90.appmanager.util.formatSize
+import com.il90.appmanager.util.ltr
 import com.il90.appmanager.util.relativeTime
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -154,12 +155,12 @@ fun SettingsScreen(
                         Column(Modifier.weight(1f)) {
                             Text(stringResource(R.string.app_name), style = MaterialTheme.typography.titleMedium)
                             Text(
-                                stringResource(R.string.settings_version, BuildConfig.VERSION_NAME),
+                                stringResource(R.string.settings_version, ltr(BuildConfig.VERSION_NAME)),
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                             )
                             Text(
-                                if (selfUpdate != null) stringResource(R.string.settings_app_update, selfUpdate.variant?.versionName.orEmpty())
+                                if (selfUpdate != null) stringResource(R.string.settings_app_update, ltr(selfUpdate.variant?.versionName.orEmpty()))
                                 else stringResource(R.string.settings_app_up_to_date),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = if (selfUpdate != null) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.tertiary,

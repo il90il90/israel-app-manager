@@ -91,7 +91,10 @@ import com.il90.appmanager.ui.components.parseMarkdown
 import com.il90.appmanager.ui.primaryAction
 import com.il90.appmanager.ui.theme.LocalDarkTheme
 import com.il90.appmanager.util.appLanguage
+import com.il90.appmanager.util.dotJoin
 import com.il90.appmanager.util.formatSize
+import com.il90.appmanager.util.isolate
+import com.il90.appmanager.util.ltr
 import com.il90.appmanager.util.parseColor
 import com.il90.appmanager.util.parseInstant
 import com.il90.appmanager.util.readableOn
@@ -190,10 +193,10 @@ private fun Header(row: AppRow, language: String) {
         Column(Modifier.weight(1f)) {
             Text(row.app.name, style = MaterialTheme.typography.headlineSmall, maxLines = 2, overflow = TextOverflow.Ellipsis)
             Spacer(Modifier.height(2.dp))
-            val by = listOf(
-                row.app.developer.takeIf { it.isNotBlank() }?.let { stringResource(R.string.detail_by, it) },
+            val by = dotJoin(
+                row.app.developer.takeIf { it.isNotBlank() }?.let { stringResource(R.string.detail_by, isolate(it)) },
                 categoryLabel(row.app.category),
-            ).filterNotNull().joinToString("  ·  ")
+            )
             Text(by, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
     }
@@ -234,7 +237,7 @@ private fun ActionArea(row: AppRow, accent: Color, onAction: () -> Unit, onOpenA
                             Text(label, style = MaterialTheme.typography.titleSmall, modifier = Modifier.weight(1f))
                             if (downloading != null && downloading.total > 0) {
                                 Text(
-                                    "${formatSize(downloading.bytes)} / ${formatSize(downloading.total)}  ·  ${(downloading.fraction * 100).toInt()}%",
+                                    dotJoin(ltr("${formatSize(downloading.bytes)} / ${formatSize(downloading.total)}"), ltr("${(downloading.fraction * 100).toInt()}%")),
                                     style = MaterialTheme.typography.labelLarge,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 )
@@ -273,7 +276,7 @@ private fun ActionArea(row: AppRow, accent: Color, onAction: () -> Unit, onOpenA
                 Icon(Icons.Rounded.Download, null, Modifier.size(20.dp))
                 Spacer(Modifier.width(8.dp))
                 val size = formatSize(row.variant?.size ?: 0)
-                Text(stringResource(R.string.action_install) + if (size.isNotEmpty()) "  ·  $size" else "")
+                Text(dotJoin(stringResource(R.string.action_install), size))
             }
             row.status == AppStatus.UP_TO_DATE -> Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                 Button(onOpenApp, big.weight(1.4f)) { Text(stringResource(R.string.action_open)) }
@@ -311,16 +314,16 @@ private fun Stats(row: AppRow) {
     val context = LocalContext.current
     val published = parseInstant(row.app.release?.publishedAt)
     val items = listOfNotNull(
-        stringResource(R.string.detail_version) to variant.versionName.ifEmpty { variant.versionCode.toString() },
+        stringResource(R.string.detail_version) to ltr(variant.versionName.ifEmpty { variant.versionCode.toString() }),
         formatSize(variant.size).takeIf { it.isNotEmpty() }?.let { stringResource(R.string.detail_size) to it },
         published?.let { stringResource(R.string.detail_updated) to relativeTime(context, it) },
-        stringResource(R.string.detail_requires_android) to "${androidVersionName(variant.minSdk)}+",
+        stringResource(R.string.detail_requires_android) to ltr("${androidVersionName(variant.minSdk)}+"),
     )
     Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surfaceContainerLow, modifier = Modifier.fillMaxWidth()) {
         Row(Modifier.padding(vertical = 14.dp, horizontal = 6.dp)) {
             items.forEach { (label, value) ->
                 Column(Modifier.weight(1f).padding(horizontal = 4.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text(value, style = MaterialTheme.typography.titleSmall, maxLines = 1, overflow = TextOverflow.Ellipsis, textAlign = TextAlign.Center)
+                    Text(value, style = MaterialTheme.typography.titleSmall, maxLines = 2, overflow = TextOverflow.Ellipsis, textAlign = TextAlign.Center)
                     Spacer(Modifier.height(2.dp))
                     Text(label, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1, textAlign = TextAlign.Center)
                 }
@@ -355,8 +358,7 @@ private fun WhatsNew(row: AppRow) {
     val collapsedBlocks = 6
     Section(
         title = sectionTitle,
-        trailing = listOf(versionName.ifEmpty { release.tag.orEmpty() }, relativeTime(context, parseInstant(release.publishedAt)))
-            .filter { it.isNotEmpty() }.joinToString("  ·  "),
+        trailing = dotJoin(ltr(versionName.ifEmpty { release.tag.orEmpty() }), relativeTime(context, parseInstant(release.publishedAt))),
     ) {
         if (blocks == 0) {
             Text(stringResource(R.string.no_release_notes), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
@@ -386,7 +388,7 @@ private fun OtherDevices(row: AppRow, onDownload: (Variant) -> Unit) {
                 Column(Modifier.weight(1f)) {
                     Text(formFactorLabel(variant.formFactor), style = MaterialTheme.typography.titleSmall)
                     Text(
-                        listOf(variant.versionName, formatSize(variant.size)).filter { it.isNotEmpty() }.joinToString("  ·  "),
+                        dotJoin(ltr(variant.versionName), formatSize(variant.size)),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -408,7 +410,7 @@ private fun DetailsTable(row: AppRow, onOpenUrl: (String) -> Unit) {
             Column(Modifier.fillMaxWidth().padding(vertical = 7.dp)) {
                 Text(label, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 Spacer(Modifier.height(2.dp))
-                SelectionContainer { Text(value, style = MaterialTheme.typography.bodyMedium, fontFamily = FontFamily.Monospace) }
+                SelectionContainer { Text(ltr(value), style = MaterialTheme.typography.bodyMedium, fontFamily = FontFamily.Monospace) }
             }
         }
 
@@ -438,13 +440,13 @@ private fun DetailsTable(row: AppRow, onOpenUrl: (String) -> Unit) {
             }
         }
         if (variant != null) {
-            line(stringResource(R.string.detail_latest_version), "${variant.versionName} (${variant.versionCode})")
-            row.installed?.let { line(stringResource(R.string.detail_installed_version), "${it.versionName} (${it.versionCode})") }
+            line(stringResource(R.string.detail_latest_version), ltr("${variant.versionName} (${variant.versionCode})"))
+            row.installed?.let { line(stringResource(R.string.detail_installed_version), ltr("${it.versionName} (${it.versionCode})")) }
             if (variant.packageName.length > 22) stacked(stringResource(R.string.detail_package), variant.packageName)
             else line(stringResource(R.string.detail_package), variant.packageName, mono = true)
         }
         line(stringResource(R.string.detail_category), categoryLabel(row.app.category))
-        row.app.website?.let { line(stringResource(R.string.detail_website), it.removePrefix("https://").removePrefix("http://").trimEnd('/'), url = it) }
+        row.app.website?.let { line(stringResource(R.string.detail_website), ltr(it.removePrefix("https://").removePrefix("http://").trimEnd('/')), url = it) }
         (row.app.release?.url ?: row.app.repoUrl)?.let { line(stringResource(R.string.detail_source), stringResource(R.string.detail_releases_page), url = it) }
     }
 }

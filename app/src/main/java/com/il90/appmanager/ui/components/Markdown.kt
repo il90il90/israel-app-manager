@@ -4,15 +4,18 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.LinkAnnotation
 import androidx.compose.ui.text.SpanStyle
@@ -24,7 +27,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withLink
 import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
+import com.il90.appmanager.util.isRtlText
 
 /** The blocks release notes are made of. Everything else is shown as a paragraph. */
 sealed interface MdBlock {
@@ -133,21 +138,31 @@ fun MarkdownText(source: String, modifier: Modifier = Modifier, maxBlocks: Int =
     val body = MaterialTheme.typography.bodyMedium.copy(color = MaterialTheme.colorScheme.onSurfaceVariant)
     Column(modifier, verticalArrangement = Arrangement.spacedBy(6.dp)) {
         blocks.take(maxBlocks).forEachIndexed { i, block ->
-            when (block) {
-                is MdBlock.Heading -> {
-                    if (i > 0) Spacer(Modifier.height(4.dp))
-                    Text(
-                        inlineMarkdown(block.text, linkColor, codeBackground),
-                        style = MaterialTheme.typography.titleSmall,
-                        color = MaterialTheme.colorScheme.onSurface,
-                    )
+            val text = when (block) {
+                is MdBlock.Heading -> block.text
+                is MdBlock.Bullet -> block.text
+                is MdBlock.Paragraph -> block.text
+            }
+            // Notes are often in another language than the app: lay each block out in its own direction.
+            val direction = if (isRtlText(text)) LayoutDirection.Rtl else LayoutDirection.Ltr
+            CompositionLocalProvider(LocalLayoutDirection provides direction) {
+                when (block) {
+                    is MdBlock.Heading -> {
+                        if (i > 0) Spacer(Modifier.height(4.dp))
+                        Text(
+                            inlineMarkdown(block.text, linkColor, codeBackground),
+                            style = MaterialTheme.typography.titleSmall,
+                            color = MaterialTheme.colorScheme.onSurface,
+                            modifier = Modifier.fillMaxWidth(),
+                        )
+                    }
+                    is MdBlock.Bullet -> Row(Modifier.fillMaxWidth().padding(start = (block.depth * 14).dp)) {
+                        Text("•", style = body, color = MaterialTheme.colorScheme.primary)
+                        Spacer(Modifier.width(10.dp))
+                        Text(inlineMarkdown(block.text, linkColor, codeBackground), style = body, modifier = Modifier.weight(1f))
+                    }
+                    is MdBlock.Paragraph -> Text(inlineMarkdown(block.text, linkColor, codeBackground), style = body, modifier = Modifier.fillMaxWidth())
                 }
-                is MdBlock.Bullet -> Row(Modifier.padding(start = (block.depth * 14).dp)) {
-                    Text("•", style = body, color = MaterialTheme.colorScheme.primary)
-                    Spacer(Modifier.width(10.dp))
-                    Text(inlineMarkdown(block.text, linkColor, codeBackground), style = body)
-                }
-                is MdBlock.Paragraph -> Text(inlineMarkdown(block.text, linkColor, codeBackground), style = body)
             }
         }
     }
