@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-16T03:29:34Z",
+ "generatedAt": "2026-11-16T04:52:19Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "apps": [
@@ -18,6 +18,9 @@
    "category": "ai",
    "developer": "Israel",
    "website": "https://touchless.tools",
+   "storeUrl": null,
+   "repoUrl": "https://github.com/il90il90/touchless-releases",
+   "latestUrl": "https://github.com/il90il90/touchless-releases/releases/latest",
    "featured": true,
    "self": false,
    "order": 0,
@@ -50,7 +53,6 @@
     "publishedAt": "2026-11-15T20:17:23Z",
     "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.610"
    },
-   "repoUrl": "https://github.com/il90il90/touchless-releases",
    "iconStyle": "adaptive",
    "icon": "icons/touchless.png?v=8327713a",
    "accent": "#DA8F30"
@@ -69,6 +71,9 @@
    "category": "video",
    "developer": "Israel",
    "website": "https://seretgram.com",
+   "storeUrl": null,
+   "repoUrl": "https://github.com/il90il90/SeretGram-releases",
+   "latestUrl": "https://github.com/il90il90/SeretGram-releases/releases/latest",
    "featured": true,
    "self": false,
    "order": 1,
@@ -158,7 +163,6 @@
     "publishedAt": "2026-11-10T07:51:39Z",
     "url": "https://github.com/il90il90/SeretGram-releases/releases/tag/v0.2.1073"
    },
-   "repoUrl": "https://github.com/il90il90/SeretGram-releases",
    "iconStyle": "adaptive",
    "icon": "icons/seretgram.png?v=85d32655",
    "accent": "#2E7DFF"
@@ -177,6 +181,9 @@
    "category": "personalization",
    "developer": "Israel",
    "website": null,
+   "storeUrl": null,
+   "repoUrl": "https://github.com/il90il90/Wallify-releases",
+   "latestUrl": "https://github.com/il90il90/Wallify-releases/releases/latest/download/Wallify.apk",
    "featured": true,
    "self": false,
    "order": 2,
@@ -190,28 +197,27 @@
       "x86_64"
      ],
      "packageName": "com.il90.wallify.debug",
-     "versionName": "0.7.2-qa",
-     "versionCode": 7002,
+     "versionName": "0.7.3",
+     "versionCode": 7003,
      "minSdk": 24,
      "targetSdk": 36,
      "tvCapable": true,
      "label": "Wallify",
-     "fileName": "wallify-0.7.2.apk",
-     "url": "https://github.com/il90il90/Wallify-releases/releases/download/v0.7.2/wallify-0.7.2.apk",
-     "size": 35664422,
-     "sha256": "c2b4977924b0f0e836c34dcec705eeebf50f5558089bbc76a5432d9c9f091b22",
-     "assetId": 752471699,
-     "assetUpdatedAt": "2026-11-15T21:55:18Z"
+     "fileName": "wallify-0.7.3.apk",
+     "url": "https://github.com/il90il90/Wallify-releases/releases/download/v0.7.3/wallify-0.7.3.apk",
+     "size": 35659746,
+     "sha256": "5c576502b093de793268f9ed3c584a3d1417c034b5ad51112966774794f87f71",
+     "assetId": 753453001,
+     "assetUpdatedAt": "2026-11-16T04:32:49Z"
     }
    ],
    "release": {
-    "tag": "v0.7.2",
-    "name": "Wallify 0.7.2",
-    "notes": "- **Everything is open to everyone**: no Premium, no paywall, no ads. The gallery (Discover) with search and\n  filters, and your own videos as live wallpapers (Love it → My videos), work for everyone. Google Play Billing\n  and the AdMob / consent SDKs are gone from the app - no advertising id, no consent form at start.\n- **Updates from the public releases**: Wallify is not in a store, so every version is also published to\n  [il90il90/Wallify-releases](https://github.com/il90il90/Wallify-releases). On launch (at most every few hours)\n  the app looks there and, for a newer version, asks whether to update, with what is new. *Update* downloads it,\n  checks its SHA-256 and that it is Wallify, and opens Android's installer (the first time, Android asks to allow\n  Wallify to install apps). *Later* asks again on the next launch; Settings → *Check for updates* asks now. The TV\n  shows the same question with remote buttons.\n- **Shorter Settings**: no Membership, Privacy or policy texts; the *Personalized* and *Keep history* switches are\n  gone (the feed is always personal, the history always kept on the phone) - *Reset recommendations* and *Clear\n  watch history* remain.\n- **No numbers on the tabs**: the count on the heart in the bottom bar, on the Love it tabs and next to the\n  categories is hidden.\n- **Developer options are hidden**: Settings → tap the version line 10 times (test builds) to show files on the\n  Cloudflare server, *Counts* (categories, Love it tabs, the heart), the temporary *Delete* button and *Hide\n  developer options*. While they are hidden, the counts and the Delete button are off.\n- From 0.7.1: the first version in the public releases; the TV's Settings have *Check for updates* too.\n\n\n---\n- Version: 0.7.2 (code 7002)\n- SHA-256: `c2b4977924b0f0e836c34dcec705eeebf50f5558089bbc76a5432d9c9f091b22`\n- Signing certificate SHA-256: `f56583efbc5c14eaec486caa567dc65fa834314e26d87f554511bc13642fbfc2`\n- Always-latest download: https://github.com/il90il90/Wallify-releases/releases/latest/download/Wallify.apk",
-    "publishedAt": "2026-11-15T21:55:19Z",
-    "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.7.2"
+    "tag": "v0.7.3",
+    "name": "Wallify 0.7.3",
+    "notes": "- **Everything is open to everyone**: no Premium, no paywall, no ads. The gallery (Discover) with search and\n  filters, and your own videos as live wallpapers (Love it → My videos), work for everyone. Google Play Billing\n  and the AdMob / consent SDKs are gone from the app - no advertising id, no consent form at start.\n- **Updates from the public releases**: Wallify is not in a store, so every version is also published to\n  [il90il90/Wallify-releases](https://github.com/il90il90/Wallify-releases). On launch (at most every few hours)\n  the app looks there and, for a newer version, asks whether to update, with what is new. *Update* downloads it,\n  checks its SHA-256 and that it is Wallify, and opens Android's installer (the first time, Android asks to allow\n  Wallify to install apps). *Later* asks again on the next launch; Settings → *Check for updates* asks now. The TV\n  shows the same question with remote buttons.\n- **Shorter Settings**: no Membership, Privacy or policy texts; the *Personalized* and *Keep history* switches are\n  gone (the feed is always personal, the history always kept on the phone) - *Reset recommendations* and *Clear\n  watch history* remain.\n- **No numbers on the tabs**: the count on the heart in the bottom bar, on the Love it tabs and next to the\n  categories is hidden.\n- **Developer options are hidden**: Settings → tap the version line 10 times (test builds) to show files on the\n  Cloudflare server, *Counts* (categories, Love it tabs, the heart), the temporary *Delete* button and *Hide\n  developer options*. While they are hidden, the counts and the Delete button are off.\n- From 0.7.1: the first version in the public releases; the TV's Settings have *Check for updates* too.\n- From 0.7.2: the version is a plain number (no \"-qa\": this is the real app now), and the temporary\n  *Delete* button is gone for good.\n\n\n---\n- Version: 0.7.3 (code 7003)\n- SHA-256: `5c576502b093de793268f9ed3c584a3d1417c034b5ad51112966774794f87f71`\n- Signing certificate SHA-256: `f56583efbc5c14eaec486caa567dc65fa834314e26d87f554511bc13642fbfc2`\n- Always-latest download: https://github.com/il90il90/Wallify-releases/releases/latest/download/Wallify.apk",
+    "publishedAt": "2026-11-16T04:32:51Z",
+    "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.7.3"
    },
-   "repoUrl": "https://github.com/il90il90/Wallify-releases",
    "iconStyle": "adaptive",
    "icon": "icons/wallify.png?v=4b5cdc0d",
    "accent": "#FF8771"
@@ -230,6 +236,9 @@
    "category": "devtools",
    "developer": "Israel",
    "website": "https://trustapk.app",
+   "storeUrl": null,
+   "repoUrl": "https://github.com/il90il90/trust-apk-releases",
+   "latestUrl": "https://github.com/il90il90/trust-apk-releases/releases/latest/download/trustapk-client.apk",
    "featured": false,
    "self": false,
    "order": 3,
@@ -259,7 +268,6 @@
     "publishedAt": "2026-11-14T19:39:03Z",
     "url": "https://github.com/il90il90/trust-apk-releases/releases/tag/v1.8.1066"
    },
-   "repoUrl": "https://github.com/il90il90/trust-apk-releases",
    "iconStyle": "adaptive",
    "icon": "icons/trustapk.png?v=bdb7358d",
    "accent": "#14D9C6"
@@ -278,6 +286,9 @@
    "category": "communication",
    "developer": "Israel",
    "website": null,
+   "storeUrl": null,
+   "repoUrl": "https://github.com/il90il90/OneDial-releases",
+   "latestUrl": "https://github.com/il90il90/OneDial-releases/releases/latest",
    "featured": false,
    "self": false,
    "order": 4,
@@ -309,7 +320,6 @@
     "publishedAt": "2026-11-15T16:30:32Z",
     "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.50"
    },
-   "repoUrl": "https://github.com/il90il90/OneDial-releases",
    "iconStyle": "adaptive",
    "icon": "icons/onedial.png?v=f291d671",
    "accent": "#1A9EAE"
@@ -328,6 +338,9 @@
    "category": "photos",
    "developer": "Israel",
    "website": null,
+   "storeUrl": null,
+   "repoUrl": "https://github.com/il90il90/GalleryWall-releases",
+   "latestUrl": "https://github.com/il90il90/GalleryWall-releases/releases/latest/download/GalleryWall.apk",
    "featured": false,
    "self": false,
    "order": 5,
@@ -362,7 +375,6 @@
     "publishedAt": "2026-11-09T19:51:35Z",
     "url": "https://github.com/il90il90/GalleryWall-releases/releases/tag/v3.3.0"
    },
-   "repoUrl": "https://github.com/il90il90/GalleryWall-releases",
    "iconStyle": "adaptive",
    "icon": "icons/gallerywall.png?v=2b8dab03",
    "accent": "#B65B33"
@@ -381,13 +393,89 @@
    "category": "video",
    "developer": "Israel",
    "website": null,
+   "storeUrl": null,
+   "repoUrl": "https://github.com/il90il90/WatchIPTV-releases",
+   "latestUrl": "https://github.com/il90il90/WatchIPTV-releases/releases/latest",
    "featured": false,
    "self": false,
    "order": 6,
-   "variants": [],
-   "release": null,
+   "variants": [
+    {
+     "formFactor": "phone",
+     "abis": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "x86",
+      "x86_64"
+     ],
+     "packageName": "com.il90.watchiptv",
+     "versionName": "1.0.1",
+     "versionCode": 26634011,
+     "minSdk": 26,
+     "targetSdk": 36,
+     "tvCapable": false,
+     "label": "WatchIPTV",
+     "fileName": "WatchIPTV-phone-v1.0.1-26634011.apk",
+     "url": "https://github.com/il90il90/WatchIPTV-releases/releases/download/v1.0.1-26634011/WatchIPTV-phone-v1.0.1-26634011.apk",
+     "size": 3444490,
+     "sha256": "15f0a45b6a4106589ed7fb04ad07e26d85d12bb2ad6b35d0ae9392eb87406c70",
+     "assetId": 753468337,
+     "assetUpdatedAt": "2026-11-16T04:39:42Z"
+    },
+    {
+     "formFactor": "tv",
+     "abis": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "x86",
+      "x86_64"
+     ],
+     "packageName": "com.il90.watchiptv",
+     "versionName": "1.0.1",
+     "versionCode": 26634013,
+     "minSdk": 26,
+     "targetSdk": 36,
+     "tvCapable": true,
+     "label": "WatchIPTV",
+     "fileName": "WatchIPTV-tv-v1.0.1-26634011.apk",
+     "url": "https://github.com/il90il90/WatchIPTV-releases/releases/download/v1.0.1-26634011/WatchIPTV-tv-v1.0.1-26634011.apk",
+     "size": 2474280,
+     "sha256": "beddcc8c09d5f6c9445623205c2eb0387884498173bd9834bfe8746a1e4753f0",
+     "assetId": 753468338,
+     "assetUpdatedAt": "2026-11-16T04:39:42Z"
+    },
+    {
+     "formFactor": "watch",
+     "abis": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "x86",
+      "x86_64"
+     ],
+     "packageName": "com.il90.watchiptv",
+     "versionName": "1.0.1",
+     "versionCode": 26634012,
+     "minSdk": 30,
+     "targetSdk": 36,
+     "tvCapable": false,
+     "label": "WatchIPTV",
+     "fileName": "WatchIPTV-watch-v1.0.1-26634011.apk",
+     "url": "https://github.com/il90il90/WatchIPTV-releases/releases/download/v1.0.1-26634011/WatchIPTV-watch-v1.0.1-26634011.apk",
+     "size": 7407375,
+     "sha256": "b510e8a32899a8fd4c58f9c34d13ba6dcb955c50264cca9f8897d3852d4cf8d0",
+     "assetId": 753468339,
+     "assetUpdatedAt": "2026-11-16T04:39:42Z"
+    }
+   ],
+   "release": {
+    "tag": "v1.0.1-26634011",
+    "name": "WatchIPTV 1.0.1",
+    "notes": "WatchIPTV 1.0.1 for phone, Android TV and Wear OS.\n\n| file | what |\n|---|---|\n| `WatchIPTV-phone-v1.0.1-26634011.apk` | phone (Android 8.0+) |\n| `WatchIPTV-tv-v1.0.1-26634011.apk` | Android TV (Android 8.0+) |\n| `WatchIPTV-watch-v1.0.1-26634011.apk` | watch (Wear OS 3+) |\n\nInstall **all from this same release**. The phone and the watch only pair when both halves share one signing key, which these do. The TV pairs over the home Wi-Fi with a code on its screen; see the Devices screen on the phone.\n\nWatch, over ADB: `adb connect <watch-ip>:5555 && adb -s <watch-ip>:5555 install -r WatchIPTV-watch-v1.0.1-26634011.apk`\n\nTV, over ADB: `adb connect <tv-ip>:5555 && adb -s <tv-ip>:5555 install -r WatchIPTV-tv-v1.0.1-26634011.apk`\n\nThe files named without a version (`WatchIPTV-phone.apk`, `WatchIPTV-tv.apk`, `WatchIPTV-watch.apk`) are the same ones, for always-latest links.",
+    "publishedAt": "2026-11-16T04:39:43Z",
+    "url": "https://github.com/il90il90/WatchIPTV-releases/releases/tag/v1.0.1-26634011"
+   },
    "iconStyle": "adaptive",
-   "icon": "icons/watchiptv.png?v=8bf672bb",
+   "icon": "icons/watchiptv.png?v=4686214e",
    "accent": "#7D7DFF"
   },
   {
@@ -404,6 +492,9 @@
    "category": "sports",
    "developer": "Israel",
    "website": null,
+   "storeUrl": null,
+   "repoUrl": "https://github.com/il90il90/ScoreUp",
+   "latestUrl": "https://github.com/il90il90/ScoreUp/releases/latest",
    "featured": false,
    "self": false,
    "order": 7,
@@ -460,7 +551,6 @@
     "publishedAt": "2026-10-23T21:22:58Z",
     "url": "https://github.com/il90il90/ScoreUp/releases/tag/v1.0.18"
    },
-   "repoUrl": "https://github.com/il90il90/ScoreUp",
    "iconStyle": "adaptive",
    "icon": "icons/scoreup.png?v=f9059385",
    "accent": "#369BFF"
@@ -479,6 +569,9 @@
    "category": "ai",
    "developer": "Israel",
    "website": null,
+   "storeUrl": null,
+   "repoUrl": "https://github.com/il90il90/touchless-hackerai-bridge",
+   "latestUrl": "https://github.com/il90il90/touchless-hackerai-bridge/releases/tag/app-v23",
    "featured": false,
    "self": false,
    "order": 8,
@@ -513,7 +606,6 @@
     "publishedAt": "2026-11-13T13:56:40Z",
     "url": "https://github.com/il90il90/touchless-hackerai-bridge/releases/tag/app-v23"
    },
-   "repoUrl": "https://github.com/il90il90/touchless-hackerai-bridge",
    "iconStyle": "adaptive",
    "icon": "icons/touchless-bridge.png?v=987c95de",
    "accent": "#00B6D6"
@@ -532,13 +624,45 @@
    "category": "tools",
    "developer": "Israel",
    "website": null,
+   "storeUrl": null,
+   "repoUrl": "https://github.com/il90il90/ScreenAwake-releases",
+   "latestUrl": "https://github.com/il90il90/ScreenAwake-releases/releases/latest/download/ScreenAwake.apk",
    "featured": false,
    "self": false,
    "order": 9,
-   "variants": [],
-   "release": null,
+   "variants": [
+    {
+     "formFactor": "phone",
+     "abis": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "x86",
+      "x86_64"
+     ],
+     "packageName": "com.screenawake.app",
+     "versionName": "1.9.2",
+     "versionCode": 10902,
+     "minSdk": 24,
+     "targetSdk": 35,
+     "tvCapable": false,
+     "label": "Screen Awake",
+     "fileName": "ScreenAwake-1.9.2.apk",
+     "url": "https://github.com/il90il90/ScreenAwake-releases/releases/download/v1.9.2/ScreenAwake-1.9.2.apk",
+     "size": 1257965,
+     "sha256": "8a36d20023dd44591b59eb29922a9121fd2772e581421e70a5211ab9a1d1ea58",
+     "assetId": 753468364,
+     "assetUpdatedAt": "2026-11-16T04:39:42Z"
+    }
+   ],
+   "release": {
+    "tag": "v1.9.2",
+    "name": "Screen Awake 1.9.2",
+    "notes": "Screen Awake 1.9.2 for Android 7.0 and up.\n\n| file | what |\n|---|---|\n| `ScreenAwake-1.9.2.apk` | the app |\n| `ScreenAwake.apk` | the same file under a name that never changes, for an always-latest link |\n\nSigned with the release key, so it installs over earlier versions and keeps your data.",
+    "publishedAt": "2026-11-16T04:39:43Z",
+    "url": "https://github.com/il90il90/ScreenAwake-releases/releases/tag/v1.9.2"
+   },
    "iconStyle": "adaptive",
-   "icon": "icons/screenawake.png?v=de4b0ed0",
+   "icon": "icons/screenawake.png?v=d40c3b82",
    "accent": "#5142BF"
   },
   {
@@ -555,13 +679,45 @@
    "category": "kids",
    "developer": "Israel",
    "website": null,
+   "storeUrl": null,
+   "repoUrl": "https://github.com/il90il90/Zoopli-releases",
+   "latestUrl": "https://github.com/il90il90/Zoopli-releases/releases/latest/download/Zoopli.apk",
    "featured": false,
    "self": false,
    "order": 10,
-   "variants": [],
-   "release": null,
+   "variants": [
+    {
+     "formFactor": "phone",
+     "abis": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "x86",
+      "x86_64"
+     ],
+     "packageName": "com.zoopli.app",
+     "versionName": "2.21.0",
+     "versionCode": 60,
+     "minSdk": 24,
+     "targetSdk": 36,
+     "tvCapable": false,
+     "label": "Zoopli",
+     "fileName": "zoopli-2.21.0.apk",
+     "url": "https://github.com/il90il90/Zoopli-releases/releases/download/v2.21.0/zoopli-2.21.0.apk",
+     "size": 2381315,
+     "sha256": "08416cd83639fa036d65bbce0dc881d1fc9e0acb6408a1488d519964f1b06518",
+     "assetId": 753467880,
+     "assetUpdatedAt": "2026-11-16T04:39:32Z"
+    }
+   ],
+   "release": {
+    "tag": "v2.21.0",
+    "name": "Zoopli 2.21.0",
+    "notes": "Zoopli 2.21.0 for Android 7.0 and up.\n\n| file | what |\n|---|---|\n| `zoopli-2.21.0.apk` | the app |\n| `Zoopli.apk` | the same file under a name that never changes, for an always-latest link |\n\nSigned with the release key, so it installs over earlier versions and keeps your data.",
+    "publishedAt": "2026-11-16T04:39:33Z",
+    "url": "https://github.com/il90il90/Zoopli-releases/releases/tag/v2.21.0"
+   },
    "iconStyle": "adaptive",
-   "icon": "icons/zoopli.png?v=ffb3233e",
+   "icon": "icons/zoopli.png?v=abd43f51",
    "accent": "#1E6FD9"
   },
   {
@@ -578,6 +734,9 @@
    "category": "kids",
    "developer": "Israel",
    "website": null,
+   "storeUrl": null,
+   "repoUrl": "https://github.com/il90il90/abc-app-releases",
+   "latestUrl": "https://github.com/il90il90/abc-app-releases/releases/latest/download/abc-app.apk",
    "featured": false,
    "self": false,
    "order": 11,
@@ -612,7 +771,6 @@
     "publishedAt": "2026-10-25T17:07:25Z",
     "url": "https://github.com/il90il90/abc-app-releases/releases/tag/v2.1.2"
    },
-   "repoUrl": "https://github.com/il90il90/abc-app-releases",
    "iconStyle": "adaptive",
    "icon": "icons/abc.png?v=3c6dc7c2",
    "accent": "#6C63FF"
@@ -631,6 +789,9 @@
    "category": "video",
    "developer": "Israel",
    "website": null,
+   "storeUrl": null,
+   "repoUrl": "https://github.com/il90il90/hass-israel-tv-release",
+   "latestUrl": "https://github.com/il90il90/hass-israel-tv-release/releases/latest/download/israel-tv-tv.apk",
    "featured": false,
    "self": false,
    "order": 12,
@@ -660,7 +821,6 @@
     "publishedAt": "2026-09-23T17:13:22Z",
     "url": "https://github.com/il90il90/hass-israel-tv-release/releases/tag/v1.4"
    },
-   "repoUrl": "https://github.com/il90il90/hass-israel-tv-release",
    "iconStyle": "legacy",
    "icon": "icons/israel-tv.png?v=45ff0e21",
    "accent": "#0B57A3"
@@ -679,6 +839,9 @@
    "category": "tools",
    "developer": "Israel",
    "website": null,
+   "storeUrl": null,
+   "repoUrl": "https://github.com/il90il90/israel-app-manager",
+   "latestUrl": "https://github.com/il90il90/israel-app-manager/releases/latest/download/IsraelAppManager.apk",
    "featured": false,
    "self": true,
    "order": 13,
@@ -713,7 +876,6 @@
     "publishedAt": "2026-11-15T22:45:26Z",
     "url": "https://github.com/il90il90/israel-app-manager/releases/tag/v1.0.1"
    },
-   "repoUrl": "https://github.com/il90il90/israel-app-manager",
    "iconStyle": "adaptive",
    "icon": "icons/israel-app-manager.png?v=233b79c0",
    "accent": "#5C71F0"
