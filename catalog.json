@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-16T05:26:21Z",
+ "generatedAt": "2026-11-16T08:56:41Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -39,29 +39,29 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.touchless",
-     "versionName": "0.2.610",
-     "versionCode": 662,
+     "versionName": "0.2.612",
+     "versionCode": 664,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "Touchless",
-     "fileName": "touchless-0.2.610.apk",
-     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.610/touchless-0.2.610.apk",
-     "size": 39982811,
-     "sha256": "90c61c5e9fa8a3f3b2b84859d96dcfe237d20a1331d4eb38ff1d603052b1bf23",
-     "assetId": 752222374,
-     "assetUpdatedAt": "2026-11-15T20:16:15Z"
+     "fileName": "touchless-0.2.612.apk",
+     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.612/touchless-0.2.612.apk",
+     "size": 40048391,
+     "sha256": "1a65d4cf26c6595d69778c0e3ddea34de886e30d9c2bbf21cbae3d3f130a0886",
+     "assetId": 754126058,
+     "assetUpdatedAt": "2026-11-16T08:51:46Z"
     }
    ],
    "release": {
-    "tag": "v0.2.610",
-    "name": "Touchless v0.2.610",
-    "notes": "# v0.2.610\n\nHands-free unlock: a pattern or a password is no longer stopped by one unclear try (#996).\n\n- **Password lock:** Touchless checks that the whole password is in the field before it confirms, and decides \"code\n  refused\" from the field, as it does for a PIN.\n- **Pattern lock:** one try that leaves the phone locked without a clear refusal no longer stops hands-free unlock.\n  It stops only after two such tries in a row, and a successful unlock starts the count again.\n- The same two-try rule covers phones whose lock-screen keys only Shizuku can see.",
-    "publishedAt": "2026-11-15T20:17:23Z",
-    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.610"
+    "tag": "v0.2.612",
+    "name": "Touchless v0.2.612",
+    "notes": "# v0.2.612\n\nTouchless Studio first, and on Home (#1011, stage 2 of the \"Onyx\" redesign).\n\n- **Plugins:** Touchless Studio is the first section, before the connectors.\n- **Home:** when Studio is installed, it has its own row on Home: one tap opens it.\n- **Home's agent card:** Approvals and Access side by side (the active hours are in Settings › Security), and\n  \"Connect your AI\" and \"Backup\" as two equal buttons in one row.\n- **Tidier:** the Plugins tab's headers have no \"Manage\" buttons (every row opens its screen), and the automation\n  cards' corners match the other cards'.",
+    "publishedAt": "2026-11-16T08:53:03Z",
+    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.612"
    },
    "iconStyle": "adaptive",
-   "icon": "icons/touchless.png?v=8327713a",
+   "icon": "icons/touchless.png?v=3ac519e8",
    "accent": "#DA8F30"
   },
   {
@@ -594,7 +594,7 @@
    "website": null,
    "storeUrl": null,
    "repoUrl": "https://github.com/il90il90/touchless-hackerai-bridge",
-   "latestUrl": "https://github.com/il90il90/touchless-hackerai-bridge/releases/tag/app-v23",
+   "latestUrl": "https://github.com/il90il90/touchless-hackerai-bridge/releases/latest",
    "featured": false,
    "license": null,
    "self": false,
@@ -609,30 +609,30 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchless.hackeraibridge",
-     "versionName": "1.1.21",
-     "versionCode": 23,
+     "versionName": "1.1.22",
+     "versionCode": 24,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": false,
      "label": "Touchless Bridge",
-     "fileName": "touchless-bridge-1.1.21.apk",
-     "url": "https://github.com/il90il90/touchless-hackerai-bridge/releases/download/app-v23/touchless-bridge-1.1.21.apk",
-     "size": 9386370,
-     "sha256": "9164a5650a99669fe3efcba6074db144626c93b39732f458a5cd600a4ba40de7",
-     "assetId": 743848445,
-     "assetUpdatedAt": "2026-11-13T13:56:39Z"
+     "fileName": "touchless-bridge-1.1.22.apk",
+     "url": "https://github.com/il90il90/touchless-hackerai-bridge/releases/download/app-v24/touchless-bridge-1.1.22.apk",
+     "size": 9479907,
+     "sha256": "bfd4bdbde9af0a11c510a5284fc173f8cf745c8a70cdd2a8a06a2cadab2d25bb",
+     "assetId": 754094790,
+     "assetUpdatedAt": "2026-11-16T08:40:54Z"
     }
    ],
    "release": {
-    "tag": "app-v23",
-    "name": "Touchless Bridge 1.1.21",
-    "notes": "Settings now shows the Remote Control (phone-as-bridge) token correctly. The \"Remote Control token\" line read the wrong field, so it said \"not captured yet\" even when the phone was connected as a bridge and auto-reconnecting; it now tracks the actual rc token.\n\nAlso adds a README explaining exactly what the app does.\n\nCarries forward the 1.1.20 edge-to-edge fix (content stays clear of the status bar and the system navigation buttons).",
-    "publishedAt": "2026-11-13T13:56:40Z",
-    "url": "https://github.com/il90il90/touchless-hackerai-bridge/releases/tag/app-v23"
+    "tag": "app-v24",
+    "name": "Touchless Bridge 1.1.22",
+    "notes": "**Installing over 1.1.21 or older: remove the old app first, once.** This version is signed with a new key, so\nAndroid won't install it on top of an older copy (\"App not installed\"). Uninstall Touchless Bridge, install\n1.1.22, then connect the phone and sign in to HackerAI again. Later versions update in place as before.\n\nA new look, an easier start, a new icon, and the app now shows when HackerAI is working.\n\n- **You can see HackerAI working.** While HackerAI works in the chat, the app's icon in the status bar moves, and\n  the notification says \"HackerAI is working\" with the step it is on right now (\"Thinking...\", \"Opening Maps\",\n  \"Phone tool: get battery status\", \"Running a command: nmap\") and a running clock. Opened, it lists the last few\n  steps. Home shows the same line. It keeps following after you close the chat window, and goes quiet when\n  HackerAI is done. Only a short line per step is shown, never a command's arguments or its output.\n- **The chat stays where you left it.** Closing the chat window no longer throws the page away: open it again and\n  it is there at once, also in the middle of a task. A chat left idle for 10 minutes is let go and loads fresh.\n- **`touchless … --say \"…\"` and `--done` work on the phone too** (when the phone itself is the HackerAI machine),\n  as they do on a computer. The setup prompt now shows the real form: `touchless call <tool> key=value`.\n- **New icon.** A hooded figure whose face is a terminal prompt (`>_`). It also has a themed-icon version, and the\n  \"Running\" notification uses it.\n- **Home shows where you stand.** A status card with the phone, Touchless and HackerAI as three points on a line.\n  When the phone is connected a glowing packet travels from it to Touchless, and on to HackerAI once you're signed\n  in there; while the phone isn't connected nothing moves. A button takes you to HackerAI.\n- **The animation shows on every phone**, also where the phone's own animations are turned off. Settings › about ›\n  \"Animate the status\" turns it off.\n- **One thing to do on Home: connect your phone.** With a Paste button, and \"Open Touchless\", which opens the\n  Touchless app to copy your address. Once the phone is connected the card folds away and HackerAI opens by itself.\n- **HackerAI in the middle of the bottom bar.** One tap from anywhere.\n- **Settings in cards.** Connection, HackerAI, always on, about. A line that isn't connected takes you back to\n  Home. Running the bridge on the phone itself is now one switch in the connection list, \"Remote Control on this\n  phone\". The setup prompt can be sent again, not only copied.\n- **\"Check for updates\" answers.** It says \"No newer version found\" when there is nothing newer.\n- **Battery.** Settings shows when battery use is already unrestricted, and the button only when it isn't.\n- **The chat shows a page loading** with a thin line along the top.\n- **Back from Settings** returns to Home.\n\nSHA-256: bfd4bdbde9af0a11c510a5284fc173f8cf745c8a70cdd2a8a06a2cadab2d25bb",
+    "publishedAt": "2026-11-16T08:40:55Z",
+    "url": "https://github.com/il90il90/touchless-hackerai-bridge/releases/tag/app-v24"
    },
    "iconStyle": "adaptive",
-   "icon": "icons/touchless-bridge.png?v=987c95de",
-   "accent": "#00B6D6"
+   "icon": "icons/touchless-bridge.png?v=0faddf12",
+   "accent": "#00D4F1"
   },
   {
    "id": "screenawake",
