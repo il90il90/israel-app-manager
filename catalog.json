@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-15T22:45:49Z",
+ "generatedAt": "2026-11-16T03:29:34Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "apps": [
@@ -386,8 +386,9 @@
    "order": 6,
    "variants": [],
    "release": null,
-   "icon": null,
-   "accent": null
+   "iconStyle": "adaptive",
+   "icon": "icons/watchiptv.png?v=8bf672bb",
+   "accent": "#7D7DFF"
   },
   {
    "id": "scoreup",
@@ -536,8 +537,9 @@
    "order": 9,
    "variants": [],
    "release": null,
-   "icon": null,
-   "accent": null
+   "iconStyle": "adaptive",
+   "icon": "icons/screenawake.png?v=de4b0ed0",
+   "accent": "#5142BF"
   },
   {
    "id": "zoopli",
@@ -558,8 +560,9 @@
    "order": 10,
    "variants": [],
    "release": null,
-   "icon": null,
-   "accent": null
+   "iconStyle": "adaptive",
+   "icon": "icons/zoopli.png?v=ffb3233e",
+   "accent": "#1E6FD9"
   },
   {
    "id": "abc",
