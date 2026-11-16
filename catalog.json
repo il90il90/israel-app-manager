@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-16T05:06:41Z",
+ "generatedAt": "2026-11-16T05:26:21Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -806,12 +806,12 @@
    "id": "israel-tv",
    "name": "Israel TV",
    "tagline": {
-    "en": "Israeli live TV channels for Android TV",
-    "he": "ערוצי טלוויזיה ישראליים ל-Android TV"
+    "en": "Israeli live TV channels on your TV and phone",
+    "he": "ערוצי טלוויזיה ישראליים בטלוויזיה ובטלפון"
    },
    "description": {
-    "en": "Live Israeli TV channels in an app made for Android TV and the remote control.",
-    "he": "ערוצי טלוויזיה ישראליים בשידור חי, באפליקציה שנבנתה ל-Android TV ולשלט."
+    "en": "Live Israeli TV channels in one app for Android TV, Google TV and Android phones: built for the remote control on a television and for touch on a phone.",
+    "he": "ערוצי טלוויזיה ישראליים בשידור חי באפליקציה אחת ל-Android TV, ל-Google TV ולטלפוני אנדרואיד: בטלוויזיה היא בנויה לשלט, ובטלפון למגע."
    },
    "category": "video",
    "developer": "Israel",
@@ -828,7 +828,7 @@
    "order": 12,
    "variants": [
     {
-     "formFactor": "tv",
+     "formFactor": "phone",
      "abis": [],
      "packageName": "il.israel.tv",
      "versionName": "1.4",
@@ -839,10 +839,10 @@
      "label": "Israel TV",
      "fileName": "israel-tv-tv.apk",
      "url": "https://github.com/il90il90/hass-israel-tv-release/releases/download/v1.4/israel-tv-tv.apk",
-     "size": 3017735,
-     "sha256": "a30d37dfd13838beb4eaed68f95b258019c9242e2c7d440269f1b159ba19db59",
-     "assetId": 584235491,
-     "assetUpdatedAt": "2026-09-23T17:13:21Z"
+     "size": 3030486,
+     "sha256": "841f19589cdb9fd88a48b4f3f7027b22064516c5f0729500cda5cde3a069a799",
+     "assetId": 753582928,
+     "assetUpdatedAt": "2026-11-16T05:25:12Z"
     }
    ],
    "release": {
