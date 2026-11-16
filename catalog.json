@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-16T05:00:13Z",
+ "generatedAt": "2026-11-16T05:06:41Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -887,26 +887,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.appmanager",
-     "versionName": "1.0.1",
-     "versionCode": 10001,
+     "versionName": "1.0.2",
+     "versionCode": 10002,
      "minSdk": 26,
      "targetSdk": 36,
      "tvCapable": false,
      "label": "Israel App Manager",
-     "fileName": "israel-app-manager-1.0.1.apk",
-     "url": "https://github.com/il90il90/israel-app-manager/releases/download/v1.0.1/israel-app-manager-1.0.1.apk",
-     "size": 2198605,
-     "sha256": "4695c56db93d3746b0166fa5cedc3f1fefe04998d149852957d1c2dd6e5149f3",
-     "assetId": 752599244,
-     "assetUpdatedAt": "2026-11-15T22:45:25Z"
+     "fileName": "israel-app-manager-1.0.2.apk",
+     "url": "https://github.com/il90il90/israel-app-manager/releases/download/v1.0.2/israel-app-manager-1.0.2.apk",
+     "size": 2255189,
+     "sha256": "9e74e9cd47e5831c3dff1441a3d71e39e468308e642929d2a40e16cc449716a1",
+     "assetId": 753533876,
+     "assetUpdatedAt": "2026-11-16T05:06:27Z"
     }
    ],
    "release": {
-    "tag": "v1.0.1",
-    "name": "Israel App Manager 1.0.1",
-    "notes": "- Hebrew: versions, sizes and the \"by Israel\" line no longer get scrambled when Hebrew and English meet on one line\n- Release notes are laid out in their own language's direction, so English notes read correctly in the Hebrew interface\n- \"Updated\" on an app's page says \"2 hours ago\" in full and fits its tile",
-    "publishedAt": "2026-11-15T22:45:26Z",
-    "url": "https://github.com/il90il90/israel-app-manager/releases/tag/v1.0.1"
+    "tag": "v1.0.2",
+    "name": "Israel App Manager 1.0.2",
+    "notes": "- **Share any app**: the share icon sends a download link that always points at the newest version on GitHub, copies that link, or sends the APK file itself. The share icon on the home screen does the same for Israel App Manager.\n- **WatchIPTV, Screen Awake and Zoopli** can now be installed from here.\n- **Premium apps** say so up front: a *License required* tag on the card, and on the app's page a button to message the developer on Telegram for a license.\n- An app made for another device (Israel TV on a phone) gets a clear **Download APK** button; an app without an APK links to its website instead.\n- Website and release links sit right under the buttons on every app's page.\n- The Featured row is gone, and cards of different heights no longer leave gaps on wide screens.",
+    "publishedAt": "2026-11-16T05:06:27Z",
+    "url": "https://github.com/il90il90/israel-app-manager/releases/tag/v1.0.2"
    },
    "iconStyle": "adaptive",
    "icon": "icons/israel-app-manager.png?v=233b79c0",
