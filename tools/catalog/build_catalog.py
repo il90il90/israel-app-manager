@@ -179,19 +179,26 @@ def inspect_apk(path, aapt2):
     return info
 
 
-def form_factor(file_name, info):
+def form_factor(file_name, info, alone=False):
+    """Which kind of device an APK is for.
+
+    The manifest decides when it can. The file name ("-tv", "-watch") only tells the builds of
+    one release apart: an app that ships a single APK is not a TV build because its own name
+    ends in "tv" (israel-tv-tv.apk has a phone launcher as well as a leanback one).
+    """
     name = file_name.lower()
-    if info["_watch"] or re.search(r"(^|[-_.])(watch|wear|wearos)([-_.]|$)", name):
+    hints = not alone
+    if info["_watch"] or (hints and re.search(r"(^|[-_.])(watch|wear|wearos)([-_.]|$)", name)):
         return "watch"
-    if info["_tv_only"] or re.search(r"(^|[-_.])(tv|androidtv|leanback)([-_.]|$)", name):
+    if info["_tv_only"] or (hints and re.search(r"(^|[-_.])(tv|androidtv|leanback)([-_.]|$)", name)):
         return "tv"
     return "phone"
 
 
-def make_variant(path, file_name, url, aapt2):
+def make_variant(path, file_name, url, aapt2, alone=False):
     info = inspect_apk(path, aapt2)
     return {
-        "formFactor": form_factor(file_name, info),
+        "formFactor": form_factor(file_name, info, alone),
         "abis": info["abis"],
         "packageName": info["packageName"],
         "versionName": info["versionName"],
@@ -344,7 +351,7 @@ def resolve_app(app, ctx):
                 path = folder / name
                 if not path.exists():
                     continue
-                v = make_variant(str(path), name, mirror_url(app["id"], name), aapt2)
+                v = make_variant(str(path), name, mirror_url(app["id"], name), aapt2, alone=len(meta.get("files", [])) == 1)
                 variants.append(v)
                 if icon_apk is None or v["formFactor"] == "phone":
                     icon_apk = icon_apk if (icon_apk and v["formFactor"] != "phone") else str(path)
@@ -371,7 +378,7 @@ def resolve_app(app, ctx):
             if not path.exists() or path.stat().st_size != a["size"]:
                 log(f"{app['id']}: downloading {a['name']} ({a['size']} bytes)")
                 gh_download(source["repo"], a["id"], str(path))
-            v = make_variant(str(path), a["name"], a["browser_download_url"], aapt2)
+            v = make_variant(str(path), a["name"], a["browser_download_url"], aapt2, alone=len(assets) == 1)
             v["assetId"], v["assetUpdatedAt"] = a["id"], a.get("updated_at")
             variants.append(v)
             if icon_apk is None or (v["formFactor"] == "phone" and "arm64-v8a" in (v["abis"] or ["arm64-v8a"])):

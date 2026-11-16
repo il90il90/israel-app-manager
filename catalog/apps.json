@@ -193,12 +193,12 @@
       "license": true,
       "category": "video",
       "tagline": {
-        "en": "Israeli live TV channels for Android TV",
-        "he": "ערוצי טלוויזיה ישראליים ל-Android TV"
+        "en": "Israeli live TV channels on your TV and phone",
+        "he": "ערוצי טלוויזיה ישראליים בטלוויזיה ובטלפון"
       },
       "description": {
-        "en": "Live Israeli TV channels in an app made for Android TV and the remote control.",
-        "he": "ערוצי טלוויזיה ישראליים בשידור חי, באפליקציה שנבנתה ל-Android TV ולשלט."
+        "en": "Live Israeli TV channels in one app for Android TV, Google TV and Android phones: built for the remote control on a television and for touch on a phone.",
+        "he": "ערוצי טלוויזיה ישראליים בשידור חי באפליקציה אחת ל-Android TV, ל-Google TV ולטלפוני אנדרואיד: בטלוויזיה היא בנויה לשלט, ובטלפון למגע."
       },
       "sources": [{ "repo": "il90il90/hass-israel-tv-release", "tag": "^v\\d", "asset": "\\.apk$" }]
     },
