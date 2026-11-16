@@ -1,10 +1,12 @@
 {
   "developer": "Israel",
+  "contact": { "telegram": "https://t.me/Israelcohen" },
   "announcement": null,
   "apps": [
     {
       "id": "touchless",
       "name": "Touchless",
+      "license": true,
       "featured": true,
       "category": "ai",
       "website": "https://touchless.tools",
@@ -27,6 +29,7 @@
     {
       "id": "seretgram",
       "name": "SeretGram",
+      "license": true,
       "featured": true,
       "category": "video",
       "website": "https://seretgram.com",
@@ -58,6 +61,7 @@
     {
       "id": "trustapk",
       "name": "TrustAPK",
+      "license": true,
       "category": "devtools",
       "website": "https://trustapk.app",
       "tagline": {
@@ -73,6 +77,7 @@
     {
       "id": "onedial",
       "name": "OneDial",
+      "license": true,
       "category": "communication",
       "tagline": {
         "en": "A fast dialer that finds anyone in a few taps",
@@ -185,6 +190,7 @@
     {
       "id": "israel-tv",
       "name": "Israel TV",
+      "license": true,
       "category": "video",
       "tagline": {
         "en": "Israeli live TV channels for Android TV",

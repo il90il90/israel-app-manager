@@ -39,6 +39,12 @@
     <string name="share_link_text">%1$s for Android. Download the latest version:\n%2$s</string>
     <string name="msg_link_copied">Link copied</string>
     <string name="msg_share_apk_failed">Couldn\'t get the APK. Check your connection and try again.</string>
+    <string name="license_required">License required</string>
+    <string name="license_premium">Premium</string>
+    <string name="license_body">A premium app: you need a license to use it.</string>
+    <string name="license_contact_hint">To get one, message the developer on Telegram.</string>
+    <string name="license_get_telegram">Get a license on Telegram</string>
+    <string name="settings_contact_telegram">Contact the developer on Telegram</string>
     <string name="action_show">Show</string>
     <string name="action_not_now">Not now</string>
     <string name="action_open_settings">Open settings</string>

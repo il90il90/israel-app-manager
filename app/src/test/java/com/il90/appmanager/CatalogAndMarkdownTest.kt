@@ -6,8 +6,11 @@ import com.il90.appmanager.data.iconUrl
 import com.il90.appmanager.data.localized
 import com.il90.appmanager.ui.components.MdBlock
 import com.il90.appmanager.ui.components.parseMarkdown
+import com.il90.appmanager.ui.components.telegramHandle
 import com.il90.appmanager.ui.details.trimRedundantHeading
+import com.il90.appmanager.ui.shareLink
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -31,6 +34,29 @@ class CatalogAndMarkdownTest {
         assertEquals(7L, x.variants.single().versionCode)
         assertNull(catalog.apps[1].release)
         assertEquals("", catalog.apps[1].tagline.localized("en"))
+    }
+
+    @Test
+    fun `premium apps carry their license and where to ask for one`() {
+        val json = """
+            {"contact": {"telegram": "https://t.me/someone"},
+             "apps": [{"id": "p", "name": "P", "license": {"required": true, "contact": "https://t.me/someone/"},
+                       "latestUrl": "https://github.com/o/r/releases/latest/download/P.apk",
+                       "release": {"tag": "v1", "url": "https://github.com/o/r/releases/tag/v1"}},
+                      {"id": "f", "name": "F", "license": null, "website": "https://f.example",
+                       "release": {"tag": "v2", "url": "https://github.com/o/f/releases/tag/v2"}},
+                      {"id": "n", "name": "N", "repoUrl": "https://github.com/o/n"}]}
+        """.trimIndent()
+        val catalog = CatalogJson.decodeFromString(Catalog.serializer(), json)
+        assertEquals("https://t.me/someone", catalog.contact?.telegram)
+        val (premium, free, bare) = catalog.apps
+        assertTrue(premium.needsLicense)
+        assertEquals("@someone", telegramHandle(premium.license?.contact.orEmpty()))
+        assertFalse(free.needsLicense)
+        // The link handed to other people: always-latest first, then this release, then whatever there is.
+        assertEquals("https://github.com/o/r/releases/latest/download/P.apk", premium.shareLink())
+        assertEquals("https://github.com/o/f/releases/tag/v2", free.shareLink())
+        assertEquals("https://github.com/o/n", bare.shareLink())
     }
 
     @Test

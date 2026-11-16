@@ -55,6 +55,8 @@ data class HomeState(
     /** This app's own catalog entry, when a newer version of it can be installed. */
     val selfUpdate: AppRow? = null,
     val announcement: Announcement? = null,
+    /** The developer's Telegram link, for the contact row in Settings. */
+    val telegram: String? = null,
 ) {
     val updates: List<AppRow> get() = rows.filter { it.status == AppStatus.UPDATE_AVAILABLE }
     val installedCount: Int get() = rows.count { it.installed != null }
@@ -124,6 +126,7 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
             self = self,
             selfUpdate = selfUpdate,
             announcement = catalog.announcement?.takeIf { it.id.isNotEmpty() && it.id != settings.dismissedAnnouncement },
+            telegram = catalog.contact?.telegram,
         )
     }.stateIn(viewModelScope, SharingStarted.Eagerly, HomeState())
 
@@ -209,12 +212,16 @@ fun AppRow.primaryAction(): PrimaryAction {
  * The APK to send to someone else: their device is unknown, so prefer the phone build that
  * runs on the most processors.
  */
-fun AppRow.shareableVariant(): Variant? {
-    val phone = app.variants.filter { it.formFactor == FormFactor.PHONE }
-    return phone.ifEmpty { app.variants }.maxWithOrNull(
+fun CatalogApp.shareableVariant(): Variant? {
+    val phone = variants.filter { it.formFactor == FormFactor.PHONE }
+    return phone.ifEmpty { variants }.maxWithOrNull(
         compareBy<Variant>({ if (it.abis.isEmpty()) Int.MAX_VALUE else it.abis.size }, { if ("arm64-v8a" in it.abis) 1 else 0 }, { -it.size })
     )
 }
 
 /** The best link to give someone for this app: always-latest when the catalog has one. */
-fun AppRow.shareLink(): String? = app.latestUrl ?: app.release?.url ?: app.storeUrl ?: app.website ?: app.repoUrl
+fun CatalogApp.shareLink(): String? = latestUrl ?: release?.url ?: storeUrl ?: website ?: repoUrl
+
+fun AppRow.shareableVariant(): Variant? = app.shareableVariant()
+
+fun AppRow.shareLink(): String? = app.shareLink()

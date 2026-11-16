@@ -10,7 +10,20 @@ data class Catalog(
     val generatedAt: String? = null,
     val baseUrl: String = "",
     val announcement: Announcement? = null,
+    val contact: Contact? = null,
     val apps: List<CatalogApp> = emptyList(),
+)
+
+/** How to reach the developer. */
+@Serializable
+data class Contact(val telegram: String? = null)
+
+/** A premium app: it is installed like any other, but needs a license from the developer to be used. */
+@Serializable
+data class License(
+    val required: Boolean = true,
+    /** Where to ask for a license (a Telegram link). */
+    val contact: String? = null,
 )
 
 @Serializable
@@ -36,6 +49,7 @@ data class CatalogApp(
     /** A GitHub link that always leads to the newest version. */
     val latestUrl: String? = null,
     val featured: Boolean = false,
+    val license: License? = null,
     val self: Boolean = false,
     val order: Int = 0,
     val icon: String? = null,
@@ -43,7 +57,9 @@ data class CatalogApp(
     val accent: String? = null,
     val release: Release? = null,
     val variants: List<Variant> = emptyList(),
-)
+) {
+    val needsLicense: Boolean get() = license?.required == true
+}
 
 @Serializable
 data class Release(

@@ -55,6 +55,7 @@ import com.il90.appmanager.R
 import com.il90.appmanager.data.ThemeMode
 import com.il90.appmanager.data.UserSettings
 import com.il90.appmanager.ui.AppRow
+import com.il90.appmanager.ui.components.TelegramButton
 import com.il90.appmanager.ui.components.ActionButton
 import com.il90.appmanager.ui.components.AppIcon
 import com.il90.appmanager.util.formatSize
@@ -78,6 +79,8 @@ fun SettingsScreen(
     onSelfUpdate: () -> Unit,
     onOpenSource: () -> Unit,
     onShareApp: () -> Unit,
+    telegram: String?,
+    onOpenUrl: (String) -> Unit,
     snackbar: SnackbarHostState,
 ) {
     Scaffold(
@@ -189,6 +192,9 @@ fun SettingsScreen(
                         Text(stringResource(R.string.settings_source), style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
                         Icon(Icons.AutoMirrored.Rounded.OpenInNew, null, Modifier.size(18.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
+                }
+                if (telegram != null) {
+                    TelegramButton(telegram, stringResource(R.string.settings_contact_telegram), onOpenUrl)
                 }
                 Text(
                     stringResource(R.string.settings_made_by),

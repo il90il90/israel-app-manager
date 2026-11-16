@@ -39,6 +39,12 @@
     <string name="share_link_text">%1$s לאנדרואיד. להורדת הגרסה האחרונה:\n%2$s</string>
     <string name="msg_link_copied">הקישור הועתק</string>
     <string name="msg_share_apk_failed">לא הצלחתי להביא את ה-APK. בדקו את החיבור ונסו שוב.</string>
+    <string name="license_required">נדרש רישיון</string>
+    <string name="license_premium">פרימיום</string>
+    <string name="license_body">אפליקציית פרימיום: כדי להשתמש בה צריך רישיון.</string>
+    <string name="license_contact_hint">לקבלת רישיון שלחו הודעה למפתח בטלגרם.</string>
+    <string name="license_get_telegram">לקבלת רישיון בטלגרם</string>
+    <string name="settings_contact_telegram">יצירת קשר עם המפתח בטלגרם</string>
     <string name="action_show">הצגה</string>
     <string name="action_not_now">לא עכשיו</string>
     <string name="action_open_settings">פתיחת ההגדרות</string>

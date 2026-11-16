@@ -6,7 +6,9 @@ import com.il90.appmanager.data.Device
 import com.il90.appmanager.data.FormFactor
 import com.il90.appmanager.data.Variant
 import com.il90.appmanager.data.pickVariant
+import com.il90.appmanager.ui.shareableVariant
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -64,5 +66,18 @@ class VariantPickerTest {
         assertEquals(Compatibility.NeedsNewerAndroid(40), pickVariant(app(variant(minSdk = 40)), phone))
         assertEquals(Compatibility.UnsupportedCpu, pickVariant(app(variant(abis = listOf("x86_64"))), phone))
         assertEquals(Compatibility.NoRelease, pickVariant(app(), phone))
+    }
+
+    @Test
+    fun `the APK sent to someone else is the phone build that runs on most phones`() {
+        val universal = variant(name = "universal.apk", size = 30)
+        val arm64 = variant(abis = listOf("arm64-v8a"), name = "arm64.apk")
+        val x86 = variant(abis = listOf("x86_64"), name = "x86.apk")
+        val tv = variant(form = FormFactor.TV, name = "tv.apk")
+        assertEquals(universal, app(arm64, universal, x86, tv).shareableVariant())
+        assertEquals(arm64, app(x86, arm64, tv).shareableVariant())
+        // An app made only for TV still has a file to send.
+        assertEquals(tv, app(tv).shareableVariant())
+        assertNull(app().shareableVariant())
     }
 }

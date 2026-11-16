@@ -2,6 +2,7 @@ package com.il90.appmanager.ui.details
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
@@ -24,6 +25,7 @@ import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.foundation.verticalScroll
@@ -36,6 +38,7 @@ import androidx.compose.material.icons.rounded.MoreVert
 import androidx.compose.material.icons.rounded.Share
 import androidx.compose.material.icons.rounded.Tv
 import androidx.compose.material.icons.rounded.Watch
+import androidx.compose.material.icons.rounded.WorkspacePremium
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.Button
 import androidx.compose.material3.DropdownMenu
@@ -78,6 +81,7 @@ import androidx.compose.ui.unit.dp
 import com.il90.appmanager.R
 import com.il90.appmanager.data.Compatibility
 import com.il90.appmanager.data.FormFactor
+import com.il90.appmanager.data.License
 import com.il90.appmanager.data.Variant
 import com.il90.appmanager.data.androidVersionName
 import com.il90.appmanager.data.localized
@@ -87,10 +91,13 @@ import com.il90.appmanager.ui.AppStatus
 import com.il90.appmanager.ui.PrimaryAction
 import com.il90.appmanager.ui.components.AppIcon
 import com.il90.appmanager.ui.components.MarkdownText
+import com.il90.appmanager.ui.components.Pill
+import com.il90.appmanager.ui.components.TelegramButton
 import com.il90.appmanager.ui.components.categoryLabel
 import com.il90.appmanager.ui.components.failureMessage
 import com.il90.appmanager.ui.components.formFactorLabel
 import com.il90.appmanager.ui.components.parseMarkdown
+import com.il90.appmanager.ui.components.premiumColor
 import com.il90.appmanager.ui.primaryAction
 import com.il90.appmanager.ui.theme.LocalDarkTheme
 import com.il90.appmanager.util.appLanguage
@@ -171,6 +178,7 @@ fun DetailsScreen(
                 ) {
                     Header(row, language)
                     ActionArea(row, accent.readableOn(dark), onAction, onOpenApp, onUninstall, onDownloadVariant, onOpenUrl)
+                    row.app.license?.takeIf { it.required }?.let { LicenseCard(it, onOpenUrl) }
                     Notices(row)
                     QuickLinks(row, onOpenUrl)
                     Stats(row)
@@ -345,6 +353,45 @@ private fun NotInstallableActions(row: AppRow, onDownloadVariant: (Variant) -> U
             Icon(Icons.AutoMirrored.Rounded.OpenInNew, null, Modifier.size(18.dp))
             Spacer(Modifier.width(8.dp))
             Text(stringResource(R.string.action_open_github))
+        }
+    }
+}
+
+/** Premium apps: say up front that a license is needed, and how to reach the developer for one. */
+@Composable
+private fun LicenseCard(license: License, onOpenUrl: (String) -> Unit) {
+    val gold = premiumColor()
+    Surface(
+        shape = MaterialTheme.shapes.large,
+        color = gold.copy(alpha = 0.09f),
+        border = BorderStroke(1.dp, gold.copy(alpha = 0.40f)),
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Box(
+                    Modifier.size(46.dp).clip(CircleShape).background(Brush.linearGradient(listOf(Color(0xFFFFDB7A), Color(0xFFE39A16)))),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Icon(Icons.Rounded.WorkspacePremium, null, Modifier.size(26.dp), tint = Color(0xFF3B2600))
+                }
+                Spacer(Modifier.width(14.dp))
+                Column(Modifier.weight(1f)) {
+                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Text(stringResource(R.string.license_required), style = MaterialTheme.typography.titleMedium)
+                        Pill(stringResource(R.string.license_premium), gold.copy(alpha = 0.18f), gold)
+                    }
+                    Spacer(Modifier.height(2.dp))
+                    val body = stringResource(R.string.license_body)
+                    val hint = stringResource(R.string.license_contact_hint)
+                    Text(
+                        if (license.contact != null) "$body $hint" else body,
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+            }
+            license.contact?.let { TelegramButton(it, stringResource(R.string.license_get_telegram), onOpenUrl) }
         }
     }
 }

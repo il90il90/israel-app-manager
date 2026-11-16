@@ -14,6 +14,7 @@ import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -107,6 +108,7 @@ import com.il90.appmanager.ui.components.ActionButton
 import com.il90.appmanager.ui.components.AppIcon
 import com.il90.appmanager.ui.components.Pill
 import com.il90.appmanager.ui.components.categoryLabel
+import com.il90.appmanager.ui.components.LicenseTag
 import com.il90.appmanager.ui.components.failureMessage
 import com.il90.appmanager.ui.components.formFactorLabel
 import com.il90.appmanager.ui.components.unavailableLabel
@@ -381,7 +383,15 @@ fun AppCard(
                     )
                 }
                 Spacer(Modifier.height(6.dp))
-                StatusLine(row)
+                if (row.app.needsLicense) {
+                    // Next to the status when there is room, on a line of its own when there is not.
+                    FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(5.dp)) {
+                        StatusLine(row, Modifier.align(Alignment.CenterVertically))
+                        LicenseTag()
+                    }
+                } else {
+                    StatusLine(row)
+                }
             }
             Spacer(Modifier.width(8.dp))
             if (row.status == AppStatus.UNAVAILABLE && row.task == null) {

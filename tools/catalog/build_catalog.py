@@ -384,6 +384,15 @@ def resolve_app(app, ctx):
     return None
 
 
+def license_of(app, spec):
+    """Premium apps: `"license": true` (or an object) in apps.json. None for free apps."""
+    value = app.get("license")
+    if not value:
+        return None
+    own = value if isinstance(value, dict) else {}
+    return {"required": True, "contact": own.get("contact") or (spec.get("contact") or {}).get("telegram")}
+
+
 def cmd_build(args):
     spec = json.loads(Path(args.apps).read_text("utf-8"))
     out = Path(args.out)
@@ -422,6 +431,7 @@ def cmd_build(args):
             "repoUrl": app.get("repoUrl"),
             "latestUrl": None,
             "featured": bool(app.get("featured")),
+            "license": license_of(app, spec),
             "self": bool(app.get("self")),
             "order": order,
         }
@@ -466,6 +476,7 @@ def cmd_build(args):
         "generatedAt": old.get("generatedAt"),
         "baseUrl": f"https://raw.githubusercontent.com/{SELF_REPO}/{CATALOG_BRANCH}/",
         "announcement": spec.get("announcement"),
+        "contact": spec.get("contact"),
         "apps": entries,
     }
     if catalog != old:

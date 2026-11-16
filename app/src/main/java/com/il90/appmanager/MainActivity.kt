@@ -416,6 +416,8 @@ private fun AppContent(viewModel: AppViewModel, requestedFilter: MutableStateFlo
                 onSelfUpdate = { state.selfUpdate?.let(::primary) },
                 onOpenSource = { openUrl("https://github.com/${BuildConfig.CATALOG_REPO}") },
                 onShareApp = { sharing = SHARE_SELF },
+                telegram = state.telegram,
+                onOpenUrl = ::openUrl,
                 snackbar = snackbar,
             )
         }
