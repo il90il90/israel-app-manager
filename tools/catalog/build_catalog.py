@@ -111,6 +111,28 @@ def pick_release(source, token=None):
     return best[1], best[2]
 
 
+def latest_link(source, rel):
+    """A GitHub link that keeps pointing at the newest release of this app.
+
+    A direct download when the release carries one APK under a name that never changes
+    (App.apk); otherwise the repository's "latest release" page. Repositories that also
+    publish other things get the page of this release, because their "latest" may not be it.
+    """
+    repo = source["repo"]
+    try:
+        newest = gh_api(f"repos/{repo}/releases/latest")
+    except GhError:
+        newest = None
+    if not newest or newest.get("tag_name") != rel["tag_name"]:
+        return rel.get("html_url")
+    stable = [a["name"] for a in rel.get("assets", [])
+              if a["name"].lower().endswith(".apk") and not re.search(r"\d", a["name"])]
+    apks = {a["size"] for a in rel.get("assets", []) if a["name"].lower().endswith(".apk")}
+    if len(stable) == 1 and len(apks) == 1:
+        return f"https://github.com/{repo}/releases/latest/download/{urllib.parse.quote(stable[0])}"
+    return f"https://github.com/{repo}/releases/latest"
+
+
 # ------------------------------------------------------------------------ aapt2
 def find_aapt2():
     if os.environ.get("AAPT2"):
@@ -328,7 +350,7 @@ def resolve_app(app, ctx):
                     icon_apk = icon_apk if (icon_apk and v["formFactor"] != "phone") else str(path)
             if variants:
                 release = {"tag": meta.get("tag"), "name": meta.get("name"), "notes": meta.get("body") or "",
-                           "publishedAt": meta.get("publishedAt"), "url": None, "repoUrl": None}
+                           "publishedAt": meta.get("publishedAt"), "url": None, "repoUrl": None, "latestUrl": None}
                 return release, variants, icon_apk
             continue
         try:
@@ -356,7 +378,8 @@ def resolve_app(app, ctx):
                 icon_apk = str(path)
         release = {"tag": rel["tag_name"], "name": rel.get("name") or rel["tag_name"],
                    "notes": rel.get("body") or "", "publishedAt": rel.get("published_at") or rel.get("created_at"),
-                   "url": rel.get("html_url"), "repoUrl": f"https://github.com/{source['repo']}"}
+                   "url": rel.get("html_url"), "repoUrl": f"https://github.com/{source['repo']}",
+                   "latestUrl": latest_link(source, rel)}
         return release, variants, icon_apk
     return None
 
@@ -395,6 +418,9 @@ def cmd_build(args):
             "category": app.get("category", "Apps"),
             "developer": app.get("developer", spec.get("developer", "")),
             "website": app.get("website"),
+            "storeUrl": app.get("store"),
+            "repoUrl": app.get("repoUrl"),
+            "latestUrl": None,
             "featured": bool(app.get("featured")),
             "self": bool(app.get("self")),
             "order": order,
@@ -407,7 +433,8 @@ def cmd_build(args):
             release, variants, icon_apk = resolved
             release["notes"] = release["notes"].strip()[:MAX_NOTES]
             repo_url = release.pop("repoUrl", None)
-            entry.update({"variants": variants, "release": release, "repoUrl": app.get("repoUrl", repo_url)})
+            entry.update({"variants": variants, "release": release, "repoUrl": app.get("repoUrl", repo_url),
+                          "latestUrl": release.pop("latestUrl", None)})
             if icon_apk and not (overrides / f"{app_id}.png").exists():
                 try:
                     style = extract_icon(icon_apk, ctx["aapt2"], str(icon_file))

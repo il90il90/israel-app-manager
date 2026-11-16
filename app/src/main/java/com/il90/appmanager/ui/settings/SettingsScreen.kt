@@ -20,6 +20,7 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Share
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.automirrored.rounded.OpenInNew
 import androidx.compose.material3.Button
@@ -76,6 +77,7 @@ fun SettingsScreen(
     onCheckNow: () -> Unit,
     onSelfUpdate: () -> Unit,
     onOpenSource: () -> Unit,
+    onShareApp: () -> Unit,
     snackbar: SnackbarHostState,
 ) {
     Scaffold(
@@ -170,6 +172,14 @@ fun SettingsScreen(
                             if (selfUpdate.task != null) ActionButton(selfUpdate, onSelfUpdate)
                             else Button(onClick = onSelfUpdate) { Text(stringResource(R.string.action_update)) }
                         }
+                    }
+                    HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f))
+                    Row(
+                        Modifier.fillMaxWidth().clickable(onClick = onShareApp).padding(horizontal = 18.dp, vertical = 16.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Text(stringResource(R.string.action_share_app), style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
+                        Icon(Icons.Rounded.Share, null, Modifier.size(18.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
                     HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f))
                     Row(

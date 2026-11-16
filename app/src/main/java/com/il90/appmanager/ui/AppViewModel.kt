@@ -8,6 +8,7 @@ import com.il90.appmanager.BuildConfig
 import com.il90.appmanager.data.Announcement
 import com.il90.appmanager.data.CatalogApp
 import com.il90.appmanager.data.Compatibility
+import com.il90.appmanager.data.FormFactor
 import com.il90.appmanager.data.InstalledInfo
 import com.il90.appmanager.data.ThemeMode
 import com.il90.appmanager.data.UserSettings
@@ -49,6 +50,8 @@ data class HomeState(
     val offline: Boolean = false,
     val fetchedAt: Long = 0,
     val rows: List<AppRow> = emptyList(),
+    /** This app's own catalog entry. */
+    val self: AppRow? = null,
     /** This app's own catalog entry, when a newer version of it can be installed. */
     val selfUpdate: AppRow? = null,
     val announcement: Announcement? = null,
@@ -75,6 +78,7 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
         }
         app.installed.watch(catalog.apps.flatMap { entry -> entry.variants.map { it.packageName } }.toSet())
         val ownPackage = app.packageName
+        var self: AppRow? = null
         var selfUpdate: AppRow? = null
         val rows = ArrayList<AppRow>()
         for (entry in catalog.apps) {
@@ -104,6 +108,7 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
                 iconUrl = entry.iconUrl(catalog.baseUrl),
             )
             if (isSelf) {
+                self = row
                 // Only a build that carries the published package name can be updated in place.
                 if (variant?.packageName == ownPackage && (status == AppStatus.UPDATE_AVAILABLE || row.task != null)) selfUpdate = row
             } else {
@@ -116,6 +121,7 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
             offline = catalogState.offline,
             fetchedAt = catalogState.fetchedAt,
             rows = rows,
+            self = self,
             selfUpdate = selfUpdate,
             announcement = catalog.announcement?.takeIf { it.id.isNotEmpty() && it.id != settings.dismissedAnnouncement },
         )
@@ -166,6 +172,11 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
     fun dismissAnnouncement(id: String) = viewModelScope.launch { app.settings.dismissAnnouncement(id) }
     fun markNotificationsAsked() = viewModelScope.launch { app.settings.setNotificationsAsked() }
 
+    suspend fun prepareApk(row: AppRow, variant: Variant, onProgress: (Float) -> Unit) =
+        app.installManager.prepareForSharing(row.app, variant, onProgress).also { refreshCacheSize() }
+
+    suspend fun ownApk() = app.installManager.ownApk("IsraelAppManager-${BuildConfig.VERSION_NAME}.apk")
+
     fun refreshCacheSize() {
         viewModelScope.launch { _cacheSize.value = app.installManager.cacheSize() }
     }
@@ -193,3 +204,17 @@ fun AppRow.primaryAction(): PrimaryAction {
         else -> PrimaryAction.NONE
     }
 }
+
+/**
+ * The APK to send to someone else: their device is unknown, so prefer the phone build that
+ * runs on the most processors.
+ */
+fun AppRow.shareableVariant(): Variant? {
+    val phone = app.variants.filter { it.formFactor == FormFactor.PHONE }
+    return phone.ifEmpty { app.variants }.maxWithOrNull(
+        compareBy<Variant>({ if (it.abis.isEmpty()) Int.MAX_VALUE else it.abis.size }, { if ("arm64-v8a" in it.abis) 1 else 0 }, { -it.size })
+    )
+}
+
+/** The best link to give someone for this app: always-latest when the catalog has one. */
+fun AppRow.shareLink(): String? = app.latestUrl ?: app.release?.url ?: app.storeUrl ?: app.website ?: app.repoUrl

@@ -3,11 +3,13 @@ package com.il90.appmanager.ui.details
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
@@ -34,6 +36,7 @@ import androidx.compose.material.icons.rounded.MoreVert
 import androidx.compose.material.icons.rounded.Share
 import androidx.compose.material.icons.rounded.Tv
 import androidx.compose.material.icons.rounded.Watch
+import androidx.compose.material3.AssistChip
 import androidx.compose.material3.Button
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -167,8 +170,9 @@ fun DetailsScreen(
                     verticalArrangement = Arrangement.spacedBy(14.dp),
                 ) {
                     Header(row, language)
-                    ActionArea(row, accent.readableOn(dark), onAction, onOpenApp, onUninstall)
+                    ActionArea(row, accent.readableOn(dark), onAction, onOpenApp, onUninstall, onDownloadVariant, onOpenUrl)
                     Notices(row)
+                    QuickLinks(row, onOpenUrl)
                     Stats(row)
                     val description = row.app.description.localized(language)
                     if (description.isNotEmpty()) {
@@ -207,7 +211,15 @@ private fun Header(row: AppRow, language: String) {
 }
 
 @Composable
-private fun ActionArea(row: AppRow, accent: Color, onAction: () -> Unit, onOpenApp: () -> Unit, onUninstall: () -> Unit) {
+private fun ActionArea(
+    row: AppRow,
+    accent: Color,
+    onAction: () -> Unit,
+    onOpenApp: () -> Unit,
+    onUninstall: () -> Unit,
+    onDownloadVariant: (Variant) -> Unit,
+    onOpenUrl: (String) -> Unit,
+) {
     val state = row.task?.state
     val big = Modifier.height(52.dp)
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -282,6 +294,79 @@ private fun ActionArea(row: AppRow, accent: Color, onAction: () -> Unit, onOpenA
                 Button(onOpenApp, big.weight(1.4f)) { Text(stringResource(R.string.action_open)) }
                 OutlinedButton(onUninstall, big.weight(1f)) { Text(stringResource(R.string.action_uninstall)) }
             }
+            else -> NotInstallableActions(row, onDownloadVariant, onOpenUrl)
+        }
+    }
+}
+
+/**
+ * What can still be done with an app this device cannot install: save the APK made for
+ * another kind of device, or, when there is no APK at all, go to the app's page.
+ */
+@Composable
+private fun NotInstallableActions(row: AppRow, onDownloadVariant: (Variant) -> Unit, onOpenUrl: (String) -> Unit) {
+    val big = Modifier.height(52.dp).fillMaxWidth()
+    val variants = row.otherVariants
+    if (variants.isNotEmpty()) {
+        variants.forEachIndexed { index, variant ->
+            val label = if (variants.size == 1) stringResource(R.string.action_download_apk)
+            else stringResource(R.string.action_apk_for, formFactorLabel(variant.formFactor))
+            val content: @Composable RowScope.() -> Unit = {
+                Icon(Icons.Rounded.Download, null, Modifier.size(20.dp))
+                Spacer(Modifier.width(8.dp))
+                Text(dotJoin(label, formatSize(variant.size)), maxLines = 1, overflow = TextOverflow.Ellipsis)
+            }
+            if (index == 0) Button(onClick = { onDownloadVariant(variant) }, modifier = big, content = content)
+            else FilledTonalButton(onClick = { onDownloadVariant(variant) }, modifier = big, content = content)
+        }
+        return
+    }
+    val store = row.app.storeUrl
+    val site = row.app.website
+    if (store != null) {
+        Button(onClick = { onOpenUrl(store) }, modifier = big) {
+            Icon(Icons.AutoMirrored.Rounded.OpenInNew, null, Modifier.size(18.dp))
+            Spacer(Modifier.width(8.dp))
+            Text(stringResource(R.string.action_get_on_play))
+        }
+    }
+    if (site != null) {
+        val content: @Composable RowScope.() -> Unit = {
+            Icon(Icons.AutoMirrored.Rounded.OpenInNew, null, Modifier.size(18.dp))
+            Spacer(Modifier.width(8.dp))
+            Text(stringResource(R.string.action_visit_website))
+        }
+        if (store == null) Button(onClick = { onOpenUrl(site) }, modifier = big, content = content)
+        else FilledTonalButton(onClick = { onOpenUrl(site) }, modifier = big, content = content)
+    }
+    val repo = row.app.repoUrl
+    if (store == null && site == null && repo != null) {
+        FilledTonalButton(onClick = { onOpenUrl(repo) }, modifier = big) {
+            Icon(Icons.AutoMirrored.Rounded.OpenInNew, null, Modifier.size(18.dp))
+            Spacer(Modifier.width(8.dp))
+            Text(stringResource(R.string.action_open_github))
+        }
+    }
+}
+
+/** The app's pages outside this app, one tap away on every app's screen. */
+@Composable
+private fun QuickLinks(row: AppRow, onOpenUrl: (String) -> Unit) {
+    val links = listOfNotNull(
+        row.app.website?.let { stringResource(R.string.action_website) to it },
+        row.app.storeUrl?.let { stringResource(R.string.action_google_play) to it },
+        row.app.release?.url?.let { stringResource(R.string.action_releases) to it }
+            ?: row.app.repoUrl?.let { stringResource(R.string.action_github) to it },
+    )
+    if (links.isEmpty()) return
+    Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        links.forEach { (label, url) ->
+            AssistChip(
+                onClick = { onOpenUrl(url) },
+                label = { Text(label) },
+                leadingIcon = { Icon(Icons.AutoMirrored.Rounded.OpenInNew, null, Modifier.size(16.dp)) },
+                shape = RoundedCornerShape(50),
+            )
         }
     }
 }
@@ -447,7 +532,6 @@ private fun DetailsTable(row: AppRow, onOpenUrl: (String) -> Unit) {
         }
         line(stringResource(R.string.detail_category), categoryLabel(row.app.category))
         row.app.website?.let { line(stringResource(R.string.detail_website), ltr(it.removePrefix("https://").removePrefix("http://").trimEnd('/')), url = it) }
-        (row.app.release?.url ?: row.app.repoUrl)?.let { line(stringResource(R.string.detail_source), stringResource(R.string.detail_releases_page), url = it) }
     }
 }
 

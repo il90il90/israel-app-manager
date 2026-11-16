@@ -360,11 +360,59 @@ class InstallManager(
         dir.usableSpace
     }
 
-    suspend fun cacheSize(): Long = withContext(Dispatchers.IO) { dir.listFiles()?.sumOf { it.length() } ?: 0L }
+    private fun sharedDir(): File = File(context.cacheDir, "shared").apply {
+        mkdirs()
+        // Files stay for a while: the app they were sent to may still be reading them.
+        val old = System.currentTimeMillis() - 6 * 60 * 60 * 1000L
+        listFiles()?.forEach { if (it.lastModified() < old) it.delete() }
+    }
+
+    /**
+     * Fetches (or reuses) and checks the APK of [variant], and returns a copy under its real
+     * file name that can be handed to another app. Null when it could not be fetched.
+     */
+    suspend fun prepareForSharing(app: CatalogApp, variant: Variant, onProgress: (Float) -> Unit): File? =
+        withContext(Dispatchers.IO) {
+            val name = variant.fileName.ifBlank { "${app.id}-${variant.versionName}.apk" }.replace(Regex("[^A-Za-z0-9._-]"), "_")
+            val out = File(sharedDir(), name)
+            try {
+                val cached = File(dir, "${app.id}-${variant.versionCode}-${variant.sha256.take(8).ifEmpty { "x" }}.apk")
+                if (cached.exists() && variant.size > 0 && cached.length() == variant.size) {
+                    cached.copyTo(out, overwrite = true)
+                } else {
+                    // Downloaded to its own file, so an install of the same app is never disturbed.
+                    downloads.withPermit {
+                        download(variant, out) { done, total -> if (total > 0) onProgress((done.toFloat() / total).coerceIn(0f, 1f)) }
+                    }
+                }
+                verify(out, variant)
+                out.setLastModified(System.currentTimeMillis())
+                out
+            } catch (e: CancellationException) {
+                throw e
+            } catch (_: Exception) {
+                out.delete()
+                null
+            }
+        }
+
+    /** A copy of this app's own installed APK, to send to someone. */
+    suspend fun ownApk(fileName: String): File? = withContext(Dispatchers.IO) {
+        try {
+            File(context.applicationInfo.sourceDir).copyTo(File(sharedDir(), fileName), overwrite = true)
+        } catch (_: Exception) {
+            null
+        }
+    }
+
+    suspend fun cacheSize(): Long = withContext(Dispatchers.IO) {
+        (dir.listFiles()?.sumOf { it.length() } ?: 0L) + (File(context.cacheDir, "shared").listFiles()?.sumOf { it.length() } ?: 0L)
+    }
 
     suspend fun clearCache() = withContext(Dispatchers.IO) {
         val busy = _tasks.value.values.any { it.state.isWorking }
         if (!busy) dir.listFiles()?.forEach { it.delete() }
+        File(context.cacheDir, "shared").listFiles()?.forEach { it.delete() }
     }
 
     companion object {

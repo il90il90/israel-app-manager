@@ -30,7 +30,11 @@ data class CatalogApp(
     val category: String = "tools",
     val developer: String = "",
     val website: String? = null,
+    /** A store page (Google Play) for apps that are not installed from here. */
+    val storeUrl: String? = null,
     val repoUrl: String? = null,
+    /** A GitHub link that always leads to the newest version. */
+    val latestUrl: String? = null,
     val featured: Boolean = false,
     val self: Boolean = false,
     val order: Int = 0,

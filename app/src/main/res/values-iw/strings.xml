@@ -20,6 +20,26 @@
     <string name="action_back">חזרה</string>
     <string name="action_clear">ניקוי</string>
     <string name="action_download_apk">הורדת APK</string>
+    <string name="action_apk">APK</string>
+    <string name="action_apk_for">APK עבור %1$s</string>
+    <string name="action_website">לאתר</string>
+    <string name="action_visit_website">מעבר לאתר</string>
+    <string name="action_google_play">Google Play</string>
+    <string name="action_get_on_play">להורדה ב-Google Play</string>
+    <string name="action_releases">גרסאות</string>
+    <string name="action_share_app">שיתוף Israel App Manager</string>
+    <string name="action_github">GitHub</string>
+    <string name="action_open_github">פתיחה ב-GitHub</string>
+    <string name="share_title">שיתוף %1$s</string>
+    <string name="share_link_title">שליחת קישור להורדה</string>
+    <string name="share_link_latest">תמיד הגרסה האחרונה, מ-GitHub</string>
+    <string name="share_copy_link">העתקת הקישור</string>
+    <string name="share_apk_title">שליחת קובץ ה-APK</string>
+    <string name="share_apk_preparing">מכין את הקובץ…</string>
+    <string name="share_link_text">%1$s לאנדרואיד. להורדת הגרסה האחרונה:\n%2$s</string>
+    <string name="msg_link_copied">הקישור הועתק</string>
+    <string name="msg_share_apk_failed">לא הצלחתי להביא את ה-APK. בדקו את החיבור ונסו שוב.</string>
+    <string name="action_show">הצגה</string>
     <string name="action_not_now">לא עכשיו</string>
     <string name="action_open_settings">פתיחת ההגדרות</string>
     <string name="action_try_again">ניסיון נוסף</string>
@@ -33,8 +53,6 @@
     <string name="status_installing">מתקין</string>
     <string name="status_confirm">נדרש אישור במסך</string>
 
-    <string name="state_installed">מותקנת</string>
-    <string name="state_update_available">יש עדכון</string>
     <string name="state_soon">בקרוב</string>
     <string name="state_tv_only">Android TV</string>
     <string name="state_watch_only">Wear OS</string>
@@ -53,7 +71,6 @@
     </plurals>
     <string name="self_update_title">גרסה חדשה של מנהל האפליקציות מוכנה</string>
     <string name="self_update_body">גרסה %1$s · %2$s</string>
-    <string name="featured">מומלצות</string>
 
     <string name="section_about">על האפליקציה</string>
     <string name="section_whats_new">מה חדש</string>
@@ -66,15 +83,13 @@
     <string name="detail_package">חבילה</string>
     <string name="detail_installed_version">גרסה מותקנת</string>
     <string name="detail_latest_version">גרסה אחרונה</string>
-    <string name="detail_source">מקור</string>
     <string name="detail_website">אתר</string>
     <string name="detail_category">קטגוריה</string>
     <string name="detail_by">מאת %1$s</string>
-    <string name="detail_releases_page">הגרסאות ב-GitHub</string>
     <string name="show_more">להציג עוד</string>
     <string name="show_less">להציג פחות</string>
     <string name="no_release_notes">אין הערות גרסה לגרסה הזו.</string>
-    <string name="incompatible_tv">האפליקציה הזו מיועדת ל-Android TV. אפשר להוריד את קובץ ה-APK ולהתקין אותו בטלוויזיה.</string>
+    <string name="incompatible_tv">האפליקציה הזו מיועדת ל-Android TV. הורידו כאן את קובץ ה-APK והתקינו אותו בטלוויזיה.</string>
     <string name="incompatible_watch">האפליקציה הזו מיועדת לשעוני Wear OS.</string>
     <string name="incompatible_sdk">האפליקציה הזו דורשת Android %1$s ומעלה.</string>
     <string name="incompatible_abi">האפליקציה הזו לא תומכת במעבד של המכשיר.</string>

@@ -19,6 +19,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -28,14 +29,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyGridScope
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -48,17 +47,20 @@ import androidx.compose.material.icons.rounded.ArrowCircleUp
 import androidx.compose.material.icons.rounded.CheckCircle
 import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material.icons.rounded.CloudOff
+import androidx.compose.material.icons.rounded.Download
 import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material.icons.rounded.Settings
+import androidx.compose.material.icons.rounded.Share
 import androidx.compose.material.icons.rounded.SystemUpdate
 import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
@@ -82,12 +84,8 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
-import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.layout.layout
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.pluralStringResource
@@ -96,29 +94,27 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.il90.appmanager.R
+import com.il90.appmanager.data.Variant
 import com.il90.appmanager.data.localized
 import com.il90.appmanager.install.TaskState
 import com.il90.appmanager.ui.AppRow
 import com.il90.appmanager.ui.AppStatus
 import com.il90.appmanager.ui.Filter
 import com.il90.appmanager.ui.HomeState
-import com.il90.appmanager.ui.PrimaryAction
 import com.il90.appmanager.ui.components.ActionButton
 import com.il90.appmanager.ui.components.AppIcon
 import com.il90.appmanager.ui.components.Pill
 import com.il90.appmanager.ui.components.categoryLabel
 import com.il90.appmanager.ui.components.failureMessage
+import com.il90.appmanager.ui.components.formFactorLabel
 import com.il90.appmanager.ui.components.unavailableLabel
-import com.il90.appmanager.ui.primaryAction
 import com.il90.appmanager.util.appLanguage
 import com.il90.appmanager.util.dotJoin
 import com.il90.appmanager.util.formatSize
 import com.il90.appmanager.util.isolate
 import com.il90.appmanager.util.ltr
-import com.il90.appmanager.util.parseColor
 import com.il90.appmanager.util.relativeTime
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -132,8 +128,10 @@ fun HomeScreen(
     onUpdateAll: () -> Unit,
     onRefresh: () -> Unit,
     onSettings: () -> Unit,
+    onShareApp: () -> Unit,
     onDismissAnnouncement: (String) -> Unit,
     onOpenUrl: (String) -> Unit,
+    onDownload: (AppRow, Variant) -> Unit,
     snackbar: SnackbarHostState,
 ) {
     val language = appLanguage()
@@ -204,6 +202,7 @@ fun HomeScreen(
                             IconButton(onClick = { query = "" }) { Icon(Icons.Rounded.Close, stringResource(R.string.action_clear)) }
                         }
                     } else {
+                        IconButton(onClick = onShareApp) { Icon(Icons.Rounded.Share, stringResource(R.string.action_share_app)) }
                         IconButton(onClick = { searching = true }) { Icon(Icons.Rounded.Search, stringResource(R.string.action_search)) }
                         IconButton(onClick = onSettings) { Icon(Icons.Rounded.Settings, stringResource(R.string.action_settings)) }
                     }
@@ -250,10 +249,6 @@ fun HomeScreen(
                         if (updates.isNotEmpty() && browsing) {
                             fullWidth("updates") { UpdatesCard(updates, onUpdateAll, onShow = { onFilter(Filter.UPDATES) }) }
                         }
-                        val featured = state.rows.filter { it.app.featured }
-                        if (featured.size >= 2 && browsing && !searching) {
-                            fullWidth("featured") { FeaturedRow(featured, language, onOpen, onAction) }
-                        }
                         fullWidth("filters") {
                             FilterRow(filter, onFilter, state.rows.size, state.installedCount, updates.size)
                         }
@@ -261,7 +256,14 @@ fun HomeScreen(
                             fullWidth("empty") { EmptyState(filter, query) }
                         }
                         items(visible, key = { it.id }) { row ->
-                            AppCard(row, language, onOpen = { onOpen(row) }, onAction = { onAction(row) }, modifier = Modifier.animateItem())
+                            AppCard(
+                                row, language,
+                                onOpen = { onOpen(row) },
+                                onAction = { onAction(row) },
+                                onDownload = { onDownload(row, it) },
+                                onOpenUrl = onOpenUrl,
+                                modifier = Modifier.animateItem(),
+                            )
                         }
                         if (state.fetchedAt > 0 && browsing) {
                             fullWidth("footer") {
@@ -348,7 +350,15 @@ private fun FilterRow(filter: Filter, onFilter: (Filter) -> Unit, all: Int, inst
 }
 
 @Composable
-fun AppCard(row: AppRow, language: String, onOpen: () -> Unit, onAction: () -> Unit, modifier: Modifier = Modifier) {
+fun AppCard(
+    row: AppRow,
+    language: String,
+    onOpen: () -> Unit,
+    onAction: () -> Unit,
+    onDownload: (Variant) -> Unit,
+    onOpenUrl: (String) -> Unit,
+    modifier: Modifier = Modifier,
+) {
     Surface(
         onClick = onOpen,
         shape = MaterialTheme.shapes.large,
@@ -375,7 +385,21 @@ fun AppCard(row: AppRow, language: String, onOpen: () -> Unit, onAction: () -> U
             }
             Spacer(Modifier.width(8.dp))
             if (row.status == AppStatus.UNAVAILABLE && row.task == null) {
-                Pill(unavailableLabel(row.compatibility), MaterialTheme.colorScheme.surfaceContainerHighest, MaterialTheme.colorScheme.onSurfaceVariant)
+                // Not installable here: offer the APK made for another device, else the app's page.
+                val other = row.otherVariants.firstOrNull()
+                val link = row.app.storeUrl ?: row.app.website
+                val size = Modifier.height(40.dp).defaultMinSize(minWidth = 76.dp)
+                when {
+                    other != null -> FilledTonalButton(onClick = { onDownload(other) }, modifier = size, contentPadding = PaddingValues(horizontal = 14.dp)) {
+                        Icon(Icons.Rounded.Download, null, Modifier.size(16.dp))
+                        Spacer(Modifier.width(6.dp))
+                        Text(stringResource(R.string.action_apk), maxLines = 1)
+                    }
+                    link != null -> OutlinedButton(onClick = { onOpenUrl(link) }, modifier = size, contentPadding = PaddingValues(horizontal = 14.dp)) {
+                        Text(stringResource(R.string.action_website), maxLines = 1)
+                    }
+                    else -> Pill(unavailableLabel(row.compatibility), MaterialTheme.colorScheme.surfaceContainerHighest, MaterialTheme.colorScheme.onSurfaceVariant)
+                }
             } else {
                 ActionButton(row, onAction)
             }
@@ -418,7 +442,14 @@ fun StatusLine(row: AppRow, modifier: Modifier = Modifier) {
                     dotJoin(ltr(variant?.versionName.orEmpty()), formatSize(variant?.size ?: 0)),
                     style = small, color = muted, maxLines = 1, overflow = TextOverflow.Ellipsis,
                 )
-                AppStatus.UNAVAILABLE -> Text(categoryLabel(row.app.category), style = small, color = muted, maxLines = 1)
+                AppStatus.UNAVAILABLE -> {
+                    val other = row.otherVariants.firstOrNull()
+                    Text(
+                        if (other != null) dotJoin(formFactorLabel(other.formFactor), ltr(other.versionName), formatSize(other.size))
+                        else categoryLabel(row.app.category),
+                        style = small, color = muted, maxLines = 1, overflow = TextOverflow.Ellipsis,
+                    )
+                }
             }
         }
     }
@@ -500,84 +531,6 @@ private fun OfflineBanner() {
         Icon(Icons.Rounded.CloudOff, null, Modifier.size(18.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
         Spacer(Modifier.width(10.dp))
         Text(stringResource(R.string.offline_banner), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-    }
-}
-
-@Composable
-private fun FeaturedRow(rows: List<AppRow>, language: String, onOpen: (AppRow) -> Unit, onAction: (AppRow) -> Unit) {
-    Column {
-        Text(stringResource(R.string.featured), style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(bottom = 10.dp, top = 4.dp))
-        // The row bleeds to the screen edges; the grid's own padding is undone and re-applied as content padding.
-        LazyRow(
-            horizontalArrangement = Arrangement.spacedBy(12.dp),
-            contentPadding = PaddingValues(horizontal = 16.dp),
-            modifier = Modifier.fillMaxWidth().bleed(16.dp),
-        ) {
-            items(rows, key = { it.id }) { row -> FeaturedCard(row, language, onOpen = { onOpen(row) }, onAction = { onAction(row) }) }
-        }
-    }
-}
-
-/** Lets a child ignore [padding] of horizontal padding applied by its parent. */
-private fun Modifier.bleed(padding: Dp): Modifier = layout { measurable, constraints ->
-    val extra = padding.roundToPx() * 2
-    val width = constraints.maxWidth + extra
-    val placeable = measurable.measure(constraints.copy(minWidth = width, maxWidth = width))
-    layout(constraints.maxWidth, placeable.height) { placeable.place(-padding.roundToPx(), 0) }
-}
-
-@Composable
-private fun FeaturedCard(row: AppRow, language: String, onOpen: () -> Unit, onAction: () -> Unit) {
-    val accent = parseColor(row.app.accent) ?: MaterialTheme.colorScheme.primary
-    val gradient = Brush.linearGradient(listOf(lerp(accent, Color.Black, 0.30f), lerp(accent, Color(0xFF05070C), 0.78f)))
-    Surface(onClick = onOpen, shape = MaterialTheme.shapes.large, color = Color.Transparent, modifier = Modifier.width(292.dp)) {
-        Column(Modifier.background(gradient).padding(16.dp)) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                AppIcon(row.iconUrl, row.app.name, row.app.accent, 52.dp)
-                Spacer(Modifier.width(12.dp))
-                Column(Modifier.weight(1f)) {
-                    Text(row.app.name, style = MaterialTheme.typography.titleMedium, color = Color.White, maxLines = 1, overflow = TextOverflow.Ellipsis)
-                    Text(categoryLabel(row.app.category), style = MaterialTheme.typography.labelMedium, color = Color.White.copy(alpha = 0.7f), maxLines = 1)
-                }
-            }
-            Spacer(Modifier.height(12.dp))
-            Text(
-                row.app.tagline.localized(language),
-                style = MaterialTheme.typography.bodyMedium,
-                color = Color.White.copy(alpha = 0.88f),
-                minLines = 2,
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis,
-            )
-            Spacer(Modifier.height(14.dp))
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                val caption = when {
-                    row.task != null -> stringResource(R.string.status_downloading)
-                    row.status == AppStatus.UP_TO_DATE -> stringResource(R.string.state_installed)
-                    row.status == AppStatus.UPDATE_AVAILABLE -> stringResource(R.string.state_update_available)
-                    row.variant != null -> dotJoin(ltr(row.variant.versionName), formatSize(row.variant.size))
-                    else -> unavailableLabel(row.compatibility)
-                }
-                Text(caption, style = MaterialTheme.typography.labelMedium, color = Color.White.copy(alpha = 0.7f), maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f))
-                val action = row.primaryAction()
-                val label = when (action) {
-                    PrimaryAction.INSTALL -> stringResource(R.string.action_install)
-                    PrimaryAction.UPDATE -> stringResource(R.string.action_update)
-                    PrimaryAction.OPEN -> stringResource(R.string.action_open)
-                    PrimaryAction.CANCEL -> stringResource(R.string.action_cancel)
-                    PrimaryAction.RETRY -> stringResource(R.string.action_retry)
-                    PrimaryAction.NONE -> null
-                }
-                if (label != null) {
-                    Button(
-                        onClick = onAction,
-                        colors = ButtonDefaults.buttonColors(containerColor = Color.White, contentColor = Color(0xFF10131A)),
-                        contentPadding = PaddingValues(horizontal = 18.dp),
-                        modifier = Modifier.height(38.dp),
-                    ) { Text(label, maxLines = 1) }
-                }
-            }
-        }
     }
 }
 

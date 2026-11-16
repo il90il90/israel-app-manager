@@ -20,6 +20,26 @@
     <string name="action_back">Back</string>
     <string name="action_clear">Clear</string>
     <string name="action_download_apk">Download APK</string>
+    <string name="action_apk">APK</string>
+    <string name="action_apk_for">APK for %1$s</string>
+    <string name="action_website">Website</string>
+    <string name="action_visit_website">Visit the website</string>
+    <string name="action_google_play">Google Play</string>
+    <string name="action_get_on_play">Get it on Google Play</string>
+    <string name="action_releases">Releases</string>
+    <string name="action_share_app">Share Israel App Manager</string>
+    <string name="action_github">GitHub</string>
+    <string name="action_open_github">Open on GitHub</string>
+    <string name="share_title">Share %1$s</string>
+    <string name="share_link_title">Send a download link</string>
+    <string name="share_link_latest">Always the latest version, from GitHub</string>
+    <string name="share_copy_link">Copy the link</string>
+    <string name="share_apk_title">Send the APK file</string>
+    <string name="share_apk_preparing">Getting the file ready…</string>
+    <string name="share_link_text">%1$s for Android. Download the latest version:\n%2$s</string>
+    <string name="msg_link_copied">Link copied</string>
+    <string name="msg_share_apk_failed">Couldn\'t get the APK. Check your connection and try again.</string>
+    <string name="action_show">Show</string>
     <string name="action_not_now">Not now</string>
     <string name="action_open_settings">Open settings</string>
     <string name="action_try_again">Try again</string>
@@ -33,8 +53,6 @@
     <string name="status_installing">Installing</string>
     <string name="status_confirm">Confirm on screen</string>
 
-    <string name="state_installed">Installed</string>
-    <string name="state_update_available">Update available</string>
     <string name="state_soon">Coming soon</string>
     <string name="state_tv_only">Android TV</string>
     <string name="state_watch_only">Wear OS</string>
@@ -52,7 +70,6 @@
     </plurals>
     <string name="self_update_title">A new App Manager is ready</string>
     <string name="self_update_body">Version %1$s · %2$s</string>
-    <string name="featured">Featured</string>
 
     <string name="section_about">About this app</string>
     <string name="section_whats_new">What\'s new</string>
@@ -65,15 +82,13 @@
     <string name="detail_package">Package</string>
     <string name="detail_installed_version">Installed version</string>
     <string name="detail_latest_version">Latest version</string>
-    <string name="detail_source">Source</string>
     <string name="detail_website">Website</string>
     <string name="detail_category">Category</string>
     <string name="detail_by">by %1$s</string>
-    <string name="detail_releases_page">Releases on GitHub</string>
     <string name="show_more">Show more</string>
     <string name="show_less">Show less</string>
     <string name="no_release_notes">No release notes for this version.</string>
-    <string name="incompatible_tv">This app is made for Android TV. You can still download the APK to install it on your TV.</string>
+    <string name="incompatible_tv">This app is made for Android TV. Download the APK here and install it on your TV.</string>
     <string name="incompatible_watch">This app is made for Wear OS watches.</string>
     <string name="incompatible_sdk">This app needs Android %1$s or newer.</string>
     <string name="incompatible_abi">This app does not support this device\'s processor.</string>

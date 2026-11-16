@@ -110,7 +110,7 @@
         "en": "Watch IPTV channels and RTSP camera streams on your phone, Android TV and Wear OS watch. Nothing is built in: you add your own playlists and streams, and they are stored encrypted on your device. The phone can send its whole library to the watch and to every TV on your Wi-Fi.",
         "he": "צופים בערוצי IPTV ובמצלמות RTSP בטלפון, ב-Android TV ובשעון Wear OS. שום דבר לא מובנה מראש: אתם מוסיפים פלייליסטים וזרמים משלכם, והם נשמרים מוצפנים במכשיר. הטלפון יכול לשלוח את כל הספרייה לשעון ולכל טלוויזיה ב-Wi-Fi."
       },
-      "sources": [{ "mirror": true }]
+      "sources": [{ "repo": "il90il90/WatchIPTV-releases", "tag": "^v\\d", "asset": "^WatchIPTV-(phone|tv|watch)-v.*\\.apk$" }]
     },
     {
       "id": "scoreup",
@@ -152,7 +152,7 @@
         "en": "Stops the display from turning off, either always or only while the apps you picked are in front. Comes with a floating button, two Quick Settings tiles and an option to start after a reboot. It changes no system setting: turn it off and your normal screen timeout is back.",
         "he": "מונעת מהמסך להיכבות, תמיד או רק כשאפליקציות שבחרתם פתוחות. כוללת כפתור צף, שני כפתורים בהגדרות המהירות ואפשרות להפעלה אחרי הדלקה מחדש. היא לא משנה שום הגדרת מערכת: מכבים אותה, וזמן כיבוי המסך הרגיל חוזר."
       },
-      "sources": [{ "mirror": true }]
+      "sources": [{ "repo": "il90il90/ScreenAwake-releases", "tag": "^v\\d", "asset": "^ScreenAwake-\\d.*\\.apk$" }]
     },
     {
       "id": "zoopli",
@@ -166,7 +166,7 @@
         "en": "An animal learning game for young children. Ninety-three animals with cartoon icons, real photos, their actual sounds and their names spoken in Hebrew and English, twenty-two countries to travel to and three gentle quiz modes.",
         "he": "משחק לימוד על בעלי חיים לילדים צעירים. תשעים ושלוש חיות עם איורים, תמונות אמיתיות, הקולות האמיתיים שלהן והשמות שלהן בעברית ובאנגלית, עשרים ושתיים מדינות לטייל בהן ושלושה מצבי חידון עדינים."
       },
-      "sources": [{ "mirror": true }]
+      "sources": [{ "repo": "il90il90/Zoopli-releases", "tag": "^v\\d", "asset": "^zoopli-[\\d.]+\\.apk$" }]
     },
     {
       "id": "abc",

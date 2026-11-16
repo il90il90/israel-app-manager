@@ -3,6 +3,8 @@ package com.il90.appmanager
 import android.Manifest
 import android.app.DownloadManager
 import android.content.ActivityNotFoundException
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -23,7 +25,9 @@ import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.SnackbarResult
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -33,12 +37,14 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.stringResource
+import androidx.core.content.FileProvider
 import androidx.core.net.toUri
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.Lifecycle
@@ -56,12 +62,20 @@ import com.il90.appmanager.ui.AppRow
 import com.il90.appmanager.ui.AppViewModel
 import com.il90.appmanager.ui.Filter
 import com.il90.appmanager.ui.PrimaryAction
+import com.il90.appmanager.ui.components.ShareSheet
 import com.il90.appmanager.ui.details.DetailsScreen
 import com.il90.appmanager.ui.home.HomeScreen
 import com.il90.appmanager.ui.primaryAction
+import com.il90.appmanager.ui.shareLink
+import com.il90.appmanager.ui.shareableVariant
 import com.il90.appmanager.ui.settings.SettingsScreen
 import com.il90.appmanager.ui.theme.IamTheme
 import com.il90.appmanager.ui.theme.LocalDarkTheme
+import com.il90.appmanager.util.dotJoin
+import com.il90.appmanager.util.formatSize
+import com.il90.appmanager.util.ltr
+import java.io.File
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.launch
@@ -131,6 +145,11 @@ class MainActivity : ComponentActivity() {
         const val FILTER_UPDATES = "updates"
     }
 }
+
+private const val SHARE_SELF = "@self"
+
+/** Always the newest release of this app: the release workflow keeps this asset name. */
+private const val SELF_LATEST_APK = "https://github.com/${BuildConfig.CATALOG_REPO}/releases/latest/download/IsraelAppManager.apk"
 
 @Composable
 private fun AppContent(viewModel: AppViewModel, requestedFilter: MutableStateFlow<Filter?>) {
@@ -229,12 +248,83 @@ private fun AppContent(viewModel: AppViewModel, requestedFilter: MutableStateFlo
         val pkg = row.variant?.packageName ?: return
         runCatching { activity.startActivity(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, "package:$pkg".toUri())) }
     }
-    fun share(row: AppRow) {
-        val link = row.app.website ?: row.app.release?.url ?: row.app.repoUrl ?: "https://github.com/${BuildConfig.CATALOG_REPO}/releases/latest"
-        val send = Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_TEXT, "${row.app.name}\n$link")
+
+    // ---- sharing ---------------------------------------------------------------------------
+    // What is being shared: an app's id, or SHARE_SELF for this app.
+    var sharing by rememberSaveable { mutableStateOf<String?>(null) }
+    var shareProgress by remember { mutableStateOf<Float?>(null) }
+    var shareJob by remember { mutableStateOf<Job?>(null) }
+    val scope = rememberCoroutineScope()
+    val shareLinkText = stringResource(R.string.share_link_text)
+    val linkCopied = stringResource(R.string.msg_link_copied)
+    val shareFailed = stringResource(R.string.msg_share_apk_failed)
+    fun closeShare() {
+        shareJob?.cancel()
+        shareJob = null
+        shareProgress = null
+        sharing = null
+    }
+    fun sendLink(name: String, link: String) {
+        val send = Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_TEXT, shareLinkText.format(name, link))
         runCatching { activity.startActivity(Intent.createChooser(send, null)) }
     }
+    fun copyLink(name: String, link: String) {
+        activity.getSystemService(ClipboardManager::class.java)?.setPrimaryClip(ClipData.newPlainText(name, link))
+        // Android 13 and up show their own confirmation.
+        if (Build.VERSION.SDK_INT < 33) activity.lifecycleScope.launch { snackbar.showSnackbar(linkCopied) }
+    }
+    fun sendFile(file: File) {
+        val uri = FileProvider.getUriForFile(activity, "${activity.packageName}.files", file)
+        val send = Intent(Intent.ACTION_SEND)
+            .setType("application/vnd.android.package-archive")
+            .putExtra(Intent.EXTRA_STREAM, uri)
+            .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+        send.clipData = ClipData.newRawUri(file.name, uri)
+        runCatching { activity.startActivity(Intent.createChooser(send, null)) }
+    }
+    sharing?.let { id ->
+        val own = id == SHARE_SELF
+        val row = if (own) state.self else state.rows.firstOrNull { it.id == id }
+        val name = if (own) stringResource(R.string.app_name) else row?.app?.name
+        if (name == null) {
+            // The catalog changed under the sheet.
+            LaunchedEffect(id) { closeShare() }
+        } else {
+            val link = if (own) SELF_LATEST_APK else row?.shareLink()
+            val variant = if (own) null else row?.shareableVariant()
+            val ownSize = remember { File(activity.applicationInfo.sourceDir).length() }
+            val apkNote = when {
+                own -> dotJoin(ltr(BuildConfig.VERSION_NAME), formatSize(ownSize))
+                variant != null -> dotJoin(ltr(variant.versionName), formatSize(variant.size))
+                else -> null
+            }
+            ShareSheet(
+                name = name,
+                link = link,
+                apkNote = apkNote,
+                progress = shareProgress,
+                onSendLink = { link?.let { sendLink(name, it) }; closeShare() },
+                onCopyLink = { link?.let { copyLink(name, it) }; closeShare() },
+                onSendApk = {
+                    shareJob = scope.launch {
+                        shareProgress = -1f
+                        val file = when {
+                            own -> viewModel.ownApk()
+                            row != null && variant != null -> viewModel.prepareApk(row, variant) { shareProgress = it }
+                            else -> null
+                        }
+                        shareJob = null
+                        closeShare()
+                        if (file != null) sendFile(file) else snackbar.showSnackbar(shareFailed)
+                    }
+                },
+                onDismiss = ::closeShare,
+            )
+        }
+    }
+
     val savingApk = stringResource(R.string.msg_apk_download_started)
+    val showDownloads = stringResource(R.string.action_show)
     fun downloadVariant(row: AppRow, variant: Variant) {
         val manager = activity.getSystemService(DownloadManager::class.java) ?: return
         val name = variant.fileName.ifEmpty { "${row.id}-${variant.versionName}.apk" }
@@ -244,7 +334,12 @@ private fun AppContent(viewModel: AppViewModel, requestedFilter: MutableStateFlo
             .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
             .setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, name)
         runCatching { manager.enqueue(request) }.onSuccess {
-            activity.lifecycleScope.launch { snackbar.showSnackbar(savingApk.format(name)) }
+            activity.lifecycleScope.launch {
+                val result = snackbar.showSnackbar(savingApk.format(name), actionLabel = showDownloads, duration = SnackbarDuration.Long)
+                if (result == SnackbarResult.ActionPerformed) {
+                    runCatching { activity.startActivity(Intent(DownloadManager.ACTION_VIEW_DOWNLOADS)) }
+                }
+            }
         }
     }
 
@@ -274,8 +369,10 @@ private fun AppContent(viewModel: AppViewModel, requestedFilter: MutableStateFlo
                 onUpdateAll = { install(state.updates) },
                 onRefresh = viewModel::refresh,
                 onSettings = { viewModel.refreshCacheSize(); navController.navigate("settings") { launchSingleTop = true } },
+                onShareApp = { sharing = SHARE_SELF },
                 onDismissAnnouncement = { viewModel.dismissAnnouncement(it) },
                 onOpenUrl = ::openUrl,
+                onDownload = ::downloadVariant,
                 snackbar = snackbar,
             )
         }
@@ -293,7 +390,7 @@ private fun AppContent(viewModel: AppViewModel, requestedFilter: MutableStateFlo
                     onOpenApp = { openApp(row) },
                     onUninstall = { uninstall(row) },
                     onAppInfo = { appInfo(row) },
-                    onShare = { share(row) },
+                    onShare = { sharing = row.id },
                     onOpenUrl = ::openUrl,
                     onDownloadVariant = { downloadVariant(row, it) },
                     snackbar = snackbar,
@@ -318,6 +415,7 @@ private fun AppContent(viewModel: AppViewModel, requestedFilter: MutableStateFlo
                 onCheckNow = viewModel::refresh,
                 onSelfUpdate = { state.selfUpdate?.let(::primary) },
                 onOpenSource = { openUrl("https://github.com/${BuildConfig.CATALOG_REPO}") },
+                onShareApp = { sharing = SHARE_SELF },
                 snackbar = snackbar,
             )
         }
