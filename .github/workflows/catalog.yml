@@ -3,9 +3,17 @@ name: Catalog
 # Rebuilds the list of apps the Israel App Manager app shows: the newest release of every
 # app in catalog/apps.json, with versions, sizes, hashes and icons. The result lives on the
 # `catalog` branch and is read by the app from raw.githubusercontent.com.
+#
+# Three things start it. The schedule is the fallback, and only that: GitHub runs schedules when
+# it has room, and on a busy day hours pass between runs. The prompt route is the "app-released"
+# event, which an app's release workflow sends the moment it has published
+# (`gh api repos/il90il90/israel-app-manager/dispatches -f event_type=app-released`, with a token
+# that has Contents: read and write on this repository). And it can always be run by hand.
 on:
   schedule:
-    - cron: "7,37 * * * *"
+    - cron: "3,13,23,33,43,53 * * * *"
+  repository_dispatch:
+    types: [app-released]
   push:
     branches: [main]
     paths: ["catalog/**", "tools/catalog/**", ".github/workflows/catalog.yml"]
