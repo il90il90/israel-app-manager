@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-16T08:56:41Z",
+ "generatedAt": "2026-11-16T19:31:54Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -263,26 +263,26 @@
      "formFactor": "phone",
      "abis": [],
      "packageName": "com.trustapk.client",
-     "versionName": "1.8.1066",
-     "versionCode": 2066,
+     "versionName": "1.8.1070",
+     "versionCode": 2070,
      "minSdk": 26,
      "targetSdk": 36,
      "tvCapable": true,
      "label": "TrustAPK",
      "fileName": "trustapk-client.apk",
-     "url": "https://github.com/il90il90/trust-apk-releases/releases/download/v1.8.1066/trustapk-client.apk",
-     "size": 7059288,
-     "sha256": "cedf01a24397c284735a82c209e46d4f1b47cfde5e16e56aecbfbf0f84df5b69",
-     "assetId": 748566093,
-     "assetUpdatedAt": "2026-11-14T19:39:01Z"
+     "url": "https://github.com/il90il90/trust-apk-releases/releases/download/v1.8.1070/trustapk-client.apk",
+     "size": 7063384,
+     "sha256": "559215fd20c9ed1d2eceb452c282cf537d219fc62cf9cfe609bbcdbb5412c382",
+     "assetId": 756028605,
+     "assetUpdatedAt": "2026-11-16T18:50:10Z"
     }
    ],
    "release": {
-    "tag": "v1.8.1066",
-    "name": "TrustAPK 1.8.1066",
-    "notes": "TrustAPK 1.8.1066 (build 2066)\n\nPatch NSC: guarantee a base-config that trusts the capture CA for every domain [skip ci]\n\nAn app whose network-security-config only declares domain-configs (with no\ntrust-anchors of their own) inherits the DEFAULT trust set — system CAs only —\nso the embedded capture/user CA is refused there even though the APK carries it.\ncom.yit.evritViewer is exactly this: its single <trust-anchors> sat inside an\ninert <debug-overrides>, and every api.*.e-vrit.co.il handshake rejected the\nMITM leaf with SSLV3_ALERT_CERTIFICATE_UNKNOWN. patchExistingConfig only added\nour cert to trust-anchors that already existed, which here applied to nothing.\n\n- Always ensure a <base-config> whose trust-anchors trust system + user + our\n  cert, inserted FIRST (the framework only lets a domain-config inherit the\n  base-config when base-config precedes it in the document).\n- Also add our cert (and user) to each domain-config that has its OWN\n  trust-anchors, so a domain that overrides the base still trusts us.\n- Idempotent: an existing user entry / cert reference is not duplicated, so a\n  re-patch stays clean.\n\nNew Axml helpers: firstChildElement, hasCertificatesReference, prependElement.\nVerified offline against the real e-vrit APK: the patched NSC now leads with\nbase-config(system,user,@cert) and the e-vrit.co.il domain-config inherits it.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>",
-    "publishedAt": "2026-11-14T19:39:03Z",
-    "url": "https://github.com/il90il90/trust-apk-releases/releases/tag/v1.8.1066"
+    "tag": "v1.8.1070",
+    "name": "TrustAPK 1.8.1070",
+    "notes": "TrustAPK 1.8.1070 (build 2070)\n\nLive traffic: reuse built rows when scrolling back (#21)\n\nEvery getView built a whole row (a dozen views) even when scrolling back\nto a row the list had just shown. The adapter now keeps the rows built\nfor the current data and gives one back when the list hands it in as the\nrecycled view for the same position; any notifyDataSetChanged clears them,\nso a changed row is always rebuilt. A reused swipe row is snapped shut.\n\n\nClaude-Session: https://claude.ai/code/session_014oAjisV6iCWE9kK5NKqJvP\n\nCo-authored-by: Claude <noreply@anthropic.com>",
+    "publishedAt": "2026-11-16T18:50:11Z",
+    "url": "https://github.com/il90il90/trust-apk-releases/releases/tag/v1.8.1070"
    },
    "iconStyle": "adaptive",
    "icon": "icons/trustapk.png?v=bdb7358d",
@@ -319,26 +319,26 @@
       "arm64-v8a"
      ],
      "packageName": "com.app360brains.exDialer.mod",
-     "versionName": "3.10.50",
-     "versionCode": 150,
+     "versionName": "3.10.55",
+     "versionCode": 155,
      "minSdk": 32,
      "targetSdk": 36,
      "tvCapable": false,
      "label": "OneDial",
-     "fileName": "onedial-3.10.50.apk",
-     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.50/onedial-3.10.50.apk",
-     "size": 48093441,
-     "sha256": "086d07f0102c79584daf2b2973155ca96b76eb8cc66c65c6d0b15b322fa524ec",
-     "assetId": 751599277,
-     "assetUpdatedAt": "2026-11-15T16:30:31Z"
+     "fileName": "onedial-3.10.55.apk",
+     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.55/onedial-3.10.55.apk",
+     "size": 48158977,
+     "sha256": "3e80499c721abe98e16cfea3987feb6abdad888bac4b3889d4c351fe4d22aa12",
+     "assetId": 755710501,
+     "assetUpdatedAt": "2026-11-16T17:13:20Z"
     }
    ],
    "release": {
-    "tag": "v3.10.50",
-    "name": "OneDial 3.10.50",
-    "notes": "- Voice dial opens as a dialog over the phone, not on a grey wall\n\nPatched on top of 3.10.49. Same release key as 3.10.5.\n\n<!-- source: 92ff10f92cf7e356661b4f35d2f405c0a21180f4 -->",
-    "publishedAt": "2026-11-15T16:30:32Z",
-    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.50"
+    "tag": "v3.10.55",
+    "name": "OneDial 3.10.55",
+    "notes": "- Settings pages open without a white flash; due reminders: five more minutes, several in one window, a movable window\n\nPatched on top of 3.10.54. Same release key as 3.10.5.\n\n<!-- source: 8cdebbbaf99f7fb7e07943cd19e62e4cb0fddda4 -->",
+    "publishedAt": "2026-11-16T17:13:21Z",
+    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.55"
    },
    "iconStyle": "adaptive",
    "icon": "icons/onedial.png?v=f291d671",
