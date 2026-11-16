@@ -1,8 +1,11 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-16T04:52:19Z",
+ "generatedAt": "2026-11-16T05:00:13Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
+ "contact": {
+  "telegram": "https://t.me/Israelcohen"
+ },
  "apps": [
   {
    "id": "touchless",
@@ -22,6 +25,10 @@
    "repoUrl": "https://github.com/il90il90/touchless-releases",
    "latestUrl": "https://github.com/il90il90/touchless-releases/releases/latest",
    "featured": true,
+   "license": {
+    "required": true,
+    "contact": "https://t.me/Israelcohen"
+   },
    "self": false,
    "order": 0,
    "variants": [
@@ -75,6 +82,10 @@
    "repoUrl": "https://github.com/il90il90/SeretGram-releases",
    "latestUrl": "https://github.com/il90il90/SeretGram-releases/releases/latest",
    "featured": true,
+   "license": {
+    "required": true,
+    "contact": "https://t.me/Israelcohen"
+   },
    "self": false,
    "order": 1,
    "variants": [
@@ -185,6 +196,7 @@
    "repoUrl": "https://github.com/il90il90/Wallify-releases",
    "latestUrl": "https://github.com/il90il90/Wallify-releases/releases/latest/download/Wallify.apk",
    "featured": true,
+   "license": null,
    "self": false,
    "order": 2,
    "variants": [
@@ -240,6 +252,10 @@
    "repoUrl": "https://github.com/il90il90/trust-apk-releases",
    "latestUrl": "https://github.com/il90il90/trust-apk-releases/releases/latest/download/trustapk-client.apk",
    "featured": false,
+   "license": {
+    "required": true,
+    "contact": "https://t.me/Israelcohen"
+   },
    "self": false,
    "order": 3,
    "variants": [
@@ -290,6 +306,10 @@
    "repoUrl": "https://github.com/il90il90/OneDial-releases",
    "latestUrl": "https://github.com/il90il90/OneDial-releases/releases/latest",
    "featured": false,
+   "license": {
+    "required": true,
+    "contact": "https://t.me/Israelcohen"
+   },
    "self": false,
    "order": 4,
    "variants": [
@@ -342,6 +362,7 @@
    "repoUrl": "https://github.com/il90il90/GalleryWall-releases",
    "latestUrl": "https://github.com/il90il90/GalleryWall-releases/releases/latest/download/GalleryWall.apk",
    "featured": false,
+   "license": null,
    "self": false,
    "order": 5,
    "variants": [
@@ -397,6 +418,7 @@
    "repoUrl": "https://github.com/il90il90/WatchIPTV-releases",
    "latestUrl": "https://github.com/il90il90/WatchIPTV-releases/releases/latest",
    "featured": false,
+   "license": null,
    "self": false,
    "order": 6,
    "variants": [
@@ -496,6 +518,7 @@
    "repoUrl": "https://github.com/il90il90/ScoreUp",
    "latestUrl": "https://github.com/il90il90/ScoreUp/releases/latest",
    "featured": false,
+   "license": null,
    "self": false,
    "order": 7,
    "variants": [
@@ -573,6 +596,7 @@
    "repoUrl": "https://github.com/il90il90/touchless-hackerai-bridge",
    "latestUrl": "https://github.com/il90il90/touchless-hackerai-bridge/releases/tag/app-v23",
    "featured": false,
+   "license": null,
    "self": false,
    "order": 8,
    "variants": [
@@ -628,6 +652,7 @@
    "repoUrl": "https://github.com/il90il90/ScreenAwake-releases",
    "latestUrl": "https://github.com/il90il90/ScreenAwake-releases/releases/latest/download/ScreenAwake.apk",
    "featured": false,
+   "license": null,
    "self": false,
    "order": 9,
    "variants": [
@@ -683,6 +708,7 @@
    "repoUrl": "https://github.com/il90il90/Zoopli-releases",
    "latestUrl": "https://github.com/il90il90/Zoopli-releases/releases/latest/download/Zoopli.apk",
    "featured": false,
+   "license": null,
    "self": false,
    "order": 10,
    "variants": [
@@ -738,6 +764,7 @@
    "repoUrl": "https://github.com/il90il90/abc-app-releases",
    "latestUrl": "https://github.com/il90il90/abc-app-releases/releases/latest/download/abc-app.apk",
    "featured": false,
+   "license": null,
    "self": false,
    "order": 11,
    "variants": [
@@ -793,6 +820,10 @@
    "repoUrl": "https://github.com/il90il90/hass-israel-tv-release",
    "latestUrl": "https://github.com/il90il90/hass-israel-tv-release/releases/latest/download/israel-tv-tv.apk",
    "featured": false,
+   "license": {
+    "required": true,
+    "contact": "https://t.me/Israelcohen"
+   },
    "self": false,
    "order": 12,
    "variants": [
@@ -843,6 +874,7 @@
    "repoUrl": "https://github.com/il90il90/israel-app-manager",
    "latestUrl": "https://github.com/il90il90/israel-app-manager/releases/latest/download/IsraelAppManager.apk",
    "featured": false,
+   "license": null,
    "self": true,
    "order": 13,
    "variants": [
