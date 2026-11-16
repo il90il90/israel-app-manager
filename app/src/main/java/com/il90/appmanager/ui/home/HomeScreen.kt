@@ -30,12 +30,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.GridItemSpan
-import androidx.compose.foundation.lazy.grid.LazyGridScope
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.lazy.grid.rememberLazyGridState
+import androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridScope
+import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
+import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
+import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridItemSpan
+import androidx.compose.foundation.lazy.staggeredgrid.items
+import androidx.compose.foundation.lazy.staggeredgrid.rememberLazyStaggeredGridState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -142,7 +142,7 @@ fun HomeScreen(
     var pulled by remember { mutableStateOf(false) }
     LaunchedEffect(state.refreshing) { if (!state.refreshing) pulled = false }
 
-    val gridState = rememberLazyGridState()
+    val gridState = rememberLazyStaggeredGridState()
     val scrolled by remember { derivedStateOf { gridState.firstVisibleItemIndex > 0 || gridState.firstVisibleItemScrollOffset > 120 } }
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
 
@@ -218,12 +218,14 @@ fun HomeScreen(
             modifier = Modifier.fillMaxSize().padding(top = padding.calculateTopPadding()),
         ) {
             val bottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
-            LazyVerticalGrid(
-                columns = GridCells.Adaptive(minSize = 330.dp),
+            // Staggered, so a card that is taller than its neighbour (a second line, a license tag)
+            // leaves no hole in the other column.
+            LazyVerticalStaggeredGrid(
+                columns = StaggeredGridCells.Adaptive(minSize = 330.dp),
                 state = gridState,
                 contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 4.dp, bottom = bottom + 28.dp),
                 horizontalArrangement = Arrangement.spacedBy(12.dp),
-                verticalArrangement = Arrangement.spacedBy(12.dp),
+                verticalItemSpacing = 12.dp,
                 modifier = Modifier.fillMaxSize(),
             ) {
                 if (!searching) {
@@ -285,8 +287,8 @@ fun HomeScreen(
     }
 }
 
-private fun LazyGridScope.fullWidth(key: String, content: @Composable () -> Unit) {
-    item(key = key, span = { GridItemSpan(maxLineSpan) }, contentType = key) { content() }
+private fun LazyStaggeredGridScope.fullWidth(key: String, content: @Composable () -> Unit) {
+    item(key = key, span = StaggeredGridItemSpan.FullLine, contentType = key) { content() }
 }
 
 @Composable

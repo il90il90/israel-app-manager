@@ -14,31 +14,36 @@ The run only downloads APKs it has not seen (it compares release asset ids with 
 `catalog.json`), and keeps the last good entry of an app whose release could not be read.
 An app with no release it can reach is listed without a download ("Coming soon" in the app).
 
-## Apps that are not released publicly
+## What an entry in apps.json can say
 
-The app can only download from public URLs. An app whose source is `{ "mirror": true }` is
-served from the `apks` branch of this repository: `apks/<app id>/` holds its APK files and a
-`release.json` (tag, name, notes, date, file names). Publishing an APK there makes it public.
+| key | meaning |
+|---|---|
+| `sources` | where the APKs are: `repo`, and optionally `tag` and `asset` (regular expressions) |
+| `website`, `store` | the app's own site and its store page, shown as links on its page |
+| `license` | `true` for a premium app: its card gets a *License required* tag and its page a card with a button to message the developer |
+| `featured`, `self`, `category`, `tagline`, `description` | as they read |
 
-Where those apps are really released is deliberately not written in this repository. It is
-passed to the `mirror` command as a JSON file:
+`contact.telegram` at the top of the file is where that button leads. Every app in the
+generated catalog also gets `latestUrl`, a GitHub link that keeps pointing at its newest
+release: a direct download when the release carries one APK under a name that never changes
+(`App.apk`), the "latest release" page otherwise. The app shares that link.
 
-```json
-{ "my-app": { "repo": "owner/private-repo", "tag": "^v\\d", "asset": "\\.apk$" } }
-```
+## Apps whose source is private
+
+The app can only download from public URLs, so each such app has a public `<App>-releases`
+repository that holds nothing but its releases. `tools/release/publish_app.sh` puts a signed
+APK there:
 
 ```bash
-git worktree add ../apks-out apks
-python3 tools/catalog/build_catalog.py mirror --apps catalog/apps.json --mirror ../apks-out --sources private-sources.json
-cd ../apks-out && git add -A && git commit -m "Mirror app releases" && git push origin HEAD:apks
+tools/release/publish_app.sh il90il90/Zoopli-releases release.json zoopli-2.22.0.apk
 ```
 
-To have the **Catalog** workflow do this by itself, add two repository secrets:
-`PRIVATE_SOURCES_JSON` (the JSON above) and `PRIVATE_REPOS_TOKEN` (a fine-grained token with
-read access to *Contents* of those repositories).
+It pushes the files to that repository's `release-inbox` branch, where its *Publish release*
+workflow checks the signature against `signing-cert.sha256` on main and creates the tagged
+release. The script's header describes `release.json`.
 
-As soon as an app also lists a public releases repository that has a release, the mirror copy
-is dropped and the public release is used.
+(`{ "mirror": true }` sources and the `mirror` command are an older way to do the same from an
+`apks` branch of this repository; nothing uses them now.)
 
 ## Icons
 
