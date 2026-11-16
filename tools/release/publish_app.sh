@@ -14,6 +14,11 @@
 #     "notes": "Markdown shown on the release and as What's new in the app" }
 # `stable` is optional: a second copy under a name that never changes, which makes
 # https://github.com/<owner/repo>/releases/latest/download/<stable> an always-latest link.
+# "replace": true swaps the files of a release that is already out (one that went out with a
+# bad file) and leaves its title and notes alone.
+#
+# This is the by-hand route. Each app's private repository also has a "Public release" workflow
+# that does the same after every release there, once its RELEASES_TOKEN secret is set.
 set -euo pipefail
 
 repo="${1:?usage: publish_app.sh <owner/repo> <release.json> <apk>...}"

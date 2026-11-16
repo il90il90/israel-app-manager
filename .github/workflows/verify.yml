@@ -1,0 +1,22 @@
+name: Verify downloads
+
+# Once a day: fetch every APK the published catalog offers, the way the app does, and check it
+# can really be installed: the link answers, size and SHA-256 match the catalog, the signature
+# verifies. A red run means some app's Install button is broken for everyone, and GitHub mails
+# the owner about it. (An unsigned APK sat on a release page once; nothing else would have said.)
+on:
+  schedule:
+    - cron: "23 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check every download
+        run: python3 tools/catalog/verify_catalog.py

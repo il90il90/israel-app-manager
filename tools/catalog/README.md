@@ -45,6 +45,19 @@ release. The script's header describes `release.json`.
 (`{ "mirror": true }` sources and the `mirror` command are an older way to do the same from an
 `apks` branch of this repository; nothing uses them now.)
 
+## Checking that everything installs
+
+`build_catalog.py` leaves out an APK whose signature does not verify (an unsigned file looks like
+any other on a release page, and every device refuses it), and names it in a warning.
+
+`verify_catalog.py` checks the published catalog from the outside: it fetches every download the
+way the app does and checks size, SHA-256, package, signature and target SDK. The **Verify
+downloads** workflow runs it once a day.
+
+```bash
+python3 tools/catalog/verify_catalog.py            # the published catalog
+```
+
 ## Icons
 
 `apk_icon.py` renders an APK's launcher icon without a device. Adaptive icons are translated to

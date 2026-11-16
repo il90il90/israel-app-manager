@@ -148,6 +148,32 @@ def find_aapt2():
     return path
 
 
+def find_apksigner(aapt2):
+    beside = os.path.join(os.path.dirname(aapt2), "apksigner")
+    return beside if os.path.exists(beside) else shutil.which("apksigner")
+
+
+class NotInstallable(Exception):
+    """An APK Android would refuse: it must not be offered for download."""
+
+
+def signature_problem(path, min_sdk, apksigner):
+    """None when Android accepts the APK's signature, else why it does not.
+
+    An unsigned APK looks like any other file on a release page, and every device refuses it.
+    Devices older than Android 7 are not held against a v2-only signature.
+    """
+    if not apksigner:
+        return None
+    r = subprocess.run([apksigner, "verify", "--min-sdk-version", str(max(min_sdk, 24)), path],
+                       capture_output=True, text=True, errors="replace")
+    if r.returncode == 0:
+        return None
+    lines = [l.strip() for l in (r.stdout + r.stderr).splitlines()
+             if l.strip() and "JAVA_TOOL_OPTIONS" not in l and l.strip() != "DOES NOT VERIFY"]
+    return (lines[0] if lines else "the signature does not verify")[:200]
+
+
 def sha256_of(path):
     h = hashlib.sha256()
     with open(path, "rb") as f:
@@ -195,8 +221,11 @@ def form_factor(file_name, info, alone=False):
     return "phone"
 
 
-def make_variant(path, file_name, url, aapt2, alone=False):
+def make_variant(path, file_name, url, aapt2, alone=False, apksigner=None):
     info = inspect_apk(path, aapt2)
+    problem = signature_problem(path, info["minSdk"], apksigner)
+    if problem:
+        raise NotInstallable(problem)
     return {
         "formFactor": form_factor(file_name, info, alone),
         "abis": info["abis"],
@@ -351,7 +380,12 @@ def resolve_app(app, ctx):
                 path = folder / name
                 if not path.exists():
                     continue
-                v = make_variant(str(path), name, mirror_url(app["id"], name), aapt2, alone=len(meta.get("files", [])) == 1)
+                try:
+                    v = make_variant(str(path), name, mirror_url(app["id"], name), aapt2,
+                                     alone=len(meta.get("files", [])) == 1, apksigner=ctx.get("apksigner"))
+                except NotInstallable as e:
+                    log(f"::warning::{app['id']}: {name} cannot be installed and is left out: {e}")
+                    continue
                 variants.append(v)
                 if icon_apk is None or v["formFactor"] == "phone":
                     icon_apk = icon_apk if (icon_apk and v["formFactor"] != "phone") else str(path)
@@ -378,11 +412,19 @@ def resolve_app(app, ctx):
             if not path.exists() or path.stat().st_size != a["size"]:
                 log(f"{app['id']}: downloading {a['name']} ({a['size']} bytes)")
                 gh_download(source["repo"], a["id"], str(path))
-            v = make_variant(str(path), a["name"], a["browser_download_url"], aapt2, alone=len(assets) == 1)
+            try:
+                v = make_variant(str(path), a["name"], a["browser_download_url"], aapt2,
+                                 alone=len(assets) == 1, apksigner=ctx.get("apksigner"))
+            except NotInstallable as e:
+                log(f"::warning::{app['id']}: {a['name']} in {rel['tag_name']} cannot be installed and is left out: {e}")
+                continue
             v["assetId"], v["assetUpdatedAt"] = a["id"], a.get("updated_at")
             variants.append(v)
             if icon_apk is None or (v["formFactor"] == "phone" and "arm64-v8a" in (v["abis"] or ["arm64-v8a"])):
                 icon_apk = str(path)
+        if not variants:
+            # Nothing in this release can be installed: the app has no download until one can.
+            continue
         release = {"tag": rel["tag_name"], "name": rel.get("name") or rel["tag_name"],
                    "notes": rel.get("body") or "", "publishedAt": rel.get("published_at") or rel.get("created_at"),
                    "url": rel.get("html_url"), "repoUrl": f"https://github.com/{source['repo']}",
@@ -412,7 +454,8 @@ def cmd_build(args):
     catalog_file = out / "catalog.json"
     old = json.loads(catalog_file.read_text("utf-8")) if catalog_file.exists() else {}
     previous = {a["id"]: a for a in old.get("apps", [])}
-    ctx = {"aapt2": find_aapt2(), "cache": cache, "mirror": mirror, "previous": previous,
+    aapt2 = find_aapt2()
+    ctx = {"aapt2": aapt2, "apksigner": find_apksigner(aapt2), "cache": cache, "mirror": mirror, "previous": previous,
            "icon_exists": lambda app_id: (icons / f"{app_id}.png").exists()}
 
     entries, failures = [], 0
