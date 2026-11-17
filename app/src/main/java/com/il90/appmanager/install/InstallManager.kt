@@ -291,8 +291,10 @@ class InstallManager(
             setAppPackageName(variant.packageName)
             setSize(file.length())
             setInstallReason(PackageManager.INSTALL_REASON_USER)
-            // Lets Android update apps this manager installed (and the manager itself) without a prompt.
-            if (Build.VERSION.SDK_INT >= 31) setRequireUserAction(PackageInstaller.SessionParams.USER_ACTION_NOT_REQUIRED)
+            // Every install and update, this app's own included, is confirmed by the user in
+            // Android's dialog. An installer that can put apps on a device without that dialog
+            // is what malware scanners look for, and this one never needs to.
+            if (Build.VERSION.SDK_INT >= 31) setRequireUserAction(PackageInstaller.SessionParams.USER_ACTION_REQUIRED)
             if (Build.VERSION.SDK_INT >= 33) setPackageSource(PackageInstaller.PACKAGE_SOURCE_STORE)
         }
         val sessionId = installer.createSession(params)
