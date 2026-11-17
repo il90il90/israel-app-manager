@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-16T19:31:54Z",
+ "generatedAt": "2026-11-17T02:36:30Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -319,26 +319,26 @@
       "arm64-v8a"
      ],
      "packageName": "com.app360brains.exDialer.mod",
-     "versionName": "3.10.55",
-     "versionCode": 155,
+     "versionName": "3.10.57",
+     "versionCode": 157,
      "minSdk": 32,
      "targetSdk": 36,
      "tvCapable": false,
      "label": "OneDial",
-     "fileName": "onedial-3.10.55.apk",
-     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.55/onedial-3.10.55.apk",
-     "size": 48158977,
-     "sha256": "3e80499c721abe98e16cfea3987feb6abdad888bac4b3889d4c351fe4d22aa12",
-     "assetId": 755710501,
-     "assetUpdatedAt": "2026-11-16T17:13:20Z"
+     "fileName": "onedial-3.10.57.apk",
+     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.57/onedial-3.10.57.apk",
+     "size": 48175361,
+     "sha256": "90cbf9e3020cbb5eaf7b4cbfaac6ddbac77513821be6e9625acd322d74e4b47d",
+     "assetId": 756358736,
+     "assetUpdatedAt": "2026-11-16T20:36:37Z"
     }
    ],
    "release": {
-    "tag": "v3.10.55",
-    "name": "OneDial 3.10.55",
-    "notes": "- Settings pages open without a white flash; due reminders: five more minutes, several in one window, a movable window\n\nPatched on top of 3.10.54. Same release key as 3.10.5.\n\n<!-- source: 8cdebbbaf99f7fb7e07943cd19e62e4cb0fddda4 -->",
-    "publishedAt": "2026-11-16T17:13:21Z",
-    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.55"
+    "tag": "v3.10.57",
+    "name": "OneDial 3.10.57",
+    "notes": "- Pictures open from the caller window; theme under Appearance; Behaviour becomes Dialer (#11)\n\nPatched on top of 3.10.56. Same release key as 3.10.5.\n\n<!-- source: 3c697fe4eda2dcc8e84a7103ea4760474841f4dc -->",
+    "publishedAt": "2026-11-16T20:36:38Z",
+    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.57"
    },
    "iconStyle": "adaptive",
    "icon": "icons/onedial.png?v=f291d671",
