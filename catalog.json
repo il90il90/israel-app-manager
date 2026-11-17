@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-17T02:36:30Z",
+ "generatedAt": "2026-11-17T10:47:07Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -24,6 +24,11 @@
    "storeUrl": null,
    "repoUrl": "https://github.com/il90il90/touchless-releases",
    "latestUrl": "https://github.com/il90il90/touchless-releases/releases/latest",
+   "source": {
+    "repo": "il90il90/touchless-releases",
+    "tag": "^v\\d+(\\.\\d+)*$",
+    "asset": "^touchless-\\d[\\d.]*\\.apk$"
+   },
    "featured": true,
    "license": {
     "required": true,
@@ -81,6 +86,11 @@
    "storeUrl": null,
    "repoUrl": "https://github.com/il90il90/SeretGram-releases",
    "latestUrl": "https://github.com/il90il90/SeretGram-releases/releases/latest",
+   "source": {
+    "repo": "il90il90/SeretGram-releases",
+    "tag": "^v\\d",
+    "asset": "\\.apk$"
+   },
    "featured": true,
    "license": {
     "required": true,
@@ -195,6 +205,11 @@
    "storeUrl": null,
    "repoUrl": "https://github.com/il90il90/Wallify-releases",
    "latestUrl": "https://github.com/il90il90/Wallify-releases/releases/latest/download/Wallify.apk",
+   "source": {
+    "repo": "il90il90/Wallify-releases",
+    "tag": "^v\\d",
+    "asset": "^wallify-\\d.*\\.apk$"
+   },
    "featured": true,
    "license": null,
    "self": false,
@@ -251,6 +266,10 @@
    "storeUrl": null,
    "repoUrl": "https://github.com/il90il90/trust-apk-releases",
    "latestUrl": "https://github.com/il90il90/trust-apk-releases/releases/latest/download/trustapk-client.apk",
+   "source": {
+    "repo": "il90il90/trust-apk-releases",
+    "asset": "\\.apk$"
+   },
    "featured": false,
    "license": {
     "required": true,
@@ -305,6 +324,11 @@
    "storeUrl": null,
    "repoUrl": "https://github.com/il90il90/OneDial-releases",
    "latestUrl": "https://github.com/il90il90/OneDial-releases/releases/latest",
+   "source": {
+    "repo": "il90il90/OneDial-releases",
+    "tag": "^v\\d",
+    "asset": "^onedial-.*\\.apk$"
+   },
    "featured": false,
    "license": {
     "required": true,
@@ -319,26 +343,26 @@
       "arm64-v8a"
      ],
      "packageName": "com.app360brains.exDialer.mod",
-     "versionName": "3.10.57",
-     "versionCode": 157,
+     "versionName": "3.10.67",
+     "versionCode": 167,
      "minSdk": 32,
      "targetSdk": 36,
      "tvCapable": false,
      "label": "OneDial",
-     "fileName": "onedial-3.10.57.apk",
-     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.57/onedial-3.10.57.apk",
-     "size": 48175361,
-     "sha256": "90cbf9e3020cbb5eaf7b4cbfaac6ddbac77513821be6e9625acd322d74e4b47d",
-     "assetId": 756358736,
-     "assetUpdatedAt": "2026-11-16T20:36:37Z"
+     "fileName": "onedial-3.10.67.apk",
+     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.67/onedial-3.10.67.apk",
+     "size": 48273665,
+     "sha256": "60c4443357aab3bae31b13fb828e77813c0f282709283fa989fefcae7b8072ba",
+     "assetId": 758617531,
+     "assetUpdatedAt": "2026-11-17T10:32:47Z"
     }
    ],
    "release": {
-    "tag": "v3.10.57",
-    "name": "OneDial 3.10.57",
-    "notes": "- Pictures open from the caller window; theme under Appearance; Behaviour becomes Dialer (#11)\n\nPatched on top of 3.10.56. Same release key as 3.10.5.\n\n<!-- source: 3c697fe4eda2dcc8e84a7103ea4760474841f4dc -->",
-    "publishedAt": "2026-11-16T20:36:38Z",
-    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.57"
+    "tag": "v3.10.67",
+    "name": "OneDial 3.10.67",
+    "notes": "- Caller window: after a second caller's call is over, go back to the call that is on (#21)\n\nPatched on top of 3.10.66. Same release key as 3.10.5.\n\n<!-- source: 887bd029380ca81db3534bb99426660d1a93ece5 -->",
+    "publishedAt": "2026-11-17T10:32:48Z",
+    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.67"
    },
    "iconStyle": "adaptive",
    "icon": "icons/onedial.png?v=f291d671",
@@ -361,6 +385,11 @@
    "storeUrl": null,
    "repoUrl": "https://github.com/il90il90/GalleryWall-releases",
    "latestUrl": "https://github.com/il90il90/GalleryWall-releases/releases/latest/download/GalleryWall.apk",
+   "source": {
+    "repo": "il90il90/GalleryWall-releases",
+    "tag": "^v\\d",
+    "asset": "\\.apk$"
+   },
    "featured": false,
    "license": null,
    "self": false,
@@ -417,6 +446,11 @@
    "storeUrl": null,
    "repoUrl": "https://github.com/il90il90/WatchIPTV-releases",
    "latestUrl": "https://github.com/il90il90/WatchIPTV-releases/releases/latest",
+   "source": {
+    "repo": "il90il90/WatchIPTV-releases",
+    "tag": "^v\\d",
+    "asset": "^WatchIPTV-(phone|tv|watch)-v.*\\.apk$"
+   },
    "featured": false,
    "license": null,
    "self": false,
@@ -517,6 +551,11 @@
    "storeUrl": null,
    "repoUrl": "https://github.com/il90il90/ScoreUp",
    "latestUrl": "https://github.com/il90il90/ScoreUp/releases/latest",
+   "source": {
+    "repo": "il90il90/ScoreUp",
+    "tag": "^v\\d",
+    "asset": "\\.apk$"
+   },
    "featured": false,
    "license": null,
    "self": false,
@@ -595,6 +634,11 @@
    "storeUrl": null,
    "repoUrl": "https://github.com/il90il90/touchless-hackerai-bridge",
    "latestUrl": "https://github.com/il90il90/touchless-hackerai-bridge/releases/latest",
+   "source": {
+    "repo": "il90il90/touchless-hackerai-bridge",
+    "tag": "^app-v\\d",
+    "asset": "\\.apk$"
+   },
    "featured": false,
    "license": null,
    "self": false,
@@ -651,6 +695,11 @@
    "storeUrl": null,
    "repoUrl": "https://github.com/il90il90/ScreenAwake-releases",
    "latestUrl": "https://github.com/il90il90/ScreenAwake-releases/releases/latest/download/ScreenAwake.apk",
+   "source": {
+    "repo": "il90il90/ScreenAwake-releases",
+    "tag": "^v\\d",
+    "asset": "^ScreenAwake-\\d.*\\.apk$"
+   },
    "featured": false,
    "license": null,
    "self": false,
@@ -707,6 +756,11 @@
    "storeUrl": null,
    "repoUrl": "https://github.com/il90il90/Zoopli-releases",
    "latestUrl": "https://github.com/il90il90/Zoopli-releases/releases/latest/download/Zoopli.apk",
+   "source": {
+    "repo": "il90il90/Zoopli-releases",
+    "tag": "^v\\d",
+    "asset": "^zoopli-[\\d.]+\\.apk$"
+   },
    "featured": false,
    "license": null,
    "self": false,
@@ -763,6 +817,11 @@
    "storeUrl": null,
    "repoUrl": "https://github.com/il90il90/abc-app-releases",
    "latestUrl": "https://github.com/il90il90/abc-app-releases/releases/latest/download/abc-app.apk",
+   "source": {
+    "repo": "il90il90/abc-app-releases",
+    "tag": "^v\\d",
+    "asset": "\\.apk$"
+   },
    "featured": false,
    "license": null,
    "self": false,
@@ -819,6 +878,11 @@
    "storeUrl": null,
    "repoUrl": "https://github.com/il90il90/hass-israel-tv-release",
    "latestUrl": "https://github.com/il90il90/hass-israel-tv-release/releases/latest/download/israel-tv-tv.apk",
+   "source": {
+    "repo": "il90il90/hass-israel-tv-release",
+    "tag": "^v\\d",
+    "asset": "\\.apk$"
+   },
    "featured": false,
    "license": {
     "required": true,
@@ -873,6 +937,11 @@
    "storeUrl": null,
    "repoUrl": "https://github.com/il90il90/israel-app-manager",
    "latestUrl": "https://github.com/il90il90/israel-app-manager/releases/latest/download/IsraelAppManager.apk",
+   "source": {
+    "repo": "il90il90/israel-app-manager",
+    "tag": "^v\\d",
+    "asset": "^israel-app-manager-.*\\.apk$"
+   },
    "featured": false,
    "license": null,
    "self": true,
