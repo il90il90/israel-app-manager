@@ -14,6 +14,7 @@ import com.il90.appmanager.data.ThemeMode
 import com.il90.appmanager.data.UserSettings
 import com.il90.appmanager.data.Variant
 import com.il90.appmanager.data.iconUrl
+import com.il90.appmanager.data.isNewerThan
 import com.il90.appmanager.data.pickVariant
 import com.il90.appmanager.install.InstallEvent
 import com.il90.appmanager.install.Task
@@ -95,7 +96,7 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
             val status = when {
                 variant == null -> AppStatus.UNAVAILABLE
                 have == null -> AppStatus.NOT_INSTALLED
-                variant.versionCode > have.versionCode -> AppStatus.UPDATE_AVAILABLE
+                variant.isNewerThan(have) -> AppStatus.UPDATE_AVAILABLE
                 else -> AppStatus.UP_TO_DATE
             }
             val row = AppRow(
@@ -145,23 +146,30 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
 
     fun row(id: String): AppRow? = state.value.rows.firstOrNull { it.id == id } ?: state.value.selfUpdate?.takeIf { it.id == id }
 
-    fun refresh() {
+    /** @param byUser pulled down by hand: look everything up again, however recent the last look. */
+    fun refresh(byUser: Boolean = true) {
         viewModelScope.launch {
-            app.catalog.refresh()
+            app.catalog.refresh(force = byUser)
             app.installed.refresh()
         }
     }
 
     fun onResume() {
         app.installed.refresh()
-        // Coming back after a while: make sure the list is not stale.
+        // Coming back after a few minutes: a release may have come out meanwhile.
         val age = System.currentTimeMillis() - state.value.fetchedAt
-        if (!state.value.refreshing && age > 10 * 60 * 1000) refresh()
+        if (!state.value.refreshing && age > 3 * 60 * 1000) refresh(byUser = false)
     }
 
     fun install(row: AppRow) {
         val variant = row.variant ?: return
-        app.installManager.enqueue(row.app, variant)
+        // What gets installed is the newest release at this moment, not the one the list showed
+        // when it was loaded: the releases page is asked once more while the task is queued.
+        app.installManager.enqueue(row.app, variant) {
+            app.catalog.freshest(row.id)?.let { fresh ->
+                (pickVariant(fresh, app.device) as? Compatibility.Ok)?.variant?.let { fresh to it }
+            }
+        }
         app.notifier.cancelUpdates()
     }
 

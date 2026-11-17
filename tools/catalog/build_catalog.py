@@ -428,7 +428,9 @@ def resolve_app(app, ctx):
         release = {"tag": rel["tag_name"], "name": rel.get("name") or rel["tag_name"],
                    "notes": rel.get("body") or "", "publishedAt": rel.get("published_at") or rel.get("created_at"),
                    "url": rel.get("html_url"), "repoUrl": f"https://github.com/{source['repo']}",
-                   "latestUrl": latest_link(source, rel)}
+                   "latestUrl": latest_link(source, rel),
+                   # The app looks here itself for a release newer than this catalog knows.
+                   "source": {k: source[k] for k in ("repo", "tag", "asset", "exclude", "prerelease") if source.get(k)}}
         return release, variants, icon_apk
     return None
 
@@ -480,6 +482,7 @@ def cmd_build(args):
             "storeUrl": app.get("store"),
             "repoUrl": app.get("repoUrl"),
             "latestUrl": None,
+            "source": None,
             "featured": bool(app.get("featured")),
             "license": license_of(app, spec),
             "self": bool(app.get("self")),
@@ -494,7 +497,7 @@ def cmd_build(args):
             release["notes"] = release["notes"].strip()[:MAX_NOTES]
             repo_url = release.pop("repoUrl", None)
             entry.update({"variants": variants, "release": release, "repoUrl": app.get("repoUrl", repo_url),
-                          "latestUrl": release.pop("latestUrl", None)})
+                          "latestUrl": release.pop("latestUrl", None), "source": release.pop("source", None)})
             if icon_apk and not (overrides / f"{app_id}.png").exists():
                 try:
                     style = extract_icon(icon_apk, ctx["aapt2"], str(icon_file))

@@ -10,6 +10,7 @@ import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import com.il90.appmanager.App
 import com.il90.appmanager.data.Compatibility
+import com.il90.appmanager.data.isNewerThan
 import com.il90.appmanager.data.pickVariant
 import java.util.concurrent.TimeUnit
 
@@ -28,9 +29,9 @@ class UpdateCheckWorker(context: Context, params: WorkerParameters) : CoroutineW
         val installed = app.installed.snapshot(candidates.map { it.second.packageName }.toSet())
         val updates = candidates.filter { (_, variant) ->
             val have = installed[variant.packageName] ?: return@filter false
-            variant.versionCode > have.versionCode
+            variant.isNewerThan(have)
         }
-        val signature = updates.joinToString(",") { "${it.second.packageName}:${it.second.versionCode}" }
+        val signature = updates.joinToString(",") { (_, v) -> "${v.packageName}:${if (v.live) v.versionName else v.versionCode.toString()}" }
         if (updates.isEmpty()) {
             app.notifier.cancelUpdates()
             if (settings.notifiedUpdates.isNotEmpty()) app.settings.setNotifiedUpdates("")

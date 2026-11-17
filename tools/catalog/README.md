@@ -23,6 +23,10 @@ An app with no release it can reach is listed without a download ("Coming soon" 
 | `license` | `true` for a premium app: its card gets a *License required* tag and its page a card with a button to message the developer |
 | `featured`, `self`, `category`, `tagline`, `description` | as they read |
 
+Every app in the generated catalog also carries `source`: the repository and the tag and file
+rules it was resolved with. The app uses them to look for a release newer than the catalog's by
+itself, so a slow catalog never means an old download.
+
 `contact.telegram` at the top of the file is where that button leads. Every app in the
 generated catalog also gets `latestUrl`, a GitHub link that keeps pointing at its newest
 release: a direct download when the release carries one APK under a name that never changes

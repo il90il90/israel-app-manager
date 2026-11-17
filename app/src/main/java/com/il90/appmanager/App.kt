@@ -11,6 +11,7 @@ import coil3.request.crossfade
 import com.il90.appmanager.data.CatalogRepository
 import com.il90.appmanager.data.Device
 import com.il90.appmanager.data.InstalledApps
+import com.il90.appmanager.data.LiveReleases
 import com.il90.appmanager.data.SettingsStore
 import com.il90.appmanager.install.InstallManager
 import com.il90.appmanager.install.Notifier
@@ -43,7 +44,7 @@ class App : Application(), Configuration.Provider, SingletonImageLoader.Factory 
     val device: Device by lazy { Device.of(this) }
     val settings: SettingsStore by lazy { SettingsStore(this) }
     val notifier: Notifier by lazy { Notifier(this) }
-    val catalog: CatalogRepository by lazy { CatalogRepository(this, http) }
+    val catalog: CatalogRepository by lazy { CatalogRepository(this, http, LiveReleases(this, http)) }
     val installed: InstalledApps by lazy { InstalledApps(this, scope) }
     val installManager: InstallManager by lazy { InstallManager(this, http, settings, scope, notifier) }
 

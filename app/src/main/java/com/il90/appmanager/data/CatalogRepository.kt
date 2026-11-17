@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.withTimeoutOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.File
@@ -24,9 +25,15 @@ data class CatalogState(
     val fetchedAt: Long = 0,
 )
 
-/** Loads the catalog from the public repository and keeps the last good copy on disk. */
-class CatalogRepository(context: Context, private val http: OkHttpClient) {
+/**
+ * Loads the catalog from the public repository and keeps the last good copy on disk. What it
+ * hands out is that catalog with every app moved up to its newest release ([LiveReleases]).
+ */
+class CatalogRepository(context: Context, private val http: OkHttpClient, private val live: LiveReleases) {
     private val file = File(context.filesDir, "catalog.json")
+    /** The catalog as published, before anything newer is laid over it. */
+    @Volatile
+    private var published: Catalog? = null
     private val etagFile = File(context.filesDir, "catalog.etag")
     private val mutex = Mutex()
     private val _state = MutableStateFlow(CatalogState())
@@ -41,14 +48,19 @@ class CatalogRepository(context: Context, private val http: OkHttpClient) {
     suspend fun load() {
         withContext(Dispatchers.IO) {
             readSaved()?.let { saved ->
-                _state.value = _state.value.copy(catalog = saved, loading = false, fetchedAt = file.lastModified())
+                published = saved
+                _state.value = _state.value.copy(catalog = live.apply(saved), loading = false, fetchedAt = file.lastModified())
             }
         }
         refresh()
     }
 
-    /** @return true when the network answered (even with "nothing new"). */
-    suspend fun refresh(): Boolean = mutex.withLock {
+    /**
+     * @param force the user asked for it: look at the releases pages again even if they were
+     * looked at a moment ago
+     * @return true when the network answered (even with "nothing new").
+     */
+    suspend fun refresh(force: Boolean = false): Boolean = mutex.withLock {
         _state.value = _state.value.copy(refreshing = true)
         val ok = withContext(Dispatchers.IO) {
             var result: Catalog? = null
@@ -66,15 +78,34 @@ class CatalogRepository(context: Context, private val http: OkHttpClient) {
                 }
             }
             if (result != null) {
-                _state.value = _state.value.copy(catalog = result, fetchedAt = System.currentTimeMillis())
+                published = result
+                _state.value = _state.value.copy(catalog = live.apply(result), loading = false, fetchedAt = System.currentTimeMillis())
             } else if (answered) {
                 file.setLastModified(System.currentTimeMillis())
                 _state.value = _state.value.copy(fetchedAt = System.currentTimeMillis())
             }
             answered
         }
+        // The catalog can be hours behind a release: ask the releases pages themselves.
+        val current = published
+        if (ok && current != null) {
+            live.refresh(current, maxAgeMs = if (force) FORCED_GAP_MS else USUAL_GAP_MS)
+            _state.value = _state.value.copy(catalog = live.apply(current))
+        }
         _state.value = _state.value.copy(loading = false, refreshing = false, offline = !ok)
         ok
+    }
+
+    /**
+     * Looks at one app's releases page now, for the moment before it is installed, and returns
+     * the app as it should be installed. Waits a few seconds at most.
+     */
+    suspend fun freshest(appId: String): CatalogApp? {
+        val current = published ?: return null
+        withTimeoutOrNull(6_000) { live.refresh(current, maxAgeMs = JUST_NOW_MS, only = appId) }
+        val effective = live.apply(current)
+        if (published === current) _state.value = _state.value.copy(catalog = effective)
+        return effective.apps.firstOrNull { it.id == appId }
     }
 
     /** @return the new catalog, or null when the server says the saved one is current. */
@@ -104,6 +135,12 @@ class CatalogRepository(context: Context, private val http: OkHttpClient) {
             if (etag != null && url == urls.first()) etagFile.writeText(etag) else etagFile.delete()
             return parsed
         }
+    }
+
+    private companion object {
+        const val USUAL_GAP_MS = 3 * 60 * 1000L
+        const val FORCED_GAP_MS = 15 * 1000L
+        const val JUST_NOW_MS = 30 * 1000L
     }
 
     private fun readSaved(): Catalog? = try {

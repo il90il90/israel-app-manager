@@ -84,6 +84,7 @@ import com.il90.appmanager.data.FormFactor
 import com.il90.appmanager.data.License
 import com.il90.appmanager.data.Variant
 import com.il90.appmanager.data.androidVersionName
+import com.il90.appmanager.data.isOlderThan
 import com.il90.appmanager.data.localized
 import com.il90.appmanager.install.TaskState
 import com.il90.appmanager.ui.AppRow
@@ -423,7 +424,7 @@ private fun Notices(row: AppRow) {
     val text = when (val c = row.compatibility) {
         is Compatibility.Ok -> {
             val have = row.installed
-            if (have != null && have.versionCode > c.variant.versionCode) stringResource(R.string.newer_installed) else null
+            if (have != null && c.variant.isOlderThan(have)) stringResource(R.string.newer_installed) else null
         }
         Compatibility.NoRelease -> stringResource(R.string.no_release_yet)
         is Compatibility.OtherDevice ->
@@ -572,7 +573,8 @@ private fun DetailsTable(row: AppRow, onOpenUrl: (String) -> Unit) {
             }
         }
         if (variant != null) {
-            line(stringResource(R.string.detail_latest_version), ltr("${variant.versionName} (${variant.versionCode})"))
+            // A release found ahead of the catalog: its build number is not known yet.
+            line(stringResource(R.string.detail_latest_version), ltr(if (variant.live) variant.versionName else "${variant.versionName} (${variant.versionCode})"))
             row.installed?.let { line(stringResource(R.string.detail_installed_version), ltr("${it.versionName} (${it.versionCode})")) }
             if (variant.packageName.length > 22) stacked(stringResource(R.string.detail_package), variant.packageName)
             else line(stringResource(R.string.detail_package), variant.packageName, mono = true)

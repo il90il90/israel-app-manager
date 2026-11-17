@@ -48,6 +48,8 @@ data class CatalogApp(
     val repoUrl: String? = null,
     /** A GitHub link that always leads to the newest version. */
     val latestUrl: String? = null,
+    /** Where the app's releases are published; see LiveReleases. */
+    val source: Source? = null,
     val featured: Boolean = false,
     val license: License? = null,
     val self: Boolean = false,
@@ -60,6 +62,17 @@ data class CatalogApp(
 ) {
     val needsLicense: Boolean get() = license?.required == true
 }
+
+/** The releases of one app on GitHub, with the same rules the catalog builder uses to pick one. */
+@Serializable
+data class Source(
+    val repo: String,
+    /** Regular expressions: which tags are this app's, which files to offer, which to leave out. */
+    val tag: String? = null,
+    val asset: String? = null,
+    val exclude: String? = null,
+    val prerelease: Boolean = false,
+)
 
 @Serializable
 data class Release(
@@ -85,6 +98,11 @@ data class Variant(
     val url: String,
     val size: Long = 0,
     val sha256: String = "",
+    /**
+     * Found on the releases page by the app itself, ahead of the catalog: the file is the new
+     * one, but the build details (versionCode, minSdk) are still those of the release before.
+     */
+    val live: Boolean = false,
 )
 
 object FormFactor {

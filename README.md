@@ -34,11 +34,19 @@ Touchless Bridge · Screen Awake · Zoopli · אבג ABC · Israel TV
 | `apks` | APKs of apps that have no public release page of their own (optional). |
 | `release-inbox` | A signed build of the manager waiting to be published (see Releasing). |
 
-Every 30 minutes, and whenever `catalog/apps.json` changes, the **Catalog** workflow asks GitHub
-for the newest release of each app, reads every APK with `aapt2` (package, version code,
-minimum Android, ABIs, form factor), renders its launcher icon, and commits the result to the
-`catalog` branch. The app reads
+The **Catalog** workflow asks GitHub for the newest release of every app, downloads the APKs once
+to read their version, size, checksum and icon, and commits the result to the `catalog` branch. It
+runs whenever `catalog/apps.json` changes, on a schedule, and when an app's release workflow sends
+it the `app-released` event. The app reads
 `https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/catalog.json`.
+
+**The app does not wait for it.** GitHub runs schedules when it has room, and hours can pass before
+the catalog notices a release. So the app also asks each app's releases page itself
+(`github.com/<repo>/releases/latest`, an ordinary page with no API limit) every time the list is
+loaded, and once more at the moment Install or Update is tapped. A release the catalog does not
+describe yet is offered straight from GitHub, with the size and SHA-256 GitHub reports for the
+file; the catalog's entry supplies what a file name cannot say (package, CPU, minimum Android).
+What gets installed is always the newest release.
 
 ### Adding an app
 

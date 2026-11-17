@@ -33,7 +33,8 @@ android {
         versionCode = versionProps.getProperty("VERSION_CODE").toInt()
         versionName = versionProps.getProperty("VERSION_NAME")
         buildConfigField("String", "CATALOG_REPO", "\"il90il90/israel-app-manager\"")
-        buildConfigField("String", "CATALOG_BRANCH", "\"catalog\"")
+        // -Piam.catalogBranch=... points a test build at another branch of the catalog.
+        buildConfigField("String", "CATALOG_BRANCH", "\"${(findProperty("iam.catalogBranch") as String?) ?: "catalog"}\"")
         vectorDrawables { useSupportLibrary = true }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

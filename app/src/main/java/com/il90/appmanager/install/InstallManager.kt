@@ -107,12 +107,16 @@ class InstallManager(
     private val installs = Mutex()
     private val dir: File get() = File(context.cacheDir, "apks").apply { mkdirs() }
 
-    fun enqueue(app: CatalogApp, variant: Variant) {
+    /**
+     * @param newest asked once the task is queued: the app and file to install if a newer release
+     * has come out since the list was loaded. Null, or a null answer, keeps [variant].
+     */
+    fun enqueue(app: CatalogApp, variant: Variant, newest: (suspend () -> Pair<CatalogApp, Variant>?)? = null) {
         val running = _tasks.value[app.id]
         if (running != null && running.state.isActive) return
         _tasks.update { it + (app.id to Task(app.id, app.name, variant, TaskState.Queued)) }
         DownloadService.start(context)
-        val job = scope.launch(Dispatchers.IO, start = CoroutineStart.LAZY) { run(app, variant) }
+        val job = scope.launch(Dispatchers.IO, start = CoroutineStart.LAZY) { run(app, variant, newest) }
         jobs[app.id] = job
         job.start()
     }
@@ -128,7 +132,9 @@ class InstallManager(
         notifier.cancelConfirm(request.sessionId)
     }
 
-    private suspend fun run(app: CatalogApp, variant: Variant) {
+    private suspend fun run(listed: CatalogApp, listedVariant: Variant, newest: (suspend () -> Pair<CatalogApp, Variant>?)?) {
+        var app = listed
+        var variant = listedVariant
         val me = currentCoroutineContext().job
         // A cancelled task may still be unwinding while the user starts the same app again:
         // only the job that currently owns the app may touch its state.
@@ -139,7 +145,21 @@ class InstallManager(
         fun clear() {
             if (owns()) _tasks.update { it - app.id }
         }
-        val file = File(dir, "${app.id}-${variant.versionCode}-${variant.sha256.take(8).ifEmpty { "x" }}.apk")
+        if (newest != null) {
+            val found = try {
+                newest()
+            } catch (e: CancellationException) {
+                throw e
+            } catch (_: Exception) {
+                null
+            }
+            if (found != null && found.first.id == listed.id) {
+                app = found.first
+                variant = found.second
+                set(TaskState.Queued)
+            }
+        }
+        val file = File(dir, "${app.id}-${variant.versionCode}-${variant.sha256.take(8).ifEmpty { variant.versionName.ifEmpty { "x" } }}.apk")
         try {
             downloads.withPermit {
                 download(variant, file) { done, total -> set(TaskState.Downloading(done, total)) }
