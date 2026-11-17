@@ -1,0 +1,6 @@
+{
+  "versionName": "1.0.3",
+  "versionCode": 10003,
+  "commit": "0bed37490fea1c78e12cd3a74837c5dd6033724a",
+  "notes": "- **Always the newest version.** The app no longer waits for its catalog to notice a release: every time the list is loaded it asks each app's releases page on GitHub itself, and offers a release the moment it is out.\n- **Install and Update check once more** at the moment you tap them, so what gets installed is the newest release, never one that needs another update right after.\n- Coming back to the app after a few minutes refreshes the list on its own; pulling down always does.\n- Update notifications and the app's own update use the same check."
+}

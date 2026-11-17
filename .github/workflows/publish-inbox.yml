@@ -1,0 +1,68 @@
+name: Publish release
+
+# Publishes a release that was built and signed outside CI.
+#
+# The release key never enters this public repository or its CI. A signed APK is pushed to
+# the `release-inbox` branch together with release.json (tools/release/make_release.sh does
+# that); this workflow checks the APK and turns it into a tagged GitHub Release.
+on:
+  push:
+    branches: [release-inbox]
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the APK
+        id: check
+        run: |
+          set -euo pipefail
+          version="$(jq -r .versionName release.json)"
+          code="$(jq -r .versionCode release.json)"
+          commit="$(jq -r .commit release.json)"
+          apk="israel-app-manager-${version}.apk"
+          test -f "$apk"
+          tools="$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)"
+          "$tools/aapt2" dump badging "$apk" | head -1 | tee badging.txt
+          grep -q "name='com.il90.appmanager' versionCode='${code}' versionName='${version}'" badging.txt
+          git fetch --quiet --depth 1 origin "$commit"
+          expected="$(git show "$commit:release/signing-cert.sha256" | tr -d '[:space:]')"
+          "$tools/apksigner" verify --print-certs "$apk" | tee certs.txt
+          actual="$(sed -n 's/^.*certificate SHA-256 digest: //p' certs.txt | head -1 | tr -d '[:space:]')"
+          if [ "$expected" != "$actual" ]; then
+            echo "::error::The APK is not signed with the release key (got $actual)."
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "commit=$commit" >> "$GITHUB_OUTPUT"
+          echo "apk=$apk" >> "$GITHUB_OUTPUT"
+      - name: Create the release
+        run: |
+          set -euo pipefail
+          version="${{ steps.check.outputs.version }}"
+          apk="${{ steps.check.outputs.apk }}"
+          if gh release view "v$version" > /dev/null 2>&1; then
+            echo "v$version is already released"
+            exit 0
+          fi
+          cp "$apk" IsraelAppManager.apk
+          sha256sum "$apk" > "$apk.sha256"
+          jq -r .notes release.json > notes.md
+          gh release create "v$version" "$apk" "$apk.sha256" IsraelAppManager.apk \
+            --target "${{ steps.check.outputs.commit }}" \
+            --title "Israel App Manager $version" --notes-file notes.md --latest
+          echo "Published https://github.com/$GITHUB_REPOSITORY/releases/tag/v$version"
+      - name: Refresh the catalog
+        run: gh workflow run catalog.yml --ref main
