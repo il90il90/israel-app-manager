@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-17T11:12:59Z",
+ "generatedAt": "2026-11-17T12:10:25Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -343,26 +343,26 @@
       "arm64-v8a"
      ],
      "packageName": "com.app360brains.exDialer.mod",
-     "versionName": "3.10.68",
-     "versionCode": 168,
+     "versionName": "3.10.69",
+     "versionCode": 169,
      "minSdk": 32,
      "targetSdk": 36,
      "tvCapable": false,
      "label": "OneDial",
-     "fileName": "onedial-3.10.68.apk",
-     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.68/onedial-3.10.68.apk",
+     "fileName": "onedial-3.10.69.apk",
+     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.69/onedial-3.10.69.apk",
      "size": 48273665,
-     "sha256": "fc9a76896d627f8e1bccc4fc616da314b0f589cd5ad4a7dde420b3be356b1123",
-     "assetId": 758699602,
-     "assetUpdatedAt": "2026-11-17T11:00:17Z"
+     "sha256": "15fe7af9d373f6af5c88a5549664d52f5daacd07c1871f9655867f7b8578788d",
+     "assetId": 758881133,
+     "assetUpdatedAt": "2026-11-17T11:58:16Z"
     }
    ],
    "release": {
-    "tag": "v3.10.68",
-    "name": "OneDial 3.10.68",
-    "notes": "- Caller window: a button that ends the call (#22)\n\nPatched on top of 3.10.67. Same release key as 3.10.5.\n\n<!-- source: cd8eb39ff1e70484449e73d38edcd6dd5ac37bd7 -->",
-    "publishedAt": "2026-11-17T11:00:18Z",
-    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.68"
+    "tag": "v3.10.69",
+    "name": "OneDial 3.10.69",
+    "notes": "- Reminder window: swipe along the line of several reminders; the note stands out (#23)\n\nPatched on top of 3.10.68. Same release key as 3.10.5.\n\n<!-- source: d7aa9fde2ea2a52c5786f50c9d0a5a2992097ced -->",
+    "publishedAt": "2026-11-17T11:58:17Z",
+    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.69"
    },
    "iconStyle": "adaptive",
    "icon": "icons/onedial.png?v=f291d671",
