@@ -11,6 +11,8 @@ Android 8.0 or newer. English and Hebrew.
 
 - Shows every app with its icon, description, version, size and release notes.
 - Installs an app in one tap, with download progress and a checksum check before installing.
+- Never installs silently: every install and update, the manager's own included, is confirmed in
+  Android's own dialog.
 - Knows what is installed, shows which apps have a new version, and updates one or all of them.
 - Picks the right build for the device (CPU, Android version, phone / TV / watch) and offers the
   TV and watch builds as plain APK downloads.
