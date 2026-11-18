@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-17T19:56:05Z",
+ "generatedAt": "2026-11-18T02:20:56Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -343,26 +343,26 @@
       "arm64-v8a"
      ],
      "packageName": "com.app360brains.exDialer.mod",
-     "versionName": "3.10.70",
-     "versionCode": 170,
+     "versionName": "3.10.71",
+     "versionCode": 171,
      "minSdk": 32,
      "targetSdk": 36,
      "tvCapable": false,
      "label": "OneDial",
-     "fileName": "onedial-3.10.70.apk",
-     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.70/onedial-3.10.70.apk",
+     "fileName": "onedial-3.10.71.apk",
+     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.71/onedial-3.10.71.apk",
      "size": 48273665,
-     "sha256": "e92b2c45d366984e90241c32516451763002c8bad887ff963d92042853942066",
-     "assetId": 758984536,
-     "assetUpdatedAt": "2026-11-17T12:31:18Z"
+     "sha256": "8fccd43fc8ab8310a00b0570b9b75ced74ff7d54fd9db16ba7b646ae4bb34613",
+     "assetId": 760647522,
+     "assetUpdatedAt": "2026-11-17T21:10:40Z"
     }
    ],
    "release": {
-    "tag": "v3.10.70",
-    "name": "OneDial 3.10.70",
-    "notes": "- Number page: the plus saves and blocking has its own button; reminder window: the number is not cut (#24)\n\nPatched on top of 3.10.69. Same release key as 3.10.5.\n\n<!-- source: 5b6ac6be4bad97408b5501a07831b437f4403b4b -->",
-    "publishedAt": "2026-11-17T12:31:20Z",
-    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.70"
+    "tag": "v3.10.71",
+    "name": "OneDial 3.10.71",
+    "notes": "- Caller window pushed aside: a glass tab with an arrow on the edge\n- Pulled search field: right to left like the field that opens\n- Calls run down to the keypad and fade into it; pulling down brings the search field itself\n\nPatched on top of 3.10.70. Same release key as 3.10.5.\n\n<!-- source: 4dd41b30d4584638a419674ce48d61ffd5280f5a -->",
+    "publishedAt": "2026-11-17T21:10:41Z",
+    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.71"
    },
    "iconStyle": "adaptive",
    "icon": "icons/onedial.png?v=f291d671",
