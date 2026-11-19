@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-19T08:49:56Z",
+ "generatedAt": "2026-11-19T17:51:34Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -224,26 +224,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.wallify.debug",
-     "versionName": "0.7.4",
-     "versionCode": 7004,
+     "versionName": "0.7.5",
+     "versionCode": 7005,
      "minSdk": 24,
      "targetSdk": 36,
      "tvCapable": true,
      "label": "Wallify",
-     "fileName": "wallify-0.7.4.apk",
-     "url": "https://github.com/il90il90/Wallify-releases/releases/download/v0.7.4/wallify-0.7.4.apk",
-     "size": 35640090,
-     "sha256": "e6cd9b96e755618d6bd2ac349533721d7eda0ece03e97ad65ebf32bfed7c5cf1",
-     "assetId": 760229423,
-     "assetUpdatedAt": "2026-11-17T18:50:30Z"
+     "fileName": "wallify-0.7.5.apk",
+     "url": "https://github.com/il90il90/Wallify-releases/releases/download/v0.7.5/wallify-0.7.5.apk",
+     "size": 35605842,
+     "sha256": "9f3e884bbbeea58895327bd21d3dd1bc521ac50f40727e67239d054653620cd8",
+     "assetId": 768656626,
+     "assetUpdatedAt": "2026-11-19T17:47:01Z"
     }
    ],
    "release": {
-    "tag": "v0.7.4",
-    "name": "Wallify 0.7.4",
-    "notes": "- **Everything is open to everyone**: no Premium, no paywall, no ads. The gallery (Discover) with search and\n  filters, and your own videos as live wallpapers (Love it → My videos), work for everyone. Google Play Billing\n  and the AdMob / consent SDKs are gone from the app - no advertising id, no consent form at start.\n- **Updates from the public releases**: Wallify is not in a store, so every version is also published to\n  [il90il90/Wallify-releases](https://github.com/il90il90/Wallify-releases). On launch (at most every few hours)\n  the app looks there and, for a newer version, asks whether to update, with what is new. *Update* downloads it,\n  checks its SHA-256 and that it is Wallify, and opens Android's installer (the first time, Android asks to allow\n  Wallify to install apps). *Later* asks again on the next launch; Settings → *Check for updates* asks now. The TV\n  shows the same question with remote buttons.\n- **Shorter Settings**: no Membership, Privacy or policy texts; the *Personalized* and *Keep history* switches are\n  gone (the feed is always personal, the history always kept on the phone) - *Reset recommendations* and *Clear\n  watch history* remain.\n- **No numbers on the tabs**: the count on the heart in the bottom bar, on the Love it tabs and next to the\n  categories is hidden.\n- **Developer options are hidden**: Settings → tap the version line 10 times (test builds) to show files on the\n  Cloudflare server, *Counts* (categories, Love it tabs, the heart), the temporary *Delete* button and *Hide\n  developer options*. While they are hidden, the counts and the Delete button are off.\n- From 0.7.1: the first version in the public releases; the TV's Settings have *Check for updates* too.\n- From 0.7.2: the version is a plain number (no \"-qa\": this is the real app now), and the temporary\n  *Delete* button is gone for good.\n- From 0.7.4: **nothing can be deleted** - there is no delete anywhere in the app (also not in *My videos*), and\n  Wallify Cloud refuses every way of deleting: images, videos, posters and backups stay, whoever asks. Viewing,\n  uploading and downloading in the original quality are unchanged.\n\n\n---\n- Version: 0.7.4 (code 7004)\n- SHA-256: `e6cd9b96e755618d6bd2ac349533721d7eda0ece03e97ad65ebf32bfed7c5cf1`\n- Signing certificate SHA-256: `f56583efbc5c14eaec486caa567dc65fa834314e26d87f554511bc13642fbfc2`\n- Always-latest download: https://github.com/il90il90/Wallify-releases/releases/latest/download/Wallify.apk",
-    "publishedAt": "2026-11-17T18:50:32Z",
-    "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.7.4"
+    "tag": "v0.7.5",
+    "name": "Wallify 0.7.5",
+    "notes": "- **Everything is open to everyone**: no Premium, no paywall, no ads. The gallery (Discover) with search and\n  filters, and your own videos as live wallpapers (Love it → My videos), work for everyone. Google Play Billing\n  and the AdMob / consent SDKs are gone from the app - no advertising id, no consent form at start.\n- **Updates from the public releases**: Wallify is not in a store, so every version is also published to\n  [il90il90/Wallify-releases](https://github.com/il90il90/Wallify-releases). On launch (at most every few hours)\n  the app looks there and, for a newer version, asks whether to update, with what is new. *Update* downloads it,\n  checks its SHA-256 and that it is Wallify, and opens Android's installer (the first time, Android asks to allow\n  Wallify to install apps). *Later* asks again on the next launch; Settings → *Check for updates* asks now. The TV\n  shows the same question with remote buttons.\n- **Shorter Settings**: no Membership, Privacy or policy texts; the *Personalized* and *Keep history* switches are\n  gone (the feed is always personal, the history always kept on the phone) - *Reset recommendations* and *Clear\n  watch history* remain.\n- **No numbers on the tabs**: the count on the heart in the bottom bar, on the Love it tabs and next to the\n  categories is hidden.\n- **Developer options are hidden**: Settings → tap the version line 10 times (test builds) to show files on the\n  Cloudflare server, *Counts* (categories, Love it tabs, the heart), the temporary *Delete* button and *Hide\n  developer options*. While they are hidden, the counts and the Delete button are off.\n- From 0.7.1: the first version in the public releases; the TV's Settings have *Check for updates* too.\n- From 0.7.2: the version is a plain number (no \"-qa\": this is the real app now), and the temporary\n  *Delete* button is gone for good.\n- From 0.7.4: **nothing can be deleted** - there is no delete anywhere in the app (also not in *My videos*), and\n  Wallify Cloud refuses every way of deleting: images, videos, posters and backups stay, whoever asks. Viewing,\n  uploading and downloading in the original quality are unchanged.\n- From 0.7.5: **Set favorites wallpaper** - one button under *Set wallpaper* (and a bar in Love it's gallery\n  view): every wallpaper you love, photos and live alike, takes turns on your screen, a new one each time the screen\n  turns on. Nothing to set up: the *Auto-change* screen (photos or live, how often, which ones) is gone. A wallpaper\n  you love later joins by itself, one you take out leaves; tap the button again to stop. *Send to TV* shows only\n  with a TV connected (connecting one: Settings → My screens). The play and round-arrows buttons at the top of Love\n  it are gone, and the tabs there no longer run under the button next to them.\n- From 0.7.5: **always something to see** - opening Wallify shows a wallpaper at once (the first ones are kept on\n  the phone from your last visit), and swiping quickly no longer lands on empty pages: what lies ahead is loaded\n  while you swipe, not only when you stop, and each wallpaper's preview is much lighter to show. A page that is\n  still on its way shows the wallpaper's own colour with a light moving over it instead of black.\n- From 0.7.5, fixed: on some phones *Set live wallpaper* did not bring up Android's screen where you choose home\n  screen, lock screen or both (it showed the phone's list of live wallpapers, an older copy of that screen, or\n  nothing). It now always opens that screen, and Wallify notices that the wallpaper was set when you come back.\n\n\n---\n- Version: 0.7.5 (code 7005)\n- SHA-256: `9f3e884bbbeea58895327bd21d3dd1bc521ac50f40727e67239d054653620cd8`\n- Signing certificate SHA-256: `f56583efbc5c14eaec486caa567dc65fa834314e26d87f554511bc13642fbfc2`\n- Always-latest download: https://github.com/il90il90/Wallify-releases/releases/latest/download/Wallify.apk",
+    "publishedAt": "2026-11-19T17:47:02Z",
+    "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.7.5"
    },
    "iconStyle": "adaptive",
    "icon": "icons/wallify.png?v=4b5cdc0d",
@@ -343,26 +343,26 @@
       "arm64-v8a"
      ],
      "packageName": "com.app360brains.exDialer.mod",
-     "versionName": "3.10.78",
-     "versionCode": 178,
+     "versionName": "3.10.81",
+     "versionCode": 181,
      "minSdk": 32,
      "targetSdk": 36,
      "tvCapable": false,
      "label": "OneDial",
-     "fileName": "onedial-3.10.78.apk",
-     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.78/onedial-3.10.78.apk",
+     "fileName": "onedial-3.10.81.apk",
+     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.81/onedial-3.10.81.apk",
      "size": 48421456,
-     "sha256": "14da0aa3d785f601ec7e89713daea04845ec9e6a897b29df7439fb718677ddeb",
-     "assetId": 766640326,
-     "assetUpdatedAt": "2026-11-19T07:09:43Z"
+     "sha256": "e8aa9cd0b107dd661c2bda8e791e99c151e2c804e8ea3e21e955554fd42396bf",
+     "assetId": 768528519,
+     "assetUpdatedAt": "2026-11-19T17:06:00Z"
     }
    ],
    "release": {
-    "tag": "v3.10.78",
-    "name": "OneDial 3.10.78",
-    "notes": "- Me: remove the temporary token-expiry debug row; don't sign out on a lone 4xx renewal hiccup\n\nPatched on top of 3.10.77. Same release key as 3.10.5.\n\n<!-- source: 7f0766266f98b9b14b2156a992f201582b0882ed -->",
-    "publishedAt": "2026-11-19T07:09:43Z",
-    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.78"
+    "tag": "v3.10.81",
+    "name": "OneDial 3.10.81",
+    "notes": "- Without Me the dialer behaves as an app that never had it (#33)\n\nPatched on top of 3.10.80. Same release key as 3.10.5.\n\n<!-- source: 58448ebff68eed3914ce5d4e82383b10ad25f7e7 -->",
+    "publishedAt": "2026-11-19T17:06:01Z",
+    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.81"
    },
    "iconStyle": "adaptive",
    "icon": "icons/onedial.png?v=f291d671",
