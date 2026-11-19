@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-18T19:01:04Z",
+ "generatedAt": "2026-11-19T08:49:56Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -343,26 +343,26 @@
       "arm64-v8a"
      ],
      "packageName": "com.app360brains.exDialer.mod",
-     "versionName": "3.10.76",
-     "versionCode": 176,
+     "versionName": "3.10.78",
+     "versionCode": 178,
      "minSdk": 32,
      "targetSdk": 36,
      "tvCapable": false,
      "label": "OneDial",
-     "fileName": "onedial-3.10.76.apk",
-     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.76/onedial-3.10.76.apk",
-     "size": 48405072,
-     "sha256": "3e2a99c7bc3ee623b032220278a03f4b729ed8d56b07fe52f3af0f7e379118bd",
-     "assetId": 764323041,
-     "assetUpdatedAt": "2026-11-18T17:31:09Z"
+     "fileName": "onedial-3.10.78.apk",
+     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.78/onedial-3.10.78.apk",
+     "size": 48421456,
+     "sha256": "14da0aa3d785f601ec7e89713daea04845ec9e6a897b29df7439fb718677ddeb",
+     "assetId": 766640326,
+     "assetUpdatedAt": "2026-11-19T07:09:43Z"
     }
    ],
    "release": {
-    "tag": "v3.10.76",
-    "name": "OneDial 3.10.76",
-    "notes": "- A call that ends while the dialer is open shows up in its call log right away\n\nPatched on top of 3.10.75. Same release key as 3.10.5.\n\n<!-- source: 059dd49fd6e80c13687c786254b4b4493e901267 -->",
-    "publishedAt": "2026-11-18T17:31:11Z",
-    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.76"
+    "tag": "v3.10.78",
+    "name": "OneDial 3.10.78",
+    "notes": "- Me: remove the temporary token-expiry debug row; don't sign out on a lone 4xx renewal hiccup\n\nPatched on top of 3.10.77. Same release key as 3.10.5.\n\n<!-- source: 7f0766266f98b9b14b2156a992f201582b0882ed -->",
+    "publishedAt": "2026-11-19T07:09:43Z",
+    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.78"
    },
    "iconStyle": "adaptive",
    "icon": "icons/onedial.png?v=f291d671",
