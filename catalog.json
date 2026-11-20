@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-19T17:51:34Z",
+ "generatedAt": "2026-11-20T00:17:37Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -105,18 +105,18 @@
       "arm64-v8a"
      ],
      "packageName": "com.il90.seretgram",
-     "versionName": "0.2.1073",
-     "versionCode": 21073,
+     "versionName": "0.2.1076",
+     "versionCode": 21076,
      "minSdk": 23,
      "targetSdk": 35,
      "tvCapable": true,
      "label": "SeretGram",
-     "fileName": "SeretGram-0.2.1073-21073-arm64-v8a.apk",
-     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1073/SeretGram-0.2.1073-21073-arm64-v8a.apk",
-     "size": 27839191,
-     "sha256": "314b52ac343a902195f63828c695cd7f46de0194f7b5787c3ca36e35fa31753f",
-     "assetId": 730583496,
-     "assetUpdatedAt": "2026-11-10T07:51:33Z"
+     "fileName": "SeretGram-0.2.1076-21076-arm64-v8a.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1076/SeretGram-0.2.1076-21076-arm64-v8a.apk",
+     "size": 27839187,
+     "sha256": "667f2963c1c6a96cee4bbd77c3b98f1e5d23903f0314381f80626853f53f2ade",
+     "assetId": 769287390,
+     "assetUpdatedAt": "2026-11-19T21:11:48Z"
     },
     {
      "formFactor": "phone",
@@ -124,18 +124,18 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.seretgram",
-     "versionName": "0.2.1073",
-     "versionCode": 21073,
+     "versionName": "0.2.1076",
+     "versionCode": 21076,
      "minSdk": 23,
      "targetSdk": 35,
      "tvCapable": true,
      "label": "SeretGram",
-     "fileName": "SeretGram-0.2.1073-21073-armeabi-v7a.apk",
-     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1073/SeretGram-0.2.1073-21073-armeabi-v7a.apk",
-     "size": 21829913,
-     "sha256": "49b495b8c7ba722c95b0a10bf69392755c9161f882953965a7bc5647affd2a47",
-     "assetId": 730583515,
-     "assetUpdatedAt": "2026-11-10T07:51:27Z"
+     "fileName": "SeretGram-0.2.1076-21076-armeabi-v7a.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1076/SeretGram-0.2.1076-21076-armeabi-v7a.apk",
+     "size": 21829906,
+     "sha256": "5af7057461e03a2aa38c08e978665e73da65ae7cc1091f6121bf7fee3bdb88d6",
+     "assetId": 769287392,
+     "assetUpdatedAt": "2026-11-19T21:11:47Z"
     },
     {
      "formFactor": "phone",
@@ -143,18 +143,18 @@
       "x86_64"
      ],
      "packageName": "com.il90.seretgram",
-     "versionName": "0.2.1073",
-     "versionCode": 21073,
+     "versionName": "0.2.1076",
+     "versionCode": 21076,
      "minSdk": 23,
      "targetSdk": 35,
      "tvCapable": true,
      "label": "SeretGram",
-     "fileName": "SeretGram-0.2.1073-21073-x86_64.apk",
-     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1073/SeretGram-0.2.1073-21073-x86_64.apk",
-     "size": 30272462,
-     "sha256": "87c30bee2a3834d63700dd95fff0d1a7de7f513ca86b6746f432562189f9530b",
-     "assetId": 730583554,
-     "assetUpdatedAt": "2026-11-10T07:51:30Z"
+     "fileName": "SeretGram-0.2.1076-21076-x86_64.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1076/SeretGram-0.2.1076-21076-x86_64.apk",
+     "size": 30272453,
+     "sha256": "ea2adc3ba4181c500cc76646649e661c60380644b6589ff8fb6b225925adf02e",
+     "assetId": 769287441,
+     "assetUpdatedAt": "2026-11-19T21:11:47Z"
     },
     {
      "formFactor": "phone",
@@ -163,26 +163,26 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.seretgram",
-     "versionName": "0.2.1073",
-     "versionCode": 21073,
+     "versionName": "0.2.1076",
+     "versionCode": 21076,
      "minSdk": 23,
      "targetSdk": 35,
      "tvCapable": true,
      "label": "SeretGram",
-     "fileName": "SeretGram-0.2.1073-21073.apk",
-     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1073/SeretGram-0.2.1073-21073.apk",
-     "size": 42703640,
-     "sha256": "22e5566940631355b2e8c1e709234d10addffab4752fa0af203543c1167bf814",
-     "assetId": 730583505,
-     "assetUpdatedAt": "2026-11-10T07:51:32Z"
+     "fileName": "SeretGram-0.2.1076-21076.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1076/SeretGram-0.2.1076-21076.apk",
+     "size": 42703636,
+     "sha256": "9525c95878dbcdf29ad76260cfbd750229ba42beea235fdf95ddd527d87ccd8d",
+     "assetId": 769287381,
+     "assetUpdatedAt": "2026-11-19T21:11:54Z"
     }
    ],
    "release": {
-    "tag": "v0.2.1073",
-    "name": "SeretGram 0.2.1073",
-    "notes": "- The TV answers the phone remote with SeretGram closed\n\n<!-- seretgram-release commit=08c6f401b4f1cae0dc9dd377170e343eb592a99f versionCode=21073 -->",
-    "publishedAt": "2026-11-10T07:51:39Z",
-    "url": "https://github.com/il90il90/SeretGram-releases/releases/tag/v0.2.1073"
+    "tag": "v0.2.1076",
+    "name": "SeretGram 0.2.1076",
+    "notes": "- A film that stalls while it plays: the TV's refresh rate fitted to the film\n- ci: run on the work PC runner [skip ci]\n\n<!-- seretgram-release commit=c893ecbeac3b61be87012c5bd5679c0870b0692a versionCode=21076 -->",
+    "publishedAt": "2026-11-19T21:11:55Z",
+    "url": "https://github.com/il90il90/SeretGram-releases/releases/tag/v0.2.1076"
    },
    "iconStyle": "adaptive",
    "icon": "icons/seretgram.png?v=85d32655",
@@ -224,26 +224,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.wallify.debug",
-     "versionName": "0.7.5",
-     "versionCode": 7005,
+     "versionName": "0.7.7",
+     "versionCode": 7007,
      "minSdk": 24,
      "targetSdk": 36,
      "tvCapable": true,
      "label": "Wallify",
-     "fileName": "wallify-0.7.5.apk",
-     "url": "https://github.com/il90il90/Wallify-releases/releases/download/v0.7.5/wallify-0.7.5.apk",
-     "size": 35605842,
-     "sha256": "9f3e884bbbeea58895327bd21d3dd1bc521ac50f40727e67239d054653620cd8",
-     "assetId": 768656626,
-     "assetUpdatedAt": "2026-11-19T17:47:01Z"
+     "fileName": "wallify-0.7.7.apk",
+     "url": "https://github.com/il90il90/Wallify-releases/releases/download/v0.7.7/wallify-0.7.7.apk",
+     "size": 35626238,
+     "sha256": "8781a6fb8ee2fd46dc25ae76f06cbab3e0d24deae6690d555b238c1037865ecd",
+     "assetId": 768828009,
+     "assetUpdatedAt": "2026-11-19T18:41:19Z"
     }
    ],
    "release": {
-    "tag": "v0.7.5",
-    "name": "Wallify 0.7.5",
-    "notes": "- **Everything is open to everyone**: no Premium, no paywall, no ads. The gallery (Discover) with search and\n  filters, and your own videos as live wallpapers (Love it → My videos), work for everyone. Google Play Billing\n  and the AdMob / consent SDKs are gone from the app - no advertising id, no consent form at start.\n- **Updates from the public releases**: Wallify is not in a store, so every version is also published to\n  [il90il90/Wallify-releases](https://github.com/il90il90/Wallify-releases). On launch (at most every few hours)\n  the app looks there and, for a newer version, asks whether to update, with what is new. *Update* downloads it,\n  checks its SHA-256 and that it is Wallify, and opens Android's installer (the first time, Android asks to allow\n  Wallify to install apps). *Later* asks again on the next launch; Settings → *Check for updates* asks now. The TV\n  shows the same question with remote buttons.\n- **Shorter Settings**: no Membership, Privacy or policy texts; the *Personalized* and *Keep history* switches are\n  gone (the feed is always personal, the history always kept on the phone) - *Reset recommendations* and *Clear\n  watch history* remain.\n- **No numbers on the tabs**: the count on the heart in the bottom bar, on the Love it tabs and next to the\n  categories is hidden.\n- **Developer options are hidden**: Settings → tap the version line 10 times (test builds) to show files on the\n  Cloudflare server, *Counts* (categories, Love it tabs, the heart), the temporary *Delete* button and *Hide\n  developer options*. While they are hidden, the counts and the Delete button are off.\n- From 0.7.1: the first version in the public releases; the TV's Settings have *Check for updates* too.\n- From 0.7.2: the version is a plain number (no \"-qa\": this is the real app now), and the temporary\n  *Delete* button is gone for good.\n- From 0.7.4: **nothing can be deleted** - there is no delete anywhere in the app (also not in *My videos*), and\n  Wallify Cloud refuses every way of deleting: images, videos, posters and backups stay, whoever asks. Viewing,\n  uploading and downloading in the original quality are unchanged.\n- From 0.7.5: **Set favorites wallpaper** - one button under *Set wallpaper* (and a bar in Love it's gallery\n  view): every wallpaper you love, photos and live alike, takes turns on your screen, a new one each time the screen\n  turns on. Nothing to set up: the *Auto-change* screen (photos or live, how often, which ones) is gone. A wallpaper\n  you love later joins by itself, one you take out leaves; tap the button again to stop. *Send to TV* shows only\n  with a TV connected (connecting one: Settings → My screens). The play and round-arrows buttons at the top of Love\n  it are gone, and the tabs there no longer run under the button next to them.\n- From 0.7.5: **always something to see** - opening Wallify shows a wallpaper at once (the first ones are kept on\n  the phone from your last visit), and swiping quickly no longer lands on empty pages: what lies ahead is loaded\n  while you swipe, not only when you stop, and each wallpaper's preview is much lighter to show. A page that is\n  still on its way shows the wallpaper's own colour with a light moving over it instead of black.\n- From 0.7.5, fixed: on some phones *Set live wallpaper* did not bring up Android's screen where you choose home\n  screen, lock screen or both (it showed the phone's list of live wallpapers, an older copy of that screen, or\n  nothing). It now always opens that screen, and Wallify notices that the wallpaper was set when you come back.\n\n\n---\n- Version: 0.7.5 (code 7005)\n- SHA-256: `9f3e884bbbeea58895327bd21d3dd1bc521ac50f40727e67239d054653620cd8`\n- Signing certificate SHA-256: `f56583efbc5c14eaec486caa567dc65fa834314e26d87f554511bc13642fbfc2`\n- Always-latest download: https://github.com/il90il90/Wallify-releases/releases/latest/download/Wallify.apk",
-    "publishedAt": "2026-11-19T17:47:02Z",
-    "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.7.5"
+    "tag": "v0.7.7",
+    "name": "Wallify 0.7.7",
+    "notes": "- From 0.7.7, fixed: **a category shows all of its wallpapers.** A category you had already seen much of ended\n  after the few new ones - \"88\" on its tab, four wallpapers in it - because the ones you had seen were left out and\n  never came back. Now the new ones still come first, and every wallpaper you have seen follows them (the ones\n  seen longest ago first), so a category is always as long as its number says.\n- From 0.7.6: **the next wallpaper is already there when you turn the screen on.** The favorites wallpaper used to\n  change when the screen came on - on some phones a moment later, in front of your eyes. It now changes when the\n  screen goes *off*: the next photo or live wallpaper is put in place right then, and a live one starts from that\n  very picture when you look at the phone again.\n- From 0.7.6: **a soft fade** when the wallpaper changes while you are looking at it (on a timer, *Next wallpaper\n  now*, lock screen to home screen) - from live to live, live to photo and back - instead of a hard cut.\n- From 0.7.6: **how often** - *Set favorites wallpaper* now asks how often it should change: each time the screen\n  turns on (the default), or every minute, 5, 15 or 30 minutes, hour, 3 hours or day. The bar in Love it's gallery\n  view opens the same choice while it runs (*Save*, *Stop*).\n- From 0.7.5: **Set favorites wallpaper** - one button under *Set wallpaper* (and a bar in Love it's gallery\n  view): every wallpaper you love, photos and live alike, takes turns on your screen. The *Auto-change* screen\n  (photos or live, which ones) is gone. A wallpaper\n  you love later joins by itself, one you take out leaves; tap the button again to stop. *Send to TV* shows only\n  with a TV connected (connecting one: Settings → My screens). The play and round-arrows buttons at the top of Love\n  it are gone, and the tabs there no longer run under the button next to them.\n- From 0.7.5: **always something to see** - opening Wallify shows a wallpaper at once (the first ones are kept on\n  the phone from your last visit), and swiping quickly no longer lands on empty pages: what lies ahead is loaded\n  while you swipe, not only when you stop, and each wallpaper's preview is much lighter to show. A page that is\n  still on its way shows the wallpaper's own colour with a light moving over it instead of black.\n- From 0.7.5, fixed: on some phones *Set live wallpaper* did not bring up Android's screen where you choose home\n  screen, lock screen or both (it showed the phone's list of live wallpapers, an older copy of that screen, or\n  nothing). It now always opens that screen, and Wallify notices that the wallpaper was set when you come back.\n- **Everything is open to everyone**: no Premium, no paywall, no ads. The gallery (Discover) with search and\n  filters, and your own videos as live wallpapers (Love it → My videos), work for everyone. Google Play Billing\n  and the AdMob / consent SDKs are gone from the app - no advertising id, no consent form at start.\n- **Updates from the public releases**: Wallify is not in a store, so every version is also published to\n  [il90il90/Wallify-releases](https://github.com/il90il90/Wallify-releases). On launch (at most every few hours)\n  the app looks there and, for a newer version, asks whether to update, with what is new. *Update* downloads it,\n  checks its SHA-256 and that it is Wallify, and opens Android's installer (the first time, Android asks to allow\n  Wallify to install apps). *Later* asks again on the next launch; Settings → *Check for updates* asks now. The TV\n  shows the same question with remote buttons.\n- **Shorter Settings**: no Membership, Privacy or policy texts; the *Personalized* and *Keep history* switches are\n  gone (the feed is always personal, the history always kept on the phone) - *Reset recommendations* and *Clear\n  watch history* remain.\n- **No numbers on the tabs**: the count on the heart in the bottom bar, on the Love it tabs and next to the\n  categories is hidden.\n- **Developer options are hidden**: Settings → tap the version line 10 times (test builds) to show files on the\n  Cloudflare server, *Counts* (categories, Love it tabs, the heart), the temporary *Delete* button and *Hide\n  developer options*. While they are hidden, the counts and the Delete button are off.\n- From 0.7.1: the first version in the public releases; the TV's Settings have *Check for updates* too.\n- From 0.7.2: the version is a plain number (no \"-qa\": this is the real app now), and the temporary\n  *Delete* button is gone for good.\n- From 0.7.4: **nothing can be deleted** - there is no delete anywhere in the app (also not in *My videos*), and\n  Wallify Cloud refuses every way of deleting: images, videos, posters and backups stay, whoever asks. Viewing,\n  uploading and downloading in the original quality are unchanged.\n\n---\n- Version: 0.7.7 (code 7007)\n- SHA-256: `8781a6fb8ee2fd46dc25ae76f06cbab3e0d24deae6690d555b238c1037865ecd`\n- Signing certificate SHA-256: `f56583efbc5c14eaec486caa567dc65fa834314e26d87f554511bc13642fbfc2`\n- Always-latest download: https://github.com/il90il90/Wallify-releases/releases/latest/download/Wallify.apk",
+    "publishedAt": "2026-11-19T18:41:21Z",
+    "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.7.7"
    },
    "iconStyle": "adaptive",
    "icon": "icons/wallify.png?v=4b5cdc0d",
