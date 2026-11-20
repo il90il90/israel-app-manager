@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-20T16:24:10Z",
+ "generatedAt": "2026-11-20T22:48:23Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -224,26 +224,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.wallify.debug",
-     "versionName": "0.7.10",
-     "versionCode": 7010,
+     "versionName": "0.7.13",
+     "versionCode": 7013,
      "minSdk": 24,
      "targetSdk": 36,
      "tvCapable": true,
      "label": "Wallify",
-     "fileName": "wallify-0.7.10.apk",
-     "url": "https://github.com/il90il90/Wallify-releases/releases/download/v0.7.10/wallify-0.7.10.apk",
-     "size": 35643502,
-     "sha256": "7a8301264aff2369ad04267423d32805aeaad5b23fd1b884003e25f6fc681187",
-     "assetId": 770685844,
-     "assetUpdatedAt": "2026-11-20T06:08:28Z"
+     "fileName": "wallify-0.7.13.apk",
+     "url": "https://github.com/il90il90/Wallify-releases/releases/download/v0.7.13/wallify-0.7.13.apk",
+     "size": 35643506,
+     "sha256": "697e329aa5e4021f565780f7fc994ebc4d2983a55aa60c17c85b8c358e8d4285",
+     "assetId": 772901904,
+     "assetUpdatedAt": "2026-11-20T18:32:50Z"
     }
    ],
    "release": {
-    "tag": "v0.7.10",
-    "name": "Wallify 0.7.10",
-    "notes": "- From 0.7.10: **one tap answers at once** - full screen in and out with no wait (a short, small badge at your\n  finger and the buttons sliding away, no vibration). Two taps love it with the heart in the **middle of the\n  screen**; the first of the two taps is simply taken back, so the buttons stay.\n- From 0.7.9: **double-tap to love it** - two taps on a wallpaper love it with a heart in Wallify's colours that pops\n  where your finger was, with a ring and sparks (keep tapping for more hearts). **One tap** is full screen and back:\n  a small badge pops at your finger and the buttons slide away - and come back with a little bounce. These effects\n  play even on phones where Android's animations are switched off (they used to vanish in the same moment there).\n- From 0.7.8: **Set favorites wallpaper** shows a fanned deck of your favourites and the \"how often\" scale again (a\n  bar of stops, like the speed bar) instead of a list - each time the screen turns on is still the default.\n- From 0.7.8: the **Set screen**: pull the panel down (or tap the wallpaper) to see the wallpaper alone - the back\n  arrow is shown then, and a small handle at the bottom brings the panel back. *Send to TV* shows only while one of\n  your TVs is on and reachable.\n- From 0.7.8: **Settings** - *Autoplay on mobile data* is gone (videos always play); *Keep live wallpaper on* shows\n  only until you allow it; *My screens* is now *TV screens*.\n- From 0.7.7, fixed: **a category shows all of its wallpapers.** A category you had already seen much of ended\n  after the few new ones - \"88\" on its tab, four wallpapers in it - because the ones you had seen were left out and\n  never came back. Now the new ones still come first, and every wallpaper you have seen follows them (the ones\n  seen longest ago first), so a category is always as long as its number says.\n- From 0.7.6: **the next wallpaper is already there when you turn the screen on.** The favorites wallpaper used to\n  change when the screen came on - on some phones a moment later, in front of your eyes. It now changes when the\n  screen goes *off*: the next photo or live wallpaper is put in place right then, and a live one starts from that\n  very picture when you look at the phone again.\n- From 0.7.6: **a soft fade** when the wallpaper changes while you are looking at it (on a timer, *Next wallpaper\n  now*, lock screen to home screen) - from live to live, live to photo and back - instead of a hard cut.\n- From 0.7.6: **how often** - *Set favorites wallpaper* now asks how often it should change: each time the screen\n  turns on (the default), or every minute, 5, 15 or 30 minutes, hour, 3 hours or day. The bar in Love it's gallery\n  view opens the same choice while it runs (*Save*, *Stop*).\n- From 0.7.5: **Set favorites wallpaper** - one button under *Set wallpaper* (and a bar in Love it's gallery\n  view): every wallpaper you love, photos and live alike, takes turns on your screen. The *Auto-change* screen\n  (photos or live, which ones) is gone. A wallpaper\n  you love later joins by itself, one you take out leaves; tap the button again to stop. *Send to TV* shows only\n  with a TV connected (connecting one: Settings → My screens). The play and round-arrows buttons at the top of Love\n  it are gone, and the tabs there no longer run under the button next to them.\n- From 0.7.5: **always something to see** - opening Wallify shows a wallpaper at once (the first ones are kept on\n  the phone from your last visit), and swiping quickly no longer lands on empty pages: what lies ahead is loaded\n  while you swipe, not only when you stop, and each wallpaper's preview is much lighter to show. A page that is\n  still on its way shows the wallpaper's own colour with a light moving over it instead of black.\n- From 0.7.5, fixed: on some phones *Set live wallpaper* did not bring up Android's screen where you choose home\n  screen, lock screen or both (it showed the phone's list of live wallpapers, an older copy of that screen, or\n  nothing). It now always opens that screen, and Wallify notices that the wallpaper was set when you come back.\n- **Everything is open to everyone**: no Premium, no paywall, no ads. The gallery (Discover) with search and\n  filters, and your own videos as live wallpapers (Love it → My videos), work for everyone. Google Play Billing\n  and the AdMob / consent SDKs are gone from the app - no advertising id, no consent form at start.\n- **Updates from the public releases**: Wallify is not in a store, so every version is also published to\n  [il90il90/Wallify-releases](https://github.com/il90il90/Wallify-releases). On launch (at most every few hours)\n  the app looks there and, for a newer version, asks whether to update, with what is new. *Update* downloads it,\n  checks its SHA-256 and that it is Wallify, and opens Android's installer (the first time, Android asks to allow\n  Wallify to install apps). *Later* asks again on the next launch; Settings → *Check for updates* asks now. The TV\n  shows the same question with remote buttons.\n- **Shorter Settings**: no Membership, Privacy or policy texts; the *Personalized* and *Keep history* switches are\n  gone (the feed is always personal, the history always kept on the phone) - *Reset recommendations* and *Clear\n  watch history* remain.\n- **No numbers on the tabs**: the count on the heart in the bottom bar, on the Love it tabs and next to the\n  categories is hidden.\n- **Developer options are hidden**: Settings → tap the version line 10 times (test builds) to show files on the\n  Cloudflare server, *Counts* (categories, Love it tabs, the heart), the temporary *Delete* button and *Hide\n  developer options*. While they are hidden, the counts and the Delete button are off.\n- From 0.7.1: the first version in the public releases; the TV's Settings have *Check for updates* too.\n- From 0.7.2: the version is a plain number (no \"-qa\": this is the real app now), and the temporary\n  *Delete* button is gone for good.\n- From 0.7.4: **nothing can be deleted** ",
-    "publishedAt": "2026-11-20T06:08:30Z",
-    "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.7.10"
+    "tag": "v0.7.13",
+    "name": "Wallify 0.7.13",
+    "notes": "- From 0.7.13, fixed: **a live wallpaper moved off-centre stood still** - after dragging or zooming a video in\n  *Set*, the wallpaper showed its first frame as a still picture (or black). The framing now gets the screen size\n  and the video plays; if a phone's GPU still shows nothing within 4 s, it plays centred instead of standing still.\n- From 0.7.12, fixed: **the same wallpaper twice in a row of categories** - many wallpapers are in more than one\n  category (Universe and Dark, say). When the feed moved on by itself to the next category, the ones you had just\n  seen came back at its end. They no longer do; a category you pick yourself still shows all of it.\n- From 0.7.11, fixed (developer counts): *All* shows how many wallpapers the library really holds (1,597 live), not\n  the categories added up - a wallpaper in two categories was counted twice (2,578).\n- From 0.7.10: **one tap answers at once** - full screen in and out with no wait (a short, small badge at your\n  finger and the buttons sliding away, no vibration). Two taps love it with the heart in the **middle of the\n  screen**; the first of the two taps is simply taken back, so the buttons stay.\n- From 0.7.9: **double-tap to love it** - two taps on a wallpaper love it with a heart in Wallify's colours that pops\n  where your finger was, with a ring and sparks (keep tapping for more hearts). **One tap** is full screen and back:\n  a small badge pops at your finger and the buttons slide away - and come back with a little bounce. These effects\n  play even on phones where Android's animations are switched off (they used to vanish in the same moment there).\n- From 0.7.8: **Set favorites wallpaper** shows a fanned deck of your favourites and the \"how often\" scale again (a\n  bar of stops, like the speed bar) instead of a list - each time the screen turns on is still the default.\n- From 0.7.8: the **Set screen**: pull the panel down (or tap the wallpaper) to see the wallpaper alone - the back\n  arrow is shown then, and a small handle at the bottom brings the panel back. *Send to TV* shows only while one of\n  your TVs is on and reachable.\n- From 0.7.8: **Settings** - *Autoplay on mobile data* is gone (videos always play); *Keep live wallpaper on* shows\n  only until you allow it; *My screens* is now *TV screens*.\n- From 0.7.7, fixed: **a category shows all of its wallpapers.** A category you had already seen much of ended\n  after the few new ones - \"88\" on its tab, four wallpapers in it - because the ones you had seen were left out and\n  never came back. Now the new ones still come first, and every wallpaper you have seen follows them (the ones\n  seen longest ago first), so a category is always as long as its number says.\n- From 0.7.6: **the next wallpaper is already there when you turn the screen on.** The favorites wallpaper used to\n  change when the screen came on - on some phones a moment later, in front of your eyes. It now changes when the\n  screen goes *off*: the next photo or live wallpaper is put in place right then, and a live one starts from that\n  very picture when you look at the phone again.\n- From 0.7.6: **a soft fade** when the wallpaper changes while you are looking at it (on a timer, *Next wallpaper\n  now*, lock screen to home screen) - from live to live, live to photo and back - instead of a hard cut.\n- From 0.7.6: **how often** - *Set favorites wallpaper* now asks how often it should change: each time the screen\n  turns on (the default), or every minute, 5, 15 or 30 minutes, hour, 3 hours or day. The bar in Love it's gallery\n  view opens the same choice while it runs (*Save*, *Stop*).\n- From 0.7.5: **Set favorites wallpaper** - one button under *Set wallpaper* (and a bar in Love it's gallery\n  view): every wallpaper you love, photos and live alike, takes turns on your screen. The *Auto-change* screen\n  (photos or live, which ones) is gone. A wallpaper\n  you love later joins by itself, one you take out leaves; tap the button again to stop. *Send to TV* shows only\n  with a TV connected (connecting one: Settings → My screens). The play and round-arrows buttons at the top of Love\n  it are gone, and the tabs there no longer run under the button next to them.\n- From 0.7.5: **always something to see** - opening Wallify shows a wallpaper at once (the first ones are kept on\n  the phone from your last visit), and swiping quickly no longer lands on empty pages: what lies ahead is loaded\n  while you swipe, not only when you stop, and each wallpaper's preview is much lighter to show. A page that is\n  still on its way shows the wallpaper's own colour with a light moving over it instead of black.\n- From 0.7.5, fixed: on some phones *Set live wallpaper* did not bring up Android's screen where you choose home\n  screen, lock screen or both (it showed the phone's list of live wallpapers, an older copy of that screen, or\n  nothing). It now always opens that screen, and Wallify notices that the wallpaper was set when you come back.\n- **Everything is open to everyone**: no Premium, no paywall, no ads. The gallery (Discover) with search and\n  filters, and your own videos as live wallpapers (Love it → My videos), work for everyone. Google Play Billing\n  and the AdMob / consent SDKs are gone from the app - no advertising id, no consent form at start.\n- **Updates from the public releases**: Wallify is not in a store, so every version is also published to\n  [il90il90/Wallify-releases](https://github.com/il90il90/Wallify-releases). On launch (at most every few hours)\n  the app looks there and, for a newer version, asks whether to update, with what is new. *Update* downloads it,\n  checks its SHA-256 and that it is Wallify, and opens Android's installer (the first time, Android asks to allow\n  Wallify to install apps). *Later* asks again on the next launch; Settings → *Check for updates* asks now. The TV\n  shows the same question with remote buttons.\n- **Shorter Settings**: no Membership, Privacy or policy texts; the *Personalized* and *Keep history* sw",
+    "publishedAt": "2026-11-20T18:32:52Z",
+    "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.7.13"
    },
    "iconStyle": "adaptive",
    "icon": "icons/wallify.png?v=4b5cdc0d",
@@ -343,26 +343,26 @@
       "arm64-v8a"
      ],
      "packageName": "com.app360brains.exDialer.mod",
-     "versionName": "3.10.81",
-     "versionCode": 181,
+     "versionName": "3.10.82",
+     "versionCode": 182,
      "minSdk": 32,
      "targetSdk": 36,
      "tvCapable": false,
      "label": "OneDial",
-     "fileName": "onedial-3.10.81.apk",
-     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.81/onedial-3.10.81.apk",
-     "size": 48421456,
-     "sha256": "e8aa9cd0b107dd661c2bda8e791e99c151e2c804e8ea3e21e955554fd42396bf",
-     "assetId": 768528519,
-     "assetUpdatedAt": "2026-11-19T17:06:00Z"
+     "fileName": "onedial-3.10.82.apk",
+     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.82/onedial-3.10.82.apk",
+     "size": 55565196,
+     "sha256": "bab552280fb47ec8da74397288d3488a00f47a11d1c2ecaff1a48cf9f6ad4616",
+     "assetId": 772812647,
+     "assetUpdatedAt": "2026-11-20T18:05:31Z"
     }
    ],
    "release": {
-    "tag": "v3.10.81",
-    "name": "OneDial 3.10.81",
-    "notes": "- Without Me the dialer behaves as an app that never had it (#33)\n\nPatched on top of 3.10.80. Same release key as 3.10.5.\n\n<!-- source: 58448ebff68eed3914ce5d4e82383b10ad25f7e7 -->",
-    "publishedAt": "2026-11-19T17:06:01Z",
-    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.81"
+    "tag": "v3.10.82",
+    "name": "OneDial 3.10.82",
+    "notes": "- Call recording with on-device Hebrew transcription, a recordings page with a speaker graph, search, share, save and delete; the dialer shows the live wallpaper\n\nPatched on top of 3.10.81. Same release key as 3.10.5.\n\n<!-- source: cb59746ee32262cd060c0cab168c01eab71d517f -->",
+    "publishedAt": "2026-11-20T18:05:32Z",
+    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.82"
    },
    "iconStyle": "adaptive",
    "icon": "icons/onedial.png?v=f291d671",
