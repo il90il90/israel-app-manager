@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-20T07:34:09Z",
+ "generatedAt": "2026-11-20T16:24:10Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -105,18 +105,18 @@
       "arm64-v8a"
      ],
      "packageName": "com.il90.seretgram",
-     "versionName": "0.2.1081",
-     "versionCode": 21081,
+     "versionName": "0.2.1086",
+     "versionCode": 21086,
      "minSdk": 23,
      "targetSdk": 35,
      "tvCapable": true,
      "label": "SeretGram",
-     "fileName": "SeretGram-0.2.1081-21081-arm64-v8a.apk",
-     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1081/SeretGram-0.2.1081-21081-arm64-v8a.apk",
-     "size": 27875919,
-     "sha256": "1425c3783680f71ca8752c2927c6e86678432127927204184cb87822f7eae5fd",
-     "assetId": 770818553,
-     "assetUpdatedAt": "2026-11-20T07:01:17Z"
+     "fileName": "SeretGram-0.2.1086-21086-arm64-v8a.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1086/SeretGram-0.2.1086-21086-arm64-v8a.apk",
+     "size": 27876556,
+     "sha256": "74f1147a49f245e62930ffd40df9fc2e0537210914e4ba25a593cad41fd92c8d",
+     "assetId": 770951203,
+     "assetUpdatedAt": "2026-11-20T07:52:09Z"
     },
     {
      "formFactor": "phone",
@@ -124,18 +124,18 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.seretgram",
-     "versionName": "0.2.1081",
-     "versionCode": 21081,
+     "versionName": "0.2.1086",
+     "versionCode": 21086,
      "minSdk": 23,
      "targetSdk": 35,
      "tvCapable": true,
      "label": "SeretGram",
-     "fileName": "SeretGram-0.2.1081-21081-armeabi-v7a.apk",
-     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1081/SeretGram-0.2.1081-21081-armeabi-v7a.apk",
-     "size": 21866643,
-     "sha256": "74da055b0b57c0a800fb621b6a1383ec2e43ba423b8f4bafd363d0b784b4dbf4",
-     "assetId": 770818552,
-     "assetUpdatedAt": "2026-11-20T07:01:17Z"
+     "fileName": "SeretGram-0.2.1086-21086-armeabi-v7a.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1086/SeretGram-0.2.1086-21086-armeabi-v7a.apk",
+     "size": 21867274,
+     "sha256": "eca1d99911c9328520e827e47daaf9e22df5c59d6ae70827aea910e441056969",
+     "assetId": 770951200,
+     "assetUpdatedAt": "2026-11-20T07:52:09Z"
     },
     {
      "formFactor": "phone",
@@ -143,18 +143,18 @@
       "x86_64"
      ],
      "packageName": "com.il90.seretgram",
-     "versionName": "0.2.1081",
-     "versionCode": 21081,
+     "versionName": "0.2.1086",
+     "versionCode": 21086,
      "minSdk": 23,
      "targetSdk": 35,
      "tvCapable": true,
      "label": "SeretGram",
-     "fileName": "SeretGram-0.2.1081-21081-x86_64.apk",
-     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1081/SeretGram-0.2.1081-21081-x86_64.apk",
-     "size": 30309196,
-     "sha256": "a2d4c441938716850e25c9d9e2ef12a3b39cc2ad320ebf512e9e1b3748bdc263",
-     "assetId": 770818616,
-     "assetUpdatedAt": "2026-11-20T07:01:16Z"
+     "fileName": "SeretGram-0.2.1086-21086-x86_64.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1086/SeretGram-0.2.1086-21086-x86_64.apk",
+     "size": 30309830,
+     "sha256": "2ae319e6c96fed66ead93092e3e2f3290a141082a8de8e055e1f02f93bc011b8",
+     "assetId": 770951279,
+     "assetUpdatedAt": "2026-11-20T07:52:08Z"
     },
     {
      "formFactor": "phone",
@@ -163,26 +163,26 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.seretgram",
-     "versionName": "0.2.1081",
-     "versionCode": 21081,
+     "versionName": "0.2.1086",
+     "versionCode": 21086,
      "minSdk": 23,
      "targetSdk": 35,
      "tvCapable": true,
      "label": "SeretGram",
-     "fileName": "SeretGram-0.2.1081-21081.apk",
-     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1081/SeretGram-0.2.1081-21081.apk",
-     "size": 42740356,
-     "sha256": "07cdcc9bba381e91969f171c2a6d2bea4053c769026289572df21d70427f313f",
-     "assetId": 770818551,
-     "assetUpdatedAt": "2026-11-20T07:01:18Z"
+     "fileName": "SeretGram-0.2.1086-21086.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1086/SeretGram-0.2.1086-21086.apk",
+     "size": 42740998,
+     "sha256": "1803f23baaaeda23127a0644a95f331e0a874104c82105dde5d7c30142938b62",
+     "assetId": 770951207,
+     "assetUpdatedAt": "2026-11-20T07:52:11Z"
     }
    ],
    "release": {
-    "tag": "v0.2.1081",
-    "name": "SeretGram 0.2.1081",
-    "notes": "- Lint: the screensaver's key handling overrides the platform's dispatchKeyEvent; the showcase's words take their shift, not a modifier\n- Screensaver: a key held to wake it, or its repeats, never acts behind it\n- Screensaver: films (as a streaming service shows them) by default, after 10 minutes in the app; slideshow on a screen of its own; Photos off hides the rest\n- Connect another screen opens the screen's setup; General in titled panels; search in the photos chat picker\n\n<!-- seretgram-release commit=109e78d88c4309dfd137ce5ac39edc94c8964db4 versionCode=21081 -->",
-    "publishedAt": "2026-11-20T07:01:20Z",
-    "url": "https://github.com/il90il90/SeretGram-releases/releases/tag/v0.2.1081"
+    "tag": "v0.2.1086",
+    "name": "SeretGram 0.2.1086",
+    "notes": "- A film's copies fold under one line: how many were found, and Show\n\n<!-- seretgram-release commit=678ff22b2f7af8d660db33deb33cbabc1a6397f2 versionCode=21086 -->",
+    "publishedAt": "2026-11-20T07:52:12Z",
+    "url": "https://github.com/il90il90/SeretGram-releases/releases/tag/v0.2.1086"
    },
    "iconStyle": "adaptive",
    "icon": "icons/seretgram.png?v=85d32655",
