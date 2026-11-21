@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-21T11:50:24Z",
+ "generatedAt": "2026-11-21T18:30:57Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -105,18 +105,18 @@
       "arm64-v8a"
      ],
      "packageName": "com.il90.seretgram",
-     "versionName": "0.2.1086",
-     "versionCode": 21086,
+     "versionName": "0.2.1088",
+     "versionCode": 21088,
      "minSdk": 23,
      "targetSdk": 35,
      "tvCapable": true,
      "label": "SeretGram",
-     "fileName": "SeretGram-0.2.1086-21086-arm64-v8a.apk",
-     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1086/SeretGram-0.2.1086-21086-arm64-v8a.apk",
-     "size": 27876556,
-     "sha256": "74f1147a49f245e62930ffd40df9fc2e0537210914e4ba25a593cad41fd92c8d",
-     "assetId": 770951203,
-     "assetUpdatedAt": "2026-11-20T07:52:09Z"
+     "fileName": "SeretGram-0.2.1088-21088-arm64-v8a.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1088/SeretGram-0.2.1088-21088-arm64-v8a.apk",
+     "size": 27876568,
+     "sha256": "dc336f0c4d6e329994124c51e82988c38c1654e56c9a9768ce52bd98bcd076f2",
+     "assetId": 776361064,
+     "assetUpdatedAt": "2026-11-21T17:42:47Z"
     },
     {
      "formFactor": "phone",
@@ -124,18 +124,18 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.seretgram",
-     "versionName": "0.2.1086",
-     "versionCode": 21086,
+     "versionName": "0.2.1088",
+     "versionCode": 21088,
      "minSdk": 23,
      "targetSdk": 35,
      "tvCapable": true,
      "label": "SeretGram",
-     "fileName": "SeretGram-0.2.1086-21086-armeabi-v7a.apk",
-     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1086/SeretGram-0.2.1086-21086-armeabi-v7a.apk",
-     "size": 21867274,
-     "sha256": "eca1d99911c9328520e827e47daaf9e22df5c59d6ae70827aea910e441056969",
-     "assetId": 770951200,
-     "assetUpdatedAt": "2026-11-20T07:52:09Z"
+     "fileName": "SeretGram-0.2.1088-21088-armeabi-v7a.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1088/SeretGram-0.2.1088-21088-armeabi-v7a.apk",
+     "size": 21867279,
+     "sha256": "6606c24bd3aa81e6fbb602ef689cddb44f42db024a2b1337952740b6e6c56a66",
+     "assetId": 776361065,
+     "assetUpdatedAt": "2026-11-21T17:42:46Z"
     },
     {
      "formFactor": "phone",
@@ -143,18 +143,18 @@
       "x86_64"
      ],
      "packageName": "com.il90.seretgram",
-     "versionName": "0.2.1086",
-     "versionCode": 21086,
+     "versionName": "0.2.1088",
+     "versionCode": 21088,
      "minSdk": 23,
      "targetSdk": 35,
      "tvCapable": true,
      "label": "SeretGram",
-     "fileName": "SeretGram-0.2.1086-21086-x86_64.apk",
-     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1086/SeretGram-0.2.1086-21086-x86_64.apk",
-     "size": 30309830,
-     "sha256": "2ae319e6c96fed66ead93092e3e2f3290a141082a8de8e055e1f02f93bc011b8",
-     "assetId": 770951279,
-     "assetUpdatedAt": "2026-11-20T07:52:08Z"
+     "fileName": "SeretGram-0.2.1088-21088-x86_64.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1088/SeretGram-0.2.1088-21088-x86_64.apk",
+     "size": 30309841,
+     "sha256": "0e8fffec91d8dc40525c31ec3e8195aceb5f794e78bc224bac358808e4bffbe2",
+     "assetId": 776361089,
+     "assetUpdatedAt": "2026-11-21T17:42:45Z"
     },
     {
      "formFactor": "phone",
@@ -163,26 +163,26 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.seretgram",
-     "versionName": "0.2.1086",
-     "versionCode": 21086,
+     "versionName": "0.2.1088",
+     "versionCode": 21088,
      "minSdk": 23,
      "targetSdk": 35,
      "tvCapable": true,
      "label": "SeretGram",
-     "fileName": "SeretGram-0.2.1086-21086.apk",
-     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1086/SeretGram-0.2.1086-21086.apk",
-     "size": 42740998,
-     "sha256": "1803f23baaaeda23127a0644a95f331e0a874104c82105dde5d7c30142938b62",
-     "assetId": 770951207,
-     "assetUpdatedAt": "2026-11-20T07:52:11Z"
+     "fileName": "SeretGram-0.2.1088-21088.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1088/SeretGram-0.2.1088-21088.apk",
+     "size": 42741012,
+     "sha256": "e4d6d4df701773ea369ce3d35da731b08949bb262e34bcfb3d673409e620afba",
+     "assetId": 776361066,
+     "assetUpdatedAt": "2026-11-21T17:42:48Z"
     }
    ],
    "release": {
-    "tag": "v0.2.1086",
-    "name": "SeretGram 0.2.1086",
-    "notes": "- A film's copies fold under one line: how many were found, and Show\n\n<!-- seretgram-release commit=678ff22b2f7af8d660db33deb33cbabc1a6397f2 versionCode=21086 -->",
-    "publishedAt": "2026-11-20T07:52:12Z",
-    "url": "https://github.com/il90il90/SeretGram-releases/releases/tag/v0.2.1086"
+    "tag": "v0.2.1088",
+    "name": "SeretGram 0.2.1088",
+    "notes": "- Category page: the tabs count what the search found\n\n<!-- seretgram-release commit=53943041e1c4f5a9a174d390d73f4993d7f70090 versionCode=21088 -->",
+    "publishedAt": "2026-11-21T17:42:49Z",
+    "url": "https://github.com/il90il90/SeretGram-releases/releases/tag/v0.2.1088"
    },
    "iconStyle": "adaptive",
    "icon": "icons/seretgram.png?v=85d32655",
@@ -343,26 +343,26 @@
       "arm64-v8a"
      ],
      "packageName": "com.app360brains.exDialer.mod",
-     "versionName": "3.10.85",
-     "versionCode": 185,
+     "versionName": "3.10.94",
+     "versionCode": 194,
      "minSdk": 32,
      "targetSdk": 36,
      "tvCapable": false,
      "label": "OneDial",
-     "fileName": "onedial-3.10.85.apk",
-     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.85/onedial-3.10.85.apk",
-     "size": 55597964,
-     "sha256": "5251bee044cf7731246f03e303ccac5acdcbf8a7ad6f60a6ea7c753fcc42c233",
-     "assetId": 775346191,
-     "assetUpdatedAt": "2026-11-21T11:24:34Z"
+     "fileName": "onedial-3.10.94.apk",
+     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.94/onedial-3.10.94.apk",
+     "size": 55622540,
+     "sha256": "03108b9d4ee7291e5929eeed032940c8731ca3b58fa25f5a9e2002e8c4574077",
+     "assetId": 776300155,
+     "assetUpdatedAt": "2026-11-21T17:21:11Z"
     }
    ],
    "release": {
-    "tag": "v3.10.85",
-    "name": "OneDial 3.10.85",
-    "notes": "- Recording: the Wi-Fi Calling check reads this call's own log entry and never changes the setting during a call\n- Recording: calls over Wi-Fi Calling are set up to be heard; the recorder starts by itself\n\nPatched on top of 3.10.84. Same release key as 3.10.5.\n\n<!-- source: 778cd1e0f9d088712144f546e1dccfb6d0bc9461 -->",
-    "publishedAt": "2026-11-21T11:24:35Z",
-    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.85"
+    "tag": "v3.10.94",
+    "name": "OneDial 3.10.94",
+    "notes": "- Recording settings: a row shown disabled ignores any click, also one from accessibility\n- Recording settings: with call recording off, the settings that need it are shown disabled\n- Live transcript: a call read as one mix is split into two sides once its channels show them\n\nPatched on top of 3.10.93. Same release key as 3.10.5.\n\n<!-- source: 8b9eff7d6107524544590fb51cf828612502ed04 -->",
+    "publishedAt": "2026-11-21T17:21:12Z",
+    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.94"
    },
    "iconStyle": "adaptive",
    "icon": "icons/onedial.png?v=f291d671",
