@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-21T18:30:57Z",
+ "generatedAt": "2026-11-21T23:35:00Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -44,26 +44,26 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.touchless",
-     "versionName": "0.2.615",
-     "versionCode": 667,
+     "versionName": "0.2.616",
+     "versionCode": 668,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "Touchless",
-     "fileName": "touchless-0.2.615.apk",
-     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.615/touchless-0.2.615.apk",
-     "size": 40064779,
-     "sha256": "ce18c8e7f8db001e4a1fdc3bc541c87deb031e5f11bf510d943c6c3778580922",
-     "assetId": 760353174,
-     "assetUpdatedAt": "2026-11-17T19:31:28Z"
+     "fileName": "touchless-0.2.616.apk",
+     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.616/touchless-0.2.616.apk",
+     "size": 40225885,
+     "sha256": "8ab5c1c31df81ec0eed8e599b7a312c3416062c5aff085f418de0c2e314141b8",
+     "assetId": 776659551,
+     "assetUpdatedAt": "2026-11-21T19:38:53Z"
     }
    ],
    "release": {
-    "tag": "v0.2.615",
-    "name": "Touchless v0.2.615",
-    "notes": "# v0.2.615\n\n- **What's on comes first (#1020).** In Automations, and in every list that has an on / off state, the items that are\n  on now sit at the top, then the ones turned off, then the finished ones.\n  - Each group keeps the order you chose (newest first, oldest first, last run, most runs, name).\n  - The same goes for Scripts, Learned skills, App skills, Webhooks, Triggers, Event Hub watches and the ready-made\n    rules in AI instructions. Schedules, Tasks and the strip on Home already worked this way.\n  - A card moves to its group as soon as you switch it on or off.\n  - Connectors keep their fixed order: cards that moved with their live status made a tap land on the wrong card.\n- **Connect your AI in three steps (#1020).**\n  1. **MCP:** add Touchless to your AI. Copy copies the address and goes on by itself.\n  2. **Access:** choose what your AI may do. It is the same choice as Settings › Security. Loosening it asks for your\n     fingerprint or PIN each time, and Bypass asks for its own confirmation too.\n  3. **Prompt:** send the intro prompt.",
-    "publishedAt": "2026-11-17T19:32:49Z",
-    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.615"
+    "tag": "v0.2.616",
+    "name": "Touchless v0.2.616",
+    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.616",
+    "publishedAt": "2026-11-21T19:42:28Z",
+    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.616"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchless.png?v=8327713a",
@@ -105,18 +105,18 @@
       "arm64-v8a"
      ],
      "packageName": "com.il90.seretgram",
-     "versionName": "0.2.1088",
-     "versionCode": 21088,
+     "versionName": "0.2.1095",
+     "versionCode": 21095,
      "minSdk": 23,
      "targetSdk": 35,
      "tvCapable": true,
      "label": "SeretGram",
-     "fileName": "SeretGram-0.2.1088-21088-arm64-v8a.apk",
-     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1088/SeretGram-0.2.1088-21088-arm64-v8a.apk",
-     "size": 27876568,
-     "sha256": "dc336f0c4d6e329994124c51e82988c38c1654e56c9a9768ce52bd98bcd076f2",
-     "assetId": 776361064,
-     "assetUpdatedAt": "2026-11-21T17:42:47Z"
+     "fileName": "SeretGram-0.2.1095-21095-arm64-v8a.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1095/SeretGram-0.2.1095-21095-arm64-v8a.apk",
+     "size": 27876567,
+     "sha256": "5f41372d025c4926232c7329e6eacd45d828cb5317aadf6a80c8c7afc478c1e2",
+     "assetId": 777147928,
+     "assetUpdatedAt": "2026-11-21T23:05:54Z"
     },
     {
      "formFactor": "phone",
@@ -124,18 +124,18 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.seretgram",
-     "versionName": "0.2.1088",
-     "versionCode": 21088,
+     "versionName": "0.2.1095",
+     "versionCode": 21095,
      "minSdk": 23,
      "targetSdk": 35,
      "tvCapable": true,
      "label": "SeretGram",
-     "fileName": "SeretGram-0.2.1088-21088-armeabi-v7a.apk",
-     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1088/SeretGram-0.2.1088-21088-armeabi-v7a.apk",
-     "size": 21867279,
-     "sha256": "6606c24bd3aa81e6fbb602ef689cddb44f42db024a2b1337952740b6e6c56a66",
-     "assetId": 776361065,
-     "assetUpdatedAt": "2026-11-21T17:42:46Z"
+     "fileName": "SeretGram-0.2.1095-21095-armeabi-v7a.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1095/SeretGram-0.2.1095-21095-armeabi-v7a.apk",
+     "size": 21867296,
+     "sha256": "9bdc47136c5281c5c159b62e0505012b5a42d992137b04aeb01e8ebe763e031f",
+     "assetId": 777147934,
+     "assetUpdatedAt": "2026-11-21T23:05:51Z"
     },
     {
      "formFactor": "phone",
@@ -143,18 +143,18 @@
       "x86_64"
      ],
      "packageName": "com.il90.seretgram",
-     "versionName": "0.2.1088",
-     "versionCode": 21088,
+     "versionName": "0.2.1095",
+     "versionCode": 21095,
      "minSdk": 23,
      "targetSdk": 35,
      "tvCapable": true,
      "label": "SeretGram",
-     "fileName": "SeretGram-0.2.1088-21088-x86_64.apk",
-     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1088/SeretGram-0.2.1088-21088-x86_64.apk",
-     "size": 30309841,
-     "sha256": "0e8fffec91d8dc40525c31ec3e8195aceb5f794e78bc224bac358808e4bffbe2",
-     "assetId": 776361089,
-     "assetUpdatedAt": "2026-11-21T17:42:45Z"
+     "fileName": "SeretGram-0.2.1095-21095-x86_64.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1095/SeretGram-0.2.1095-21095-x86_64.apk",
+     "size": 30309831,
+     "sha256": "12195b188377c0e8d153b30474e86456c97747bcb3810a27febed2f320320b45",
+     "assetId": 777147976,
+     "assetUpdatedAt": "2026-11-21T23:05:49Z"
     },
     {
      "formFactor": "phone",
@@ -163,26 +163,26 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.seretgram",
-     "versionName": "0.2.1088",
-     "versionCode": 21088,
+     "versionName": "0.2.1095",
+     "versionCode": 21095,
      "minSdk": 23,
      "targetSdk": 35,
      "tvCapable": true,
      "label": "SeretGram",
-     "fileName": "SeretGram-0.2.1088-21088.apk",
-     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1088/SeretGram-0.2.1088-21088.apk",
-     "size": 42741012,
-     "sha256": "e4d6d4df701773ea369ce3d35da731b08949bb262e34bcfb3d673409e620afba",
-     "assetId": 776361066,
-     "assetUpdatedAt": "2026-11-21T17:42:48Z"
+     "fileName": "SeretGram-0.2.1095-21095.apk",
+     "url": "https://github.com/il90il90/SeretGram-releases/releases/download/v0.2.1095/SeretGram-0.2.1095-21095.apk",
+     "size": 42741001,
+     "sha256": "be2fe091f3a57b2ee81572b52b58315d2bfc2c09a94b5e25807af3561a61b74b",
+     "assetId": 777147929,
+     "assetUpdatedAt": "2026-11-21T23:05:56Z"
     }
    ],
    "release": {
-    "tag": "v0.2.1088",
-    "name": "SeretGram 0.2.1088",
-    "notes": "- Category page: the tabs count what the search found\n\n<!-- seretgram-release commit=53943041e1c4f5a9a174d390d73f4993d7f70090 versionCode=21088 -->",
-    "publishedAt": "2026-11-21T17:42:49Z",
-    "url": "https://github.com/il90il90/SeretGram-releases/releases/tag/v0.2.1088"
+    "tag": "v0.2.1095",
+    "name": "SeretGram 0.2.1095",
+    "notes": "- Windows grid: a key's move and a focus put back go by the film's key\n- Windows: keep the grid's focus and the player's tracks right while they change\n\n<!-- seretgram-release commit=c55e9603399761ca319b80a4347cd4b31f6be444 versionCode=21095 -->",
+    "publishedAt": "2026-11-21T23:05:57Z",
+    "url": "https://github.com/il90il90/SeretGram-releases/releases/tag/v0.2.1095"
    },
    "iconStyle": "adaptive",
    "icon": "icons/seretgram.png?v=85d32655",
