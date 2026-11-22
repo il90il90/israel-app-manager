@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-22T11:57:06Z",
+ "generatedAt": "2026-11-22T18:43:55Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -44,26 +44,26 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.touchless",
-     "versionName": "0.2.616",
-     "versionCode": 668,
+     "versionName": "0.2.620",
+     "versionCode": 672,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "Touchless",
-     "fileName": "touchless-0.2.616.apk",
-     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.616/touchless-0.2.616.apk",
-     "size": 40225885,
-     "sha256": "8ab5c1c31df81ec0eed8e599b7a312c3416062c5aff085f418de0c2e314141b8",
-     "assetId": 776659551,
-     "assetUpdatedAt": "2026-11-21T19:38:53Z"
+     "fileName": "touchless-0.2.620.apk",
+     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.620/touchless-0.2.620.apk",
+     "size": 40297515,
+     "sha256": "b4ae0ff7b9ce7a40bd726db23b78fd9522b8579e70abef345fe27ae8378753c7",
+     "assetId": 779945728,
+     "assetUpdatedAt": "2026-11-22T17:58:56Z"
     }
    ],
    "release": {
-    "tag": "v0.2.616",
-    "name": "Touchless v0.2.616",
-    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.616",
-    "publishedAt": "2026-11-21T19:42:28Z",
-    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.616"
+    "tag": "v0.2.620",
+    "name": "Touchless v0.2.620",
+    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.620",
+    "publishedAt": "2026-11-22T18:00:22Z",
+    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.620"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchless.png?v=8327713a",
@@ -343,26 +343,26 @@
       "arm64-v8a"
      ],
      "packageName": "com.app360brains.exDialer.mod",
-     "versionName": "3.10.94",
-     "versionCode": 194,
+     "versionName": "3.10.96",
+     "versionCode": 196,
      "minSdk": 32,
      "targetSdk": 36,
      "tvCapable": false,
      "label": "OneDial",
-     "fileName": "onedial-3.10.94.apk",
-     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.94/onedial-3.10.94.apk",
-     "size": 55622540,
-     "sha256": "03108b9d4ee7291e5929eeed032940c8731ca3b58fa25f5a9e2002e8c4574077",
-     "assetId": 776300155,
-     "assetUpdatedAt": "2026-11-21T17:21:11Z"
+     "fileName": "onedial-3.10.96.apk",
+     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.96/onedial-3.10.96.apk",
+     "size": 55643020,
+     "sha256": "5c1ecbc4ac3d0607cc3d2290c4bb5e9dd0b584be852a1da040acd5c92881832b",
+     "assetId": 780030062,
+     "assetUpdatedAt": "2026-11-22T18:28:07Z"
     }
    ],
    "release": {
-    "tag": "v3.10.94",
-    "name": "OneDial 3.10.94",
-    "notes": "- Recording settings: a row shown disabled ignores any click, also one from accessibility\n- Recording settings: with call recording off, the settings that need it are shown disabled\n- Live transcript: a call read as one mix is split into two sides once its channels show them\n\nPatched on top of 3.10.93. Same release key as 3.10.5.\n\n<!-- source: 8b9eff7d6107524544590fb51cf828612502ed04 -->",
-    "publishedAt": "2026-11-21T17:21:12Z",
-    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.94"
+    "tag": "v3.10.96",
+    "name": "OneDial 3.10.96",
+    "notes": "- Transcripts: Hebrew lines that start with an English word read right to left\n\nPatched on top of 3.10.95. Same release key as 3.10.5.\n\n<!-- source: aa4da2328f67f37288791ec8d07255dc5ffd6939 -->",
+    "publishedAt": "2026-11-22T18:28:08Z",
+    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.96"
    },
    "iconStyle": "adaptive",
    "icon": "icons/onedial.png?v=f291d671",
@@ -740,6 +740,34 @@
    "accent": "#5142BF"
   },
   {
+   "id": "touchkey",
+   "name": "TouchKey",
+   "tagline": {
+    "en": "Remap any hardware key: tap, double tap, long press",
+    "he": "מיפוי מחדש לכל מקש פיזי: לחיצה, לחיצה כפולה ולחיצה ארוכה"
+   },
+   "description": {
+    "en": "Gives any hardware key a new job. Every key gets three actions of its own: tap, double tap and long press. Works with the device's own buttons, USB and Bluetooth keyboards, game controllers and TV remotes, on phones, tablets and Android TV.",
+    "he": "נותן לכל מקש פיזי תפקיד חדש. לכל מקש שלוש פעולות משלו: לחיצה, לחיצה כפולה ולחיצה ארוכה. עובד עם הכפתורים של המכשיר עצמו, עם מקלדות USB ו-Bluetooth, עם בקרי משחק ועם שלטי טלוויזיה, בטלפונים, בטאבלטים וב-Android TV."
+   },
+   "category": "tools",
+   "developer": "Israel",
+   "website": null,
+   "storeUrl": null,
+   "repoUrl": null,
+   "latestUrl": null,
+   "source": null,
+   "featured": false,
+   "license": null,
+   "self": false,
+   "order": 10,
+   "variants": [],
+   "release": null,
+   "iconStyle": "adaptive",
+   "icon": "icons/touchkey.png?v=bf1f429b",
+   "accent": "#5A58DF"
+  },
+  {
    "id": "zoopli",
    "name": "Zoopli",
    "tagline": {
@@ -764,7 +792,7 @@
    "featured": false,
    "license": null,
    "self": false,
-   "order": 10,
+   "order": 11,
    "variants": [
     {
      "formFactor": "phone",
@@ -825,7 +853,7 @@
    "featured": false,
    "license": null,
    "self": false,
-   "order": 11,
+   "order": 12,
    "variants": [
     {
      "formFactor": "phone",
@@ -889,7 +917,7 @@
     "contact": "https://t.me/Israelcohen"
    },
    "self": false,
-   "order": 12,
+   "order": 13,
    "variants": [
     {
      "formFactor": "phone",
@@ -945,7 +973,7 @@
    "featured": false,
    "license": null,
    "self": true,
-   "order": 13,
+   "order": 14,
    "variants": [
     {
      "formFactor": "phone",
