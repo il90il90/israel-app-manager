@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-22T19:28:52Z",
+ "generatedAt": "2026-11-22T20:07:23Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -747,22 +747,55 @@
     "he": "מיפוי מחדש לכל מקש פיזי: לחיצה, לחיצה כפולה ולחיצה ארוכה"
    },
    "description": {
-    "en": "Gives any hardware key a new job. Every key gets three actions of its own: tap, double tap and long press. Works with the device's own buttons, USB and Bluetooth keyboards, game controllers and TV remotes, on phones, tablets and Android TV.",
-    "he": "נותן לכל מקש פיזי תפקיד חדש. לכל מקש שלוש פעולות משלו: לחיצה, לחיצה כפולה ולחיצה ארוכה. עובד עם הכפתורים של המכשיר עצמו, עם מקלדות USB ו-Bluetooth, עם בקרי משחק ועם שלטי טלוויזיה, בטלפונים, בטאבלטים וב-Android TV."
+    "en": "Gives any hardware key a new job. Every key gets three actions of its own: tap, double tap and long press. Works with the device's own buttons, USB and Bluetooth keyboards, game controllers and TV remotes, on phones, tablets and Android TV. Keys can act differently in each app, run several steps in a row, open a quick menu, or tap a place or a button on the screen.",
+    "he": "נותן לכל מקש פיזי תפקיד חדש. לכל מקש שלוש פעולות משלו: לחיצה, לחיצה כפולה ולחיצה ארוכה. עובד עם הכפתורים של המכשיר עצמו, עם מקלדות USB ו-Bluetooth, עם בקרי משחק ועם שלטי טלוויזיה, בטלפונים, בטאבלטים וב-Android TV. מקש יכול להתנהג אחרת בכל אפליקציה, להריץ כמה צעדים ברצף, לפתוח תפריט מהיר, או ללחוץ על מקום או על כפתור במסך."
    },
    "category": "tools",
    "developer": "Israel",
    "website": null,
    "storeUrl": null,
-   "repoUrl": null,
-   "latestUrl": null,
-   "source": null,
+   "repoUrl": "https://github.com/il90il90/touchkey-releases",
+   "latestUrl": "https://github.com/il90il90/touchkey-releases/releases/latest",
+   "source": {
+    "repo": "il90il90/touchkey-releases",
+    "tag": "^v\\d+(\\.\\d+)*$",
+    "asset": "^touchkey-\\d[\\d.]*\\.apk$"
+   },
    "featured": false,
    "license": null,
    "self": false,
    "order": 10,
-   "variants": [],
-   "release": null,
+   "variants": [
+    {
+     "formFactor": "phone",
+     "abis": [
+      "arm64-v8a",
+      "armeabi-v7a",
+      "x86",
+      "x86_64"
+     ],
+     "packageName": "com.il90.touchkey",
+     "versionName": "0.2.0",
+     "versionCode": 2,
+     "minSdk": 26,
+     "targetSdk": 37,
+     "tvCapable": true,
+     "label": "TouchKey",
+     "fileName": "touchkey-0.2.0.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.2.0/touchkey-0.2.0.apk",
+     "size": 11300004,
+     "sha256": "200cc57faa839b21b6f2d87d1f3a66639520fa9adc8652180d0ae6bc913ee085",
+     "assetId": 780244647,
+     "assetUpdatedAt": "2026-11-22T19:45:51Z"
+    }
+   ],
+   "release": {
+    "tag": "v0.2.0",
+    "name": "TouchKey 0.2.0",
+    "notes": "## TouchKey 0.2.0\n\nThe first public release.\n\n- Remap the device's buttons, keyboards, Bluetooth devices and remotes: a tap, a double tap and a long press for every key.\n- Per-app keys, sequences of steps, quick menus, screen actions (tap a place, or a button by its name).\n- Power mode over Wi-Fi debugging for keys and actions that need more access.\n- Backup to a file or to Google Drive.\n- New: TouchKey checks for updates once a day and installs them with your OK (Settings › About and updates).\n\n\nVersion 0.2.0 (build 2).\nSHA-256: 200cc57faa839b21b6f2d87d1f3a66639520fa9adc8652180d0ae6bc913ee085",
+    "publishedAt": "2026-11-22T19:45:52Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.2.0"
+   },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
    "accent": "#5A58DF"
