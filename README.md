@@ -25,7 +25,7 @@ publishing a new version of one needs no new version of the manager.
 ## The apps
 
 Touchless · SeretGram · Wallify · TrustAPK · OneDial · Gallery Wall · WatchIPTV · ScoreUp ·
-Touchless Bridge · Screen Awake · Zoopli · אבג ABC · Israel TV
+Touchless Bridge · Screen Awake · TouchKey · Zoopli · אבג ABC · Israel TV
 
 ## How it works
 

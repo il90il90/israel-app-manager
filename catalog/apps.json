@@ -160,6 +160,20 @@
       "sources": [{ "repo": "il90il90/ScreenAwake-releases", "tag": "^v\\d", "asset": "^ScreenAwake-\\d.*\\.apk$" }]
     },
     {
+      "id": "touchkey",
+      "name": "TouchKey",
+      "category": "tools",
+      "tagline": {
+        "en": "Remap any hardware key: tap, double tap, long press",
+        "he": "מיפוי מחדש לכל מקש פיזי: לחיצה, לחיצה כפולה ולחיצה ארוכה"
+      },
+      "description": {
+        "en": "Gives any hardware key a new job. Every key gets three actions of its own: tap, double tap and long press. Works with the device's own buttons, USB and Bluetooth keyboards, game controllers and TV remotes, on phones, tablets and Android TV.",
+        "he": "נותן לכל מקש פיזי תפקיד חדש. לכל מקש שלוש פעולות משלו: לחיצה, לחיצה כפולה ולחיצה ארוכה. עובד עם הכפתורים של המכשיר עצמו, עם מקלדות USB ו-Bluetooth, עם בקרי משחק ועם שלטי טלוויזיה, בטלפונים, בטאבלטים וב-Android TV."
+      },
+      "sources": []
+    },
+    {
       "id": "zoopli",
       "name": "Zoopli",
       "category": "kids",
