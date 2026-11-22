@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-22T20:07:23Z",
+ "generatedAt": "2026-11-22T22:17:52Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.2.0",
-     "versionCode": 2,
+     "versionName": "0.3.0",
+     "versionCode": 3,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.2.0.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.2.0/touchkey-0.2.0.apk",
-     "size": 11300004,
-     "sha256": "200cc57faa839b21b6f2d87d1f3a66639520fa9adc8652180d0ae6bc913ee085",
-     "assetId": 780244647,
-     "assetUpdatedAt": "2026-11-22T19:45:51Z"
+     "fileName": "touchkey-0.3.0.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.3.0/touchkey-0.3.0.apk",
+     "size": 11332932,
+     "sha256": "8fce3281e01f3573a42fa0f550debc9c65935a832bd08b8a0b1863b4af0480cd",
+     "assetId": 780639998,
+     "assetUpdatedAt": "2026-11-22T22:17:16Z"
     }
    ],
    "release": {
-    "tag": "v0.2.0",
-    "name": "TouchKey 0.2.0",
-    "notes": "## TouchKey 0.2.0\n\nThe first public release.\n\n- Remap the device's buttons, keyboards, Bluetooth devices and remotes: a tap, a double tap and a long press for every key.\n- Per-app keys, sequences of steps, quick menus, screen actions (tap a place, or a button by its name).\n- Power mode over Wi-Fi debugging for keys and actions that need more access.\n- Backup to a file or to Google Drive.\n- New: TouchKey checks for updates once a day and installs them with your OK (Settings › About and updates).\n\n\nVersion 0.2.0 (build 2).\nSHA-256: 200cc57faa839b21b6f2d87d1f3a66639520fa9adc8652180d0ae6bc913ee085",
-    "publishedAt": "2026-11-22T19:45:52Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.2.0"
+    "tag": "v0.3.0",
+    "name": "TouchKey 0.3.0",
+    "notes": "## TouchKey 0.3.0\n\n- **Voice typing** (new action): press a key and speak; the words are typed where the cursor is, in any language.\n  Start from a template (quick message, message and send, long dictation, search) and set the language, when the\n  recording ends, how long it may run, a wait before typing and what happens after. Recognition can stay on the\n  device where it supports it.\n- **Split screen** now works on Samsung and every other device with Power mode: the app you used before opens beside\n  the current one, and a second press leaves split screen.\n- **Power mode** asks for itself: choosing something that needs it shows what it is and how to set it up. Once it is\n  on, its tab moves to Settings.\n- **HTTP request**: Send test shows the whole answer (status, time, body, headers) in a window of its own.\n- **Open a link in an app** (activity with a link and no action) opens the link, e.g. ChatGPT's voice chat.\n- Back in the action list returns to the same tab and place; a clearer \"which device's button\" question; \"Try it\"\n  is gone from the key screen.\n\n\nVersion 0.3.0 (build 3).\nSHA-256: 8fce3281e01f3573a42fa0f550debc9c65935a832bd08b8a0b1863b4af0480cd",
+    "publishedAt": "2026-11-22T22:17:17Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.3.0"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
