@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T20:23:35Z",
+ "generatedAt": "2026-11-23T21:13:17Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -224,26 +224,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.wallify.debug",
-     "versionName": "0.8.1",
-     "versionCode": 8001,
+     "versionName": "0.8.2",
+     "versionCode": 8002,
      "minSdk": 24,
      "targetSdk": 36,
      "tvCapable": true,
      "label": "Wallify",
-     "fileName": "wallify-0.8.1.apk",
-     "url": "https://github.com/il90il90/Wallify-releases/releases/download/v0.8.1/wallify-0.8.1.apk",
-     "size": 35937338,
-     "sha256": "a1cf39f48c8a94725cccbcfa561b6ff173060c2f3c4e845fa4452f42c7c82674",
-     "assetId": 784387798,
-     "assetUpdatedAt": "2026-11-23T20:13:41Z"
+     "fileName": "wallify-0.8.2.apk",
+     "url": "https://github.com/il90il90/Wallify-releases/releases/download/v0.8.2/wallify-0.8.2.apk",
+     "size": 35959628,
+     "sha256": "1e3230c433298fe6320eaa6cd3ef9dec82b647cdfc20223e371f8bc17023b175",
+     "assetId": 784443651,
+     "assetUpdatedAt": "2026-11-23T20:31:57Z"
     }
    ],
    "release": {
-    "tag": "v0.8.1",
-    "name": "Wallify 0.8.1",
-    "notes": "- From 0.8.1: **13 more smart wallpapers** (37 in all). *Liquid and playful*: Day Tank (the day draining away),\n  Storage Tank, Lava Lamp, Hourglass, Bubbles, Moonlit Sea, Fireflies. *Places*: City Radar (the nearest cities in\n  their true direction and distance), Far Away (the way and the distance to a city you miss), Globe, Golden Hour\n  (where the sun is, and when the light turns golden). *Calendar*: My Week, Countdown to a day you choose.\n- From 0.8.1: **your precise place** - a wallpaper that shows a place can use the phone's own location instead of\n  the city of your network: choose *Precise location (GPS)* in Customize. Wallify asks for the permission only\n  then, reads the place only while Wallify itself is open, and the wallpaper uses what it last saw - it never\n  follows you in the background. For the weather the point is sent rounded to about a kilometre.\n- From 0.8.1: **take parts off** - switches in Customize hide parts of a wallpaper: the Cockpit's battery dial, its\n  gauges, its digital clock; the Liquid Battery's number and status; clocks, coordinates and more.\n- From 0.8.1: **more to touch** - bubbles burst from under a finger, fireflies and lava gather to it, water ripples.\n  The Liquid Battery says how long until it is full. *This Month* can mark the days that have events.\n- **Smart wallpapers** - a third side of the switch at the top of Home: *Live · Photos · Smart*. A smart wallpaper is\n  drawn on the phone from its real time and state: a clock that tells the time, a tank as full as the battery, the\n  sky as it is now. What you browse is the wallpaper itself, running on your phone.\n- **24 of them** at first, in five groups. *Clocks*: Cockpit, Word Clock (the time in words, in Hebrew too), Orbit, Neon,\n  Synthwave, Time Rings, Classic, Big Time, This Month, Year in Dots. *Sky & weather*: Weather Now (the real sky with\n  drifting clouds, rain, snow, lightning, fog), Forecast, Sky Now, Daylight (the sun's path, sunrise and sunset),\n  Aurora, Tonight's Moon. *Calendar*: My Day, Next Up, Day Planner. *Places*: Earth Now (a world map lit where it is\n  day), Compass, World Time. *Device*: Liquid Battery (leans with the phone, bubbles while charging), Device HUD.\n- **Make it yours** - *Customize* gives each wallpaper the options that fit it: colours, switches, a city from a list\n  of the world's cities (the three cities of World Time; the place a weather or sky wallpaper is for), Celsius or\n  Fahrenheit, the Word Clock's language, your own words on the Classic dial. Every change is drawn at once.\n- **Your calendar on the wallpaper** - choose which calendars are shown. Wallify asks to read the calendar only when\n  you pick calendars for such a wallpaper; the meetings are only read on the phone and drawn, never sent anywhere.\n  On a locked phone a meeting keeps its time but shows *Busy* instead of its name and place (a switch turns that\n  off).\n- **Weather without a location permission** - the weather comes from Wallify Cloud, which finds the city from the\n  phone's network address; it is asked for only while such a wallpaper is on screen, at most every half hour.\n  Offline, these wallpapers show the time and say so.\n- **Love it, like any wallpaper** - the heart, a double tap or touch and hold; setting one loves it too. Loved smart\n  wallpapers have their own *Smart* tab in Favorites. The Smart feed is in a new order on every visit.\n- **Easy on the battery** - a smart wallpaper is drawn only while it is on screen: once a minute, once a second, or\n  in frames only for what really moves (a second hand, rain); hidden, it does nothing.\n- Set one with *Set*: the first time Android's own \"Set wallpaper\" screen opens for *Wallify Smart* (home, lock or\n  both); after that a change shows at once. Wallify Smart is a wallpaper of its own beside Wallify Live, so moving\n  between a video and a smart wallpaper goes through that screen.\n- Not yet: sharing, comments and love counts for smart wallpapers, and their place in the favourites wallpaper that\n  takes turns - they are not in Wallify Cloud's catalogue yet.\n\n\n---\n- Version: 0.8.1 (code 8001)\n- SHA-256: `a1cf39f48c8a94725cccbcfa561b6ff173060c2f3c4e845fa4452f42c7c82674`\n- Signing certificate SHA-256: `f56583efbc5c14eaec486caa567dc65fa834314e26d87f554511bc13642fbfc2`\n- Always-latest download: https://github.com/il90il90/Wallify-releases/releases/latest/download/Wallify.apk",
-    "publishedAt": "2026-11-23T20:13:43Z",
-    "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.8.1"
+    "tag": "v0.8.2",
+    "name": "Wallify 0.8.2",
+    "notes": "- From 0.8.2: **the day outside, on your wallpaper** - six more (43 in all), in *Sky & weather*. **Horizon**: the\n  sun rising and setting over the sea where it really is, its light lying on the water, the moon at night.\n  **Day and Night**: the whole day as a ring in the colours the sky has at each hour, with today's real sunrise and\n  sunset and the sun or moon riding it. **Window**: when it rains where you are, drops stand on the glass and run\n  down it - wipe them with a finger; city lights glow behind it at night. **Today Outside**: hills, pines and grass\n  under the real sky - rain, snow on the hills, grass bending in the wind, birds on a fair day. **Puddle**: rain\n  rings on still water. **Thermometer**: a glass thermometer with the real temperature.\n  *Window* and *Puddle* have a switch for drops in any weather.\n- From 0.8.1: **13 more smart wallpapers** (37 in all). *Liquid and playful*: Day Tank (the day draining away),\n  Storage Tank, Lava Lamp, Hourglass, Bubbles, Moonlit Sea, Fireflies. *Places*: City Radar (the nearest cities in\n  their true direction and distance), Far Away (the way and the distance to a city you miss), Globe, Golden Hour\n  (where the sun is, and when the light turns golden). *Calendar*: My Week, Countdown to a day you choose.\n- From 0.8.1: **your precise place** - a wallpaper that shows a place can use the phone's own location instead of\n  the city of your network: choose *Precise location (GPS)* in Customize. Wallify asks for the permission only\n  then, reads the place only while Wallify itself is open, and the wallpaper uses what it last saw - it never\n  follows you in the background. For the weather the point is sent rounded to about a kilometre.\n- From 0.8.1: **take parts off** - switches in Customize hide parts of a wallpaper: the Cockpit's battery dial, its\n  gauges, its digital clock; the Liquid Battery's number and status; clocks, coordinates and more.\n- From 0.8.1: **more to touch** - bubbles burst from under a finger, fireflies and lava gather to it, water ripples.\n  The Liquid Battery says how long until it is full. *This Month* can mark the days that have events.\n- **Smart wallpapers** - a third side of the switch at the top of Home: *Live · Photos · Smart*. A smart wallpaper is\n  drawn on the phone from its real time and state: a clock that tells the time, a tank as full as the battery, the\n  sky as it is now. What you browse is the wallpaper itself, running on your phone.\n- **24 of them** at first, in five groups. *Clocks*: Cockpit, Word Clock (the time in words, in Hebrew too), Orbit, Neon,\n  Synthwave, Time Rings, Classic, Big Time, This Month, Year in Dots. *Sky & weather*: Weather Now (the real sky with\n  drifting clouds, rain, snow, lightning, fog), Forecast, Sky Now, Daylight (the sun's path, sunrise and sunset),\n  Aurora, Tonight's Moon. *Calendar*: My Day, Next Up, Day Planner. *Places*: Earth Now (a world map lit where it is\n  day), Compass, World Time. *Device*: Liquid Battery (leans with the phone, bubbles while charging), Device HUD.\n- **Make it yours** - *Customize* gives each wallpaper the options that fit it: colours, switches, a city from a list\n  of the world's cities (the three cities of World Time; the place a weather or sky wallpaper is for), Celsius or\n  Fahrenheit, the Word Clock's language, your own words on the Classic dial. Every change is drawn at once.\n- **Your calendar on the wallpaper** - choose which calendars are shown. Wallify asks to read the calendar only when\n  you pick calendars for such a wallpaper; the meetings are only read on the phone and drawn, never sent anywhere.\n  On a locked phone a meeting keeps its time but shows *Busy* instead of its name and place (a switch turns that\n  off).\n- **Weather without a location permission** - the weather comes from Wallify Cloud, which finds the city from the\n  phone's network address; it is asked for only while such a wallpaper is on screen, at most every half hour.\n  Offline, these wallpapers show the time and say so.\n- **Love it, like any wallpaper** - the heart, a double tap or touch and hold; setting one loves it too. Loved smart\n  wallpapers have their own *Smart* tab in Favorites. The Smart feed is in a new order on every visit.\n- **Easy on the battery** - a smart wallpaper is drawn only while it is on screen: once a minute, once a second, or\n  in frames only for what really moves (a second hand, rain); hidden, it does nothing.\n- Set one with *Set*: the first time Android's own \"Set wallpaper\" screen opens for *Wallify Smart* (home, lock or\n  both); after that a change shows at once. Wallify Smart is a wallpaper of its own beside Wallify Live, so moving\n  between a video and a smart wallpaper goes through that screen.\n- Not yet: sharing, comments and love counts for smart wallpapers, and their place in the favourites wallpaper that\n  takes turns - they are not in Wallify Cloud's catalogue yet.\n\n\n---\n- Version: 0.8.2 (code 8002)\n- SHA-256: `1e3230c433298fe6320eaa6cd3ef9dec82b647cdfc20223e371f8bc17023b175`\n- Signing certificate SHA-256: `f56583efbc5c14eaec486caa567dc65fa834314e26d87f554511bc13642fbfc2`\n- Always-latest download: https://github.com/il90il90/Wallify-releases/releases/latest/download/Wallify.apk",
+    "publishedAt": "2026-11-23T20:31:58Z",
+    "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.8.2"
    },
    "iconStyle": "adaptive",
    "icon": "icons/wallify.png?v=4b5cdc0d",
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.6.0",
-     "versionCode": 13,
+     "versionName": "0.7.0",
+     "versionCode": 14,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.6.0.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.6.0/touchkey-0.6.0.apk",
-     "size": 11521185,
-     "sha256": "c14d8cea300a897e9257356e801735bac6a271f83d3905e904161062ebf8c478",
-     "assetId": 784416016,
-     "assetUpdatedAt": "2026-11-23T20:22:51Z"
+     "fileName": "touchkey-0.7.0.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.7.0/touchkey-0.7.0.apk",
+     "size": 11600185,
+     "sha256": "6a789682c8fc639470ac6115433c3e8c6524e4c6f780c3dfaae4f89a611f04eb",
+     "assetId": 784559430,
+     "assetUpdatedAt": "2026-11-23T21:12:36Z"
     }
    ],
    "release": {
-    "tag": "v0.6.0",
-    "name": "TouchKey 0.6.0",
-    "notes": "## TouchKey 0.6.0\n\n- **Home-screen buttons (widgets)**: a button on your home screen that does what a key does. A tap runs its\n  actions, chosen from the same list (AI tab included), one step or several. Make them in Settings › Home-screen\n  buttons and tap \"Add to home screen\", or add \"TouchKey button\" from your launcher's widget list and pick or make\n  one there. The widget shows the app's own icon, or the action's.\n- Home-screen buttons are saved with your keys, so file and Google Drive backups carry them, and a backup's preview\n  lists new ones.\n\n\nVersion 0.6.0 (build 13).\nSHA-256: c14d8cea300a897e9257356e801735bac6a271f83d3905e904161062ebf8c478",
-    "publishedAt": "2026-11-23T20:22:53Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.6.0"
+    "tag": "v0.7.0",
+    "name": "TouchKey 0.7.0",
+    "notes": "## TouchKey 0.7.0\n\n- **Triggers**: the new \"Triggers\" button at the top of the home screen. \"When this happens, do that\", with the\n  same actions as keys (the AI tab included). A trigger can wait for:\n  - a Bluetooth device connecting or disconnecting (any, or one of your paired devices),\n  - Wi-Fi connecting or disconnecting (any network, or one by name),\n  - the charger plugged in or out, the battery dropping to a level, power saving on or off,\n  - the screen turning on or off, the phone being unlocked,\n  - headphones plugged in or out,\n  - an app opening or closing,\n  - a time of day on chosen days,\n  - the device starting.\n- Each trigger has its own switch, \"Run it now\" to try it, and a name that follows what it waits for until you\n  change it. Triggers are part of your backups.\n- Permissions are asked only when a trigger needs them: Bluetooth to choose a device, location only to know a Wi-Fi\n  network's name, and \"Alarms & reminders\" (optional) for time triggers to the minute.\n\n\nVersion 0.7.0 (build 14).\nSHA-256: 6a789682c8fc639470ac6115433c3e8c6524e4c6f780c3dfaae4f89a611f04eb",
+    "publishedAt": "2026-11-23T21:12:37Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.7.0"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
