@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T21:44:33Z",
+ "generatedAt": "2026-11-23T21:53:28Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.8.1",
-     "versionCode": 16,
+     "versionName": "0.8.2",
+     "versionCode": 17,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.8.1.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.8.1/touchkey-0.8.1.apk",
-     "size": 11649573,
-     "sha256": "3cbd743077c6d18ec0226396b6f7ddc6b24fcef539a2c71caa25e6d59afe6484",
-     "assetId": 784653229,
-     "assetUpdatedAt": "2026-11-23T21:44:03Z"
+     "fileName": "touchkey-0.8.2.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.8.2/touchkey-0.8.2.apk",
+     "size": 11665957,
+     "sha256": "40186dcaa47f2c4a2d4d7ed78cfbd72a99eb5f20633e4f4275d51adcc986287f",
+     "assetId": 784678939,
+     "assetUpdatedAt": "2026-11-23T21:52:47Z"
     }
    ],
    "release": {
-    "tag": "v0.8.1",
-    "name": "TouchKey 0.8.1",
-    "notes": "## TouchKey 0.8.1\n\n- **Triggers has its own tab** in the bottom bar, next to Keys, Menus and Settings (the button at the top of the\n  home screen is gone, so it is in one place).\n- **No more permission dialogs with Power mode**: when a feature needs a permission (SMS, calls, Bluetooth,\n  location, notification access, exact alarms, microphone, installing updates), TouchKey gives it to itself through\n  Power mode. Settings › Tools › \"Allow everything at once\" gives all of them in one tap. Without Power mode the\n  usual Android dialogs still appear.\n\n\nVersion 0.8.1 (build 16).\nSHA-256: 3cbd743077c6d18ec0226396b6f7ddc6b24fcef539a2c71caa25e6d59afe6484",
-    "publishedAt": "2026-11-23T21:44:04Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.8.1"
+    "tag": "v0.8.2",
+    "name": "TouchKey 0.8.2",
+    "notes": "## TouchKey 0.8.2\n\n- **Connect to a Bluetooth device** and **Connect to Wi-Fi** (Device tab): pick one of your paired devices or\n  saved networks. Use them anywhere: a key, a home-screen button, or a trigger such as \"YouTube opens → connect to\n  the speaker\". TouchKey checks first and does nothing when it is connected already; otherwise it turns Bluetooth or\n  Wi-Fi on (Power mode), opens Android's own list, taps the name and goes back. It needs TouchKey screen actions.\n\n\nVersion 0.8.2 (build 17).\nSHA-256: 40186dcaa47f2c4a2d4d7ed78cfbd72a99eb5f20633e4f4275d51adcc986287f",
+    "publishedAt": "2026-11-23T21:52:48Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.8.2"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
