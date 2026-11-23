@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T18:40:47Z",
+ "generatedAt": "2026-11-23T20:01:53Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.5.2",
-     "versionCode": 10,
+     "versionName": "0.5.3",
+     "versionCode": 11,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.5.2.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.5.2/touchkey-0.5.2.apk",
-     "size": 11439821,
-     "sha256": "a9b1242a8b35f9e568ce4d4da2b97ce22a3afceb92cef62e642d716a2800ba95",
-     "assetId": 784109103,
-     "assetUpdatedAt": "2026-11-23T18:40:15Z"
+     "fileName": "touchkey-0.5.3.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.5.3/touchkey-0.5.3.apk",
+     "size": 11501897,
+     "sha256": "c24388e9eb72955834997a47d19f7b41fdf08e986df13d87af422ecd921f76ae",
+     "assetId": 784350252,
+     "assetUpdatedAt": "2026-11-23T20:01:11Z"
     }
    ],
    "release": {
-    "tag": "v0.5.2",
-    "name": "TouchKey 0.5.2",
-    "notes": "## TouchKey 0.5.2\n\n- **Locked and screen off are one choice** on a key: \"Locked or screen off\". A key that already had both, doing the\n  same, shows as one.\n- **Choose several backups at once** (Backups › the select button): keep them forever, let them go, or delete them\n  together. \"Select all\" per device.\n- Backups: this device goes by the name you gave it, also for its older backups.\n- Settings are calmer: the screen-actions card shows only while it still needs turning on, and long texts are\n  shorter.\n- The Google Drive card has a Drive icon.\n\n\nVersion 0.5.2 (build 10).\nSHA-256: a9b1242a8b35f9e568ce4d4da2b97ce22a3afceb92cef62e642d716a2800ba95",
-    "publishedAt": "2026-11-23T18:40:17Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.5.2"
+    "tag": "v0.5.3",
+    "name": "TouchKey 0.5.3",
+    "notes": "## TouchKey 0.5.3\n\n- **New \"AI\" tab** in the action list: one press opens a conversation with ChatGPT (straight into Voice), Gemini\n  Live, Claude (voice mode), Grok (voice), Google voice search, your phone's own assistant, Perplexity, Copilot,\n  Meta AI or DeepSeek. Each shows its own icon. \"Text chat\" opens a plain chat instead.\n- **Not installed?** The list says so with \"Get it\", and a key that opens an app that isn't there opens its page in\n  Google Play.\n- Gemini Live and Claude's voice mode tap their own voice button for you, so they need TouchKey screen actions.\n  The phone's assistant needs Power mode.\n- Google Drive shows its own icon in Settings and in Backups.\n- An update waiting for \"Install unknown apps\" goes on by itself once you allow it.\n\n\nVersion 0.5.3 (build 11).\nSHA-256: c24388e9eb72955834997a47d19f7b41fdf08e986df13d87af422ecd921f76ae",
+    "publishedAt": "2026-11-23T20:01:13Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.5.3"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
