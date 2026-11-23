@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T20:16:25Z",
+ "generatedAt": "2026-11-23T20:23:35Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.5.4",
-     "versionCode": 12,
+     "versionName": "0.6.0",
+     "versionCode": 13,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.5.4.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.5.4/touchkey-0.5.4.apk",
-     "size": 11501897,
-     "sha256": "074fba7f9edd01cfca21a8e69cb5c99bc10adc90f2feb8b352b53e29f3764338",
-     "assetId": 784378230,
-     "assetUpdatedAt": "2026-11-23T20:10:11Z"
+     "fileName": "touchkey-0.6.0.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.6.0/touchkey-0.6.0.apk",
+     "size": 11521185,
+     "sha256": "c14d8cea300a897e9257356e801735bac6a271f83d3905e904161062ebf8c478",
+     "assetId": 784416016,
+     "assetUpdatedAt": "2026-11-23T20:22:51Z"
     }
    ],
    "release": {
-    "tag": "v0.5.4",
-    "name": "TouchKey 0.5.4",
-    "notes": "## TouchKey 0.5.4\n\n- When a step has to tap a button (Claude's voice mode, Gemini Live) and TouchKey screen actions are off, a message\n  now says what to turn on, instead of the app opening with nothing more happening.\n\n\nVersion 0.5.4 (build 12).\nSHA-256: 074fba7f9edd01cfca21a8e69cb5c99bc10adc90f2feb8b352b53e29f3764338",
-    "publishedAt": "2026-11-23T20:10:12Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.5.4"
+    "tag": "v0.6.0",
+    "name": "TouchKey 0.6.0",
+    "notes": "## TouchKey 0.6.0\n\n- **Home-screen buttons (widgets)**: a button on your home screen that does what a key does. A tap runs its\n  actions, chosen from the same list (AI tab included), one step or several. Make them in Settings › Home-screen\n  buttons and tap \"Add to home screen\", or add \"TouchKey button\" from your launcher's widget list and pick or make\n  one there. The widget shows the app's own icon, or the action's.\n- Home-screen buttons are saved with your keys, so file and Google Drive backups carry them, and a backup's preview\n  lists new ones.\n\n\nVersion 0.6.0 (build 13).\nSHA-256: c14d8cea300a897e9257356e801735bac6a271f83d3905e904161062ebf8c478",
+    "publishedAt": "2026-11-23T20:22:53Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.6.0"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
