@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T21:34:15Z",
+ "generatedAt": "2026-11-23T21:44:33Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.8.0",
-     "versionCode": 15,
+     "versionName": "0.8.1",
+     "versionCode": 16,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.8.0.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.8.0/touchkey-0.8.0.apk",
-     "size": 11649577,
-     "sha256": "883115ec52049c3045d82c014d8e7997f04437fb5e76e3f51c5e0d1a2acce8f7",
-     "assetId": 784619679,
-     "assetUpdatedAt": "2026-11-23T21:32:56Z"
+     "fileName": "touchkey-0.8.1.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.8.1/touchkey-0.8.1.apk",
+     "size": 11649573,
+     "sha256": "3cbd743077c6d18ec0226396b6f7ddc6b24fcef539a2c71caa25e6d59afe6484",
+     "assetId": 784653229,
+     "assetUpdatedAt": "2026-11-23T21:44:03Z"
     }
    ],
    "release": {
-    "tag": "v0.8.0",
-    "name": "TouchKey 0.8.0",
-    "notes": "## TouchKey 0.8.0\n\n**More triggers**\n- **SMS received**: from anyone or from people you choose (from your contacts or a typed number), only when the\n  text contains certain words, and optionally only after several within a time (\"2 within 10 minutes\").\n- **Phone call**: rings, missed, answered or ends; from anyone or chosen people; \"3 calls within 5 minutes\".\n- **Notification from an app**: any app or one app, with words, with a count.\n- Bluetooth and Wi-Fi turning on or off, airplane mode, ringer mode (silent, vibrate, ring), Do Not Disturb.\n- **One row per subject**: the \"When…\" list shows Bluetooth, Wi-Fi, Charger, Screen, Phone call… once, and the\n  state (connects, disconnects, turns on…) is chosen inside the trigger, keeping the device, network or people.\n- **Names from your device**: Bluetooth lists your paired devices; Wi-Fi lists the networks saved on the device\n  (with Power mode), the one you're on, and the ones in range.\n\n**Device settings with a state** (new \"Device\" tab in the action list)\n- Flashlight, Do Not Disturb, Wi-Fi, Bluetooth, mobile data, airplane mode, location, auto-rotate, dark mode,\n  battery saver: **Toggle, On or Off**, right on the row.\n- Ringer: next, ring, vibrate or silent. Brightness: up, down, 25%, 50%, 100%.\n- Wi-Fi, Bluetooth, mobile data, airplane mode, location, dark mode and battery saver need Power mode. Do Not\n  Disturb, rotation and brightness work with Android's own access too.\n\n\nVersion 0.8.0 (build 15).\nSHA-256: 883115ec52049c3045d82c014d8e7997f04437fb5e76e3f51c5e0d1a2acce8f7",
-    "publishedAt": "2026-11-23T21:32:58Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.8.0"
+    "tag": "v0.8.1",
+    "name": "TouchKey 0.8.1",
+    "notes": "## TouchKey 0.8.1\n\n- **Triggers has its own tab** in the bottom bar, next to Keys, Menus and Settings (the button at the top of the\n  home screen is gone, so it is in one place).\n- **No more permission dialogs with Power mode**: when a feature needs a permission (SMS, calls, Bluetooth,\n  location, notification access, exact alarms, microphone, installing updates), TouchKey gives it to itself through\n  Power mode. Settings › Tools › \"Allow everything at once\" gives all of them in one tap. Without Power mode the\n  usual Android dialogs still appear.\n\n\nVersion 0.8.1 (build 16).\nSHA-256: 3cbd743077c6d18ec0226396b6f7ddc6b24fcef539a2c71caa25e6d59afe6484",
+    "publishedAt": "2026-11-23T21:44:04Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.8.1"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
