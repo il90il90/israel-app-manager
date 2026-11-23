@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T17:37:17Z",
+ "generatedAt": "2026-11-23T18:17:38Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -44,26 +44,26 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.touchless",
-     "versionName": "0.2.622",
-     "versionCode": 674,
+     "versionName": "0.2.623",
+     "versionCode": 675,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "Touchless",
-     "fileName": "touchless-0.2.622.apk",
-     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.622/touchless-0.2.622.apk",
-     "size": 40340031,
-     "sha256": "3a85ad4e3d24997defa31fd1b35847548ade7a13c1b2deeaa09e5d26aba52165",
-     "assetId": 782256622,
-     "assetUpdatedAt": "2026-11-23T09:05:16Z"
+     "fileName": "touchless-0.2.623.apk",
+     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.623/touchless-0.2.623.apk",
+     "size": 40340027,
+     "sha256": "995daefc498ef1f0338eeae10c8346bdd950ad2b137946950b0a26cdb7ba6dee",
+     "assetId": 783907065,
+     "assetUpdatedAt": "2026-11-23T17:36:37Z"
     }
    ],
    "release": {
-    "tag": "v0.2.622",
-    "name": "Touchless v0.2.622",
-    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.622",
-    "publishedAt": "2026-11-23T09:06:50Z",
-    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.622"
+    "tag": "v0.2.623",
+    "name": "Touchless v0.2.623",
+    "notes": "# v0.2.623\n\n- **A switch no longer moves its row (#1031).** In Automations, turning an automation on or off made its card jump to\n  another place in the list while your finger was still over it, so the next tap could land on another automation's\n  switch.\n  - Now a card stays where it is while the list is on screen. The list is put in order again the next time you open\n    it, when you come back to the app, or when you pick another order.\n  - The same goes for Scripts, Triggers, Webhooks, Event Hub watches, Learned skills, App skills and the ready-made\n    rules in AI instructions.\n- **\"Active first\" is your choice (#1031).** The sort menu of Automations now ends with \"Active first\", and the sort\n  button says so: \"Active · Newest first\".\n  - On (as before): the automations that are on come first, then the ones turned off.\n  - Off: only the order you picked counts. The finished ones stay under \"Inactive\".\n  - An AI can read or change it with the `automations_active_first` setting.",
+    "publishedAt": "2026-11-23T17:38:02Z",
+    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.623"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchless.png?v=8327713a",
@@ -224,26 +224,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.wallify.debug",
-     "versionName": "0.7.15",
-     "versionCode": 7015,
+     "versionName": "0.8.0",
+     "versionCode": 8000,
      "minSdk": 24,
      "targetSdk": 36,
      "tvCapable": true,
      "label": "Wallify",
-     "fileName": "wallify-0.7.15.apk",
-     "url": "https://github.com/il90il90/Wallify-releases/releases/download/v0.7.15/wallify-0.7.15.apk",
-     "size": 35643506,
-     "sha256": "a1731d595acce86cf762d7280436cb3724fa1a92c2d99b0c7c97ef24171388fc",
-     "assetId": 774114758,
-     "assetUpdatedAt": "2026-11-21T02:16:03Z"
+     "fileName": "wallify-0.8.0.apk",
+     "url": "https://github.com/il90il90/Wallify-releases/releases/download/v0.8.0/wallify-0.8.0.apk",
+     "size": 35767456,
+     "sha256": "43f5558f91496445918b6af4943cd283042606d3cb1810c9f08eaffeeb702e64",
+     "assetId": 783960006,
+     "assetUpdatedAt": "2026-11-23T17:52:29Z"
     }
    ],
    "release": {
-    "tag": "v0.7.15",
-    "name": "Wallify 0.7.15",
-    "notes": "- From 0.7.15, fixed: **live wallpapers taking turns changed in front of you when the screen came on** - the\n  real cause. Painting the next video's first frame when the screen went off could crash Wallify Live inside the\n  graphics driver (a poster of odd width, read past its end); Android restarted it, and the new wallpaper then\n  loaded while you were looking. Posters are drawn safely now: the change happens with the screen off.\n- From 0.7.14: **favourites wallpaper no longer changes in front of you when the screen comes on** - the next\n  wallpaper's picture is now decoded ahead, while the current one is showing, so the moment the screen goes off it\n  is only drawn (it used to be decoded right then, and on a phone that fell asleep first it appeared after the\n  screen lit up). A change that arrives as the screen goes off is never played or faded any more either.\n- From 0.7.13, fixed: **a live wallpaper moved off-centre stood still** - after dragging or zooming a video in\n  *Set*, the wallpaper showed its first frame as a still picture (or black). The framing now gets the screen size\n  and the video plays; if a phone's GPU still shows nothing within 4 s, it plays centred instead of standing still.\n- From 0.7.12, fixed: **the same wallpaper twice in a row of categories** - many wallpapers are in more than one\n  category (Universe and Dark, say). When the feed moved on by itself to the next category, the ones you had just\n  seen came back at its end. They no longer do; a category you pick yourself still shows all of it.\n- From 0.7.11, fixed (developer counts): *All* shows how many wallpapers the library really holds (1,597 live), not\n  the categories added up - a wallpaper in two categories was counted twice (2,578).\n- From 0.7.10: **one tap answers at once** - full screen in and out with no wait (a short, small badge at your\n  finger and the buttons sliding away, no vibration). Two taps love it with the heart in the **middle of the\n  screen**; the first of the two taps is simply taken back, so the buttons stay.\n- From 0.7.9: **double-tap to love it** - two taps on a wallpaper love it with a heart in Wallify's colours that pops\n  where your finger was, with a ring and sparks (keep tapping for more hearts). **One tap** is full screen and back:\n  a small badge pops at your finger and the buttons slide away - and come back with a little bounce. These effects\n  play even on phones where Android's animations are switched off (they used to vanish in the same moment there).\n- From 0.7.8: **Set favorites wallpaper** shows a fanned deck of your favourites and the \"how often\" scale again (a\n  bar of stops, like the speed bar) instead of a list - each time the screen turns on is still the default.\n- From 0.7.8: the **Set screen**: pull the panel down (or tap the wallpaper) to see the wallpaper alone - the back\n  arrow is shown then, and a small handle at the bottom brings the panel back. *Send to TV* shows only while one of\n  your TVs is on and reachable.\n- From 0.7.8: **Settings** - *Autoplay on mobile data* is gone (videos always play); *Keep live wallpaper on* shows\n  only until you allow it; *My screens* is now *TV screens*.\n- From 0.7.7, fixed: **a category shows all of its wallpapers.** A category you had already seen much of ended\n  after the few new ones - \"88\" on its tab, four wallpapers in it - because the ones you had seen were left out and\n  never came back. Now the new ones still come first, and every wallpaper you have seen follows them (the ones\n  seen longest ago first), so a category is always as long as its number says.\n- From 0.7.6: **the next wallpaper is already there when you turn the screen on.** The favorites wallpaper used to\n  change when the screen came on - on some phones a moment later, in front of your eyes. It now changes when the\n  screen goes *off*: the next photo or live wallpaper is put in place right then, and a live one starts from that\n  very picture when you look at the phone again.\n- From 0.7.6: **a soft fade** when the wallpaper changes while you are looking at it (on a timer, *Next wallpaper\n  now*, lock screen to home screen) - from live to live, live to photo and back - instead of a hard cut.\n- From 0.7.6: **how often** - *Set favorites wallpaper* now asks how often it should change: each time the screen\n  turns on (the default), or every minute, 5, 15 or 30 minutes, hour, 3 hours or day. The bar in Love it's gallery\n  view opens the same choice while it runs (*Save*, *Stop*).\n- From 0.7.5: **Set favorites wallpaper** - one button under *Set wallpaper* (and a bar in Love it's gallery\n  view): every wallpaper you love, photos and live alike, takes turns on your screen. The *Auto-change* screen\n  (photos or live, which ones) is gone. A wallpaper\n  you love later joins by itself, one you take out leaves; tap the button again to stop. *Send to TV* shows only\n  with a TV connected (connecting one: Settings → My screens). The play and round-arrows buttons at the top of Love\n  it are gone, and the tabs there no longer run under the button next to them.\n- From 0.7.5: **always something to see** - opening Wallify shows a wallpaper at once (the first ones are kept on\n  the phone from your last visit), and swiping quickly no longer lands on empty pages: what lies ahead is loaded\n  while you swipe, not only when you stop, and each wallpaper's preview is much lighter to show. A page that is\n  still on its way shows the wallpaper's own colour with a light moving over it instead of black.\n- From 0.7.5, fixed: on some phones *Set live wallpaper* did not bring up Android's screen where you choose home\n  screen, lock screen or both (it showed the phone's list of live wallpapers, an older copy of that screen, or\n  nothing). It now always opens that screen, and Wallify notices that the wallpaper was set when you come back.\n- **Everything is open to everyone**: no Premium, no paywall, no ads. The gallery (Discover) with search and\n  filters, and your own videos as live wallpap",
-    "publishedAt": "2026-11-21T02:16:05Z",
-    "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.7.15"
+    "tag": "v0.8.0",
+    "name": "Wallify 0.8.0",
+    "notes": "- **Smart wallpapers** - a third side of the switch at the top of Home: *Live · Photos · Smart*. A smart wallpaper is\n  drawn on the phone from its real time and state: a clock that tells the time, a tank as full as the battery, the\n  sky as it is now. What you browse is the wallpaper itself, running on your phone.\n- **24 of them**, in five groups. *Clocks*: Cockpit, Word Clock (the time in words, in Hebrew too), Orbit, Neon,\n  Synthwave, Time Rings, Classic, Big Time, This Month, Year in Dots. *Sky & weather*: Weather Now (the real sky with\n  drifting clouds, rain, snow, lightning, fog), Forecast, Sky Now, Daylight (the sun's path, sunrise and sunset),\n  Aurora, Tonight's Moon. *Calendar*: My Day, Next Up, Day Planner. *Places*: Earth Now (a world map lit where it is\n  day), Compass, World Time. *Device*: Liquid Battery (leans with the phone, bubbles while charging), Device HUD.\n- **Make it yours** - *Customize* gives each wallpaper the options that fit it: colours, switches, a city from a list\n  of the world's cities (the three cities of World Time; the place a weather or sky wallpaper is for), Celsius or\n  Fahrenheit, the Word Clock's language, your own words on the Classic dial. Every change is drawn at once.\n- **Your calendar on the wallpaper** - choose which calendars are shown. Wallify asks to read the calendar only when\n  you pick calendars for such a wallpaper; the meetings are only read on the phone and drawn, never sent anywhere.\n  On a locked phone a meeting keeps its time but shows *Busy* instead of its name and place (a switch turns that\n  off).\n- **Weather without a location permission** - the weather comes from Wallify Cloud, which finds the city from the\n  phone's network address; it is asked for only while such a wallpaper is on screen, at most every half hour.\n  Offline, these wallpapers show the time and say so.\n- **Love it, like any wallpaper** - the heart, a double tap or touch and hold; setting one loves it too. Loved smart\n  wallpapers have their own *Smart* tab in Favorites. The Smart feed is in a new order on every visit.\n- **Easy on the battery** - a smart wallpaper is drawn only while it is on screen: once a minute, once a second, or\n  in frames only for what really moves (a second hand, rain); hidden, it does nothing.\n- Set one with *Set*: the first time Android's own \"Set wallpaper\" screen opens for *Wallify Smart* (home, lock or\n  both); after that a change shows at once. Wallify Smart is a wallpaper of its own beside Wallify Live, so moving\n  between a video and a smart wallpaper goes through that screen.\n- Not yet: sharing, comments and love counts for smart wallpapers, and their place in the favourites wallpaper that\n  takes turns - they are not in Wallify Cloud's catalogue yet.\n\n\n---\n- Version: 0.8.0 (code 8000)\n- SHA-256: `43f5558f91496445918b6af4943cd283042606d3cb1810c9f08eaffeeb702e64`\n- Signing certificate SHA-256: `f56583efbc5c14eaec486caa567dc65fa834314e26d87f554511bc13642fbfc2`\n- Always-latest download: https://github.com/il90il90/Wallify-releases/releases/latest/download/Wallify.apk",
+    "publishedAt": "2026-11-23T17:52:32Z",
+    "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.8.0"
    },
    "iconStyle": "adaptive",
    "icon": "icons/wallify.png?v=4b5cdc0d",
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.5.0",
-     "versionCode": 8,
+     "versionName": "0.5.1",
+     "versionCode": 9,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.5.0.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.5.0/touchkey-0.5.0.apk",
+     "fileName": "touchkey-0.5.1.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.5.1/touchkey-0.5.1.apk",
      "size": 11420445,
-     "sha256": "4e321379b09162667017e657c2706a4113f579cc08dba31868133def941396c0",
-     "assetId": 783904263,
-     "assetUpdatedAt": "2026-11-23T17:35:56Z"
+     "sha256": "89e7e5fdad232c68397e8946b8df267cfab4053e09dbf17ff71b2ae19a0254c3",
+     "assetId": 784036312,
+     "assetUpdatedAt": "2026-11-23T18:17:00Z"
     }
    ],
    "release": {
-    "tag": "v0.5.0",
-    "name": "TouchKey 0.5.0",
-    "notes": "## TouchKey 0.5.0\n\n- **Backups by device** (Settings › Google Drive › All backups): every device on your Google account has its own\n  place, with its name (rename any of them, e.g. \"Kitchen tablet\"), how many versions it has and when it last backed\n  up. Each version shows its date and time, whether it was daily or by hand, and how many keys it holds.\n- **See before you bring it in**: open any version, from this device or another one, and TouchKey compares it with\n  what you have now: keys that are new, keys that do something else, keys that are the same, and keys only on this\n  device. Quick menus and general settings too.\n- **Two ways in**: \"Add what's missing\" brings in only what you don't have and never changes a key you already have;\n  \"Replace everything\" makes the device exactly like the backup (it asks first). Either can be undone from Backups.\n- **Versions**: each device keeps its newest 10. \"Keep forever\" protects a version from ever being removed. A daily\n  backup is skipped when nothing changed, so the versions stay meaningful.\n- Fixed: \"Presses that pause TouchKey\" showed \"ms\"; voice typing's recording length now shows seconds.\n\n\nVersion 0.5.0 (build 8).\nSHA-256: 4e321379b09162667017e657c2706a4113f579cc08dba31868133def941396c0",
-    "publishedAt": "2026-11-23T17:35:57Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.5.0"
+    "tag": "v0.5.1",
+    "name": "TouchKey 0.5.1",
+    "notes": "## TouchKey 0.5.1\n\n- **Updates install from inside the app**, with one tap on \"Update now\", in the test build too (it used to send\n  you to the release page). Each release now also carries the test build.\n- **A first screen on a new install**: what TouchKey does, and Power mode (Wireless debugging) to set up right away,\n  or \"Skip for now\". It shows once; Power mode stays in Settings.\n- Fixed: with the keyboard up (searching on the home screen, most of all on an unfolded Fold), the screen was\n  squeezed and the Add key button sat on the search field. The bottom bar and Add key now step aside while you type.\n\n\nVersion 0.5.1 (build 9).\nSHA-256: 89e7e5fdad232c68397e8946b8df267cfab4053e09dbf17ff71b2ae19a0254c3",
+    "publishedAt": "2026-11-23T18:17:02Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.5.1"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
