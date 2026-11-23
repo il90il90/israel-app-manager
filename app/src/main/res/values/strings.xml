@@ -180,4 +180,8 @@
     <string name="cat_sports">Sports</string>
     <string name="cat_tools">Tools</string>
     <string name="cat_kids">Kids</string>
+    <string name="foreign_tv_build">Made for Android TV. It installs and runs on this device too, but some screens may expect a TV remote.</string>
+    <string name="foreign_phone_build">Made for phones and tablets. It installs and runs on this device too; some screens may expect a touchscreen, so a mouse or the remote\'s pointer may help.</string>
+    <string name="foreign_other_build">Made for another kind of device. It installs and runs here too, but may not fit this screen.</string>
+    <string name="action_refresh">Refresh</string>
 </resources>

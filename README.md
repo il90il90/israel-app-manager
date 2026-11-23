@@ -5,7 +5,8 @@ One place to download, install and update all of Israel's Android apps.
 **[Download the latest APK](https://github.com/il90il90/israel-app-manager/releases/latest/download/IsraelAppManager.apk)** ·
 [All releases](https://github.com/il90il90/israel-app-manager/releases)
 
-Android 8.0 or newer. English and Hebrew.
+Android 8.0 or newer, on phones, tablets, foldables, Chromebooks and Android TV / Google TV
+(driven by the remote). English and Hebrew.
 
 ## What it does
 
@@ -14,8 +15,12 @@ Android 8.0 or newer. English and Hebrew.
 - Never installs silently: every install and update, the manager's own included, is confirmed in
   Android's own dialog.
 - Knows what is installed, shows which apps have a new version, and updates one or all of them.
-- Picks the right build for the device (CPU, Android version, phone / TV / watch) and offers the
-  TV and watch builds as plain APK downloads.
+- Picks the right build for the device (CPU, Android version, phone / TV / watch). Any app
+  installs on any phone, tablet or TV: when an app has no build for this kind of device, the
+  build made for another one is installed, and the app's page says so. Watch builds are offered
+  only to watches, and as plain APK downloads everywhere else.
+- Works with a TV remote, a keyboard or a D-pad: a clear focus ring, focus that starts on the
+  first app and comes back to the app you opened, and safe margins for TV screens.
 - Checks for new versions in the background and sends one notification per set of updates.
 - Updates itself the same way it updates the other apps.
 
@@ -71,6 +76,13 @@ hand-made icon instead, put `catalog/icons/<id>.png` next to `apps.json`.
 
 An app that has no public release page can be served from the `apks` branch instead; see
 [tools/catalog/README.md](tools/catalog/README.md).
+
+## Google Play Protect
+
+The manager requests no high-risk permissions (no `QUERY_ALL_PACKAGES`, accessibility, SMS or
+overlay), installs nothing without Android's own confirmation, and its code is not obfuscated.
+If Play Protect still warns about it, see [docs/PLAY_PROTECT.md](docs/PLAY_PROTECT.md) for the
+appeal and developer verification steps.
 
 ## Building
 

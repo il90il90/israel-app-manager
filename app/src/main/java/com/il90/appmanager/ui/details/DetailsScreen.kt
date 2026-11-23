@@ -21,7 +21,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
@@ -36,6 +35,7 @@ import androidx.compose.material.icons.rounded.Download
 import androidx.compose.material.icons.rounded.Info
 import androidx.compose.material.icons.rounded.MoreVert
 import androidx.compose.material.icons.rounded.Share
+import androidx.compose.material.icons.rounded.PhoneAndroid
 import androidx.compose.material.icons.rounded.Tv
 import androidx.compose.material.icons.rounded.Watch
 import androidx.compose.material.icons.rounded.WorkspacePremium
@@ -96,7 +96,10 @@ import com.il90.appmanager.ui.components.Pill
 import com.il90.appmanager.ui.components.TelegramButton
 import com.il90.appmanager.ui.components.categoryLabel
 import com.il90.appmanager.ui.components.failureMessage
+import com.il90.appmanager.ui.components.focusRing
 import com.il90.appmanager.ui.components.formFactorLabel
+import com.il90.appmanager.ui.components.initialFocus
+import com.il90.appmanager.ui.components.remoteStop
 import com.il90.appmanager.ui.components.parseMarkdown
 import com.il90.appmanager.ui.components.premiumColor
 import com.il90.appmanager.ui.primaryAction
@@ -131,6 +134,7 @@ fun DetailsScreen(
     var menu by remember { mutableStateOf(false) }
     val scroll = rememberScrollState()
     val collapsed by remember { derivedStateOf { scroll.value > 420 } }
+    val scrolled by remember { derivedStateOf { scroll.value > 0 } }
 
     Scaffold(
         snackbarHost = { SnackbarHost(snackbar) },
@@ -141,7 +145,7 @@ fun DetailsScreen(
                     if (collapsed) Text(row.app.name, maxLines = 1, overflow = TextOverflow.Ellipsis)
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = if (collapsed) MaterialTheme.colorScheme.surfaceContainer else Color.Transparent,
+                    containerColor = if (scrolled) MaterialTheme.colorScheme.surfaceContainer else Color.Transparent,
                 ),
                 navigationIcon = {
                     IconButton(onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, stringResource(R.string.action_back)) }
@@ -159,7 +163,9 @@ fun DetailsScreen(
             )
         },
     ) { padding ->
-        // The content deliberately runs under the transparent top bar.
+        // The colour wash runs under the transparent top bar; the page itself starts below it.
+        // (A page that also ran under the bar would sit "above" the Back button for a TV remote
+        // or a keyboard, and the focus could never move down into it.)
         Box(Modifier.fillMaxSize().consumeWindowInsets(padding)) {
             // A soft wash of the app's own colour behind the header.
             Box(
@@ -168,17 +174,19 @@ fun DetailsScreen(
                 )
             )
             Column(
-                Modifier.fillMaxSize().verticalScroll(scroll),
+                Modifier.fillMaxSize().padding(top = padding.calculateTopPadding()).verticalScroll(scroll),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                val top = WindowInsets.statusBars.asPaddingValues().calculateTopPadding() + 64.dp
                 val bottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding() + 32.dp
                 Column(
-                    Modifier.widthIn(max = 720.dp).fillMaxWidth().padding(start = 16.dp, end = 16.dp, top = top, bottom = bottom),
+                    Modifier.widthIn(max = 720.dp).fillMaxWidth().padding(start = 16.dp, end = 16.dp, bottom = bottom),
                     verticalArrangement = Arrangement.spacedBy(14.dp),
                 ) {
                     Header(row, language)
-                    ActionArea(row, accent.readableOn(dark), onAction, onOpenApp, onUninstall, onDownloadVariant, onOpenUrl)
+                    // On a TV the remote starts on the main button (Install, Update, Open).
+                    Box(Modifier.initialFocus(row.id)) {
+                        ActionArea(row, accent.readableOn(dark), onAction, onOpenApp, onUninstall, onDownloadVariant, onOpenUrl)
+                    }
                     row.app.license?.takeIf { it.required }?.let { LicenseCard(it, onOpenUrl) }
                     Notices(row)
                     QuickLinks(row, onOpenUrl)
@@ -230,7 +238,7 @@ private fun ActionArea(
     onOpenUrl: (String) -> Unit,
 ) {
     val state = row.task?.state
-    val big = Modifier.height(52.dp)
+    val big = Modifier.focusRing(RoundedCornerShape(50)).height(52.dp)
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
         when {
             state is TaskState.Failed -> {
@@ -285,7 +293,7 @@ private fun ActionArea(
                     }
                     if (row.primaryAction() == PrimaryAction.CANCEL) {
                         Spacer(Modifier.width(8.dp))
-                        TextButton(onAction) { Text(stringResource(R.string.action_cancel)) }
+                        TextButton(onAction, Modifier.focusRing(RoundedCornerShape(50))) { Text(stringResource(R.string.action_cancel)) }
                     }
                 }
             }
@@ -314,7 +322,7 @@ private fun ActionArea(
  */
 @Composable
 private fun NotInstallableActions(row: AppRow, onDownloadVariant: (Variant) -> Unit, onOpenUrl: (String) -> Unit) {
-    val big = Modifier.height(52.dp).fillMaxWidth()
+    val big = Modifier.focusRing(RoundedCornerShape(50)).height(52.dp).fillMaxWidth()
     val variants = row.otherVariants
     if (variants.isNotEmpty()) {
         variants.forEachIndexed { index, variant ->
@@ -424,7 +432,15 @@ private fun Notices(row: AppRow) {
     val text = when (val c = row.compatibility) {
         is Compatibility.Ok -> {
             val have = row.installed
-            if (have != null && c.variant.isOlderThan(have)) stringResource(R.string.newer_installed) else null
+            when {
+                have != null && c.variant.isOlderThan(have) -> stringResource(R.string.newer_installed)
+                c.foreign -> when (c.variant.formFactor) {
+                    FormFactor.TV -> stringResource(R.string.foreign_tv_build)
+                    FormFactor.PHONE -> stringResource(R.string.foreign_phone_build)
+                    else -> stringResource(R.string.foreign_other_build)
+                }
+                else -> null
+            }
         }
         Compatibility.NoRelease -> stringResource(R.string.no_release_yet)
         is Compatibility.OtherDevice ->
@@ -432,7 +448,7 @@ private fun Notices(row: AppRow) {
         is Compatibility.NeedsNewerAndroid -> stringResource(R.string.incompatible_sdk, androidVersionName(c.minSdk))
         Compatibility.UnsupportedCpu -> stringResource(R.string.incompatible_abi)
     } ?: return
-    Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surfaceContainerHigh, modifier = Modifier.fillMaxWidth()) {
+    Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surfaceContainerHigh, modifier = Modifier.remoteStop(MaterialTheme.shapes.medium).fillMaxWidth()) {
         Row(Modifier.padding(14.dp), verticalAlignment = Alignment.CenterVertically) {
             Icon(Icons.Rounded.Info, null, Modifier.size(20.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
             Spacer(Modifier.width(12.dp))
@@ -452,7 +468,7 @@ private fun Stats(row: AppRow) {
         published?.let { stringResource(R.string.detail_updated) to relativeTime(context, it) },
         stringResource(R.string.detail_requires_android) to ltr("${androidVersionName(variant.minSdk)}+"),
     )
-    Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surfaceContainerLow, modifier = Modifier.fillMaxWidth()) {
+    Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surfaceContainerLow, modifier = Modifier.remoteStop(MaterialTheme.shapes.large).fillMaxWidth()) {
         Row(Modifier.padding(vertical = 14.dp, horizontal = 6.dp)) {
             items.forEach { (label, value) ->
                 Column(Modifier.weight(1f).padding(horizontal = 4.dp), horizontalAlignment = Alignment.CenterHorizontally) {
@@ -467,7 +483,8 @@ private fun Stats(row: AppRow) {
 
 @Composable
 private fun Section(title: String, trailing: String? = null, content: @Composable ColumnScope.() -> Unit) {
-    Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surfaceContainerLow, modifier = Modifier.fillMaxWidth()) {
+    // Without a touchscreen the remote stops on each section, so a long page scrolls to its end.
+    Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surfaceContainerLow, modifier = Modifier.remoteStop(MaterialTheme.shapes.large).fillMaxWidth()) {
         Column(Modifier.padding(18.dp).animateContentSize()) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(title, style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
@@ -514,7 +531,11 @@ private fun OtherDevices(row: AppRow, onDownload: (Variant) -> Unit) {
             if (index > 0) Spacer(Modifier.height(10.dp))
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Icon(
-                    if (variant.formFactor == FormFactor.WATCH) Icons.Rounded.Watch else Icons.Rounded.Tv,
+                    when (variant.formFactor) {
+                        FormFactor.WATCH -> Icons.Rounded.Watch
+                        FormFactor.TV -> Icons.Rounded.Tv
+                        else -> Icons.Rounded.PhoneAndroid
+                    },
                     null, tint = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
                 Spacer(Modifier.width(14.dp))

@@ -11,10 +11,27 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
-    <!-- The catalog is remote, so the packages to look up are not known at build time. -->
-    <uses-permission
-        android:name="android.permission.QUERY_ALL_PACKAGES"
-        tools:ignore="QueryAllPackagesPermission" />
+
+    <!-- Runs on every kind of device: phones, tablets, foldables, Chromebooks, Android TV and
+         Google TV (driven by a remote), and devices with a keyboard or a mouse instead of a
+         touchscreen. None of these is required. -->
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.hardware.faketouch" android:required="false" />
+    <uses-feature android:name="android.software.leanback" android:required="false" />
+
+    <!-- Which apps are installed. QUERY_ALL_PACKAGES is deliberately not requested: the apps in
+         the catalog are apps people open, so they are visible through their launcher entry (on
+         a phone or on a TV), and Android also shows this app every app it installed itself. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+        </intent>
+    </queries>
 
     <application
         android:name=".App"
@@ -22,9 +39,11 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:enableOnBackInvokedCallback="true"
+        android:banner="@drawable/tv_banner"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:localeConfig="@xml/locales_config"
+        android:resizeableActivity="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.IAM.Starting"
         tools:targetApi="36">
@@ -38,6 +57,8 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+                <!-- Listed in the Android TV / Google TV launcher too. -->
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
 

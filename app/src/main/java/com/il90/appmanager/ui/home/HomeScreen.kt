@@ -49,6 +49,7 @@ import androidx.compose.material.icons.rounded.CheckCircle
 import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material.icons.rounded.CloudOff
 import androidx.compose.material.icons.rounded.Download
+import androidx.compose.material.icons.rounded.Refresh
 import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material.icons.rounded.Settings
 import androidx.compose.material.icons.rounded.Share
@@ -97,6 +98,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.il90.appmanager.R
+import com.il90.appmanager.data.Compatibility
 import com.il90.appmanager.data.Variant
 import com.il90.appmanager.data.localized
 import com.il90.appmanager.install.TaskState
@@ -109,6 +111,9 @@ import com.il90.appmanager.ui.components.AppIcon
 import com.il90.appmanager.ui.components.Pill
 import com.il90.appmanager.ui.components.categoryLabel
 import com.il90.appmanager.ui.components.LicenseTag
+import com.il90.appmanager.ui.components.LocalDevice
+import com.il90.appmanager.ui.components.focusRing
+import com.il90.appmanager.ui.components.initialFocus
 import com.il90.appmanager.ui.components.failureMessage
 import com.il90.appmanager.ui.components.formFactorLabel
 import com.il90.appmanager.ui.components.unavailableLabel
@@ -137,7 +142,10 @@ fun HomeScreen(
     snackbar: SnackbarHostState,
 ) {
     val language = appLanguage()
+    val remote = !LocalDevice.current.touch
     var searching by rememberSaveable { mutableStateOf(false) }
+    // The app whose page was opened last: coming back, the remote's focus returns to it.
+    var lastOpened by rememberSaveable { mutableStateOf<String?>(null) }
     var query by rememberSaveable { mutableStateOf("") }
     var pulled by remember { mutableStateOf(false) }
     LaunchedEffect(state.refreshing) { if (!state.refreshing) pulled = false }
@@ -204,6 +212,12 @@ fun HomeScreen(
                             IconButton(onClick = { query = "" }) { Icon(Icons.Rounded.Close, stringResource(R.string.action_clear)) }
                         }
                     } else {
+                        // A TV cannot pull the list down to refresh it.
+                        if (remote) {
+                            IconButton(onClick = onRefresh, enabled = !state.refreshing) {
+                                Icon(Icons.Rounded.Refresh, stringResource(R.string.action_refresh))
+                            }
+                        }
                         IconButton(onClick = onShareApp) { Icon(Icons.Rounded.Share, stringResource(R.string.action_share_app)) }
                         IconButton(onClick = { searching = true }) { Icon(Icons.Rounded.Search, stringResource(R.string.action_search)) }
                         IconButton(onClick = onSettings) { Icon(Icons.Rounded.Settings, stringResource(R.string.action_settings)) }
@@ -259,14 +273,15 @@ fun HomeScreen(
                         if (visible.isEmpty()) {
                             fullWidth("empty") { EmptyState(filter, query) }
                         }
+                        val focusId = lastOpened?.takeIf { id -> visible.any { it.id == id } } ?: visible.firstOrNull()?.id
                         items(visible, key = { it.id }) { row ->
                             AppCard(
                                 row, language,
-                                onOpen = { onOpen(row) },
+                                onOpen = { lastOpened = row.id; onOpen(row) },
                                 onAction = { onAction(row) },
                                 onDownload = { onDownload(row, it) },
                                 onOpenUrl = onOpenUrl,
-                                modifier = Modifier.animateItem(),
+                                modifier = Modifier.animateItem().then(if (row.id == focusId && !searching) Modifier.initialFocus(focusId) else Modifier),
                             )
                         }
                         if (state.fetchedAt > 0 && browsing) {
@@ -367,7 +382,7 @@ fun AppCard(
         onClick = onOpen,
         shape = MaterialTheme.shapes.large,
         color = MaterialTheme.colorScheme.surfaceContainerLow,
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier.focusRing(MaterialTheme.shapes.large).fillMaxWidth(),
     ) {
         Row(Modifier.padding(start = 12.dp, top = 14.dp, bottom = 14.dp, end = 10.dp), verticalAlignment = Alignment.CenterVertically) {
             AppIcon(row.iconUrl, row.app.name, row.app.accent, 56.dp)
@@ -400,7 +415,7 @@ fun AppCard(
                 // Not installable here: offer the APK made for another device, else the app's page.
                 val other = row.otherVariants.firstOrNull()
                 val link = row.app.storeUrl ?: row.app.website
-                val size = Modifier.height(40.dp).defaultMinSize(minWidth = 76.dp)
+                val size = Modifier.focusRing(RoundedCornerShape(50)).height(40.dp).defaultMinSize(minWidth = 76.dp)
                 when {
                     other != null -> FilledTonalButton(onClick = { onDownload(other) }, modifier = size, contentPadding = PaddingValues(horizontal = 14.dp)) {
                         Icon(Icons.Rounded.Download, null, Modifier.size(16.dp))
@@ -451,7 +466,12 @@ fun StatusLine(row: AppRow, modifier: Modifier = Modifier) {
                     )
                 }
                 AppStatus.NOT_INSTALLED -> Text(
-                    dotJoin(ltr(variant?.versionName.orEmpty()), formatSize(variant?.size ?: 0)),
+                    dotJoin(
+                        // A build made for another kind of device says so.
+                        variant?.takeIf { (row.compatibility as? Compatibility.Ok)?.foreign == true }?.let { formFactorLabel(it.formFactor) },
+                        ltr(variant?.versionName.orEmpty()),
+                        formatSize(variant?.size ?: 0),
+                    ),
                     style = small, color = muted, maxLines = 1, overflow = TextOverflow.Ellipsis,
                 )
                 AppStatus.UNAVAILABLE -> {
@@ -469,7 +489,12 @@ fun StatusLine(row: AppRow, modifier: Modifier = Modifier) {
 
 @Composable
 private fun UpdatesCard(updates: List<AppRow>, onUpdateAll: () -> Unit, onShow: () -> Unit) {
-    Surface(onClick = onShow, shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.primaryContainer, modifier = Modifier.fillMaxWidth()) {
+    Surface(
+        onClick = onShow,
+        shape = MaterialTheme.shapes.large,
+        color = MaterialTheme.colorScheme.primaryContainer,
+        modifier = Modifier.focusRing(MaterialTheme.shapes.large).fillMaxWidth(),
+    ) {
         Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
             Box(Modifier.width((36 + 22 * (minOf(updates.size, 3) - 1)).dp)) {
                 updates.take(3).forEachIndexed { i, row ->
@@ -493,7 +518,7 @@ private fun UpdatesCard(updates: List<AppRow>, onUpdateAll: () -> Unit, onShow: 
             }
             Spacer(Modifier.width(8.dp))
             val allBusy = updates.all { it.isBusy }
-            Button(onClick = onUpdateAll, enabled = !allBusy, contentPadding = PaddingValues(horizontal = 16.dp)) {
+            Button(onClick = onUpdateAll, enabled = !allBusy, contentPadding = PaddingValues(horizontal = 16.dp), modifier = Modifier.focusRing(RoundedCornerShape(50))) {
                 Text(stringResource(R.string.action_update_all), maxLines = 1)
             }
         }

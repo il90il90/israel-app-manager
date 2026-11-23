@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Share
@@ -44,7 +45,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
@@ -58,6 +61,8 @@ import com.il90.appmanager.ui.AppRow
 import com.il90.appmanager.ui.components.TelegramButton
 import com.il90.appmanager.ui.components.ActionButton
 import com.il90.appmanager.ui.components.AppIcon
+import com.il90.appmanager.ui.components.focusRing
+import com.il90.appmanager.ui.components.initialFocus
 import com.il90.appmanager.util.formatSize
 import com.il90.appmanager.util.ltr
 import com.il90.appmanager.util.relativeTime
@@ -98,7 +103,7 @@ fun SettingsScreen(
         ) {
             val bottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding() + 32.dp
             Column(
-                Modifier.widthIn(max = 720.dp).fillMaxWidth().padding(start = 16.dp, end = 16.dp, top = 8.dp, bottom = bottom),
+                Modifier.widthIn(max = 720.dp).fillMaxWidth().padding(start = 16.dp, end = 16.dp, top = 8.dp, bottom = bottom).initialFocus(),
                 verticalArrangement = Arrangement.spacedBy(14.dp),
             ) {
                 Group(stringResource(R.string.settings_updates)) {
@@ -178,7 +183,7 @@ fun SettingsScreen(
                     }
                     HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f))
                     Row(
-                        Modifier.fillMaxWidth().clickable(onClick = onShareApp).padding(horizontal = 18.dp, vertical = 16.dp),
+                        Modifier.fillMaxWidth().focusRing(RowRing, gap = (-6).dp).clickable(onClick = onShareApp).padding(horizontal = 18.dp, vertical = 16.dp),
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
                         Text(stringResource(R.string.action_share_app), style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
@@ -186,7 +191,7 @@ fun SettingsScreen(
                     }
                     HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f))
                     Row(
-                        Modifier.fillMaxWidth().clickable(onClick = onOpenSource).padding(horizontal = 18.dp, vertical = 16.dp),
+                        Modifier.fillMaxWidth().focusRing(RowRing, gap = (-6).dp).clickable(onClick = onOpenSource).padding(horizontal = 18.dp, vertical = 16.dp),
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
                         Text(stringResource(R.string.settings_source), style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
@@ -224,8 +229,12 @@ private fun Group(title: String, content: @Composable ColumnScope.() -> Unit) {
 
 @Composable
 private fun SwitchRow(title: String, description: String, checked: Boolean, onChange: (Boolean) -> Unit) {
+    // The whole row is the switch: one stop for a remote or a keyboard, one target for a finger.
     Row(
-        Modifier.fillMaxWidth().clickable { onChange(!checked) }.padding(horizontal = 18.dp, vertical = 14.dp),
+        Modifier.fillMaxWidth()
+            .focusRing(RowRing, gap = (-6).dp)
+            .toggleable(value = checked, role = Role.Switch, onValueChange = onChange)
+            .padding(horizontal = 18.dp, vertical = 14.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Column(Modifier.weight(1f)) {
@@ -233,7 +242,7 @@ private fun SwitchRow(title: String, description: String, checked: Boolean, onCh
             Text(description, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
         Spacer(Modifier.width(12.dp))
-        Switch(checked = checked, onCheckedChange = onChange)
+        Switch(checked = checked, onCheckedChange = null)
     }
 }
 
@@ -246,3 +255,6 @@ private fun OwnIcon(size: Dp) {
     }
     if (bitmap != null) Image(bitmap, null, Modifier.size(size)) else AppIcon(null, "I", null, size)
 }
+
+/** The focus ring of a row inside a group: drawn inside the row, so the group's rounded corners do not cut it. */
+private val RowRing = RoundedCornerShape(18.dp)

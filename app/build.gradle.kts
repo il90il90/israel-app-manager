@@ -84,7 +84,7 @@ android {
     lint {
         abortOnError = true
         checkReleaseBuilds = false
-        disable += listOf("MissingTranslation", "QueryAllPackagesPermission", "GradleDependency", "AndroidGradlePluginVersion", "NewerVersionAvailable", "ObsoleteSdkInt")
+        disable += listOf("MissingTranslation", "GradleDependency", "AndroidGradlePluginVersion", "NewerVersionAvailable", "ObsoleteSdkInt")
     }
     testOptions { unitTests.isReturnDefaultValues = true }
 }

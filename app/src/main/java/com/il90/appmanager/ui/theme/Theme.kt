@@ -1,5 +1,8 @@
 package com.il90.appmanager.ui.theme
 
+import androidx.compose.material.ripple.RippleAlpha
+import androidx.compose.material3.LocalRippleConfiguration
+import androidx.compose.material3.RippleConfiguration
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Shapes
@@ -108,6 +111,8 @@ private val AppShapes = Shapes(
 
 val LocalDarkTheme = staticCompositionLocalOf { false }
 
+private val FocusVisibleRipple = RippleAlpha(draggedAlpha = 0.16f, focusedAlpha = 0.32f, hoveredAlpha = 0.12f, pressedAlpha = 0.12f)
+
 @Composable
 fun IamTheme(mode: ThemeMode, content: @Composable () -> Unit) {
     val dark = when (mode) {
@@ -115,7 +120,13 @@ fun IamTheme(mode: ThemeMode, content: @Composable () -> Unit) {
         ThemeMode.LIGHT -> false
         ThemeMode.DARK -> true
     }
-    CompositionLocalProvider(LocalDarkTheme provides dark) {
+    CompositionLocalProvider(
+        LocalDarkTheme provides dark,
+        // Focus from a TV remote, a keyboard or a D-pad shows as a strong highlight on every
+        // button, chip and menu item (Material's default is too faint to see from a sofa).
+        // Touch never gives focus, so phones look the same as before.
+        LocalRippleConfiguration provides RippleConfiguration(rippleAlpha = FocusVisibleRipple),
+    ) {
         MaterialTheme(
             colorScheme = if (dark) Dark else Light,
             typography = AppTypography,

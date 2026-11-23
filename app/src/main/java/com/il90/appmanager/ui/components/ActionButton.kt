@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material3.Button
@@ -56,7 +58,7 @@ fun ActionButton(row: AppRow, onClick: () -> Unit, modifier: Modifier = Modifier
         modifier = modifier,
     ) { target ->
         val padding = PaddingValues(horizontal = 14.dp)
-        val size = Modifier.height(40.dp).defaultMinSize(minWidth = 76.dp)
+        val size = Modifier.focusRing(RoundedCornerShape(50)).height(40.dp).defaultMinSize(minWidth = 76.dp)
         when (target) {
             "progress" -> {
                 val fraction = (state as? TaskState.Downloading)?.fraction
@@ -74,7 +76,7 @@ fun ActionButton(row: AppRow, onClick: () -> Unit, modifier: Modifier = Modifier
                             trackColor = MaterialTheme.colorScheme.surfaceContainerHighest,
                         )
                     }
-                    IconButton(onClick, Modifier.size(44.dp).semantics { contentDescription = cancel }) {
+                    IconButton(onClick, Modifier.focusRing(CircleShape).size(44.dp).semantics { contentDescription = cancel }) {
                         Icon(Icons.Rounded.Close, null, Modifier.size(18.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
                 }
