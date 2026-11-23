@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T06:42:19Z",
+ "generatedAt": "2026-11-23T08:07:08Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -44,26 +44,26 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.touchless",
-     "versionName": "0.2.620",
-     "versionCode": 672,
+     "versionName": "0.2.621",
+     "versionCode": 673,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "Touchless",
-     "fileName": "touchless-0.2.620.apk",
-     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.620/touchless-0.2.620.apk",
+     "fileName": "touchless-0.2.621.apk",
+     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.621/touchless-0.2.621.apk",
      "size": 40297515,
-     "sha256": "b4ae0ff7b9ce7a40bd726db23b78fd9522b8579e70abef345fe27ae8378753c7",
-     "assetId": 779945728,
-     "assetUpdatedAt": "2026-11-22T17:58:56Z"
+     "sha256": "78a3d591b87e84e50bccad1fb9a8dcedb9533332e49564ccd41ec803400dac4f",
+     "assetId": 781872467,
+     "assetUpdatedAt": "2026-11-23T06:50:06Z"
     }
    ],
    "release": {
-    "tag": "v0.2.620",
-    "name": "Touchless v0.2.620",
-    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.620",
-    "publishedAt": "2026-11-22T18:00:22Z",
-    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.620"
+    "tag": "v0.2.621",
+    "name": "Touchless v0.2.621",
+    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.621",
+    "publishedAt": "2026-11-23T06:51:28Z",
+    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.621"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchless.png?v=8327713a",
@@ -343,26 +343,26 @@
       "arm64-v8a"
      ],
      "packageName": "com.app360brains.exDialer.mod",
-     "versionName": "3.10.97",
-     "versionCode": 197,
+     "versionName": "3.10.99",
+     "versionCode": 199,
      "minSdk": 32,
      "targetSdk": 36,
      "tvCapable": false,
      "label": "OneDial",
-     "fileName": "onedial-3.10.97.apk",
-     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.97/onedial-3.10.97.apk",
-     "size": 55684050,
-     "sha256": "b8b98511f0109d0653d4889a8ff5a45e1a6da5251c8cd69f88bd322b573314dd",
-     "assetId": 780163712,
-     "assetUpdatedAt": "2026-11-22T19:15:19Z"
+     "fileName": "onedial-3.10.99.apk",
+     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.99/onedial-3.10.99.apk",
+     "size": 58493906,
+     "sha256": "63a6e01077822379042d1ccf7e99ca0d1c269f19b50e98b46428d88cf95264e0",
+     "assetId": 782048586,
+     "assetUpdatedAt": "2026-11-23T07:52:35Z"
     }
    ],
    "release": {
-    "tag": "v3.10.97",
-    "name": "OneDial 3.10.97",
-    "notes": "- Transcription: fixes from review of the word list\n- Transcription: listen for the caller's name and the owner's own words\n\nPatched on top of 3.10.96. Same release key as 3.10.5.\n\n<!-- source: 85718dbe1d5f25adb5b8f43872dbda720765e4ab -->",
-    "publishedAt": "2026-11-22T19:15:20Z",
-    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.97"
+    "tag": "v3.10.99",
+    "name": "OneDial 3.10.99",
+    "notes": "- Recording settings: a tile for each kind of call\n- Record WhatsApp and Telegram calls like phone calls\n- Recording settings: drop the word list\n\nPatched on top of 3.10.98. Same release key as 3.10.5.\n\n<!-- source: 12f3b0032f3a752dc696ebe0c41e615df8e702e9 -->",
+    "publishedAt": "2026-11-23T07:52:36Z",
+    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.99"
    },
    "iconStyle": "adaptive",
    "icon": "icons/onedial.png?v=f291d671",
