@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T06:20:50Z",
+ "generatedAt": "2026-11-23T06:31:07Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.3.2",
-     "versionCode": 5,
+     "versionName": "0.3.3",
+     "versionCode": 6,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.3.2.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.3.2/touchkey-0.3.2.apk",
-     "size": 11333884,
-     "sha256": "ae4cfbf7a564a2d9638f836d383db960e6a7363800f2ac3d2665526bb924df27",
-     "assetId": 781795960,
-     "assetUpdatedAt": "2026-11-23T06:20:13Z"
+     "fileName": "touchkey-0.3.3.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.3.3/touchkey-0.3.3.apk",
+     "size": 11350268,
+     "sha256": "8e823e8c3c122384ffa084041f4ec543287b461108a540fc90646548dcaaf59c",
+     "assetId": 781822580,
+     "assetUpdatedAt": "2026-11-23T06:30:33Z"
     }
    ],
    "release": {
-    "tag": "v0.3.2",
-    "name": "TouchKey 0.3.2",
-    "notes": "## TouchKey 0.3.2\n\n- Add a key: the \"Tap here to record\" button is gone. The screen already listens for any key you press; Back, OK and\n  the arrows (which move around TouchKey itself) are in \"Choose from a list\", as one plain line now says.\n- Includes 0.3.1: knobs and scroll wheels no longer pause TouchKey.\n\n\nVersion 0.3.2 (build 5).\nSHA-256: ae4cfbf7a564a2d9638f836d383db960e6a7363800f2ac3d2665526bb924df27",
-    "publishedAt": "2026-11-23T06:20:14Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.3.2"
+    "tag": "v0.3.3",
+    "name": "TouchKey 0.3.3",
+    "notes": "## TouchKey 0.3.3\n\n- **Choose a key: press it to find it.** On the list of every key, press a key on the device, a keyboard or a remote:\n  the list scrolls it to the top and marks it with a pulsing frame for a few seconds, the search clears if it hid it,\n  and \"For\" switches to the device you pressed it on. A key that isn't in the list gets its number filled in below,\n  ready to add. (Back, OK and the arrows keep moving around the screen.)\n\n\nVersion 0.3.3 (build 6).\nSHA-256: 8e823e8c3c122384ffa084041f4ec543287b461108a540fc90646548dcaaf59c",
+    "publishedAt": "2026-11-23T06:30:34Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.3.3"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
