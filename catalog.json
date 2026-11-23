@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T18:17:38Z",
+ "generatedAt": "2026-11-23T18:40:47Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.5.1",
-     "versionCode": 9,
+     "versionName": "0.5.2",
+     "versionCode": 10,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.5.1.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.5.1/touchkey-0.5.1.apk",
-     "size": 11420445,
-     "sha256": "89e7e5fdad232c68397e8946b8df267cfab4053e09dbf17ff71b2ae19a0254c3",
-     "assetId": 784036312,
-     "assetUpdatedAt": "2026-11-23T18:17:00Z"
+     "fileName": "touchkey-0.5.2.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.5.2/touchkey-0.5.2.apk",
+     "size": 11439821,
+     "sha256": "a9b1242a8b35f9e568ce4d4da2b97ce22a3afceb92cef62e642d716a2800ba95",
+     "assetId": 784109103,
+     "assetUpdatedAt": "2026-11-23T18:40:15Z"
     }
    ],
    "release": {
-    "tag": "v0.5.1",
-    "name": "TouchKey 0.5.1",
-    "notes": "## TouchKey 0.5.1\n\n- **Updates install from inside the app**, with one tap on \"Update now\", in the test build too (it used to send\n  you to the release page). Each release now also carries the test build.\n- **A first screen on a new install**: what TouchKey does, and Power mode (Wireless debugging) to set up right away,\n  or \"Skip for now\". It shows once; Power mode stays in Settings.\n- Fixed: with the keyboard up (searching on the home screen, most of all on an unfolded Fold), the screen was\n  squeezed and the Add key button sat on the search field. The bottom bar and Add key now step aside while you type.\n\n\nVersion 0.5.1 (build 9).\nSHA-256: 89e7e5fdad232c68397e8946b8df267cfab4053e09dbf17ff71b2ae19a0254c3",
-    "publishedAt": "2026-11-23T18:17:02Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.5.1"
+    "tag": "v0.5.2",
+    "name": "TouchKey 0.5.2",
+    "notes": "## TouchKey 0.5.2\n\n- **Locked and screen off are one choice** on a key: \"Locked or screen off\". A key that already had both, doing the\n  same, shows as one.\n- **Choose several backups at once** (Backups › the select button): keep them forever, let them go, or delete them\n  together. \"Select all\" per device.\n- Backups: this device goes by the name you gave it, also for its older backups.\n- Settings are calmer: the screen-actions card shows only while it still needs turning on, and long texts are\n  shorter.\n- The Google Drive card has a Drive icon.\n\n\nVersion 0.5.2 (build 10).\nSHA-256: a9b1242a8b35f9e568ce4d4da2b97ce22a3afceb92cef62e642d716a2800ba95",
+    "publishedAt": "2026-11-23T18:40:17Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.5.2"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
