@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T06:31:07Z",
+ "generatedAt": "2026-11-23T06:42:19Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.3.3",
-     "versionCode": 6,
+     "versionName": "0.4.0",
+     "versionCode": 7,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.3.3.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.3.3/touchkey-0.3.3.apk",
-     "size": 11350268,
-     "sha256": "8e823e8c3c122384ffa084041f4ec543287b461108a540fc90646548dcaaf59c",
-     "assetId": 781822580,
-     "assetUpdatedAt": "2026-11-23T06:30:33Z"
+     "fileName": "touchkey-0.4.0.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.4.0/touchkey-0.4.0.apk",
+     "size": 11368164,
+     "sha256": "4c1a86056abfd75ab183bc6320634762eab270dae3b2338ca272ebd5a140d27d",
+     "assetId": 781851085,
+     "assetUpdatedAt": "2026-11-23T06:41:28Z"
     }
    ],
    "release": {
-    "tag": "v0.3.3",
-    "name": "TouchKey 0.3.3",
-    "notes": "## TouchKey 0.3.3\n\n- **Choose a key: press it to find it.** On the list of every key, press a key on the device, a keyboard or a remote:\n  the list scrolls it to the top and marks it with a pulsing frame for a few seconds, the search clears if it hid it,\n  and \"For\" switches to the device you pressed it on. A key that isn't in the list gets its number filled in below,\n  ready to add. (Back, OK and the arrows keep moving around the screen.)\n\n\nVersion 0.3.3 (build 6).\nSHA-256: 8e823e8c3c122384ffa084041f4ec543287b461108a540fc90646548dcaaf59c",
-    "publishedAt": "2026-11-23T06:30:34Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.3.3"
+    "tag": "v0.4.0",
+    "name": "TouchKey 0.4.0",
+    "notes": "## TouchKey 0.4.0\n\n- **Show a message** (new action): your own short note at the bottom of the screen. It can say the time, the date,\n  the day, the battery level or the app in front ({time}, {date}, {day}, {battery}, {app}).\n- **Show a window with buttons** (new action): a window in the middle of the screen with a title, a message and up\n  to four buttons. Each button runs its own actions, picked from the same list as everything else, and has its own\n  look (main, normal, quiet, danger). It can close by itself after a while. Answer it by touch, or with the arrows and\n  OK on a remote or keyboard. The form shows a live preview.\n- **When TouchKey is paused** (by its switch or by the emergency stop) a notification says so, with \"Turn on\". The\n  home screen marks a pause in orange.\n- Fixed: a key screen left open under another app could swallow that app's keys.\n\n\nVersion 0.4.0 (build 7).\nSHA-256: 4c1a86056abfd75ab183bc6320634762eab270dae3b2338ca272ebd5a140d27d",
+    "publishedAt": "2026-11-23T06:41:29Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.4.0"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
