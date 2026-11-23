@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T21:53:28Z",
+ "generatedAt": "2026-11-23T22:23:20Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.8.2",
-     "versionCode": 17,
+     "versionName": "0.8.3",
+     "versionCode": 18,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.8.2.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.8.2/touchkey-0.8.2.apk",
-     "size": 11665957,
-     "sha256": "40186dcaa47f2c4a2d4d7ed78cfbd72a99eb5f20633e4f4275d51adcc986287f",
-     "assetId": 784678939,
-     "assetUpdatedAt": "2026-11-23T21:52:47Z"
+     "fileName": "touchkey-0.8.3.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.8.3/touchkey-0.8.3.apk",
+     "size": 11682345,
+     "sha256": "cef032543686d4f6d845b5b6b851b4b483d2d55b12a76b50c59da49e9c86c0a0",
+     "assetId": 784765670,
+     "assetUpdatedAt": "2026-11-23T22:22:50Z"
     }
    ],
    "release": {
-    "tag": "v0.8.2",
-    "name": "TouchKey 0.8.2",
-    "notes": "## TouchKey 0.8.2\n\n- **Connect to a Bluetooth device** and **Connect to Wi-Fi** (Device tab): pick one of your paired devices or\n  saved networks. Use them anywhere: a key, a home-screen button, or a trigger such as \"YouTube opens → connect to\n  the speaker\". TouchKey checks first and does nothing when it is connected already; otherwise it turns Bluetooth or\n  Wi-Fi on (Power mode), opens Android's own list, taps the name and goes back. It needs TouchKey screen actions.\n\n\nVersion 0.8.2 (build 17).\nSHA-256: 40186dcaa47f2c4a2d4d7ed78cfbd72a99eb5f20633e4f4275d51adcc986287f",
-    "publishedAt": "2026-11-23T21:52:48Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.8.2"
+    "tag": "v0.8.3",
+    "name": "TouchKey 0.8.3",
+    "notes": "## TouchKey 0.8.3\n\n- **Connecting is now automatic.** With Power mode, \"Connect a Bluetooth device\" and \"Connect to Wi-Fi\" connect\n  directly, in the background, the way Android's own Settings do: no Bluetooth or Wi-Fi screen opens. TouchKey\n  turns the radio on if needed and checks that it really connected. Without Power mode (or if Android refuses) it\n  still falls back to opening Android's list and tapping the name.\n- **Notification triggers show what is showing now.** After choosing the app (or \"Any app\"), its notifications\n  that are on the phone right now are listed: tap one and the app and its words are filled in, nothing to type.\n- **Press a notification's buttons.** Each listed notification shows its buttons (\"Connect\", \"Mark as read\"…);\n  tap one to add a step that presses it when the trigger runs. The same is in the action list as \"Press a\n  notification button\" (System), for keys and home-screen buttons too.\n- Ongoing notifications (a VPN, music, a download) now count for a trigger that names their app.\n\n\nVersion 0.8.3 (build 18).\nSHA-256: cef032543686d4f6d845b5b6b851b4b483d2d55b12a76b50c59da49e9c86c0a0",
+    "publishedAt": "2026-11-23T22:22:51Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.8.3"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
