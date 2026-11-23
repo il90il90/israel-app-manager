@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T06:04:33Z",
+ "generatedAt": "2026-11-23T06:20:50Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.3.1",
-     "versionCode": 4,
+     "versionName": "0.3.2",
+     "versionCode": 5,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.3.1.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.3.1/touchkey-0.3.1.apk",
+     "fileName": "touchkey-0.3.2.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.3.2/touchkey-0.3.2.apk",
      "size": 11333884,
-     "sha256": "f68c25ee12dfb4d43d2749dc11e7f195f88b1d9aaba16a20785a789d93692840",
-     "assetId": 781755354,
-     "assetUpdatedAt": "2026-11-23T06:04:04Z"
+     "sha256": "ae4cfbf7a564a2d9638f836d383db960e6a7363800f2ac3d2665526bb924df27",
+     "assetId": 781795960,
+     "assetUpdatedAt": "2026-11-23T06:20:13Z"
     }
    ],
    "release": {
-    "tag": "v0.3.1",
-    "name": "TouchKey 0.3.1",
-    "notes": "## TouchKey 0.3.1\n\n- **Knobs and scroll wheels** (e.g. the rotary knob on a mini keyboard) no longer pause TouchKey. Its clicks are made\n  by the device, faster than a finger, and no longer count towards the emergency stop, so the key keeps its new job\n  and no letters leak into the app you are in.\n- A key's screen has **\"Fast repeats are normal\"** for any other key that repeats on purpose.\n- Settings › Safety: how many fast presses pause TouchKey (3–20). When it does pause, the message names the key.\n\n\nVersion 0.3.1 (build 4).\nSHA-256: f68c25ee12dfb4d43d2749dc11e7f195f88b1d9aaba16a20785a789d93692840",
-    "publishedAt": "2026-11-23T06:04:05Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.3.1"
+    "tag": "v0.3.2",
+    "name": "TouchKey 0.3.2",
+    "notes": "## TouchKey 0.3.2\n\n- Add a key: the \"Tap here to record\" button is gone. The screen already listens for any key you press; Back, OK and\n  the arrows (which move around TouchKey itself) are in \"Choose from a list\", as one plain line now says.\n- Includes 0.3.1: knobs and scroll wheels no longer pause TouchKey.\n\n\nVersion 0.3.2 (build 5).\nSHA-256: ae4cfbf7a564a2d9638f836d383db960e6a7363800f2ac3d2665526bb924df27",
+    "publishedAt": "2026-11-23T06:20:14Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.3.2"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
