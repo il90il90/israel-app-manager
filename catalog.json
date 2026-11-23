@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-22T22:17:52Z",
+ "generatedAt": "2026-11-23T06:04:33Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.3.0",
-     "versionCode": 3,
+     "versionName": "0.3.1",
+     "versionCode": 4,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.3.0.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.3.0/touchkey-0.3.0.apk",
-     "size": 11332932,
-     "sha256": "8fce3281e01f3573a42fa0f550debc9c65935a832bd08b8a0b1863b4af0480cd",
-     "assetId": 780639998,
-     "assetUpdatedAt": "2026-11-22T22:17:16Z"
+     "fileName": "touchkey-0.3.1.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.3.1/touchkey-0.3.1.apk",
+     "size": 11333884,
+     "sha256": "f68c25ee12dfb4d43d2749dc11e7f195f88b1d9aaba16a20785a789d93692840",
+     "assetId": 781755354,
+     "assetUpdatedAt": "2026-11-23T06:04:04Z"
     }
    ],
    "release": {
-    "tag": "v0.3.0",
-    "name": "TouchKey 0.3.0",
-    "notes": "## TouchKey 0.3.0\n\n- **Voice typing** (new action): press a key and speak; the words are typed where the cursor is, in any language.\n  Start from a template (quick message, message and send, long dictation, search) and set the language, when the\n  recording ends, how long it may run, a wait before typing and what happens after. Recognition can stay on the\n  device where it supports it.\n- **Split screen** now works on Samsung and every other device with Power mode: the app you used before opens beside\n  the current one, and a second press leaves split screen.\n- **Power mode** asks for itself: choosing something that needs it shows what it is and how to set it up. Once it is\n  on, its tab moves to Settings.\n- **HTTP request**: Send test shows the whole answer (status, time, body, headers) in a window of its own.\n- **Open a link in an app** (activity with a link and no action) opens the link, e.g. ChatGPT's voice chat.\n- Back in the action list returns to the same tab and place; a clearer \"which device's button\" question; \"Try it\"\n  is gone from the key screen.\n\n\nVersion 0.3.0 (build 3).\nSHA-256: 8fce3281e01f3573a42fa0f550debc9c65935a832bd08b8a0b1863b4af0480cd",
-    "publishedAt": "2026-11-22T22:17:17Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.3.0"
+    "tag": "v0.3.1",
+    "name": "TouchKey 0.3.1",
+    "notes": "## TouchKey 0.3.1\n\n- **Knobs and scroll wheels** (e.g. the rotary knob on a mini keyboard) no longer pause TouchKey. Its clicks are made\n  by the device, faster than a finger, and no longer count towards the emergency stop, so the key keeps its new job\n  and no letters leak into the app you are in.\n- A key's screen has **\"Fast repeats are normal\"** for any other key that repeats on purpose.\n- Settings › Safety: how many fast presses pause TouchKey (3–20). When it does pause, the message names the key.\n\n\nVersion 0.3.1 (build 4).\nSHA-256: f68c25ee12dfb4d43d2749dc11e7f195f88b1d9aaba16a20785a789d93692840",
+    "publishedAt": "2026-11-23T06:04:05Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.3.1"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
