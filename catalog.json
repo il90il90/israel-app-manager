@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T22:34:47Z",
+ "generatedAt": "2026-11-23T23:17:37Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.8.4",
-     "versionCode": 19,
+     "versionName": "0.8.5",
+     "versionCode": 20,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.8.4.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.8.4/touchkey-0.8.4.apk",
-     "size": 11698729,
-     "sha256": "726861ff9dd52b87272828cff9258cc120b504c236daf30458d628350dd1beca",
-     "assetId": 784797543,
-     "assetUpdatedAt": "2026-11-23T22:34:09Z"
+     "fileName": "touchkey-0.8.5.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.8.5/touchkey-0.8.5.apk",
+     "size": 11702789,
+     "sha256": "8d17f0c8511358bda9477fd4c66d684fe969dac9685d40068e8eed1d6e68957e",
+     "assetId": 784909774,
+     "assetUpdatedAt": "2026-11-23T23:16:50Z"
     }
    ],
    "release": {
-    "tag": "v0.8.4",
-    "name": "TouchKey 0.8.4",
-    "notes": "## TouchKey 0.8.4\n\nEverything as automatic as possible: with Power mode, TouchKey does it directly instead of opening a screen.\n\n- **Updates install by themselves** with Power mode: one tap on Update, no Android install screen. Android still\n  checks that it is a newer TouchKey signed with the same key.\n- **Connecting** to Bluetooth or Wi-Fi never opens a screen with Power mode: if the device or network does not\n  answer, the step says so instead of opening Android's list.\n- **Steps that tap on the screen** (Gemini Live, Claude voice, \"Tap a button\") switch TouchKey screen actions on by\n  themselves with Power mode, instead of stopping with a message.\n- **Turn on** (Keys, Add key, Triggers) switches TouchKey on directly with Power mode, no Accessibility screen.\n- **Silent** (Ringer) gives itself \"Do not disturb\" access with Power mode when it needs it.\n- **Triggers have their own colour** (amber): the Triggers tab, its list, switches and buttons, so a trigger never\n  looks like a key.\n- **The trigger's name is at the top** of the trigger screen.\n\n\nVersion 0.8.4 (build 19).\nSHA-256: 726861ff9dd52b87272828cff9258cc120b504c236daf30458d628350dd1beca",
-    "publishedAt": "2026-11-23T22:34:10Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.8.4"
+    "tag": "v0.8.5",
+    "name": "TouchKey 0.8.5",
+    "notes": "## TouchKey 0.8.5\n\n- **Home-screen buttons look like TouchKey.** A button on the home screen now shows exactly the tile TouchKey\n  shows for its action (the same colour and icon; an app's or AI app's own icon), with its name under it like an\n  app icon, sized to fit.\n- **On / Off, live.** A button for a setting (flashlight, Wi-Fi, Bluetooth, Do not disturb, mobile data, airplane\n  mode, location, auto-rotate, dark mode, battery saver) says On or Off. When off, its tile turns grey and the icon\n  shows the \"off\" picture. It follows the device however the setting changes: the button, a key, or Android's quick\n  settings.\n- The button's screen in TouchKey shows a preview of how it looks on the home screen, and the list shows the\n  same tiles.\n- A new button is named after its action without the state (\"Flashlight\", not \"Flashlight (toggle)\").\n\n\nVersion 0.8.5 (build 20).\nSHA-256: 8d17f0c8511358bda9477fd4c66d684fe969dac9685d40068e8eed1d6e68957e",
+    "publishedAt": "2026-11-23T23:16:51Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.8.5"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
