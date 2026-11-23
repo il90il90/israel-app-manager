@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T21:13:17Z",
+ "generatedAt": "2026-11-23T21:34:15Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.7.0",
-     "versionCode": 14,
+     "versionName": "0.8.0",
+     "versionCode": 15,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.7.0.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.7.0/touchkey-0.7.0.apk",
-     "size": 11600185,
-     "sha256": "6a789682c8fc639470ac6115433c3e8c6524e4c6f780c3dfaae4f89a611f04eb",
-     "assetId": 784559430,
-     "assetUpdatedAt": "2026-11-23T21:12:36Z"
+     "fileName": "touchkey-0.8.0.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.8.0/touchkey-0.8.0.apk",
+     "size": 11649577,
+     "sha256": "883115ec52049c3045d82c014d8e7997f04437fb5e76e3f51c5e0d1a2acce8f7",
+     "assetId": 784619679,
+     "assetUpdatedAt": "2026-11-23T21:32:56Z"
     }
    ],
    "release": {
-    "tag": "v0.7.0",
-    "name": "TouchKey 0.7.0",
-    "notes": "## TouchKey 0.7.0\n\n- **Triggers**: the new \"Triggers\" button at the top of the home screen. \"When this happens, do that\", with the\n  same actions as keys (the AI tab included). A trigger can wait for:\n  - a Bluetooth device connecting or disconnecting (any, or one of your paired devices),\n  - Wi-Fi connecting or disconnecting (any network, or one by name),\n  - the charger plugged in or out, the battery dropping to a level, power saving on or off,\n  - the screen turning on or off, the phone being unlocked,\n  - headphones plugged in or out,\n  - an app opening or closing,\n  - a time of day on chosen days,\n  - the device starting.\n- Each trigger has its own switch, \"Run it now\" to try it, and a name that follows what it waits for until you\n  change it. Triggers are part of your backups.\n- Permissions are asked only when a trigger needs them: Bluetooth to choose a device, location only to know a Wi-Fi\n  network's name, and \"Alarms & reminders\" (optional) for time triggers to the minute.\n\n\nVersion 0.7.0 (build 14).\nSHA-256: 6a789682c8fc639470ac6115433c3e8c6524e4c6f780c3dfaae4f89a611f04eb",
-    "publishedAt": "2026-11-23T21:12:37Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.7.0"
+    "tag": "v0.8.0",
+    "name": "TouchKey 0.8.0",
+    "notes": "## TouchKey 0.8.0\n\n**More triggers**\n- **SMS received**: from anyone or from people you choose (from your contacts or a typed number), only when the\n  text contains certain words, and optionally only after several within a time (\"2 within 10 minutes\").\n- **Phone call**: rings, missed, answered or ends; from anyone or chosen people; \"3 calls within 5 minutes\".\n- **Notification from an app**: any app or one app, with words, with a count.\n- Bluetooth and Wi-Fi turning on or off, airplane mode, ringer mode (silent, vibrate, ring), Do Not Disturb.\n- **One row per subject**: the \"When…\" list shows Bluetooth, Wi-Fi, Charger, Screen, Phone call… once, and the\n  state (connects, disconnects, turns on…) is chosen inside the trigger, keeping the device, network or people.\n- **Names from your device**: Bluetooth lists your paired devices; Wi-Fi lists the networks saved on the device\n  (with Power mode), the one you're on, and the ones in range.\n\n**Device settings with a state** (new \"Device\" tab in the action list)\n- Flashlight, Do Not Disturb, Wi-Fi, Bluetooth, mobile data, airplane mode, location, auto-rotate, dark mode,\n  battery saver: **Toggle, On or Off**, right on the row.\n- Ringer: next, ring, vibrate or silent. Brightness: up, down, 25%, 50%, 100%.\n- Wi-Fi, Bluetooth, mobile data, airplane mode, location, dark mode and battery saver need Power mode. Do Not\n  Disturb, rotation and brightness work with Android's own access too.\n\n\nVersion 0.8.0 (build 15).\nSHA-256: 883115ec52049c3045d82c014d8e7997f04437fb5e76e3f51c5e0d1a2acce8f7",
+    "publishedAt": "2026-11-23T21:32:58Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.8.0"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
