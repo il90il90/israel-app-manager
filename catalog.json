@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T08:07:08Z",
+ "generatedAt": "2026-11-23T17:37:17Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -44,26 +44,26 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.touchless",
-     "versionName": "0.2.621",
-     "versionCode": 673,
+     "versionName": "0.2.622",
+     "versionCode": 674,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "Touchless",
-     "fileName": "touchless-0.2.621.apk",
-     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.621/touchless-0.2.621.apk",
-     "size": 40297515,
-     "sha256": "78a3d591b87e84e50bccad1fb9a8dcedb9533332e49564ccd41ec803400dac4f",
-     "assetId": 781872467,
-     "assetUpdatedAt": "2026-11-23T06:50:06Z"
+     "fileName": "touchless-0.2.622.apk",
+     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.622/touchless-0.2.622.apk",
+     "size": 40340031,
+     "sha256": "3a85ad4e3d24997defa31fd1b35847548ade7a13c1b2deeaa09e5d26aba52165",
+     "assetId": 782256622,
+     "assetUpdatedAt": "2026-11-23T09:05:16Z"
     }
    ],
    "release": {
-    "tag": "v0.2.621",
-    "name": "Touchless v0.2.621",
-    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.621",
-    "publishedAt": "2026-11-23T06:51:28Z",
-    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.621"
+    "tag": "v0.2.622",
+    "name": "Touchless v0.2.622",
+    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.622",
+    "publishedAt": "2026-11-23T09:06:50Z",
+    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.622"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchless.png?v=8327713a",
@@ -343,26 +343,26 @@
       "arm64-v8a"
      ],
      "packageName": "com.app360brains.exDialer.mod",
-     "versionName": "3.10.99",
-     "versionCode": 199,
+     "versionName": "3.10.102",
+     "versionCode": 202,
      "minSdk": 32,
      "targetSdk": 36,
      "tvCapable": false,
      "label": "OneDial",
-     "fileName": "onedial-3.10.99.apk",
-     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.99/onedial-3.10.99.apk",
-     "size": 58493906,
-     "sha256": "63a6e01077822379042d1ccf7e99ca0d1c269f19b50e98b46428d88cf95264e0",
-     "assetId": 782048586,
-     "assetUpdatedAt": "2026-11-23T07:52:35Z"
+     "fileName": "onedial-3.10.102.apk",
+     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.102/onedial-3.10.102.apk",
+     "size": 58498421,
+     "sha256": "80fcb92303c68c1b9b86708d4a8418f20272c4baf6b38609a7b36db78f3a1b98",
+     "assetId": 782498678,
+     "assetUpdatedAt": "2026-11-23T10:27:26Z"
     }
    ],
    "release": {
-    "tag": "v3.10.99",
-    "name": "OneDial 3.10.99",
-    "notes": "- Recording settings: a tile for each kind of call\n- Record WhatsApp and Telegram calls like phone calls\n- Recording settings: drop the word list\n\nPatched on top of 3.10.98. Same release key as 3.10.5.\n\n<!-- source: 12f3b0032f3a752dc696ebe0c41e615df8e702e9 -->",
-    "publishedAt": "2026-11-23T07:52:36Z",
-    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.99"
+    "tag": "v3.10.102",
+    "name": "OneDial 3.10.102",
+    "notes": "- Test hook: a widget asked for from the background no longer ends the app\n\nPatched on top of 3.10.101. Same release key as 3.10.5.\n\n<!-- source: 63ccbd0676fcfe60039997074498e431d247dc40 -->",
+    "publishedAt": "2026-11-23T10:27:27Z",
+    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.102"
    },
    "iconStyle": "adaptive",
    "icon": "icons/onedial.png?v=f291d671",
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.4.0",
-     "versionCode": 7,
+     "versionName": "0.5.0",
+     "versionCode": 8,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.4.0.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.4.0/touchkey-0.4.0.apk",
-     "size": 11368164,
-     "sha256": "4c1a86056abfd75ab183bc6320634762eab270dae3b2338ca272ebd5a140d27d",
-     "assetId": 781851085,
-     "assetUpdatedAt": "2026-11-23T06:41:28Z"
+     "fileName": "touchkey-0.5.0.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.5.0/touchkey-0.5.0.apk",
+     "size": 11420445,
+     "sha256": "4e321379b09162667017e657c2706a4113f579cc08dba31868133def941396c0",
+     "assetId": 783904263,
+     "assetUpdatedAt": "2026-11-23T17:35:56Z"
     }
    ],
    "release": {
-    "tag": "v0.4.0",
-    "name": "TouchKey 0.4.0",
-    "notes": "## TouchKey 0.4.0\n\n- **Show a message** (new action): your own short note at the bottom of the screen. It can say the time, the date,\n  the day, the battery level or the app in front ({time}, {date}, {day}, {battery}, {app}).\n- **Show a window with buttons** (new action): a window in the middle of the screen with a title, a message and up\n  to four buttons. Each button runs its own actions, picked from the same list as everything else, and has its own\n  look (main, normal, quiet, danger). It can close by itself after a while. Answer it by touch, or with the arrows and\n  OK on a remote or keyboard. The form shows a live preview.\n- **When TouchKey is paused** (by its switch or by the emergency stop) a notification says so, with \"Turn on\". The\n  home screen marks a pause in orange.\n- Fixed: a key screen left open under another app could swallow that app's keys.\n\n\nVersion 0.4.0 (build 7).\nSHA-256: 4c1a86056abfd75ab183bc6320634762eab270dae3b2338ca272ebd5a140d27d",
-    "publishedAt": "2026-11-23T06:41:29Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.4.0"
+    "tag": "v0.5.0",
+    "name": "TouchKey 0.5.0",
+    "notes": "## TouchKey 0.5.0\n\n- **Backups by device** (Settings › Google Drive › All backups): every device on your Google account has its own\n  place, with its name (rename any of them, e.g. \"Kitchen tablet\"), how many versions it has and when it last backed\n  up. Each version shows its date and time, whether it was daily or by hand, and how many keys it holds.\n- **See before you bring it in**: open any version, from this device or another one, and TouchKey compares it with\n  what you have now: keys that are new, keys that do something else, keys that are the same, and keys only on this\n  device. Quick menus and general settings too.\n- **Two ways in**: \"Add what's missing\" brings in only what you don't have and never changes a key you already have;\n  \"Replace everything\" makes the device exactly like the backup (it asks first). Either can be undone from Backups.\n- **Versions**: each device keeps its newest 10. \"Keep forever\" protects a version from ever being removed. A daily\n  backup is skipped when nothing changed, so the versions stay meaningful.\n- Fixed: \"Presses that pause TouchKey\" showed \"ms\"; voice typing's recording length now shows seconds.\n\n\nVersion 0.5.0 (build 8).\nSHA-256: 4e321379b09162667017e657c2706a4113f579cc08dba31868133def941396c0",
+    "publishedAt": "2026-11-23T17:35:57Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.5.0"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
