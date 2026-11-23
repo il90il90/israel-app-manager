@@ -103,7 +103,9 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
                 app = entry,
                 compatibility = compatibility,
                 variant = variant,
-                otherVariants = entry.variants.filter { it.formFactor != app.device.formFactor }
+                // The builds for other kinds of device, offered as plain downloads (not the one
+                // installed here when that one is itself made for another device).
+                otherVariants = entry.variants.filter { it.formFactor != app.device.formFactor && it.formFactor != variant?.formFactor }
                     .distinctBy { it.formFactor to it.abis },
                 installed = have,
                 status = status,

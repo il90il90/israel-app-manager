@@ -22,7 +22,9 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SnackbarDuration
@@ -32,6 +34,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -44,6 +47,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.core.content.FileProvider
 import androidx.core.net.toUri
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -54,6 +58,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.il90.appmanager.data.FormFactor
 import com.il90.appmanager.data.ThemeMode
 import com.il90.appmanager.data.Variant
 import com.il90.appmanager.install.InstallEvent
@@ -62,6 +67,7 @@ import com.il90.appmanager.ui.AppRow
 import com.il90.appmanager.ui.AppViewModel
 import com.il90.appmanager.ui.Filter
 import com.il90.appmanager.ui.PrimaryAction
+import com.il90.appmanager.ui.components.LocalDevice
 import com.il90.appmanager.ui.components.ShareSheet
 import com.il90.appmanager.ui.details.DetailsScreen
 import com.il90.appmanager.ui.home.HomeScreen
@@ -102,12 +108,18 @@ class MainActivity : ComponentActivity() {
             }
         }
 
+        val device = App.from(this).device
         setContent {
             val settings by viewModel.settings.collectAsStateWithLifecycle()
-            IamTheme(settings.theme) {
-                SystemBars(settings.theme)
-                Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    AppContent(viewModel, requestedFilter)
+            CompositionLocalProvider(LocalDevice provides device) {
+                IamTheme(settings.theme) {
+                    SystemBars(settings.theme)
+                    Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                        // A TV may cut off the edges of the picture (overscan): keep everything
+                        // inside the area Android TV's design guidelines call safe.
+                        val safe = if (device.formFactor == FormFactor.TV) Modifier.padding(horizontal = 48.dp, vertical = 27.dp) else Modifier
+                        Box(safe) { AppContent(viewModel, requestedFilter) }
+                    }
                 }
             }
         }
@@ -217,9 +229,12 @@ private fun AppContent(viewModel: AppViewModel, requestedFilter: MutableStateFlo
     val cannotOpen = stringResource(R.string.msg_cannot_open)
     fun openApp(row: AppRow) {
         val pkg = row.variant?.packageName ?: return
-        val launch = activity.packageManager.getLaunchIntentForPackage(pkg)
-            ?: if (activity.packageManager.hasSystemFeature("android.software.leanback"))
-                activity.packageManager.getLeanbackLaunchIntentForPackage(pkg) else null
+        val pm = activity.packageManager
+        // On a TV an app's TV screen comes first; its phone screen is the fallback (and the
+        // other way round everywhere else).
+        val tv = App.from(activity).device.formFactor == FormFactor.TV
+        val launch = if (tv) pm.getLeanbackLaunchIntentForPackage(pkg) ?: pm.getLaunchIntentForPackage(pkg)
+        else pm.getLaunchIntentForPackage(pkg) ?: pm.getLeanbackLaunchIntentForPackage(pkg)
         if (launch != null) runCatching { activity.startActivity(launch) }
         else runCatching {
             activity.startActivity(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, "package:$pkg".toUri()))

@@ -8,6 +8,7 @@ import com.il90.appmanager.data.Variant
 import com.il90.appmanager.data.pickVariant
 import com.il90.appmanager.ui.shareableVariant
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -46,9 +47,43 @@ class VariantPickerTest {
     }
 
     @Test
-    fun `an app made only for TV is not offered on a phone`() {
-        val picked = pickVariant(app(variant(FormFactor.TV)), phone)
-        assertEquals(Compatibility.OtherDevice(listOf(FormFactor.TV)), picked)
+    fun `an app made only for TV still installs on a phone, marked as made for TV`() {
+        val picked = pickVariant(app(variant(FormFactor.TV, name = "tv.apk")), phone) as Compatibility.Ok
+        assertEquals("tv.apk", picked.variant.fileName)
+        assertTrue(picked.foreign)
+    }
+
+    @Test
+    fun `a build made for this kind of device is not marked as foreign`() {
+        val picked = pickVariant(app(variant(name = "phone.apk")), phone) as Compatibility.Ok
+        assertFalse(picked.foreign)
+        val tv = Device(FormFactor.TV, listOf("armeabi-v7a"), 34)
+        assertFalse((pickVariant(app(variant(name = "phone.apk", tvCapable = true)), tv) as Compatibility.Ok).foreign)
+    }
+
+    @Test
+    fun `a watch build is never offered to a phone or a TV, but a watch takes a phone build`() {
+        assertEquals(Compatibility.OtherDevice(listOf(FormFactor.WATCH)), pickVariant(app(variant(FormFactor.WATCH)), phone))
+        val tv = Device(FormFactor.TV, listOf("arm64-v8a"), 34)
+        assertEquals(Compatibility.OtherDevice(listOf(FormFactor.WATCH)), pickVariant(app(variant(FormFactor.WATCH)), tv))
+        val watch = Device(FormFactor.WATCH, listOf("arm64-v8a"), 34)
+        val picked = pickVariant(app(variant(name = "phone.apk")), watch) as Compatibility.Ok
+        assertEquals("phone.apk", picked.variant.fileName)
+        assertTrue(picked.foreign)
+    }
+
+    @Test
+    fun `a build for another device is the fallback when this device's own build cannot run here`() {
+        val tv = Device(FormFactor.TV, listOf("armeabi-v7a"), 28)
+        // The TV build needs a newer Android than this TV has; the phone build runs.
+        val picked = pickVariant(app(variant(FormFactor.TV, minSdk = 31, name = "tv.apk"), variant(name = "phone.apk")), tv) as Compatibility.Ok
+        assertEquals("phone.apk", picked.variant.fileName)
+        assertTrue(picked.foreign)
+        // Nothing runs: the reason given is the one for this device's own build.
+        assertEquals(
+            Compatibility.NeedsNewerAndroid(31),
+            pickVariant(app(variant(FormFactor.TV, minSdk = 31), variant(abis = listOf("x86_64"))), tv),
+        )
     }
 
     @Test
@@ -58,7 +93,10 @@ class VariantPickerTest {
         assertEquals("tv.apk", (both as Compatibility.Ok).variant.fileName)
         val shared = pickVariant(app(variant(name = "phone.apk", tvCapable = true)), tv)
         assertEquals("phone.apk", (shared as Compatibility.Ok).variant.fileName)
-        assertTrue(pickVariant(app(variant(name = "phone.apk")), tv) is Compatibility.OtherDevice)
+        // A phone build that does not declare TV support still installs, marked as made for phones.
+        val phoneOnly = pickVariant(app(variant(name = "phone.apk")), tv) as Compatibility.Ok
+        assertEquals("phone.apk", phoneOnly.variant.fileName)
+        assertTrue(phoneOnly.foreign)
     }
 
     @Test
