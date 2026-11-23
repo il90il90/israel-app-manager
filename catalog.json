@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T20:01:53Z",
+ "generatedAt": "2026-11-23T20:10:45Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.5.3",
-     "versionCode": 11,
+     "versionName": "0.5.4",
+     "versionCode": 12,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.5.3.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.5.3/touchkey-0.5.3.apk",
+     "fileName": "touchkey-0.5.4.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.5.4/touchkey-0.5.4.apk",
      "size": 11501897,
-     "sha256": "c24388e9eb72955834997a47d19f7b41fdf08e986df13d87af422ecd921f76ae",
-     "assetId": 784350252,
-     "assetUpdatedAt": "2026-11-23T20:01:11Z"
+     "sha256": "074fba7f9edd01cfca21a8e69cb5c99bc10adc90f2feb8b352b53e29f3764338",
+     "assetId": 784378230,
+     "assetUpdatedAt": "2026-11-23T20:10:11Z"
     }
    ],
    "release": {
-    "tag": "v0.5.3",
-    "name": "TouchKey 0.5.3",
-    "notes": "## TouchKey 0.5.3\n\n- **New \"AI\" tab** in the action list: one press opens a conversation with ChatGPT (straight into Voice), Gemini\n  Live, Claude (voice mode), Grok (voice), Google voice search, your phone's own assistant, Perplexity, Copilot,\n  Meta AI or DeepSeek. Each shows its own icon. \"Text chat\" opens a plain chat instead.\n- **Not installed?** The list says so with \"Get it\", and a key that opens an app that isn't there opens its page in\n  Google Play.\n- Gemini Live and Claude's voice mode tap their own voice button for you, so they need TouchKey screen actions.\n  The phone's assistant needs Power mode.\n- Google Drive shows its own icon in Settings and in Backups.\n- An update waiting for \"Install unknown apps\" goes on by itself once you allow it.\n\n\nVersion 0.5.3 (build 11).\nSHA-256: c24388e9eb72955834997a47d19f7b41fdf08e986df13d87af422ecd921f76ae",
-    "publishedAt": "2026-11-23T20:01:13Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.5.3"
+    "tag": "v0.5.4",
+    "name": "TouchKey 0.5.4",
+    "notes": "## TouchKey 0.5.4\n\n- When a step has to tap a button (Claude's voice mode, Gemini Live) and TouchKey screen actions are off, a message\n  now says what to turn on, instead of the app opening with nothing more happening.\n\n\nVersion 0.5.4 (build 12).\nSHA-256: 074fba7f9edd01cfca21a8e69cb5c99bc10adc90f2feb8b352b53e29f3764338",
+    "publishedAt": "2026-11-23T20:10:12Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.5.4"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
