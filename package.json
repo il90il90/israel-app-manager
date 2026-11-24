@@ -1,0 +1,11 @@
+{
+  "name": "israel-app-manager-tools",
+  "private": true,
+  "description": "Tests and tools for the catalog and the admin dashboard. The Android app is built with Gradle.",
+  "type": "module",
+  "scripts": {
+    "validate": "node tools/catalog/validate_catalog.mjs catalog/catalog.json",
+    "test": "node --test tests/dashboard/*.test.mjs",
+    "test:e2e": "node tests/dashboard-e2e/dashboard.e2e.mjs"
+  }
+}

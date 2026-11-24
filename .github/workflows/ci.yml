@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches: [main]
-    paths-ignore: ["**.md", "catalog/**"]
+    paths-ignore: ["**.md"]
   pull_request:
     branches: [main]
 
@@ -23,9 +23,32 @@ jobs:
       - name: Unit tests, lint and a debug build
         run: ./gradlew --no-daemon :app:testDebugUnitTest :app:lintDebug :app:assembleDebug
       - name: Catalog tools compile
-        run: python3 -m py_compile tools/catalog/build_catalog.py tools/catalog/apk_icon.py
+        run: python3 -m py_compile tools/catalog/*.py
       - uses: actions/upload-artifact@v4
         with:
           name: israel-app-manager-debug
           path: app/build/outputs/apk/debug/app-debug.apk
           retention-days: 7
+
+  catalog-and-dashboard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Validate catalog/catalog.json
+        run: node tools/catalog/validate_catalog.mjs catalog/catalog.json
+      - name: Dashboard and schema unit tests
+        run: node --test tests/dashboard/*.test.mjs
+      - name: Catalog tools tests
+        run: |
+          python -m pip install --quiet pytest pillow
+          python -m pytest -q tests/catalog
+      - name: Dashboard end-to-end test (mocked GitHub API)
+        run: |
+          npm install --no-save --no-package-lock playwright@1.49.1
+          npx playwright install --with-deps chromium
+          node tests/dashboard-e2e/dashboard.e2e.mjs
