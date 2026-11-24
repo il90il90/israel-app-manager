@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-24T06:13:39Z",
+ "generatedAt": "2026-11-24T06:40:05Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.9.1",
-     "versionCode": 22,
+     "versionName": "0.10.0",
+     "versionCode": 23,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.9.1.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.9.1/touchkey-0.9.1.apk",
-     "size": 11719169,
-     "sha256": "b0358e78db380905ba54b0b1de7f7e655077efe268c9f0617f376da7b93c67fd",
-     "assetId": 785946953,
-     "assetUpdatedAt": "2026-11-24T06:13:04Z"
+     "fileName": "touchkey-0.10.0.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.10.0/touchkey-0.10.0.apk",
+     "size": 11752001,
+     "sha256": "2164f9daff66b2601b5f4fd6d3cf31b70d2790fe83c28b548631adec7a9e1b7f",
+     "assetId": 786016656,
+     "assetUpdatedAt": "2026-11-24T06:37:17Z"
     }
    ],
    "release": {
-    "tag": "v0.9.1",
-    "name": "TouchKey 0.9.1",
-    "notes": "## TouchKey 0.9.1\n\n- **Clearer empty lists.** \"Anyone\", \"Any text\", \"Any device\" are no longer pills that look like buttons but do\n  nothing. They are now a plain sentence with what it means and how to change it (\"Anyone · Add people below to\n  choose who.\"). A list that needs a value (the app of \"An app opens\", a time) says so in the warning colour, inside\n  the card.\n- \"Does nothing yet\" in a trigger or home-screen button says the same way that its actions are still to be chosen.\n- \"Only when it happens several times\" gives the right example for each trigger (messages, calls, missed calls,\n  notifications).\n\n\nVersion 0.9.1 (build 22).\nSHA-256: b0358e78db380905ba54b0b1de7f7e655077efe268c9f0617f376da7b93c67fd",
-    "publishedAt": "2026-11-24T06:13:06Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.9.1"
+    "tag": "v0.10.0",
+    "name": "TouchKey 0.10.0",
+    "notes": "## TouchKey 0.10.0\n\n**Timers.** A new trigger, Triggers › Time › Timer:\n\n- **Any length**: a quick choice (10 s, 20 s, 30 s, 1 min … 1 h) or any hours, minutes and seconds.\n- **Counts down** (time left) or **up** (time passed); either way its steps run when the time is up.\n- **Once, or again and again**: \"every 10 seconds\" until it is stopped. Rounds do not drift.\n- **Starts by itself** whenever the trigger is on, or only when a step starts it: a key, a home-screen button,\n  or another trigger (\"when the car connects, start a 30 min timer\").\n- **Floating window** (optional): the time, live, over any app. Tap it to pause or resume, ✕ to stop, drag it\n  anywhere; it stays where you put it.\n- The trigger screen shows the timer itself, big, with Start, Pause, Restart and Stop. The triggers list shows\n  the time of each running timer.\n- Running timers carry on after TouchKey restarts.\n\n**New actions**\n\n- **Timer: start, stop, restart, pause / resume** (System), for any timer; \"New timer\" makes one on the spot.\n- **Close an app** (System): with Power mode the app is stopped completely, as Settings › Force stop does; without\n  it, TouchKey sends it away from the screen and Android ends it in the background.\n\nWith the steps that were already there (open an app, open an activity, send a broadcast, a key, a web request…),\na timer can do anything a key can.\n\n\nVersion 0.10.0 (build 23).\nSHA-256: 2164f9daff66b2601b5f4fd6d3cf31b70d2790fe83c28b548631adec7a9e1b7f",
+    "publishedAt": "2026-11-24T06:37:19Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.10.0"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
