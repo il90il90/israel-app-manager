@@ -1,12 +1,12 @@
 {
  "schemaVersion": 2,
  "schema": 2,
- "generatedAt": "2026-11-24T18:02:23Z",
+ "generatedAt": "2026-11-24T18:04:48Z",
  "baseUrl": "https://github.com/il90il90/israel-app-manager/releases/download/catalog/",
  "dashboardUrl": "https://il90il90.github.io/israel-app-manager/",
  "announcement": null,
  "contact": {
-  "telegram": "https://t.me/YisraelCohen"
+  "telegram": "https://t.me/israelCohen"
  },
  "categories": [
   {
@@ -110,7 +110,7 @@
    "featured": true,
    "license": {
     "required": true,
-    "contact": "https://t.me/YisraelCohen"
+    "contact": "https://t.me/israelCohen"
    },
    "self": false,
    "order": 0,
@@ -177,7 +177,7 @@
    "featured": true,
    "license": {
     "required": true,
-    "contact": "https://t.me/YisraelCohen"
+    "contact": "https://t.me/israelCohen"
    },
    "self": false,
    "order": 1,
@@ -366,7 +366,7 @@
    "featured": false,
    "license": {
     "required": true,
-    "contact": "https://t.me/YisraelCohen"
+    "contact": "https://t.me/israelCohen"
    },
    "self": false,
    "order": 3,
@@ -430,7 +430,7 @@
    "featured": false,
    "license": {
     "required": true,
-    "contact": "https://t.me/YisraelCohen"
+    "contact": "https://t.me/israelCohen"
    },
    "self": false,
    "order": 4,
@@ -1090,7 +1090,7 @@
    "featured": false,
    "license": {
     "required": true,
-    "contact": "https://t.me/YisraelCohen"
+    "contact": "https://t.me/israelCohen"
    },
    "self": false,
    "order": 13,
