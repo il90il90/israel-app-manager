@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-24T15:35:12Z",
+ "generatedAt": "2026-11-24T15:54:01Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -343,26 +343,26 @@
       "arm64-v8a"
      ],
      "packageName": "com.app360brains.exDialer.mod",
-     "versionName": "3.10.103",
-     "versionCode": 203,
+     "versionName": "3.10.104",
+     "versionCode": 204,
      "minSdk": 32,
      "targetSdk": 36,
      "tvCapable": false,
      "label": "OneDial",
-     "fileName": "onedial-3.10.103.apk",
-     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.103/onedial-3.10.103.apk",
-     "size": 58522997,
-     "sha256": "191ac248b01e3d49c70162d9978fc264c8272e198e2aba4941c030cf14aec2f0",
-     "assetId": 786670247,
-     "assetUpdatedAt": "2026-11-24T10:13:52Z"
+     "fileName": "onedial-3.10.104.apk",
+     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.104/onedial-3.10.104.apk",
+     "size": 58555765,
+     "sha256": "587fa51684803d411b5ad4c7457fdcd6c533efb12a4ca240d9ef70942d0ba14f",
+     "assetId": 787785010,
+     "assetUpdatedAt": "2026-11-24T15:42:42Z"
     }
    ],
    "release": {
-    "tag": "v3.10.103",
-    "name": "OneDial 3.10.103",
-    "notes": "- Answer of a call going out: review fixes\n- Contact page: WhatsApp and Telegram calls among the calls, with their icon\n- Transcript: written down from the answer of a call going out\n\nPatched on top of 3.10.102. Same release key as 3.10.5.\n\n<!-- source: 4c735d2ae07f943e107f7213df6e6747c1ef16e1 -->",
-    "publishedAt": "2026-11-24T10:13:53Z",
-    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.103"
+    "tag": "v3.10.104",
+    "name": "OneDial 3.10.104",
+    "notes": "- Transcribe-only texts: short record-row summary, call page names the setting\n- Recording off with transcription on is transcribe-only; no separate switch\n- Transcribe-only: keys are not words; once turned off, a call keeps its recording\n- Recording settings: speed test button on its own row\n- Transcribe-only deletes only after a whole written transcript; faster accurate pass\n- Transcribe-only option, logos on source chips, search shows the matching line\n- Transcript window: swipe it aside to a tab on the screen edge, as the caller window\n- App calls: resume only with no phone call left, tie app recordings by id only\n- Calls during an app's call: Telecom's own say, app calls by id, the app call recorded again\n- Calls during an app's call: per-window ringing, the answered path, no app call recorded as a phone call\n- Caller window: only its own call's recording, closed when a phone call ends during an app call\n- Review fixes: after-call cleanup off the stop thread, passes asked for first\n- Silent lines: say in the log that the lines left out were not said\n- Transcripts: leave out faint short lines after the call\n- Contact widget: no quick actions menu\n- Contact widget: the owner's name in its preview\n- Accurate transcript: only when asked, from the call's page\n- Galaxy S23: know when the call's keypad is open\n- Transcript window: the grip pulls it over the open keypad too\n- Live transcript: leave out lines written over silence\n\nPatched on top of 3.10.103. Same release key as 3.10.5.\n\n<!-- source: 69518f55a1d2581ca64c89d7c64e839bc6aea6ed -->",
+    "publishedAt": "2026-11-24T15:42:44Z",
+    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.104"
    },
    "iconStyle": "adaptive",
    "icon": "icons/onedial.png?v=f291d671",
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.11.0",
-     "versionCode": 24,
+     "versionName": "0.12.0",
+     "versionCode": 25,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.11.0.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.11.0/touchkey-0.11.0.apk",
-     "size": 11768389,
-     "sha256": "97f21334f3dbe984d81c671c914ba44fa87bdee6930f8be86b338b7d2b326d83",
-     "assetId": 786754637,
-     "assetUpdatedAt": "2026-11-24T10:39:27Z"
+     "fileName": "touchkey-0.12.0.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.12.0/touchkey-0.12.0.apk",
+     "size": 11821997,
+     "sha256": "9a2da4ae52f62b2bfb23e8eb2ce7e3dda7fb16d9bfe121b9ebdc9d1a02c2f59b",
+     "assetId": 787824650,
+     "assetUpdatedAt": "2026-11-24T15:53:18Z"
     }
    ],
    "release": {
-    "tag": "v0.11.0",
-    "name": "TouchKey 0.11.0",
-    "notes": "## TouchKey 0.11.0\n\n**See what your triggers do, and what they did.**\n\n- **In the list**, each trigger shows its whole name (on two lines), what it does (\"→ Flashlight\"), and when it\n  last ran: \"✓ Ran 5 min ago\", \"⚠ Ran 2 h ago · a step failed\", or \"Not run yet\". A running timer shows its time.\n- **\"How it works\"** at the top of a trigger: the trigger as a little flow, WHEN (its sentence) → THEN each step in\n  order, and its last run under it.\n- **\"Recent runs\"** at the bottom: its last runs (when, and \"by hand\" for Run it now), with every step's outcome\n  and, when one failed, why (\"This device has no flashlight\", \"Not installed\"…), or which steps did not run after it.\n- The history stays on this phone only: the last 20 runs of each trigger, step titles and outcomes, nothing of what\n  the trigger reacted to. It is deleted with the trigger.\n\n\nVersion 0.11.0 (build 24).\nSHA-256: 97f21334f3dbe984d81c671c914ba44fa87bdee6930f8be86b338b7d2b326d83",
-    "publishedAt": "2026-11-24T10:39:29Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.11.0"
+    "tag": "v0.12.0",
+    "name": "TouchKey 0.12.0",
+    "notes": "## TouchKey 0.12.0\n\n**Calls** (a new Calls tab in the action list)\n\n- **Answer the call** and **End or decline the call**: on a key (\"press Volume up twice to answer\"), a\n  home-screen button, or a trigger. With Power mode they also work through the phone's own call keys.\n- **Call someone**: from your contacts or a typed number. Without the Phone permission the dialer opens with the\n  number instead.\n- **Send an SMS**: your words, to as many people as you choose.\n- New trigger state **You call** (Phone call › You call): when you call someone, or anyone.\n\n**Schedules**\n\n- **Only when…** on every trigger: between hours (22:00 to 07:00 goes over midnight), on some days, charging or\n  not, on a Wi-Fi network (or any, or none), the screen on or off. All of them must hold. Each rule is a small card\n  with its choices right on it; \"How it works\" shows them between WHEN and THEN.\n- **At a time, on dates**: besides every week on some days, a time trigger can run on chosen dates\n  (\"09:00 on 24 Dec and 31 Dec\"), picked on Android's calendar.\n\n**Sound & media** (the Media tab, now \"Sound & media\")\n\n- **Set a volume**: media, ringtone, notifications, alarm or call, to a level.\n- **Say something out loud**: the phone's voice reads your words (\"Mom is calling\"). \"Hear it\" tries it first.\n- **Vibrate**: short, long or twice.\n\nWith Power mode, TouchKey gives itself the permissions these need (Phone, SMS, Do not disturb) the first time.\n\n\nVersion 0.12.0 (build 25).\nSHA-256: 9a2da4ae52f62b2bfb23e8eb2ce7e3dda7fb16d9bfe121b9ebdc9d1a02c2f59b",
+    "publishedAt": "2026-11-24T15:53:20Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.12.0"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
