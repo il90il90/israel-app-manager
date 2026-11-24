@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-24T16:22:44Z",
+ "generatedAt": "2026-11-24T16:55:06Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.13.1",
-     "versionCode": 27,
+     "versionName": "0.14.0",
+     "versionCode": 28,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.13.1.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.13.1/touchkey-0.13.1.apk",
-     "size": 11855582,
-     "sha256": "bc2b0d791a1467f089ef26c7dee8e4b93eddf6964ac9bbd01dcaba46d634295c",
-     "assetId": 787922887,
-     "assetUpdatedAt": "2026-11-24T16:21:46Z"
+     "fileName": "touchkey-0.14.0.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.14.0/touchkey-0.14.0.apk",
+     "size": 11905834,
+     "sha256": "766c099d4f38608bb44c1955da52705b45c3f4a1f536fcca507713ed03d8cfd2",
+     "assetId": 788037427,
+     "assetUpdatedAt": "2026-11-24T16:54:18Z"
     }
    ],
    "release": {
-    "tag": "v0.13.1",
-    "name": "TouchKey 0.13.1",
-    "notes": "## TouchKey 0.13.1\n\n- **Drag steps into another order.** Every list of steps (a trigger's \"Do\", a key's press, a home-screen button)\n  has a handle (⋮⋮) on each step: press it and drag the step up or down; the others make way as it passes. With\n  TalkBack the handle offers \"Move up\" and \"Move down\".\n\n\nVersion 0.13.1 (build 27).\nSHA-256: bc2b0d791a1467f089ef26c7dee8e4b93eddf6964ac9bbd01dcaba46d634295c",
-    "publishedAt": "2026-11-24T16:21:47Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.13.1"
+    "tag": "v0.14.0",
+    "name": "TouchKey 0.14.0",
+    "notes": "## TouchKey 0.14.0\n\n**If and Repeat**, in any key, trigger or home-screen button (a new \"If & repeat\" tab; searching \"if\" finds it).\n\n- **If… then… otherwise**: check something at the moment the step runs and do one thing or another. Checks: a\n  Bluetooth device connected (or not), an app in front, a setting on or off (flashlight, Wi-Fi, Bluetooth, Do not\n  disturb…), the battery below or above a level, headphones in, in a call, the time, the day, charging, a Wi-Fi\n  network, the screen. All of them, or any of them.\n  Example: \"When the screen turns on: if KIA MOTORS is connected, open Waze and set the media volume to 70%;\n  otherwise, vibrate three times.\"\n- **Repeat**: steps several times, with a pause between rounds. If and Repeat can go inside each other.\n- Tap any step to change it; an If or a Repeat opens again filled in. Steps inside are dragged into order too.\n- \"How it works\" shows what each branch of an If does.\n- The new checks also work as a trigger's \"Only when\" rules.\n- Search puts actions whose words start with what you typed first (\"if\" no longer starts with \"Notifications\").\n\n\nVersion 0.14.0 (build 28).\nSHA-256: 766c099d4f38608bb44c1955da52705b45c3f4a1f536fcca507713ed03d8cfd2",
+    "publishedAt": "2026-11-24T16:54:20Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.14.0"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
