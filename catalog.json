@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-24T06:40:05Z",
+ "generatedAt": "2026-11-24T10:40:45Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -224,26 +224,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.wallify.debug",
-     "versionName": "0.8.5",
-     "versionCode": 8005,
+     "versionName": "0.8.6",
+     "versionCode": 8006,
      "minSdk": 24,
      "targetSdk": 36,
      "tvCapable": true,
      "label": "Wallify",
-     "fileName": "wallify-0.8.5.apk",
-     "url": "https://github.com/il90il90/Wallify-releases/releases/download/v0.8.5/wallify-0.8.5.apk",
-     "size": 38734962,
-     "sha256": "9e37823f130084d94757ccee6127a5227b0f0114508699bc01f008d51a964bc7",
-     "assetId": 785828747,
-     "assetUpdatedAt": "2026-11-24T05:26:21Z"
+     "fileName": "wallify-0.8.6.apk",
+     "url": "https://github.com/il90il90/Wallify-releases/releases/download/v0.8.6/wallify-0.8.6.apk",
+     "size": 38734958,
+     "sha256": "fd8b96abe254aa5d6570300801ec76fedea3480813e48a330f4c0ae704513b21",
+     "assetId": 786133058,
+     "assetUpdatedAt": "2026-11-24T07:18:19Z"
     }
    ],
    "release": {
-    "tag": "v0.8.5",
-    "name": "Wallify 0.8.5",
-    "notes": "- From 0.8.5: **the place wallpapers are alive.** Around Me, Signpost, Local Line and My Street were drawn once a\n  minute and did not answer the phone at all - fixed. They now turn with the phone (the map and the arrows point\n  the real way; the signpost's boards turn on their pole, narrow when they point straight ahead), lean with it\n  (the street sign hangs and swings, the boards sway, the map has depth) and move by themselves (a ring going out\n  from where you are that lights each place it passes, a light running down the line, boards stirring in the\n  wind). *Turn with the phone* is on by default, and a new *Motion* switch stills a scene for those who prefer it.\n  Following the phone is drawn smoothly only while the phone is being moved.\n- From 0.8.4: **four more wallpapers of where you are, and a range you choose** (47 in all). **Around Me**: a map\n  of what is round you under a night sky - each town where it really lies, its dot as big as the town. **Signpost**:\n  a crossroads signpost under the real sky of the hour, a board for each place pointing its way, with distance and\n  direction. **Local Line**: your place as the first station of a line, the places round you its stops, each with\n  an arrow and how far. **My Street**: the street you are on as a street sign, and the streets round it on a map.\n  All of them and City Radar have a *Range* in Customize - 500 m, 1, 2, 5, 10, 25, 50, 100 or 250 km: only what is\n  inside it is shown, and the wider it is the more there is. Up to 2 km they show streets (with *Precise location*;\n  the phone now learns the streets up to two kilometres round you, while Wallify is open), beyond that towns - or\n  choose with *Show*. A scene that has nothing in its range, or needs your precise place for streets, says so.\n  City Radar and the maps can be kept north-up (*Turn with the phone* off). Distances in Hebrew are written in\n  Hebrew.\n- From 0.8.3: **City Radar shows what is really near.** Instead of the world's capitals it now shows the towns\n  round you - from Netivot: Ofakim, Sderot, Rahat, Beersheba, Kiryat Gat, Ashkelon - each where it lies and how far,\n  with the distance of the outer ring written on it. *Show* in Customize chooses: *Towns nearby* (the default),\n  *Towns and villages*, *Big cities*, *Streets nearby* or *World cities* as before; *My country only* (on) keeps to\n  the country you are in. Names are in Hebrew for places in Israel when the wallpaper is in Hebrew. With *Precise\n  location* it also writes the street you are on, and *Streets nearby* puts the streets around you on the radar, in\n  metres. The 162,000 towns are inside the app (GeoNames, CC BY 4.0), so finding them uses no network; street names\n  come from the phone's own location service, asked only while Wallify is open.\n- From 0.8.2: **the day outside, on your wallpaper** - six more (43 in all), in *Sky & weather*. **Horizon**: the\n  sun rising and setting over the sea where it really is, its light lying on the water, the moon at night.\n  **Day and Night**: the whole day as a ring in the colours the sky has at each hour, with today's real sunrise and\n  sunset and the sun or moon riding it. **Window**: when it rains where you are, drops stand on the glass and run\n  down it - wipe them with a finger; city lights glow behind it at night. **Today Outside**: hills, pines and grass\n  under the real sky - rain, snow on the hills, grass bending in the wind, birds on a fair day. **Puddle**: rain\n  rings on still water. **Thermometer**: a glass thermometer with the real temperature.\n  *Window* and *Puddle* have a switch for drops in any weather.\n- From 0.8.1: **13 more smart wallpapers** (37 in all). *Liquid and playful*: Day Tank (the day draining away),\n  Storage Tank, Lava Lamp, Hourglass, Bubbles, Moonlit Sea, Fireflies. *Places*: City Radar (the nearest cities in\n  their true direction and distance), Far Away (the way and the distance to a city you miss), Globe, Golden Hour\n  (where the sun is, and when the light turns golden). *Calendar*: My Week, Countdown to a day you choose.\n- From 0.8.1: **your precise place** - a wallpaper that shows a place can use the phone's own location instead of\n  the city of your network: choose *Precise location (GPS)* in Customize. Wallify asks for the permission only\n  then, reads the place only while Wallify itself is open, and the wallpaper uses what it last saw - it never\n  follows you in the background. For the weather the point is sent rounded to about a kilometre.\n- From 0.8.1: **take parts off** - switches in Customize hide parts of a wallpaper: the Cockpit's battery dial, its\n  gauges, its digital clock; the Liquid Battery's number and status; clocks, coordinates and more.\n- From 0.8.1: **more to touch** - bubbles burst from under a finger, fireflies and lava gather to it, water ripples.\n  The Liquid Battery says how long until it is full. *This Month* can mark the days that have events.\n- **Smart wallpapers** - a third side of the switch at the top of Home: *Live · Photos · Smart*. A smart wallpaper is\n  drawn on the phone from its real time and state: a clock that tells the time, a tank as full as the battery, the\n  sky as it is now. What you browse is the wallpaper itself, running on your phone.\n- **24 of them** at first, in five groups. *Clocks*: Cockpit, Word Clock (the time in words, in Hebrew too), Orbit, Neon,\n  Synthwave, Time Rings, Classic, Big Time, This Month, Year in Dots. *Sky & weather*: Weather Now (the real sky with\n  drifting clouds, rain, snow, lightning, fog), Forecast, Sky Now, Daylight (the sun's path, sunrise and sunset),\n  Aurora, Tonight's Moon. *Calendar*: My Day, Next Up, Day Planner. *Places*: Earth Now (a world map lit where it is\n  day), Compass, World Time. *Device*: Liquid Battery (leans with the phone, bubbles while charging), Device HUD.\n- **Make it yours** - *Customize* gives each wallpaper the options that fit it: colours, switches, a city from a list\n  of the world's cities (the three cities of Worl",
-    "publishedAt": "2026-11-24T05:26:23Z",
-    "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.8.5"
+    "tag": "v0.8.6",
+    "name": "Wallify 0.8.6",
+    "notes": "- From 0.8.6: the switch at the top of the feed reads **Live · Smart · Photos** - Smart is in the middle.\n- From 0.8.5: **the place wallpapers are alive.** Around Me, Signpost, Local Line and My Street were drawn once a\n  minute and did not answer the phone at all - fixed. They now turn with the phone (the map and the arrows point\n  the real way; the signpost's boards turn on their pole, narrow when they point straight ahead), lean with it\n  (the street sign hangs and swings, the boards sway, the map has depth) and move by themselves (a ring going out\n  from where you are that lights each place it passes, a light running down the line, boards stirring in the\n  wind). *Turn with the phone* is on by default, and a new *Motion* switch stills a scene for those who prefer it.\n  Following the phone is drawn smoothly only while the phone is being moved.\n- From 0.8.4: **four more wallpapers of where you are, and a range you choose** (47 in all). **Around Me**: a map\n  of what is round you under a night sky - each town where it really lies, its dot as big as the town. **Signpost**:\n  a crossroads signpost under the real sky of the hour, a board for each place pointing its way, with distance and\n  direction. **Local Line**: your place as the first station of a line, the places round you its stops, each with\n  an arrow and how far. **My Street**: the street you are on as a street sign, and the streets round it on a map.\n  All of them and City Radar have a *Range* in Customize - 500 m, 1, 2, 5, 10, 25, 50, 100 or 250 km: only what is\n  inside it is shown, and the wider it is the more there is. Up to 2 km they show streets (with *Precise location*;\n  the phone now learns the streets up to two kilometres round you, while Wallify is open), beyond that towns - or\n  choose with *Show*. A scene that has nothing in its range, or needs your precise place for streets, says so.\n  City Radar and the maps can be kept north-up (*Turn with the phone* off). Distances in Hebrew are written in\n  Hebrew.\n- From 0.8.3: **City Radar shows what is really near.** Instead of the world's capitals it now shows the towns\n  round you - from Netivot: Ofakim, Sderot, Rahat, Beersheba, Kiryat Gat, Ashkelon - each where it lies and how far,\n  with the distance of the outer ring written on it. *Show* in Customize chooses: *Towns nearby* (the default),\n  *Towns and villages*, *Big cities*, *Streets nearby* or *World cities* as before; *My country only* (on) keeps to\n  the country you are in. Names are in Hebrew for places in Israel when the wallpaper is in Hebrew. With *Precise\n  location* it also writes the street you are on, and *Streets nearby* puts the streets around you on the radar, in\n  metres. The 162,000 towns are inside the app (GeoNames, CC BY 4.0), so finding them uses no network; street names\n  come from the phone's own location service, asked only while Wallify is open.\n- From 0.8.2: **the day outside, on your wallpaper** - six more (43 in all), in *Sky & weather*. **Horizon**: the\n  sun rising and setting over the sea where it really is, its light lying on the water, the moon at night.\n  **Day and Night**: the whole day as a ring in the colours the sky has at each hour, with today's real sunrise and\n  sunset and the sun or moon riding it. **Window**: when it rains where you are, drops stand on the glass and run\n  down it - wipe them with a finger; city lights glow behind it at night. **Today Outside**: hills, pines and grass\n  under the real sky - rain, snow on the hills, grass bending in the wind, birds on a fair day. **Puddle**: rain\n  rings on still water. **Thermometer**: a glass thermometer with the real temperature.\n  *Window* and *Puddle* have a switch for drops in any weather.\n- From 0.8.1: **13 more smart wallpapers** (37 in all). *Liquid and playful*: Day Tank (the day draining away),\n  Storage Tank, Lava Lamp, Hourglass, Bubbles, Moonlit Sea, Fireflies. *Places*: City Radar (the nearest cities in\n  their true direction and distance), Far Away (the way and the distance to a city you miss), Globe, Golden Hour\n  (where the sun is, and when the light turns golden). *Calendar*: My Week, Countdown to a day you choose.\n- From 0.8.1: **your precise place** - a wallpaper that shows a place can use the phone's own location instead of\n  the city of your network: choose *Precise location (GPS)* in Customize. Wallify asks for the permission only\n  then, reads the place only while Wallify itself is open, and the wallpaper uses what it last saw - it never\n  follows you in the background. For the weather the point is sent rounded to about a kilometre.\n- From 0.8.1: **take parts off** - switches in Customize hide parts of a wallpaper: the Cockpit's battery dial, its\n  gauges, its digital clock; the Liquid Battery's number and status; clocks, coordinates and more.\n- From 0.8.1: **more to touch** - bubbles burst from under a finger, fireflies and lava gather to it, water ripples.\n  The Liquid Battery says how long until it is full. *This Month* can mark the days that have events.\n- **Smart wallpapers** - a third side of the switch at the top of Home: *Live · Photos · Smart*. A smart wallpaper is\n  drawn on the phone from its real time and state: a clock that tells the time, a tank as full as the battery, the\n  sky as it is now. What you browse is the wallpaper itself, running on your phone.\n- **24 of them** at first, in five groups. *Clocks*: Cockpit, Word Clock (the time in words, in Hebrew too), Orbit, Neon,\n  Synthwave, Time Rings, Classic, Big Time, This Month, Year in Dots. *Sky & weather*: Weather Now (the real sky with\n  drifting clouds, rain, snow, lightning, fog), Forecast, Sky Now, Daylight (the sun's path, sunrise and sunset),\n  Aurora, Tonight's Moon. *Calendar*: My Day, Next Up, Day Planner. *Places*: Earth Now (a world map lit where it is\n  day), Compass, World Time. *Device*: Liquid Battery (leans with the phone, bubbles while charging), Device HUD.\n- **Make it yours** - *Customize* gives each wallpaper the op",
+    "publishedAt": "2026-11-24T07:18:21Z",
+    "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.8.6"
    },
    "iconStyle": "adaptive",
    "icon": "icons/wallify.png?v=4b5cdc0d",
@@ -343,26 +343,26 @@
       "arm64-v8a"
      ],
      "packageName": "com.app360brains.exDialer.mod",
-     "versionName": "3.10.102",
-     "versionCode": 202,
+     "versionName": "3.10.103",
+     "versionCode": 203,
      "minSdk": 32,
      "targetSdk": 36,
      "tvCapable": false,
      "label": "OneDial",
-     "fileName": "onedial-3.10.102.apk",
-     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.102/onedial-3.10.102.apk",
-     "size": 58498421,
-     "sha256": "80fcb92303c68c1b9b86708d4a8418f20272c4baf6b38609a7b36db78f3a1b98",
-     "assetId": 782498678,
-     "assetUpdatedAt": "2026-11-23T10:27:26Z"
+     "fileName": "onedial-3.10.103.apk",
+     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.103/onedial-3.10.103.apk",
+     "size": 58522997,
+     "sha256": "191ac248b01e3d49c70162d9978fc264c8272e198e2aba4941c030cf14aec2f0",
+     "assetId": 786670247,
+     "assetUpdatedAt": "2026-11-24T10:13:52Z"
     }
    ],
    "release": {
-    "tag": "v3.10.102",
-    "name": "OneDial 3.10.102",
-    "notes": "- Test hook: a widget asked for from the background no longer ends the app\n\nPatched on top of 3.10.101. Same release key as 3.10.5.\n\n<!-- source: 63ccbd0676fcfe60039997074498e431d247dc40 -->",
-    "publishedAt": "2026-11-23T10:27:27Z",
-    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.102"
+    "tag": "v3.10.103",
+    "name": "OneDial 3.10.103",
+    "notes": "- Answer of a call going out: review fixes\n- Contact page: WhatsApp and Telegram calls among the calls, with their icon\n- Transcript: written down from the answer of a call going out\n\nPatched on top of 3.10.102. Same release key as 3.10.5.\n\n<!-- source: 4c735d2ae07f943e107f7213df6e6747c1ef16e1 -->",
+    "publishedAt": "2026-11-24T10:13:53Z",
+    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.103"
    },
    "iconStyle": "adaptive",
    "icon": "icons/onedial.png?v=f291d671",
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.10.0",
-     "versionCode": 23,
+     "versionName": "0.11.0",
+     "versionCode": 24,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.10.0.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.10.0/touchkey-0.10.0.apk",
-     "size": 11752001,
-     "sha256": "2164f9daff66b2601b5f4fd6d3cf31b70d2790fe83c28b548631adec7a9e1b7f",
-     "assetId": 786016656,
-     "assetUpdatedAt": "2026-11-24T06:37:17Z"
+     "fileName": "touchkey-0.11.0.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.11.0/touchkey-0.11.0.apk",
+     "size": 11768389,
+     "sha256": "97f21334f3dbe984d81c671c914ba44fa87bdee6930f8be86b338b7d2b326d83",
+     "assetId": 786754637,
+     "assetUpdatedAt": "2026-11-24T10:39:27Z"
     }
    ],
    "release": {
-    "tag": "v0.10.0",
-    "name": "TouchKey 0.10.0",
-    "notes": "## TouchKey 0.10.0\n\n**Timers.** A new trigger, Triggers › Time › Timer:\n\n- **Any length**: a quick choice (10 s, 20 s, 30 s, 1 min … 1 h) or any hours, minutes and seconds.\n- **Counts down** (time left) or **up** (time passed); either way its steps run when the time is up.\n- **Once, or again and again**: \"every 10 seconds\" until it is stopped. Rounds do not drift.\n- **Starts by itself** whenever the trigger is on, or only when a step starts it: a key, a home-screen button,\n  or another trigger (\"when the car connects, start a 30 min timer\").\n- **Floating window** (optional): the time, live, over any app. Tap it to pause or resume, ✕ to stop, drag it\n  anywhere; it stays where you put it.\n- The trigger screen shows the timer itself, big, with Start, Pause, Restart and Stop. The triggers list shows\n  the time of each running timer.\n- Running timers carry on after TouchKey restarts.\n\n**New actions**\n\n- **Timer: start, stop, restart, pause / resume** (System), for any timer; \"New timer\" makes one on the spot.\n- **Close an app** (System): with Power mode the app is stopped completely, as Settings › Force stop does; without\n  it, TouchKey sends it away from the screen and Android ends it in the background.\n\nWith the steps that were already there (open an app, open an activity, send a broadcast, a key, a web request…),\na timer can do anything a key can.\n\n\nVersion 0.10.0 (build 23).\nSHA-256: 2164f9daff66b2601b5f4fd6d3cf31b70d2790fe83c28b548631adec7a9e1b7f",
-    "publishedAt": "2026-11-24T06:37:19Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.10.0"
+    "tag": "v0.11.0",
+    "name": "TouchKey 0.11.0",
+    "notes": "## TouchKey 0.11.0\n\n**See what your triggers do, and what they did.**\n\n- **In the list**, each trigger shows its whole name (on two lines), what it does (\"→ Flashlight\"), and when it\n  last ran: \"✓ Ran 5 min ago\", \"⚠ Ran 2 h ago · a step failed\", or \"Not run yet\". A running timer shows its time.\n- **\"How it works\"** at the top of a trigger: the trigger as a little flow, WHEN (its sentence) → THEN each step in\n  order, and its last run under it.\n- **\"Recent runs\"** at the bottom: its last runs (when, and \"by hand\" for Run it now), with every step's outcome\n  and, when one failed, why (\"This device has no flashlight\", \"Not installed\"…), or which steps did not run after it.\n- The history stays on this phone only: the last 20 runs of each trigger, step titles and outcomes, nothing of what\n  the trigger reacted to. It is deleted with the trigger.\n\n\nVersion 0.11.0 (build 24).\nSHA-256: 97f21334f3dbe984d81c671c914ba44fa87bdee6930f8be86b338b7d2b326d83",
+    "publishedAt": "2026-11-24T10:39:29Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.11.0"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
