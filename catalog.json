@@ -1,7 +1,7 @@
 {
  "schemaVersion": 2,
  "schema": 2,
- "generatedAt": "2026-11-24T18:04:48Z",
+ "generatedAt": "2026-11-24T18:11:54Z",
  "baseUrl": "https://github.com/il90il90/israel-app-manager/releases/download/catalog/",
  "dashboardUrl": "https://il90il90.github.io/israel-app-manager/",
  "announcement": null,
@@ -1166,26 +1166,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.appmanager",
-     "versionName": "1.0.3",
-     "versionCode": 10003,
+     "versionName": "1.2.0",
+     "versionCode": 10200,
      "minSdk": 26,
      "targetSdk": 36,
-     "tvCapable": false,
+     "tvCapable": true,
      "label": "Israel App Manager",
-     "fileName": "israel-app-manager-1.0.3.apk",
-     "url": "https://github.com/il90il90/israel-app-manager/releases/download/v1.0.3/israel-app-manager-1.0.3.apk",
-     "size": 2287957,
-     "sha256": "d014d95932232a9338e21a82bdb6ae1812c31af215838e5dd7efb049d262367c",
-     "assetId": 758674260,
-     "assetUpdatedAt": "2026-11-17T10:51:34Z"
+     "fileName": "israel-app-manager-1.2.0.apk",
+     "url": "https://github.com/il90il90/israel-app-manager/releases/download/v1.2.0/israel-app-manager-1.2.0.apk",
+     "size": 2377461,
+     "sha256": "752d7267a43efba8935c0bc9b3cee1b65bdef203479fffe30b5cb3648f7438af",
+     "assetId": 788297857,
+     "assetUpdatedAt": "2026-11-24T18:10:45Z"
     }
    ],
    "release": {
-    "tag": "v1.0.3",
-    "name": "Israel App Manager 1.0.3",
-    "notes": "- **Always the newest version.** The app no longer waits for its catalog to notice a release: every time the list is loaded it asks each app's releases page on GitHub itself, and offers a release the moment it is out.\n- **Install and Update check once more** at the moment you tap them, so what gets installed is the newest release, never one that needs another update right after.\n- Coming back to the app after a few minutes refreshes the list on its own; pulling down always does.\n- Update notifications and the app's own update use the same check.",
-    "publishedAt": "2026-11-17T10:51:34Z",
-    "url": "https://github.com/il90il90/israel-app-manager/releases/tag/v1.0.3"
+    "tag": "v1.2.0",
+    "name": "Israel App Manager 1.2.0",
+    "notes": "- **Android TV, tablets and every other device.** The manager now appears in the Android TV / Google TV launcher and works fully with the remote. A clear frame shows where you are. It starts on the first app and returns to the app you opened, and a long page scrolls to its end. A Refresh button replaces pull-to-refresh, and the edges stay inside the TV's safe area. Keyboards and D-pads work the same way on phones, tablets and Chromebooks.\n- **Any app on any device.** An app with no build for your kind of device now installs anyway, using the build made for another one: phone apps on a TV, TV apps on a phone or tablet. Its page says what it was made for. Watch apps are still offered only to watches.\n- **Fewer permissions.** The manager no longer asks to see every app on the device, only the apps you can open. Its code is easy to inspect, so Google Play Protect has less reason to warn about it.\n- Fixed: on an app's page, a remote or keyboard could not move from the Back button down into the page.\n- **The list of apps updates without a new version of the manager.** The catalog is now published separately from the app, checked before it is used, and the last good copy is kept for when you are offline. If a newer catalog needs a newer manager, the app says so and keeps showing the list it can read.\n- **Categories and screenshots.** An app can be in several categories, category names come from the catalog, and apps can show screenshots on their page.",
+    "publishedAt": "2026-11-24T18:10:46Z",
+    "url": "https://github.com/il90il90/israel-app-manager/releases/tag/v1.2.0"
    },
    "iconStyle": "adaptive",
    "icon": "icon-israel-app-manager-233b79c0.png",
