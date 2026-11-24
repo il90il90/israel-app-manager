@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-24T05:34:36Z",
+ "generatedAt": "2026-11-24T06:13:39Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.9.0",
-     "versionCode": 21,
+     "versionName": "0.9.1",
+     "versionCode": 22,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.9.0.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.9.0/touchkey-0.9.0.apk",
-     "size": 11719173,
-     "sha256": "2ce7a5a264f6eb690a8ebd7370d01809996b0403468a4ce443c441f147ad2837",
-     "assetId": 785847744,
-     "assetUpdatedAt": "2026-11-24T05:34:03Z"
+     "fileName": "touchkey-0.9.1.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.9.1/touchkey-0.9.1.apk",
+     "size": 11719169,
+     "sha256": "b0358e78db380905ba54b0b1de7f7e655077efe268c9f0617f376da7b93c67fd",
+     "assetId": 785946953,
+     "assetUpdatedAt": "2026-11-24T06:13:04Z"
     }
    ],
    "release": {
-    "tag": "v0.9.0",
-    "name": "TouchKey 0.9.0",
-    "notes": "## TouchKey 0.9.0\n\n**Every trigger takes as many values as you want.** Whatever a trigger can be narrowed by is now a list, edited\nthe same way everywhere; any one of them will do, and an empty list means \"any\".\n\n- **Words** (SMS, notifications): type a word and press Enter, or type several with commas (\"code, OTP\"); each\n  becomes a chip you can remove with ✕.\n- **Bluetooth devices**: add as many of your paired devices as you like, with one tap each.\n- **Wi-Fi networks**: several networks, from the ones this phone knows or typed in.\n- **Apps** (app opens or closes, notifications): several apps, each with its icon.\n- **Times**: several times a day (\"07:30 and 19:00\"), picked on Android's clock; tap one to change it.\n- **People** (SMS and calls): from your contacts or typed numbers, as many as you need.\n- A cleaner trigger screen: each list has its own section, and the days wrap instead of scrolling sideways.\n- In notification triggers, tapping a notification that is showing now adds its app and its words to the lists.\n\nTriggers made with an older version open with their one value already in the list. A save from this version\nstill opens in an older TouchKey, with the first value of each list.\n\n\nVersion 0.9.0 (build 21).\nSHA-256: 2ce7a5a264f6eb690a8ebd7370d01809996b0403468a4ce443c441f147ad2837",
-    "publishedAt": "2026-11-24T05:34:04Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.9.0"
+    "tag": "v0.9.1",
+    "name": "TouchKey 0.9.1",
+    "notes": "## TouchKey 0.9.1\n\n- **Clearer empty lists.** \"Anyone\", \"Any text\", \"Any device\" are no longer pills that look like buttons but do\n  nothing. They are now a plain sentence with what it means and how to change it (\"Anyone · Add people below to\n  choose who.\"). A list that needs a value (the app of \"An app opens\", a time) says so in the warning colour, inside\n  the card.\n- \"Does nothing yet\" in a trigger or home-screen button says the same way that its actions are still to be chosen.\n- \"Only when it happens several times\" gives the right example for each trigger (messages, calls, missed calls,\n  notifications).\n\n\nVersion 0.9.1 (build 22).\nSHA-256: b0358e78db380905ba54b0b1de7f7e655077efe268c9f0617f376da7b93c67fd",
+    "publishedAt": "2026-11-24T06:13:06Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.9.1"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
