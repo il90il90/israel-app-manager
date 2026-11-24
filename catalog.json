@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-24T10:40:45Z",
+ "generatedAt": "2026-11-24T15:35:12Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -44,26 +44,26 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.touchless",
-     "versionName": "0.2.623",
-     "versionCode": 675,
+     "versionName": "0.2.626",
+     "versionCode": 678,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "Touchless",
-     "fileName": "touchless-0.2.623.apk",
-     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.623/touchless-0.2.623.apk",
-     "size": 40340027,
-     "sha256": "995daefc498ef1f0338eeae10c8346bdd950ad2b137946950b0a26cdb7ba6dee",
-     "assetId": 783907065,
-     "assetUpdatedAt": "2026-11-23T17:36:37Z"
+     "fileName": "touchless-0.2.626.apk",
+     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.626/touchless-0.2.626.apk",
+     "size": 40405567,
+     "sha256": "6fa27038a049fdf781df54022305237fac67a0fadbc4a6c774d113f04a6bcf01",
+     "assetId": 787676308,
+     "assetUpdatedAt": "2026-11-24T15:12:06Z"
     }
    ],
    "release": {
-    "tag": "v0.2.623",
-    "name": "Touchless v0.2.623",
-    "notes": "# v0.2.623\n\n- **A switch no longer moves its row (#1031).** In Automations, turning an automation on or off made its card jump to\n  another place in the list while your finger was still over it, so the next tap could land on another automation's\n  switch.\n  - Now a card stays where it is while the list is on screen. The list is put in order again the next time you open\n    it, when you come back to the app, or when you pick another order.\n  - The same goes for Scripts, Triggers, Webhooks, Event Hub watches, Learned skills, App skills and the ready-made\n    rules in AI instructions.\n- **\"Active first\" is your choice (#1031).** The sort menu of Automations now ends with \"Active first\", and the sort\n  button says so: \"Active · Newest first\".\n  - On (as before): the automations that are on come first, then the ones turned off.\n  - Off: only the order you picked counts. The finished ones stay under \"Inactive\".\n  - An AI can read or change it with the `automations_active_first` setting.",
-    "publishedAt": "2026-11-23T17:38:02Z",
-    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.623"
+    "tag": "v0.2.626",
+    "name": "Touchless v0.2.626",
+    "notes": "# v0.2.626\n\n- **An APK Mod can be cloned from GitHub (#1040).** Until now a mod's repo held its files but not its recipe (which\n  app it changes, the label, patches, filters and permissions), so no other phone could bring the mod back, and Clone\n  refused every mod.\n  - **Push** now also saves the mod's recipe and which app and version it was made from. The original app itself\n    never goes to GitHub.\n  - **Clone** makes the mod from the repo's recipe and files and from the original app on this phone. The app has to\n    be installed here; if it isn't, Clone says which app to install. When this phone has another version of the app\n    than the one the mod was made from, the result says so.\n  - **Pull** also takes the recipe when it changed on GitHub. This phone's recipe is kept next to it.\n  - \"I own this app\" stays on the phone where it was said: it is not saved to GitHub and not taken from it.\n  - **A mod you saved before this version** has no recipe in its repo. On the phone that has the project, update\n    Touchless and push it again; after that it can be cloned. Clone tells you this instead of naming an internal\n    command.\n- **The clone list asks GitHub twice (#1040).** When GitHub didn't answer which repos hold an app, every repo whose name\n  starts with your prefix was marked as one. Now the list asks a second time first, and if it still has to go by the\n  names it says so.",
+    "publishedAt": "2026-11-24T15:13:42Z",
+    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.626"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchless.png?v=8327713a",
