@@ -1,36 +1,60 @@
 # Catalog tools
 
-`build_catalog.py` turns `catalog/apps.json` into what the app downloads.
+The Catalog workflow (`.github/workflows/catalog.yml`) runs these in order. Each can also be run
+by hand.
+
+| Tool | What it does |
+|---|---|
+| `validate_catalog.mjs` | Validates `catalog/catalog.json` with `dashboard/js/schema.js`, the same rules the dashboard uses. Exits 1 on errors. |
+| `publish_release.py fetch` | Downloads the published catalog and its icons, so the build reuses what it already knows. |
+| `build_catalog.py build` | Resolves every app and writes the catalog the app downloads, plus `icons/<id>.png`. |
+| `publish_release.py publish` | Uploads icons, swaps the new `catalog.json` into the `catalog` release, keeps `catalog-previous.json`, writes the status into the release description. |
+| `publish_release.py fail` | Records a failed run in the release description. Nothing else changes. |
+| `publish_release.py rollback` | Swaps `catalog-previous.json` back in and pins it until the next catalog change. |
+| `verify_catalog.py` | Daily check (**Verify downloads** workflow): fetches every published APK like the app does and checks size, SHA-256, package, signature and target SDK. |
+| `apk_icon.py` | Renders an APK's launcher icon without a device. |
 
 ```bash
-export ANDROID_HOME=...            # needs build-tools (aapt2); also rsvg-convert and Pillow
-gh auth login                      # or GH_TOKEN
+node tools/catalog/validate_catalog.mjs catalog/catalog.json
 
-git worktree add ../catalog-out catalog
-python3 tools/catalog/build_catalog.py build --apps catalog/apps.json --out ../catalog-out
+export ANDROID_HOME=...            # needs build-tools (aapt2, apksigner); also rsvg-convert and Pillow
+gh auth login                      # or GH_TOKEN
+python3 tools/catalog/publish_release.py fetch --out out
+python3 tools/catalog/build_catalog.py build --catalog catalog/catalog.json --out out --report build.json
+python3 tools/catalog/publish_release.py status       # what the last run reported
 ```
 
-The run only downloads APKs it has not seen (it compares release asset ids with the previous
-`catalog.json`), and keeps the last good entry of an app whose release could not be read.
-An app with no release it can reach is listed without a download ("Coming soon" in the app).
+## How an app is resolved
 
-## What an entry in apps.json can say
+`source_catalog.py` turns each entry of `catalog/catalog.json` into a build plan:
 
-| key | meaning |
-|---|---|
-| `sources` | where the APKs are: `repo`, and optionally `tag` and `asset` (regular expressions) |
-| `website`, `store` | the app's own site and its store page, shown as links on its page |
-| `license` | `true` for a premium app: its card gets a *License required* tag and its page a card with a button to message the developer |
-| `featured`, `self`, `category`, `tagline`, `description` | as they read |
+- **link** entries: `app-manager.json` (or `.github/app-manager.json`) from the repository's
+  default branch supplies name, `by`, tagline, description, icon, screenshots, package name and
+  release rules. Missing fields fall back to the repository's own name, owner and description.
+  Fields written in the catalog entry win over both.
+- **custom** entries: everything comes from the entry; `release.strategy` is
+  `github-latest`, `direct-apk` or `external-json`. No `release` means the app is listed without
+  a download ("not available" in the app).
+- `hidden: true` entries are not published.
 
-Every app in the generated catalog also carries `source`: the repository and the tag and file
-rules it was resolved with. The app uses them to look for a release newer than the catalog's by
-itself, so a slow catalog never means an old download.
+Then `build_catalog.py`:
 
-`contact.telegram` at the top of the file is where that button leads. Every app in the
-generated catalog also gets `latestUrl`, a GitHub link that keeps pointing at its newest
-release: a direct download when the release carries one APK under a name that never changes
-(`App.apk`), the "latest release" page otherwise. The app shares that link.
+- picks the newest non-draft release whose tag and asset names match (`github-latest`), or
+  downloads the direct APK / the APK named by the external JSON (re-downloaded only when its
+  ETag, Last-Modified or size changes);
+- inspects each APK with aapt2 (package, version, minimum and target SDK, ABIs, phone / TV /
+  watch) and leaves out any APK whose signature Android would refuse, or whose package differs
+  from the one `app-manager.json` declares;
+- takes the icon from `catalog/icons/<id>.png` (owner override), else the entry's or
+  `app-manager.json`'s icon (downloaded, checked to be an image, re-encoded as PNG), else the
+  APK's launcher icon;
+- keeps the last published entry of an app whose release cannot be read right now;
+- fails (and nothing is published) only when no app at all can be resolved, which means GitHub
+  or the network is down.
+
+Every app in the published catalog carries `source` (repository, tag and file rules) for
+`github-latest` releases, so the app can look for a newer release by itself, and `latestUrl`, a
+link that keeps pointing at the newest version.
 
 ## Apps whose source is private
 
@@ -45,25 +69,3 @@ tools/release/publish_app.sh il90il90/Zoopli-releases release.json zoopli-2.22.0
 It pushes the files to that repository's `release-inbox` branch, where its *Publish release*
 workflow checks the signature against `signing-cert.sha256` on main and creates the tagged
 release. The script's header describes `release.json`.
-
-(`{ "mirror": true }` sources and the `mirror` command are an older way to do the same from an
-`apks` branch of this repository; nothing uses them now.)
-
-## Checking that everything installs
-
-`build_catalog.py` leaves out an APK whose signature does not verify (an unsigned file looks like
-any other on a release page, and every device refuses it), and names it in a warning.
-
-`verify_catalog.py` checks the published catalog from the outside: it fetches every download the
-way the app does and checks size, SHA-256, package, signature and target SDK. The **Verify
-downloads** workflow runs it once a day.
-
-```bash
-python3 tools/catalog/verify_catalog.py            # the published catalog
-```
-
-## Icons
-
-`apk_icon.py` renders an APK's launcher icon without a device. Adaptive icons are translated to
-SVG layer by layer (colours, bitmaps, VectorDrawables with groups, clip paths and gradients) and
-rasterised; if a layer uses something it cannot translate, the legacy bitmap icon is used.

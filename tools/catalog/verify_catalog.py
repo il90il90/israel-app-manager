@@ -29,7 +29,7 @@ import sys
 import tempfile
 import urllib.request
 
-LIVE = "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/catalog.json"
+LIVE = "https://github.com/il90il90/israel-app-manager/releases/download/catalog/catalog.json"
 # Android 14 refuses apps that target below 23, Android 15 below 24.
 MIN_TARGET_SDK = 24
 

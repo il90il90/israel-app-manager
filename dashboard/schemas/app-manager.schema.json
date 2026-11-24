@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://il90il90.github.io/israel-app-manager/schemas/app-manager.schema.json",
+  "title": "app-manager.json (specVersion 1)",
+  "description": "Put this file at the root of a public GitHub repository so Israel App Manager can list the app. See docs/DEVELOPER_GUIDE.md.",
+  "type": "object",
+  "required": [
+    "specVersion",
+    "name"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "specVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?$",
+      "description": "Suggested catalog ID. The catalog owner decides."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "by": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "Developer credit, shown as “by …”."
+    },
+    "developerUrl": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "tagline": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "object",
+          "propertyNames": {
+            "pattern": "^[a-z]{2,3}(-[A-Za-z]{2,4})?$"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minProperties": 1
+        }
+      ]
+    },
+    "description": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "object",
+          "propertyNames": {
+            "pattern": "^[a-z]{2,3}(-[A-Za-z]{2,4})?$"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minProperties": 1
+        }
+      ]
+    },
+    "icon": {
+      "type": "string",
+      "description": "Path in the repository (e.g. assets/icon.png) or an https URL. Square PNG, 512x512 recommended."
+    },
+    "screenshots": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "type": "string"
+      }
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Suggestions only; the catalog owner decides."
+    },
+    "website": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "license": {
+      "enum": [
+        "free",
+        "premium"
+      ]
+    },
+    "android": {
+      "type": "object",
+      "properties": {
+        "packageName": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_]*(\\.[A-Za-z][A-Za-z0-9_]*)+$"
+        },
+        "minSdk": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        }
+      }
+    },
+    "releases": {
+      "type": "object",
+      "properties": {
+        "repository": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9-]{0,38}/[A-Za-z0-9._-]{1,100}$"
+        },
+        "tag": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "Regular expression (portable subset: no lookbehind, no named groups)."
+        },
+        "asset": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "Regular expression (portable subset: no lookbehind, no named groups)."
+        },
+        "exclude": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "Regular expression (portable subset: no lookbehind, no named groups)."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

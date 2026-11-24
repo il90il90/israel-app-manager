@@ -3,16 +3,32 @@ package com.il90.appmanager.data
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 
-/** The remote catalog, as written by tools/catalog/build_catalog.py. */
+/**
+ * The remote catalog, as written by tools/catalog/build_catalog.py and published as the
+ * `catalog.json` asset of the fixed `catalog` GitHub Release.
+ */
 @Serializable
 data class Catalog(
+    /** Catalogs before version 2 call it `schema`; see [version]. */
+    val schemaVersion: Int? = null,
     val schema: Int = 1,
     val generatedAt: String? = null,
     val baseUrl: String = "",
+    val dashboardUrl: String? = null,
     val announcement: Announcement? = null,
     val contact: Contact? = null,
+    /** The category registry: ids with their localized names. */
+    val categories: List<CategoryDef> = emptyList(),
     val apps: List<CatalogApp> = emptyList(),
-)
+) {
+    val version: Int get() = schemaVersion ?: schema
+}
+
+/** One entry of the category registry. */
+@Serializable
+data class CategoryDef(val id: String, val name: Map<String, String> = emptyMap())
+
+const val DEFAULT_CATEGORY = "other"
 
 /** How to reach the developer. */
 @Serializable
@@ -40,7 +56,11 @@ data class CatalogApp(
     val name: String,
     val tagline: Map<String, String>? = null,
     val description: Map<String, String>? = null,
-    val category: String = "tools",
+    /** "link" (resolved from a GitHub repository) or "custom" (written by the catalog owner). */
+    val type: String = "custom",
+    /** The first of [categories]; the only one catalogs before version 2 have. */
+    val category: String = DEFAULT_CATEGORY,
+    val categories: List<String> = emptyList(),
     val developer: String = "",
     val website: String? = null,
     /** A store page (Google Play) for apps that are not installed from here. */
@@ -59,8 +79,13 @@ data class CatalogApp(
     val accent: String? = null,
     val release: Release? = null,
     val variants: List<Variant> = emptyList(),
+    /** Optional https links to screenshots; none is fine. */
+    val screenshots: List<String> = emptyList(),
 ) {
     val needsLicense: Boolean get() = license?.required == true
+
+    /** Every category of this app, never empty. */
+    val allCategories: List<String> get() = categories.ifEmpty { listOf(category.ifBlank { DEFAULT_CATEGORY }) }
 }
 
 /** The releases of one app on GitHub, with the same rules the catalog builder uses to pick one. */
@@ -126,3 +151,9 @@ fun Map<String, String>?.localized(language: String): String {
 }
 
 fun CatalogApp.iconUrl(baseUrl: String): String? = icon?.let { if (it.startsWith("http")) it else baseUrl + it }
+
+/** The localized name of a category: the registry first, then [fallback] (built-in names), then the id. */
+fun List<CategoryDef>.nameOf(id: String, language: String, fallback: (String) -> String? = { null }): String {
+    val fromRegistry = firstOrNull { it.id == id }?.name?.takeIf { it.isNotEmpty() }?.localized(language)
+    return fromRegistry?.takeIf { it.isNotBlank() } ?: fallback(id) ?: id
+}

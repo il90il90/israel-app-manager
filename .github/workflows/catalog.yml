@@ -1,14 +1,22 @@
 name: Catalog
 
-# Rebuilds the list of apps the Israel App Manager app shows: the newest release of every
-# app in catalog/apps.json, with versions, sizes, hashes and icons. The result lives on the
-# `catalog` branch and is read by the app from raw.githubusercontent.com.
+# Validates catalog/catalog.json and publishes the resolved catalog as assets of the fixed
+# `catalog` GitHub Release (never an app release, never "latest"). The Android app downloads
+#   https://github.com/il90il90/israel-app-manager/releases/download/catalog/catalog.json
 #
-# Three things start it. The schedule is the fallback, and only that: GitHub runs schedules when
-# it has room, and on a busy day hours pass between runs. The prompt route is the "app-released"
-# event, which an app's release workflow sends the moment it has published
-# (`gh api repos/il90il90/israel-app-manager/dispatches -f event_type=app-released`, with a token
-# that has Contents: read and write on this repository). And it can always be run by hand.
+# Order of work, and what happens when something fails:
+#   1. validate catalog/catalog.json   -> on errors nothing is published; the last good catalog stays
+#   2. resolve every app (app-manager.json, newest release, APK checks, icons)
+#   3. check nothing newer was committed meanwhile (a newer run will publish that instead)
+#   4. upload icons, then swap the new catalog.json in; the old one becomes catalog-previous.json
+#   5. mirror catalog.json to the `catalog` branch for app versions up to 1.1.0
+# The outcome (success or the exact errors) is written into the release description, which the
+# admin dashboard reads. Runs never overlap (one concurrency group, queued, never cancelled).
+#
+# Triggers: a change to the catalog (pushed by the admin dashboard or by hand), the
+# "app-released" event an app's release workflow sends (`gh api
+# repos/il90il90/israel-app-manager/dispatches -f event_type=app-released`), a schedule as a
+# fallback, and by hand (Actions > Catalog > Run workflow), which can also roll back.
 on:
   schedule:
     - cron: "3,13,23,33,43,53 * * * *"
@@ -16,8 +24,18 @@ on:
     types: [app-released]
   push:
     branches: [main]
-    paths: ["catalog/**", "tools/catalog/**", ".github/workflows/catalog.yml"]
+    paths:
+      - "catalog/**"
+      - "tools/catalog/**"
+      - "dashboard/js/schema.js"
+      - ".github/workflows/catalog.yml"
   workflow_dispatch:
+    inputs:
+      action:
+        description: "publish: validate and publish now. rollback: restore catalog-previous.json (pinned until the next catalog change)."
+        type: choice
+        options: [publish, rollback]
+        default: publish
 
 permissions:
   contents: write
@@ -29,55 +47,98 @@ concurrency:
 jobs:
   catalog:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     env:
       GH_TOKEN: ${{ github.token }}
-      # Optional, for the apps whose source is {"mirror": true}: where their releases are
-      # (a JSON object, see tools/catalog/README.md) and a token that can read them. With both,
-      # new releases are copied to the `apks` branch by themselves; without them the mirror
-      # only changes when it is updated by hand.
-      PRIVATE_REPOS_TOKEN: ${{ secrets.PRIVATE_REPOS_TOKEN }}
-      PRIVATE_SOURCES_JSON: ${{ secrets.PRIVATE_SOURCES_JSON }}
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
     steps:
       - uses: actions/checkout@v4
-        with: { path: src }
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
+
+      - name: Source
+        id: src
+        run: |
+          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "blob=$(git rev-parse HEAD:catalog/catalog.json)" >> "$GITHUB_OUTPUT"
+
+      - name: Roll back
+        id: rollback
+        if: github.event_name == 'workflow_dispatch' && inputs.action == 'rollback'
+        run: python tools/catalog/publish_release.py rollback --run-url "$RUN_URL"
+
+      - name: Validate catalog/catalog.json
+        id: validate
+        if: steps.rollback.outcome == 'skipped'
+        run: node tools/catalog/validate_catalog.mjs catalog/catalog.json --json validation.json
+
       - name: Tools
+        if: steps.rollback.outcome == 'skipped'
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq librsvg2-bin
           python -m pip install --quiet pillow
-      - name: Check out the data branches
+
+      - name: Fetch the published catalog
+        if: steps.rollback.outcome == 'skipped'
+        run: python tools/catalog/publish_release.py fetch --out out
+
+      - name: Resolve apps and build
+        id: build
+        if: steps.rollback.outcome == 'skipped'
+        run: python tools/catalog/build_catalog.py build --catalog catalog/catalog.json --out out --report build.json
+
+      - name: Is this still the newest catalog?
+        id: fresh
+        if: steps.rollback.outcome == 'skipped'
         run: |
-          remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          for branch in catalog apks; do
-            if git ls-remote --exit-code --heads "$remote" "$branch" > /dev/null; then
-              git clone --quiet --depth 1 --branch "$branch" "$remote" "$branch"
-            else
-              git init --quiet --initial-branch "$branch" "$branch"
-              git -C "$branch" remote add origin "$remote"
+          latest="$(git ls-remote origin refs/heads/main | cut -f1)"
+          current=true
+          if [ -n "$latest" ] && [ "$latest" != "${{ steps.src.outputs.commit }}" ]; then
+            git fetch --quiet --depth 1 origin "$latest"
+            if [ "$(git rev-parse "$latest:catalog/catalog.json")" != "${{ steps.src.outputs.blob }}" ]; then
+              echo "::notice::catalog/catalog.json changed while this run was working; the run for that change publishes it."
+              current=false
             fi
-          done
-      - name: Mirror private releases
-        if: env.PRIVATE_REPOS_TOKEN != '' && env.PRIVATE_SOURCES_JSON != ''
+          fi
+          echo "current=$current" >> "$GITHUB_OUTPUT"
+
+      - name: Publish to the catalog release
+        if: steps.rollback.outcome == 'skipped' && steps.fresh.outputs.current == 'true'
         run: |
-          python src/tools/catalog/build_catalog.py mirror --apps src/catalog/apps.json --mirror apks
-          cd apks
-          git add -A
-          if git diff --cached --quiet; then exit 0; fi
-          # One commit, always: the branch holds binaries and must not grow a history.
-          git checkout --quiet --orphan fresh
-          git add -A
-          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit --quiet -m "Mirror app releases"
-          git push --quiet --force origin fresh:apks
-      - name: Build the catalog
-        run: python src/tools/catalog/build_catalog.py build --apps src/catalog/apps.json --out catalog --mirror apks
-      - name: Publish
+          python tools/catalog/publish_release.py publish --dir out --report build.json \
+            --source-blob "${{ steps.src.outputs.blob }}" --commit "${{ steps.src.outputs.commit }}" \
+            --run-url "$RUN_URL" --event "${{ github.event_name }}"
+
+      - name: Mirror to the legacy catalog branch
+        # App versions up to 1.1.0 read raw.githubusercontent.com/<repo>/catalog/catalog.json.
+        # The `catalog` tag is moved to the same commit, so the branch and the tag of the same
+        # name always resolve to identical content.
+        if: success() && (steps.rollback.outcome == 'success' || steps.fresh.outputs.current == 'true')
         run: |
-          cd catalog
-          git add -A
-          if git diff --cached --quiet; then echo "Catalog unchanged"; exit 0; fi
-          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit --quiet -m "Update catalog"
-          git push --quiet origin HEAD:catalog
-          echo "Catalog published"
+          set -euo pipefail
+          mkdir -p published
+          gh release download catalog --pattern catalog.json --dir published --clobber
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git init --quiet legacy
+          cd legacy
+          git remote add origin "$remote"
+          if git fetch --quiet --depth 1 origin refs/heads/catalog; then git checkout --quiet -B catalog FETCH_HEAD; else git checkout --quiet --orphan catalog; fi
+          cp ../published/catalog.json catalog.json
+          git add catalog.json
+          if ! git diff --cached --quiet; then
+            git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit --quiet -m "Update catalog"
+            git push --quiet origin HEAD:refs/heads/catalog
+          fi
+          git push --quiet --force origin HEAD:refs/tags/catalog
+
+      - name: Report the failure
+        if: failure() && steps.rollback.outcome == 'skipped'
+        run: |
+          if [ "${{ steps.validate.outcome }}" = "failure" ]; then stage=validation; report=validation.json
+          elif [ "${{ steps.build.outcome }}" = "failure" ]; then stage=build; report=build.json
+          else stage=publish; report=build.json; fi
+          python tools/catalog/publish_release.py fail --stage "$stage" --report "$report" \
+            --source-blob "${{ steps.src.outputs.blob }}" --commit "${{ steps.src.outputs.commit }}" --run-url "$RUN_URL"

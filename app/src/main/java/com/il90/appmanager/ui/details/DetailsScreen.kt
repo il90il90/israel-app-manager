@@ -94,7 +94,7 @@ import com.il90.appmanager.ui.components.AppIcon
 import com.il90.appmanager.ui.components.MarkdownText
 import com.il90.appmanager.ui.components.Pill
 import com.il90.appmanager.ui.components.TelegramButton
-import com.il90.appmanager.ui.components.categoryLabel
+import com.il90.appmanager.ui.components.categoriesLabel
 import com.il90.appmanager.ui.components.failureMessage
 import com.il90.appmanager.ui.components.focusRing
 import com.il90.appmanager.ui.components.formFactorLabel
@@ -197,6 +197,7 @@ fun DetailsScreen(
                             Text(description, style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
                         }
                     }
+                    Screenshots(row.app.screenshots)
                     WhatsNew(row)
                     OtherDevices(row, onDownloadVariant)
                     DetailsTable(row, onOpenUrl)
@@ -216,7 +217,7 @@ private fun Header(row: AppRow, language: String) {
             Spacer(Modifier.height(2.dp))
             val by = dotJoin(
                 row.app.developer.takeIf { it.isNotBlank() }?.let { stringResource(R.string.detail_by, isolate(it)) },
-                categoryLabel(row.app.category),
+                categoriesLabel(row.app.allCategories),
             )
             Text(by, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
@@ -600,7 +601,7 @@ private fun DetailsTable(row: AppRow, onOpenUrl: (String) -> Unit) {
             if (variant.packageName.length > 22) stacked(stringResource(R.string.detail_package), variant.packageName)
             else line(stringResource(R.string.detail_package), variant.packageName, mono = true)
         }
-        line(stringResource(R.string.detail_category), categoryLabel(row.app.category))
+        line(stringResource(R.string.detail_category), categoriesLabel(row.app.allCategories))
         row.app.website?.let { line(stringResource(R.string.detail_website), ltr(it.removePrefix("https://").removePrefix("http://").trimEnd('/')), url = it) }
     }
 }
@@ -619,4 +620,26 @@ internal fun trimRedundantHeading(notes: String, redundant: List<String>): Strin
         heading == w || heading == "v$w" || (w.length >= 3 && heading.contains(w) && heading.length <= w.length + 24)
     }
     return if (repeats) text.substringAfter('\n', "").trim() else text
+}
+
+/** Optional screenshots from the catalog, in a row that scrolls sideways. Nothing at all when there are none. */
+@Composable
+private fun Screenshots(urls: List<String>) {
+    if (urls.isEmpty()) return
+    Section(stringResource(R.string.section_screenshots)) {
+        androidx.compose.foundation.lazy.LazyRow(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            items(urls.size) { i ->
+                coil3.compose.AsyncImage(
+                    model = urls[i],
+                    contentDescription = stringResource(R.string.screenshot_n, i + 1),
+                    contentScale = androidx.compose.ui.layout.ContentScale.Fit,
+                    modifier = Modifier
+                        .height(220.dp)
+                        .widthIn(max = 320.dp)
+                        .clip(MaterialTheme.shapes.medium)
+                        .background(MaterialTheme.colorScheme.surfaceContainerHigh),
+                )
+            }
+        }
+    }
 }

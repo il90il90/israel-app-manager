@@ -101,6 +101,7 @@ import com.il90.appmanager.R
 import com.il90.appmanager.data.Compatibility
 import com.il90.appmanager.data.Variant
 import com.il90.appmanager.data.localized
+import com.il90.appmanager.data.nameOf
 import com.il90.appmanager.install.TaskState
 import com.il90.appmanager.ui.AppRow
 import com.il90.appmanager.ui.AppStatus
@@ -154,7 +155,8 @@ fun HomeScreen(
     val scrolled by remember { derivedStateOf { gridState.firstVisibleItemIndex > 0 || gridState.firstVisibleItemScrollOffset > 120 } }
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
 
-    val visible = remember(state.rows, filter, query, language) {
+    val categories = state.categories
+    val visible = remember(state.rows, filter, query, language, categories) {
         val needle = query.trim().lowercase()
         state.rows.asSequence()
             .filter { row ->
@@ -167,7 +169,8 @@ fun HomeScreen(
             .filter { row ->
                 needle.isEmpty() || row.app.name.lowercase().contains(needle) ||
                     row.app.tagline.localized(language).lowercase().contains(needle) ||
-                    row.app.category.lowercase().contains(needle) ||
+                    row.app.allCategories.any { it.lowercase().contains(needle) || categories.nameOf(it, language).lowercase().contains(needle) } ||
+                    row.app.developer.lowercase().contains(needle) ||
                     row.app.variants.any { it.packageName.lowercase().contains(needle) || it.label.lowercase().contains(needle) }
             }
             .sortedWith(compareBy({ if (it.status == AppStatus.UPDATE_AVAILABLE) 0 else 1 }, { it.app.order }))
@@ -250,6 +253,7 @@ fun HomeScreen(
                     state.rows.isEmpty() -> fullWidth("error") { ErrorState(onRefresh) }
                     else -> {
                         if (state.offline) fullWidth("offline") { OfflineBanner() }
+                        if (state.incompatible) fullWidth("incompatible") { OfflineBanner(R.string.catalog_needs_update) }
                         val self = state.selfUpdate
                         if (self != null && browsing) fullWidth("self") { SelfUpdateBanner(self, onAction = { onAction(self) }) }
                         val note = state.announcement
@@ -560,14 +564,14 @@ private fun AnnouncementCard(title: String, body: String, onOpen: (() -> Unit)?,
 }
 
 @Composable
-private fun OfflineBanner() {
+private fun OfflineBanner(text: Int = R.string.offline_banner) {
     Row(
         Modifier.fillMaxWidth().clip(MaterialTheme.shapes.medium).background(MaterialTheme.colorScheme.surfaceContainerHigh).padding(horizontal = 14.dp, vertical = 10.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Icon(Icons.Rounded.CloudOff, null, Modifier.size(18.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
         Spacer(Modifier.width(10.dp))
-        Text(stringResource(R.string.offline_banner), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(stringResource(text), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
 }
 

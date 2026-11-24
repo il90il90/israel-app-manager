@@ -1,0 +1,552 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://il90il90.github.io/israel-app-manager/schemas/catalog.schema.json",
+  "title": "Israel App Manager catalog (catalog/catalog.json)",
+  "description": "The owner-controlled list of apps. Validated by dashboard/js/schema.js, which is authoritative; this schema is for editors.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "categories",
+    "apps"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": 2
+    },
+    "developer": {
+      "type": "string",
+      "description": "Default developer credit."
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "telegram": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        }
+      }
+    },
+    "announcement": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "title"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "title": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "object",
+                  "propertyNames": {
+                    "pattern": "^[a-z]{2,3}(-[A-Za-z]{2,4})?$"
+                  },
+                  "additionalProperties": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minProperties": 1
+                }
+              ]
+            },
+            "body": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "object",
+                  "propertyNames": {
+                    "pattern": "^[a-z]{2,3}(-[A-Za-z]{2,4})?$"
+                  },
+                  "additionalProperties": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minProperties": 1
+                }
+              ]
+            },
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://"
+            }
+          }
+        }
+      ]
+    },
+    "categories": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?$"
+          },
+          "name": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "object",
+                "propertyNames": {
+                  "pattern": "^[a-z]{2,3}(-[A-Za-z]{2,4})?$"
+                },
+                "additionalProperties": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minProperties": 1
+              }
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "contains": {
+        "properties": {
+          "id": {
+            "const": "other"
+          }
+        }
+      }
+    },
+    "apps": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "title": "link",
+            "required": [
+              "id",
+              "type",
+              "repository"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?$",
+                "description": "Stable app ID. Never change it once published."
+              },
+              "type": {
+                "const": "link"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+              },
+              "by": {
+                "type": "string",
+                "maxLength": 80,
+                "description": "Developer credit shown as “by …”."
+              },
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?$"
+                },
+                "maxItems": 5,
+                "uniqueItems": true,
+                "description": "IDs from the category registry. Empty or missing means “other”."
+              },
+              "tagline": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "propertyNames": {
+                      "pattern": "^[a-z]{2,3}(-[A-Za-z]{2,4})?$"
+                    },
+                    "additionalProperties": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minProperties": 1
+                  }
+                ],
+                "description": "One line. Up to 160 characters per language."
+              },
+              "description": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "propertyNames": {
+                      "pattern": "^[a-z]{2,3}(-[A-Za-z]{2,4})?$"
+                    },
+                    "additionalProperties": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minProperties": 1
+                  }
+                ],
+                "description": "Up to 4000 characters per language."
+              },
+              "icon": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://"
+              },
+              "screenshots": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri",
+                  "pattern": "^https://"
+                },
+                "maxItems": 10
+              },
+              "website": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://"
+              },
+              "storeUrl": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://"
+              },
+              "repoUrl": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://"
+              },
+              "featured": {
+                "type": "boolean"
+              },
+              "hidden": {
+                "type": "boolean",
+                "description": "Keep the entry but do not publish it."
+              },
+              "self": {
+                "type": "boolean",
+                "description": "This entry is Israel App Manager itself."
+              },
+              "license": {
+                "oneOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "contact": {
+                        "type": "string",
+                        "format": "uri",
+                        "pattern": "^https://"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                ],
+                "description": "Premium app: a license from the developer is required."
+              },
+              "accent": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "iconStyle": {
+                "type": "string"
+              },
+              "repository": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9-]{0,38}/[A-Za-z0-9._-]{1,100}$"
+              },
+              "release": {
+                "type": "object",
+                "properties": {
+                  "strategy": {
+                    "const": "github-latest"
+                  },
+                  "repository": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9-]{0,38}/[A-Za-z0-9._-]{1,100}$"
+                  },
+                  "tag": {
+                    "type": "string",
+                    "maxLength": 300,
+                    "description": "Regular expression (portable subset: no lookbehind, no named groups)."
+                  },
+                  "asset": {
+                    "type": "string",
+                    "maxLength": 300,
+                    "description": "Regular expression (portable subset: no lookbehind, no named groups)."
+                  },
+                  "exclude": {
+                    "type": "string",
+                    "maxLength": 300,
+                    "description": "Regular expression (portable subset: no lookbehind, no named groups)."
+                  },
+                  "prerelease": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          {
+            "type": "object",
+            "title": "custom",
+            "required": [
+              "id",
+              "type",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?$",
+                "description": "Stable app ID. Never change it once published."
+              },
+              "type": {
+                "const": "custom"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+              },
+              "by": {
+                "type": "string",
+                "maxLength": 80,
+                "description": "Developer credit shown as “by …”."
+              },
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?$"
+                },
+                "maxItems": 5,
+                "uniqueItems": true,
+                "description": "IDs from the category registry. Empty or missing means “other”."
+              },
+              "tagline": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "propertyNames": {
+                      "pattern": "^[a-z]{2,3}(-[A-Za-z]{2,4})?$"
+                    },
+                    "additionalProperties": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minProperties": 1
+                  }
+                ],
+                "description": "One line. Up to 160 characters per language."
+              },
+              "description": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "object",
+                    "propertyNames": {
+                      "pattern": "^[a-z]{2,3}(-[A-Za-z]{2,4})?$"
+                    },
+                    "additionalProperties": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minProperties": 1
+                  }
+                ],
+                "description": "Up to 4000 characters per language."
+              },
+              "icon": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://"
+              },
+              "screenshots": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri",
+                  "pattern": "^https://"
+                },
+                "maxItems": 10
+              },
+              "website": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://"
+              },
+              "storeUrl": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://"
+              },
+              "repoUrl": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://"
+              },
+              "featured": {
+                "type": "boolean"
+              },
+              "hidden": {
+                "type": "boolean",
+                "description": "Keep the entry but do not publish it."
+              },
+              "self": {
+                "type": "boolean",
+                "description": "This entry is Israel App Manager itself."
+              },
+              "license": {
+                "oneOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "contact": {
+                        "type": "string",
+                        "format": "uri",
+                        "pattern": "^https://"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                ],
+                "description": "Premium app: a license from the developer is required."
+              },
+              "accent": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "iconStyle": {
+                "type": "string"
+              },
+              "release": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "strategy": {
+                        "const": "github-latest"
+                      },
+                      "repository": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9-]{0,38}/[A-Za-z0-9._-]{1,100}$"
+                      },
+                      "tag": {
+                        "type": "string",
+                        "maxLength": 300,
+                        "description": "Regular expression (portable subset: no lookbehind, no named groups)."
+                      },
+                      "asset": {
+                        "type": "string",
+                        "maxLength": 300,
+                        "description": "Regular expression (portable subset: no lookbehind, no named groups)."
+                      },
+                      "exclude": {
+                        "type": "string",
+                        "maxLength": 300,
+                        "description": "Regular expression (portable subset: no lookbehind, no named groups)."
+                      },
+                      "prerelease": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "strategy",
+                      "repository"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "strategy": {
+                        "const": "direct-apk"
+                      },
+                      "url": {
+                        "type": "string",
+                        "format": "uri",
+                        "pattern": "^https://"
+                      },
+                      "versionName": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "strategy",
+                      "url"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "strategy": {
+                        "const": "external-json"
+                      },
+                      "url": {
+                        "type": "string",
+                        "format": "uri",
+                        "pattern": "^https://"
+                      }
+                    },
+                    "required": [
+                      "strategy",
+                      "url"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -10,3 +10,5 @@ captures/
 keystore.properties
 /dist/
 __pycache__/
+tests/dashboard-e2e/failure.png
+node_modules/

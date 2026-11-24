@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.il90.appmanager.App
 import com.il90.appmanager.BuildConfig
 import com.il90.appmanager.data.Announcement
+import com.il90.appmanager.data.CategoryDef
 import com.il90.appmanager.data.CatalogApp
 import com.il90.appmanager.data.Compatibility
 import com.il90.appmanager.data.FormFactor
@@ -49,6 +50,8 @@ data class HomeState(
     val loading: Boolean = true,
     val refreshing: Boolean = false,
     val offline: Boolean = false,
+    /** The published catalog needs a newer version of this app. */
+    val incompatible: Boolean = false,
     val fetchedAt: Long = 0,
     val rows: List<AppRow> = emptyList(),
     /** This app's own catalog entry. */
@@ -58,6 +61,8 @@ data class HomeState(
     val announcement: Announcement? = null,
     /** The developer's Telegram link, for the contact row in Settings. */
     val telegram: String? = null,
+    /** The catalog's category registry, for category names. */
+    val categories: List<CategoryDef> = emptyList(),
 ) {
     val updates: List<AppRow> get() = rows.filter { it.status == AppStatus.UPDATE_AVAILABLE }
     val installedCount: Int get() = rows.count { it.installed != null }
@@ -77,7 +82,7 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
     ) { catalogState, installed, tasks, settings ->
         val catalog = catalogState.catalog
         if (catalog == null) {
-            return@combine HomeState(loading = catalogState.loading, refreshing = catalogState.refreshing, offline = catalogState.offline)
+            return@combine HomeState(loading = catalogState.loading, refreshing = catalogState.refreshing, offline = catalogState.offline, incompatible = catalogState.incompatible)
         }
         app.installed.watch(catalog.apps.flatMap { entry -> entry.variants.map { it.packageName } }.toSet())
         val ownPackage = app.packageName
@@ -124,12 +129,14 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
             loading = false,
             refreshing = catalogState.refreshing,
             offline = catalogState.offline,
+            incompatible = catalogState.incompatible,
             fetchedAt = catalogState.fetchedAt,
             rows = rows,
             self = self,
             selfUpdate = selfUpdate,
             announcement = catalog.announcement?.takeIf { it.id.isNotEmpty() && it.id != settings.dismissedAnnouncement },
             telegram = catalog.contact?.telegram,
+            categories = catalog.categories,
         )
     }.stateIn(viewModelScope, SharingStarted.Eagerly, HomeState())
 
