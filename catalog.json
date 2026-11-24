@@ -1,14 +1,89 @@
 {
- "schema": 1,
- "generatedAt": "2026-11-24T16:55:06Z",
- "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
+ "schemaVersion": 2,
+ "schema": 2,
+ "generatedAt": "2026-11-24T17:49:32Z",
+ "baseUrl": "https://github.com/il90il90/israel-app-manager/releases/download/catalog/",
+ "dashboardUrl": "https://il90il90.github.io/israel-app-manager/",
  "announcement": null,
  "contact": {
-  "telegram": "https://t.me/Israelcohen"
+  "telegram": "https://t.me/YisraelCohen"
  },
+ "categories": [
+  {
+   "id": "ai",
+   "name": {
+    "en": "AI & Automation",
+    "he": "AI ואוטומציה"
+   }
+  },
+  {
+   "id": "video",
+   "name": {
+    "en": "Video",
+    "he": "וידאו"
+   }
+  },
+  {
+   "id": "personalization",
+   "name": {
+    "en": "Personalization",
+    "he": "התאמה אישית"
+   }
+  },
+  {
+   "id": "devtools",
+   "name": {
+    "en": "Developer tools",
+    "he": "כלי פיתוח"
+   }
+  },
+  {
+   "id": "communication",
+   "name": {
+    "en": "Communication",
+    "he": "תקשורת"
+   }
+  },
+  {
+   "id": "photos",
+   "name": {
+    "en": "Photos",
+    "he": "תמונות"
+   }
+  },
+  {
+   "id": "sports",
+   "name": {
+    "en": "Sports",
+    "he": "ספורט"
+   }
+  },
+  {
+   "id": "tools",
+   "name": {
+    "en": "Tools",
+    "he": "כלים"
+   }
+  },
+  {
+   "id": "kids",
+   "name": {
+    "en": "Kids",
+    "he": "ילדים"
+   }
+  },
+  {
+   "id": "other",
+   "name": {
+    "en": "Other",
+    "he": "אחר"
+   }
+  }
+ ],
  "apps": [
   {
    "id": "touchless",
+   "type": "custom",
    "name": "Touchless",
    "tagline": {
     "en": "Let AI operate your phone, hands-free",
@@ -19,6 +94,9 @@
     "he": "Touchless מחברת עוזרי AI כמו Claude, ChatGPT ו-Gemini לטלפון האנדרואיד שלכם דרך MCP. ה-AI יכול לפתוח אפליקציות, לקרוא את המסך, להקיש ולהקליד, לשלוח הודעות, לבנות אוטומציות ולבצע משימות שלמות בשבילכם, ואתם קובעים מה מותר לו."
    },
    "category": "ai",
+   "categories": [
+    "ai"
+   ],
    "developer": "Israel",
    "website": "https://touchless.tools",
    "storeUrl": null,
@@ -32,10 +110,11 @@
    "featured": true,
    "license": {
     "required": true,
-    "contact": "https://t.me/Israelcohen"
+    "contact": "https://t.me/YisraelCohen"
    },
    "self": false,
    "order": 0,
+   "screenshots": [],
    "variants": [
     {
      "formFactor": "phone",
@@ -66,11 +145,12 @@
     "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.626"
    },
    "iconStyle": "adaptive",
-   "icon": "icons/touchless.png?v=8327713a",
+   "icon": "icon-touchless-8327713a.png",
    "accent": "#DA8F30"
   },
   {
    "id": "seretgram",
+   "type": "custom",
    "name": "SeretGram",
    "tagline": {
     "en": "Your Telegram films as a streaming library",
@@ -81,6 +161,9 @@
     "he": "SeretGram הופכת את הסרטים והסדרות שבצ'אטים שלכם בטלגרם לספרייה עם פוסטרים, שחקנים וז'אנרים. ממשיכים מאיפה שעצרתם, צופים יחד עם חברים, פותחים שידורים חיים, ומשתמשים בטלפון כשלט ל-SeretGram ב-Android TV. הספרייה מסתנכרנת בין הטלפון לטלוויזיה."
    },
    "category": "video",
+   "categories": [
+    "video"
+   ],
    "developer": "Israel",
    "website": "https://seretgram.com",
    "storeUrl": null,
@@ -94,10 +177,11 @@
    "featured": true,
    "license": {
     "required": true,
-    "contact": "https://t.me/Israelcohen"
+    "contact": "https://t.me/YisraelCohen"
    },
    "self": false,
    "order": 1,
+   "screenshots": [],
    "variants": [
     {
      "formFactor": "phone",
@@ -185,11 +269,12 @@
     "url": "https://github.com/il90il90/SeretGram-releases/releases/tag/v0.2.1099"
    },
    "iconStyle": "adaptive",
-   "icon": "icons/seretgram.png?v=85d32655",
+   "icon": "icon-seretgram-85d32655.png",
    "accent": "#2E7DFF"
   },
   {
    "id": "wallify",
+   "type": "custom",
    "name": "Wallify",
    "tagline": {
     "en": "Still and live wallpapers in an endless feed",
@@ -200,6 +285,9 @@
     "he": "פיד אנכי סוחף בסגנון טיקטוק של טפטים רגילים וטפטים חיים (וידאו). הקשה כפולה שומרת למועדפים, אפשר להגדיר טפט חי אמיתי, לחפש בגלריה ולהפוך סרטונים משלכם לטפטים חיים. מתאים לכל מסך, כולל מתקפלים. חינם וללא פרסומות."
    },
    "category": "personalization",
+   "categories": [
+    "personalization"
+   ],
    "developer": "Israel",
    "website": null,
    "storeUrl": null,
@@ -214,6 +302,7 @@
    "license": null,
    "self": false,
    "order": 2,
+   "screenshots": [],
    "variants": [
     {
      "formFactor": "phone",
@@ -246,11 +335,12 @@
     "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.8.6"
    },
    "iconStyle": "adaptive",
-   "icon": "icons/wallify.png?v=4b5cdc0d",
+   "icon": "icon-wallify-4b5cdc0d.png",
    "accent": "#FF8771"
   },
   {
    "id": "trustapk",
+   "type": "custom",
    "name": "TrustAPK",
    "tagline": {
     "en": "Patch and inspect APKs right on your phone",
@@ -261,6 +351,9 @@
     "he": "כלי מקומי לתיקון קובצי APK ולבדיקת תעבורת HTTPS, למפתחים ולבודקים. גורמים לאפליקציה לסמוך על תעודות משתמש, מסירים certificate pinning, מציצים פנימה ומבצעים דה-קומפילציה, וחותמים מחדש. הכול בטלפון, בלי מחשב."
    },
    "category": "devtools",
+   "categories": [
+    "devtools"
+   ],
    "developer": "Israel",
    "website": "https://trustapk.app",
    "storeUrl": null,
@@ -273,10 +366,11 @@
    "featured": false,
    "license": {
     "required": true,
-    "contact": "https://t.me/Israelcohen"
+    "contact": "https://t.me/YisraelCohen"
    },
    "self": false,
    "order": 3,
+   "screenshots": [],
    "variants": [
     {
      "formFactor": "phone",
@@ -304,11 +398,12 @@
     "url": "https://github.com/il90il90/trust-apk-releases/releases/tag/v1.8.1070"
    },
    "iconStyle": "adaptive",
-   "icon": "icons/trustapk.png?v=bdb7358d",
+   "icon": "icon-trustapk-bdb7358d.png",
    "accent": "#14D9C6"
   },
   {
    "id": "onedial",
+   "type": "custom",
    "name": "OneDial",
    "tagline": {
     "en": "A fast dialer that finds anyone in a few taps",
@@ -319,6 +414,9 @@
     "he": "חייגן ואנשי קשר שמתאימים את עצמם אליכם. מחפשים שמות בעברית ובאנגלית ישר מהמקלדת, מחליקים על שורה כדי להתקשר, לשלוח הודעה או לפתוח וואטסאפ וטלגרם, רואים מי נמצא על כל מקש חיוג מהיר, מחייגים בקול ומקבלים כפתור חיוג לכל SIM. ערכות נושא, הטפט שלכם ברקע החייגן וחלון שיחה שמראה מי מתקשר."
    },
    "category": "communication",
+   "categories": [
+    "communication"
+   ],
    "developer": "Israel",
    "website": null,
    "storeUrl": null,
@@ -332,10 +430,11 @@
    "featured": false,
    "license": {
     "required": true,
-    "contact": "https://t.me/Israelcohen"
+    "contact": "https://t.me/YisraelCohen"
    },
    "self": false,
    "order": 4,
+   "screenshots": [],
    "variants": [
     {
      "formFactor": "phone",
@@ -343,33 +442,34 @@
       "arm64-v8a"
      ],
      "packageName": "com.app360brains.exDialer.mod",
-     "versionName": "3.10.104",
-     "versionCode": 204,
+     "versionName": "3.10.105",
+     "versionCode": 205,
      "minSdk": 32,
      "targetSdk": 36,
      "tvCapable": false,
      "label": "OneDial",
-     "fileName": "onedial-3.10.104.apk",
-     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.104/onedial-3.10.104.apk",
+     "fileName": "onedial-3.10.105.apk",
+     "url": "https://github.com/il90il90/OneDial-releases/releases/download/v3.10.105/onedial-3.10.105.apk",
      "size": 58555765,
-     "sha256": "587fa51684803d411b5ad4c7457fdcd6c533efb12a4ca240d9ef70942d0ba14f",
-     "assetId": 787785010,
-     "assetUpdatedAt": "2026-11-24T15:42:42Z"
+     "sha256": "c7ac0ff7cebee497f4be9a6951aacc356366408789ad28bd140a5e570f457d9e",
+     "assetId": 788062979,
+     "assetUpdatedAt": "2026-11-24T17:02:12Z"
     }
    ],
    "release": {
-    "tag": "v3.10.104",
-    "name": "OneDial 3.10.104",
-    "notes": "- Transcribe-only texts: short record-row summary, call page names the setting\n- Recording off with transcription on is transcribe-only; no separate switch\n- Transcribe-only: keys are not words; once turned off, a call keeps its recording\n- Recording settings: speed test button on its own row\n- Transcribe-only deletes only after a whole written transcript; faster accurate pass\n- Transcribe-only option, logos on source chips, search shows the matching line\n- Transcript window: swipe it aside to a tab on the screen edge, as the caller window\n- App calls: resume only with no phone call left, tie app recordings by id only\n- Calls during an app's call: Telecom's own say, app calls by id, the app call recorded again\n- Calls during an app's call: per-window ringing, the answered path, no app call recorded as a phone call\n- Caller window: only its own call's recording, closed when a phone call ends during an app call\n- Review fixes: after-call cleanup off the stop thread, passes asked for first\n- Silent lines: say in the log that the lines left out were not said\n- Transcripts: leave out faint short lines after the call\n- Contact widget: no quick actions menu\n- Contact widget: the owner's name in its preview\n- Accurate transcript: only when asked, from the call's page\n- Galaxy S23: know when the call's keypad is open\n- Transcript window: the grip pulls it over the open keypad too\n- Live transcript: leave out lines written over silence\n\nPatched on top of 3.10.103. Same release key as 3.10.5.\n\n<!-- source: 69518f55a1d2581ca64c89d7c64e839bc6aea6ed -->",
-    "publishedAt": "2026-11-24T15:42:44Z",
-    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.104"
+    "tag": "v3.10.105",
+    "name": "OneDial 3.10.105",
+    "notes": "- Transcript window back from its tab: slide in once it is on the screen\n- Live transcript never opens by itself: a call without a caller window gets an edge tab\n\nPatched on top of 3.10.104. Same release key as 3.10.5.\n\n<!-- source: 17710cc2076f3350d2e07f0c9deeac7e038335eb -->",
+    "publishedAt": "2026-11-24T17:02:13Z",
+    "url": "https://github.com/il90il90/OneDial-releases/releases/tag/v3.10.105"
    },
    "iconStyle": "adaptive",
-   "icon": "icons/onedial.png?v=f291d671",
+   "icon": "icon-onedial-f291d671.png",
    "accent": "#1A9EAE"
   },
   {
    "id": "gallerywall",
+   "type": "custom",
    "name": "Gallery Wall",
    "tagline": {
     "en": "Turn your TVs into a living photo wall",
@@ -380,6 +480,9 @@
     "he": "מתקינים בטלפון ובטלוויזיות: הטלפון הוא השלט והטלוויזיות הן התצוגה. משתפים תמונות וסרטונים ישר מהגלריה לאלבומים, והם מופיעים על המסכים דרך ה-Wi-Fi הביתי."
    },
    "category": "photos",
+   "categories": [
+    "photos"
+   ],
    "developer": "Israel",
    "website": null,
    "storeUrl": null,
@@ -394,6 +497,7 @@
    "license": null,
    "self": false,
    "order": 5,
+   "screenshots": [],
    "variants": [
     {
      "formFactor": "phone",
@@ -426,11 +530,12 @@
     "url": "https://github.com/il90il90/GalleryWall-releases/releases/tag/v3.3.1"
    },
    "iconStyle": "adaptive",
-   "icon": "icons/gallerywall.png?v=2b8dab03",
+   "icon": "icon-gallerywall-2b8dab03.png",
    "accent": "#B65B33"
   },
   {
    "id": "watchiptv",
+   "type": "custom",
    "name": "WatchIPTV",
    "tagline": {
     "en": "IPTV and camera streams on phone, TV and watch",
@@ -441,6 +546,9 @@
     "he": "צופים בערוצי IPTV ובמצלמות RTSP בטלפון, ב-Android TV ובשעון Wear OS. שום דבר לא מובנה מראש: אתם מוסיפים פלייליסטים וזרמים משלכם, והם נשמרים מוצפנים במכשיר. הטלפון יכול לשלוח את כל הספרייה לשעון ולכל טלוויזיה ב-Wi-Fi."
    },
    "category": "video",
+   "categories": [
+    "video"
+   ],
    "developer": "Israel",
    "website": null,
    "storeUrl": null,
@@ -455,6 +563,7 @@
    "license": null,
    "self": false,
    "order": 6,
+   "screenshots": [],
    "variants": [
     {
      "formFactor": "phone",
@@ -531,11 +640,12 @@
     "url": "https://github.com/il90il90/WatchIPTV-releases/releases/tag/v1.0.1-26634011"
    },
    "iconStyle": "adaptive",
-   "icon": "icons/watchiptv.png?v=4686214e",
+   "icon": "icon-watchiptv-4686214e.png",
    "accent": "#7D7DFF"
   },
   {
    "id": "scoreup",
+   "type": "custom",
    "name": "ScoreUp",
    "tagline": {
     "en": "A scoreboard on your phone, watch and TV",
@@ -546,6 +656,9 @@
     "he": "לוח תוצאות לספורט לטלפונים, לטאבלטים ולמתקפלים. שעון Wear OS משמש כשלט לניקוד, הטלוויזיה מציגה לוח תוצאות חי, והאפליקציה מנהלת את שעון המשחק ושומרת את התוצאות."
    },
    "category": "sports",
+   "categories": [
+    "sports"
+   ],
    "developer": "Israel",
    "website": null,
    "storeUrl": null,
@@ -560,6 +673,7 @@
    "license": null,
    "self": false,
    "order": 7,
+   "screenshots": [],
    "variants": [
     {
      "formFactor": "phone",
@@ -614,11 +728,12 @@
     "url": "https://github.com/il90il90/ScoreUp/releases/tag/v1.0.18"
    },
    "iconStyle": "adaptive",
-   "icon": "icons/scoreup.png?v=f9059385",
+   "icon": "icon-scoreup-f9059385.png",
    "accent": "#369BFF"
   },
   {
    "id": "touchless-bridge",
+   "type": "custom",
    "name": "Touchless Bridge",
    "tagline": {
     "en": "Connect HackerAI to your phone through Touchless",
@@ -629,6 +744,9 @@
     "he": "מאפשרת לצ'אט של HackerAI להפעיל את הטלפון דרך Touchless, בלי מחשב באמצע. הגדרה בשלושה צעדים מחברת את הטלפון, צ'אט HackerAI מובנה עושה את השאר, והאפליקציה שומרת על החיבור ברקע מאחורי נעילת PIN או טביעת אצבע. דורשת את Touchless."
    },
    "category": "ai",
+   "categories": [
+    "ai"
+   ],
    "developer": "Israel",
    "website": null,
    "storeUrl": null,
@@ -643,6 +761,7 @@
    "license": null,
    "self": false,
    "order": 8,
+   "screenshots": [],
    "variants": [
     {
      "formFactor": "phone",
@@ -675,11 +794,12 @@
     "url": "https://github.com/il90il90/touchless-hackerai-bridge/releases/tag/app-v24"
    },
    "iconStyle": "adaptive",
-   "icon": "icons/touchless-bridge.png?v=0faddf12",
+   "icon": "icon-touchless-bridge-0faddf12.png",
    "accent": "#00D4F1"
   },
   {
    "id": "screenawake",
+   "type": "custom",
    "name": "Screen Awake",
    "tagline": {
     "en": "Keep the screen on, always or only in chosen apps",
@@ -690,6 +810,9 @@
     "he": "מונעת מהמסך להיכבות, תמיד או רק כשאפליקציות שבחרתם פתוחות. כוללת כפתור צף, שני כפתורים בהגדרות המהירות ואפשרות להפעלה אחרי הדלקה מחדש. היא לא משנה שום הגדרת מערכת: מכבים אותה, וזמן כיבוי המסך הרגיל חוזר."
    },
    "category": "tools",
+   "categories": [
+    "tools"
+   ],
    "developer": "Israel",
    "website": null,
    "storeUrl": null,
@@ -704,6 +827,7 @@
    "license": null,
    "self": false,
    "order": 9,
+   "screenshots": [],
    "variants": [
     {
      "formFactor": "phone",
@@ -736,11 +860,12 @@
     "url": "https://github.com/il90il90/ScreenAwake-releases/releases/tag/v1.9.2"
    },
    "iconStyle": "adaptive",
-   "icon": "icons/screenawake.png?v=d40c3b82",
+   "icon": "icon-screenawake-d40c3b82.png",
    "accent": "#5142BF"
   },
   {
    "id": "touchkey",
+   "type": "custom",
    "name": "TouchKey",
    "tagline": {
     "en": "Remap any hardware key: tap, double tap, long press",
@@ -751,6 +876,9 @@
     "he": "נותן לכל מקש פיזי תפקיד חדש. לכל מקש שלוש פעולות משלו: לחיצה, לחיצה כפולה ולחיצה ארוכה. עובד עם הכפתורים של המכשיר עצמו, עם מקלדות USB ו-Bluetooth, עם בקרי משחק ועם שלטי טלוויזיה, בטלפונים, בטאבלטים וב-Android TV. מקש יכול להתנהג אחרת בכל אפליקציה, להריץ כמה צעדים ברצף, לפתוח תפריט מהיר, או ללחוץ על מקום או על כפתור במסך."
    },
    "category": "tools",
+   "categories": [
+    "tools"
+   ],
    "developer": "Israel",
    "website": null,
    "storeUrl": null,
@@ -765,6 +893,7 @@
    "license": null,
    "self": false,
    "order": 10,
+   "screenshots": [],
    "variants": [
     {
      "formFactor": "phone",
@@ -797,11 +926,12 @@
     "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.14.0"
    },
    "iconStyle": "adaptive",
-   "icon": "icons/touchkey.png?v=bf1f429b",
+   "icon": "icon-touchkey-bf1f429b.png",
    "accent": "#5A58DF"
   },
   {
    "id": "zoopli",
+   "type": "custom",
    "name": "Zoopli",
    "tagline": {
     "en": "Animals for kids, in Hebrew and English",
@@ -812,6 +942,9 @@
     "he": "משחק לימוד על בעלי חיים לילדים צעירים. תשעים ושלוש חיות עם איורים, תמונות אמיתיות, הקולות האמיתיים שלהן והשמות שלהן בעברית ובאנגלית, עשרים ושתיים מדינות לטייל בהן ושלושה מצבי חידון עדינים."
    },
    "category": "kids",
+   "categories": [
+    "kids"
+   ],
    "developer": "Israel",
    "website": null,
    "storeUrl": null,
@@ -826,6 +959,7 @@
    "license": null,
    "self": false,
    "order": 11,
+   "screenshots": [],
    "variants": [
     {
      "formFactor": "phone",
@@ -858,11 +992,12 @@
     "url": "https://github.com/il90il90/Zoopli-releases/releases/tag/v2.21.0"
    },
    "iconStyle": "adaptive",
-   "icon": "icons/zoopli.png?v=abd43f51",
+   "icon": "icon-zoopli-abd43f51.png",
    "accent": "#1E6FD9"
   },
   {
    "id": "abc",
+   "type": "custom",
    "name": "אבג ABC",
    "tagline": {
     "en": "Letters and numbers for ages 2 to 8",
@@ -873,6 +1008,9 @@
     "he": "אפליקציה ללימוד קריאה וכתיבה בעברית (כולל ניקוד), אנגלית ומספרים, לגילאי 2 עד 8. עובדת אופליין, בלי פרסומות, בלי רכישות ובלי איסוף מידע."
    },
    "category": "kids",
+   "categories": [
+    "kids"
+   ],
    "developer": "Israel",
    "website": null,
    "storeUrl": null,
@@ -887,6 +1025,7 @@
    "license": null,
    "self": false,
    "order": 12,
+   "screenshots": [],
    "variants": [
     {
      "formFactor": "phone",
@@ -919,11 +1058,12 @@
     "url": "https://github.com/il90il90/abc-app-releases/releases/tag/v2.1.2"
    },
    "iconStyle": "adaptive",
-   "icon": "icons/abc.png?v=3c6dc7c2",
+   "icon": "icon-abc-3c6dc7c2.png",
    "accent": "#6C63FF"
   },
   {
    "id": "israel-tv",
+   "type": "custom",
    "name": "Israel TV",
    "tagline": {
     "en": "Israeli live TV channels on your TV and phone",
@@ -934,6 +1074,9 @@
     "he": "ערוצי טלוויזיה ישראליים בשידור חי באפליקציה אחת ל-Android TV, ל-Google TV ולטלפוני אנדרואיד: בטלוויזיה היא בנויה לשלט, ובטלפון למגע."
    },
    "category": "video",
+   "categories": [
+    "video"
+   ],
    "developer": "Israel",
    "website": null,
    "storeUrl": null,
@@ -947,10 +1090,11 @@
    "featured": false,
    "license": {
     "required": true,
-    "contact": "https://t.me/Israelcohen"
+    "contact": "https://t.me/YisraelCohen"
    },
    "self": false,
    "order": 13,
+   "screenshots": [],
    "variants": [
     {
      "formFactor": "phone",
@@ -978,11 +1122,12 @@
     "url": "https://github.com/il90il90/hass-israel-tv-release/releases/tag/v1.4"
    },
    "iconStyle": "legacy",
-   "icon": "icons/israel-tv.png?v=45ff0e21",
+   "icon": "icon-israel-tv-45ff0e21.png",
    "accent": "#0B57A3"
   },
   {
    "id": "israel-app-manager",
+   "type": "custom",
    "name": "Israel App Manager",
    "tagline": {
     "en": "All of Israel's apps in one place",
@@ -993,6 +1138,9 @@
     "he": "הורדה, התקנה ועדכון של כל האפליקציות שישראל בונה, ממקום אחד."
    },
    "category": "tools",
+   "categories": [
+    "tools"
+   ],
    "developer": "Israel",
    "website": null,
    "storeUrl": null,
@@ -1007,6 +1155,7 @@
    "license": null,
    "self": true,
    "order": 14,
+   "screenshots": [],
    "variants": [
     {
      "formFactor": "phone",
@@ -1039,7 +1188,7 @@
     "url": "https://github.com/il90il90/israel-app-manager/releases/tag/v1.0.3"
    },
    "iconStyle": "adaptive",
-   "icon": "icons/israel-app-manager.png?v=233b79c0",
+   "icon": "icon-israel-app-manager-233b79c0.png",
    "accent": "#5C71F0"
   }
  ]
