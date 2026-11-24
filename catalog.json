@@ -1,7 +1,7 @@
 {
  "schemaVersion": 2,
  "schema": 2,
- "generatedAt": "2026-11-24T17:49:32Z",
+ "generatedAt": "2026-11-24T18:02:23Z",
  "baseUrl": "https://github.com/il90il90/israel-app-manager/releases/download/catalog/",
  "dashboardUrl": "https://il90il90.github.io/israel-app-manager/",
  "announcement": null,
@@ -123,26 +123,26 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.touchless",
-     "versionName": "0.2.626",
-     "versionCode": 678,
+     "versionName": "0.2.627",
+     "versionCode": 681,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "Touchless",
-     "fileName": "touchless-0.2.626.apk",
-     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.626/touchless-0.2.626.apk",
-     "size": 40405567,
-     "sha256": "6fa27038a049fdf781df54022305237fac67a0fadbc4a6c774d113f04a6bcf01",
-     "assetId": 787676308,
-     "assetUpdatedAt": "2026-11-24T15:12:06Z"
+     "fileName": "touchless-0.2.627.apk",
+     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.627/touchless-0.2.627.apk",
+     "size": 40457151,
+     "sha256": "116651f385f2176175ad892eadefb27492b2e775d44000d5df8388a54615ffde",
+     "assetId": 788237996,
+     "assetUpdatedAt": "2026-11-24T17:53:39Z"
     }
    ],
    "release": {
-    "tag": "v0.2.626",
-    "name": "Touchless v0.2.626",
-    "notes": "# v0.2.626\n\n- **An APK Mod can be cloned from GitHub (#1040).** Until now a mod's repo held its files but not its recipe (which\n  app it changes, the label, patches, filters and permissions), so no other phone could bring the mod back, and Clone\n  refused every mod.\n  - **Push** now also saves the mod's recipe and which app and version it was made from. The original app itself\n    never goes to GitHub.\n  - **Clone** makes the mod from the repo's recipe and files and from the original app on this phone. The app has to\n    be installed here; if it isn't, Clone says which app to install. When this phone has another version of the app\n    than the one the mod was made from, the result says so.\n  - **Pull** also takes the recipe when it changed on GitHub. This phone's recipe is kept next to it.\n  - \"I own this app\" stays on the phone where it was said: it is not saved to GitHub and not taken from it.\n  - **A mod you saved before this version** has no recipe in its repo. On the phone that has the project, update\n    Touchless and push it again; after that it can be cloned. Clone tells you this instead of naming an internal\n    command.\n- **The clone list asks GitHub twice (#1040).** When GitHub didn't answer which repos hold an app, every repo whose name\n  starts with your prefix was marked as one. Now the list asks a second time first, and if it still has to go by the\n  names it says so.",
-    "publishedAt": "2026-11-24T15:13:42Z",
-    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.626"
+    "tag": "v0.2.627",
+    "name": "Touchless v0.2.627",
+    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.627",
+    "publishedAt": "2026-11-24T17:56:10Z",
+    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.627"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchless-8327713a.png",
@@ -904,26 +904,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.14.0",
-     "versionCode": 28,
+     "versionName": "0.14.1",
+     "versionCode": 29,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.14.0.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.14.0/touchkey-0.14.0.apk",
+     "fileName": "touchkey-0.14.1.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.14.1/touchkey-0.14.1.apk",
      "size": 11905834,
-     "sha256": "766c099d4f38608bb44c1955da52705b45c3f4a1f536fcca507713ed03d8cfd2",
-     "assetId": 788037427,
-     "assetUpdatedAt": "2026-11-24T16:54:18Z"
+     "sha256": "ce633a5d2722bcdc86cf20e7cdca1204cb8b48e4c6fc0d54a1bf8551e878d7cd",
+     "assetId": 788266150,
+     "assetUpdatedAt": "2026-11-24T18:01:38Z"
     }
    ],
    "release": {
-    "tag": "v0.14.0",
-    "name": "TouchKey 0.14.0",
-    "notes": "## TouchKey 0.14.0\n\n**If and Repeat**, in any key, trigger or home-screen button (a new \"If & repeat\" tab; searching \"if\" finds it).\n\n- **If… then… otherwise**: check something at the moment the step runs and do one thing or another. Checks: a\n  Bluetooth device connected (or not), an app in front, a setting on or off (flashlight, Wi-Fi, Bluetooth, Do not\n  disturb…), the battery below or above a level, headphones in, in a call, the time, the day, charging, a Wi-Fi\n  network, the screen. All of them, or any of them.\n  Example: \"When the screen turns on: if KIA MOTORS is connected, open Waze and set the media volume to 70%;\n  otherwise, vibrate three times.\"\n- **Repeat**: steps several times, with a pause between rounds. If and Repeat can go inside each other.\n- Tap any step to change it; an If or a Repeat opens again filled in. Steps inside are dragged into order too.\n- \"How it works\" shows what each branch of an If does.\n- The new checks also work as a trigger's \"Only when\" rules.\n- Search puts actions whose words start with what you typed first (\"if\" no longer starts with \"Notifications\").\n\n\nVersion 0.14.0 (build 28).\nSHA-256: 766c099d4f38608bb44c1955da52705b45c3f4a1f536fcca507713ed03d8cfd2",
-    "publishedAt": "2026-11-24T16:54:20Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.14.0"
+    "tag": "v0.14.1",
+    "name": "TouchKey 0.14.1",
+    "notes": "## TouchKey 0.14.1\n\n- **Press a button, see it on the home screen.** While the Keys screen is open, pressing any button shows\n  \"You pressed Volume down\" at the top:\n  - when that key is set up, the list scrolls to its row and outlines it, and **Open** goes straight to it;\n  - when it is not, **Add it** opens it ready to set up, without going through Add key.\n- When a press runs one of a key's setups (tap, double tap, long press), that press's tile on its row grows for a\n  moment, so you can see which one ran.\n- Back, OK and the arrows show only when they are set up, so moving around does not fill the screen with them.\n\n\nVersion 0.14.1 (build 29).\nSHA-256: ce633a5d2722bcdc86cf20e7cdca1204cb8b48e4c6fc0d54a1bf8551e878d7cd",
+    "publishedAt": "2026-11-24T18:01:39Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.14.1"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchkey-bf1f429b.png",
