@@ -1,7 +1,7 @@
 {
  "schemaVersion": 2,
  "schema": 2,
- "generatedAt": "2026-11-24T18:11:54Z",
+ "generatedAt": "2026-11-24T21:31:00Z",
  "baseUrl": "https://github.com/il90il90/israel-app-manager/releases/download/catalog/",
  "dashboardUrl": "https://il90il90.github.io/israel-app-manager/",
  "announcement": null,
@@ -123,26 +123,26 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.touchless",
-     "versionName": "0.2.627",
-     "versionCode": 681,
+     "versionName": "0.2.629",
+     "versionCode": 683,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "Touchless",
-     "fileName": "touchless-0.2.627.apk",
-     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.627/touchless-0.2.627.apk",
+     "fileName": "touchless-0.2.629.apk",
+     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.629/touchless-0.2.629.apk",
      "size": 40457151,
-     "sha256": "116651f385f2176175ad892eadefb27492b2e775d44000d5df8388a54615ffde",
-     "assetId": 788237996,
-     "assetUpdatedAt": "2026-11-24T17:53:39Z"
+     "sha256": "adf78540da59aa48a54633b205eb650b00e9f6d356b16ace23efe7737575c232",
+     "assetId": 788527683,
+     "assetUpdatedAt": "2026-11-24T19:22:37Z"
     }
    ],
    "release": {
-    "tag": "v0.2.627",
-    "name": "Touchless v0.2.627",
-    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.627",
-    "publishedAt": "2026-11-24T17:56:10Z",
-    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.627"
+    "tag": "v0.2.629",
+    "name": "Touchless v0.2.629",
+    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.629",
+    "publishedAt": "2026-11-24T19:24:08Z",
+    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.629"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchless-8327713a.png",
@@ -904,26 +904,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.14.1",
-     "versionCode": 29,
+     "versionName": "0.14.2",
+     "versionCode": 30,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.14.1.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.14.1/touchkey-0.14.1.apk",
-     "size": 11905834,
-     "sha256": "ce633a5d2722bcdc86cf20e7cdca1204cb8b48e4c6fc0d54a1bf8551e878d7cd",
-     "assetId": 788266150,
-     "assetUpdatedAt": "2026-11-24T18:01:38Z"
+     "fileName": "touchkey-0.14.2.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.14.2/touchkey-0.14.2.apk",
+     "size": 11922218,
+     "sha256": "73cbb16842b317d33b0d82f24edaccc6aefc0432df0facdfb5fc5279a438e3b1",
+     "assetId": 788928602,
+     "assetUpdatedAt": "2026-11-24T21:29:56Z"
     }
    ],
    "release": {
-    "tag": "v0.14.1",
-    "name": "TouchKey 0.14.1",
-    "notes": "## TouchKey 0.14.1\n\n- **Press a button, see it on the home screen.** While the Keys screen is open, pressing any button shows\n  \"You pressed Volume down\" at the top:\n  - when that key is set up, the list scrolls to its row and outlines it, and **Open** goes straight to it;\n  - when it is not, **Add it** opens it ready to set up, without going through Add key.\n- When a press runs one of a key's setups (tap, double tap, long press), that press's tile on its row grows for a\n  moment, so you can see which one ran.\n- Back, OK and the arrows show only when they are set up, so moving around does not fill the screen with them.\n\n\nVersion 0.14.1 (build 29).\nSHA-256: ce633a5d2722bcdc86cf20e7cdca1204cb8b48e4c6fc0d54a1bf8551e878d7cd",
-    "publishedAt": "2026-11-24T18:01:39Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.14.1"
+    "tag": "v0.14.2",
+    "name": "TouchKey 0.14.2",
+    "notes": "## TouchKey 0.14.2\n\n- **The trigger page reads top to bottom, in three numbered parts:**\n  1. **When**: what starts it.\n  2. **Only if** (optional): the conditions it must meet. With none it says \"Every time\".\n  3. **Then do**: the steps, numbered in the order they run, with \"Add another step\" inside the same card.\n  Under them, **Try it** has \"Run it now\" and the recent runs (the last 3, \"Show all\" for more). The name is at the\n  top with when the trigger last ran. The \"How it works\" summary is gone: the page itself is now laid out that way.\n- **Notification triggers: pick from what is showing now.** The notifications on the phone right now come first,\n  each with its app's icon. Tap one to use its app and words; tap one of its buttons (\"Press “Mark as read”\") to\n  add a step that presses it. What is already taken is marked \"✓ Used\" / \"✓ Presses …\".\n- **App icons fixed.** In the app picker an app could show another app's icon (Touchless with Google Photos's\n  icon) after searching or scrolling. Each app now always shows its own.\n\n\nVersion 0.14.2 (build 30).\nSHA-256: 73cbb16842b317d33b0d82f24edaccc6aefc0432df0facdfb5fc5279a438e3b1",
+    "publishedAt": "2026-11-24T21:29:58Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.14.2"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchkey-bf1f429b.png",
