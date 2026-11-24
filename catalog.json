@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-24T16:11:47Z",
+ "generatedAt": "2026-11-24T16:22:44Z",
  "baseUrl": "https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/",
  "announcement": null,
  "contact": {
@@ -775,26 +775,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.13.0",
-     "versionCode": 26,
+     "versionName": "0.13.1",
+     "versionCode": 27,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.13.0.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.13.0/touchkey-0.13.0.apk",
-     "size": 11854765,
-     "sha256": "fc6f99471dbaca9fb24d84ff392a54e46b004a32f8867d1035a0fefe062f0a4f",
-     "assetId": 787885483,
-     "assetUpdatedAt": "2026-11-24T16:11:10Z"
+     "fileName": "touchkey-0.13.1.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.13.1/touchkey-0.13.1.apk",
+     "size": 11855582,
+     "sha256": "bc2b0d791a1467f089ef26c7dee8e4b93eddf6964ac9bbd01dcaba46d634295c",
+     "assetId": 787922887,
+     "assetUpdatedAt": "2026-11-24T16:21:46Z"
     }
    ],
    "release": {
-    "tag": "v0.13.0",
-    "name": "TouchKey 0.13.0",
-    "notes": "## TouchKey 0.13.0\n\n**Save, Discard and Delete**\n\n- A key's screen and a trigger's screen now end with a **Save** button. What you change still works at once, so\n  you can try it, but it stays only when you press Save.\n- **Back with changes asks \"Discard changes?\"**: Discard puts everything back as it was when you opened it (a new\n  key or trigger is removed), Save keeps it.\n- **Delete** is a button at the top right, and asks first.\n\n**Apps**\n\n- The app list is read again each time it opens, so a newly installed app is there at once (before, it could\n  stay hidden until TouchKey restarted).\n- **System apps**: the apps that came with the phone and have no icon, so their screens can be opened too.\n- **Shortcuts**: the shortcuts apps can make (a contact to call or message, a bookmark…). The app opens its own\n  screen to make it, and the step then opens that shortcut.\n- **Press and hold an app** for everything inside it: open it, its shortcuts, any of its screens (with a search),\n  or its App info page.\n\nNote: apps inside Samsung's Secure Folder cannot be seen by any other app, TouchKey included.\n\n\nVersion 0.13.0 (build 26).\nSHA-256: fc6f99471dbaca9fb24d84ff392a54e46b004a32f8867d1035a0fefe062f0a4f",
-    "publishedAt": "2026-11-24T16:11:12Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.13.0"
+    "tag": "v0.13.1",
+    "name": "TouchKey 0.13.1",
+    "notes": "## TouchKey 0.13.1\n\n- **Drag steps into another order.** Every list of steps (a trigger's \"Do\", a key's press, a home-screen button)\n  has a handle (⋮⋮) on each step: press it and drag the step up or down; the others make way as it passes. With\n  TalkBack the handle offers \"Move up\" and \"Move down\".\n\n\nVersion 0.13.1 (build 27).\nSHA-256: bc2b0d791a1467f089ef26c7dee8e4b93eddf6964ac9bbd01dcaba46d634295c",
+    "publishedAt": "2026-11-24T16:21:47Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.13.1"
    },
    "iconStyle": "adaptive",
    "icon": "icons/touchkey.png?v=bf1f429b",
