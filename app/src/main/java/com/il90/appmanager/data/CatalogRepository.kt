@@ -22,15 +22,23 @@ data class CatalogState(
     val refreshing: Boolean = false,
     /** The last refresh failed, so what is shown may be out of date. */
     val offline: Boolean = false,
+    /** The published catalog needs a newer version of this app; the last compatible copy is shown. */
+    val incompatible: Boolean = false,
     val fetchedAt: Long = 0,
 )
 
 /**
- * Loads the catalog from the public repository and keeps the last good copy on disk. What it
- * hands out is that catalog with every app moved up to its newest release ([LiveReleases]).
+ * Loads the catalog and keeps the last good copy on disk. What it hands out is that catalog
+ * with every app moved up to its newest release ([LiveReleases]).
+ *
+ * The catalog is the `catalog.json` asset of the fixed `catalog` GitHub Release, which the
+ * Catalog workflow replaces only after it validated it; the app validates it again
+ * ([CatalogValidator]) before using or saving it. A copy on the `catalog` branch (raw GitHub
+ * and jsDelivr) is the fallback. Nothing is rebuilt into the app: a new catalog is picked up on
+ * the next refresh.
  */
 class CatalogRepository(context: Context, private val http: OkHttpClient, private val live: LiveReleases) {
-    private val file = File(context.filesDir, "catalog.json")
+    private val cache = CatalogCache(File(context.filesDir, "catalog.json"))
     /** The catalog as published, before anything newer is laid over it. */
     @Volatile
     private var published: Catalog? = null
@@ -39,17 +47,14 @@ class CatalogRepository(context: Context, private val http: OkHttpClient, privat
     private val _state = MutableStateFlow(CatalogState())
     val state: StateFlow<CatalogState> = _state.asStateFlow()
 
-    private val urls = listOf(
-        "https://raw.githubusercontent.com/${BuildConfig.CATALOG_REPO}/${BuildConfig.CATALOG_BRANCH}/catalog.json",
-        "https://cdn.jsdelivr.net/gh/${BuildConfig.CATALOG_REPO}@${BuildConfig.CATALOG_BRANCH}/catalog.json",
-    )
+    private val urls = catalogUrls(BuildConfig.CATALOG_REPO, BuildConfig.CATALOG_TAG, BuildConfig.CATALOG_BRANCH)
 
     /** Shows the saved list at once (if any), then asks the network. */
     suspend fun load() {
         withContext(Dispatchers.IO) {
-            readSaved()?.let { saved ->
+            cache.read()?.let { saved ->
                 published = saved
-                _state.value = _state.value.copy(catalog = live.apply(saved), loading = false, fetchedAt = file.lastModified())
+                _state.value = _state.value.copy(catalog = live.apply(saved), loading = false, fetchedAt = cache.lastModified())
             }
         }
         refresh()
@@ -65,24 +70,28 @@ class CatalogRepository(context: Context, private val http: OkHttpClient, privat
         val ok = withContext(Dispatchers.IO) {
             var result: Catalog? = null
             var answered = false
+            var incompatible = false
             for ((index, url) in urls.withIndex()) {
                 try {
-                    val fresh = fetch(url, useEtag = index == 0 && file.exists())
+                    val fresh = fetch(url, useEtag = index == 0 && cache.exists())
                     answered = true
                     result = fresh
                     break
                 } catch (_: IOException) {
                     // try the next mirror
-                } catch (_: IllegalArgumentException) {
-                    // unreadable answer: try the next mirror
+                } catch (e: CatalogRejected) {
+                    // unreadable or invalid answer: keep the last good copy, try the next mirror
+                    incompatible = incompatible || e.incompatible
                 }
             }
             if (result != null) {
                 published = result
-                _state.value = _state.value.copy(catalog = live.apply(result), loading = false, fetchedAt = System.currentTimeMillis())
+                _state.value = _state.value.copy(catalog = live.apply(result), loading = false, incompatible = false, fetchedAt = System.currentTimeMillis())
             } else if (answered) {
-                file.setLastModified(System.currentTimeMillis())
-                _state.value = _state.value.copy(fetchedAt = System.currentTimeMillis())
+                cache.touch()
+                _state.value = _state.value.copy(fetchedAt = System.currentTimeMillis(), incompatible = false)
+            } else {
+                _state.value = _state.value.copy(incompatible = incompatible)
             }
             answered
         }
@@ -119,18 +128,9 @@ class CatalogRepository(context: Context, private val http: OkHttpClient, privat
             if (response.code == 304) return null
             if (!response.isSuccessful) throw IOException("HTTP ${response.code}")
             val body = response.body?.string() ?: throw IOException("empty body")
-            val parsed = try {
-                CatalogJson.decodeFromString(Catalog.serializer(), body)
-            } catch (e: Exception) {
-                throw IllegalArgumentException("bad catalog", e)
-            }
-            require(parsed.apps.isNotEmpty()) { "empty catalog" }
-            val tmp = File(file.parentFile, "catalog.json.tmp")
-            tmp.writeText(body)
-            if (!tmp.renameTo(file)) {
-                file.writeText(body)
-                tmp.delete()
-            }
+            // Validated before it replaces the last good copy.
+            val parsed = CatalogValidator.parse(body)
+            cache.write(body)
             val etag = response.header("ETag")
             if (etag != null && url == urls.first()) etagFile.writeText(etag) else etagFile.delete()
             return parsed
@@ -142,10 +142,14 @@ class CatalogRepository(context: Context, private val http: OkHttpClient, privat
         const val FORCED_GAP_MS = 15 * 1000L
         const val JUST_NOW_MS = 30 * 1000L
     }
-
-    private fun readSaved(): Catalog? = try {
-        if (file.exists()) CatalogJson.decodeFromString(Catalog.serializer(), file.readText()) else null
-    } catch (_: Exception) {
-        null
-    }
 }
+
+/**
+ * Where the catalog is downloaded from, in order: the asset of the fixed catalog release (the
+ * source of truth), then the mirror on the catalog branch, directly and through jsDelivr.
+ */
+fun catalogUrls(repo: String, tag: String, branch: String): List<String> = listOf(
+    "https://github.com/$repo/releases/download/$tag/catalog.json",
+    "https://raw.githubusercontent.com/$repo/refs/heads/$branch/catalog.json",
+    "https://cdn.jsdelivr.net/gh/$repo@$branch/catalog.json",
+)

@@ -35,6 +35,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -67,6 +68,7 @@ import com.il90.appmanager.ui.AppRow
 import com.il90.appmanager.ui.AppViewModel
 import com.il90.appmanager.ui.Filter
 import com.il90.appmanager.ui.PrimaryAction
+import com.il90.appmanager.ui.components.LocalCategories
 import com.il90.appmanager.ui.components.LocalDevice
 import com.il90.appmanager.ui.components.ShareSheet
 import com.il90.appmanager.ui.details.DetailsScreen
@@ -366,6 +368,7 @@ private fun AppContent(viewModel: AppViewModel, requestedFilter: MutableStateFlo
     }
     val cleared = stringResource(R.string.msg_cache_cleared)
 
+    CompositionLocalProvider(LocalCategories provides state.categories) {
     NavHost(
         navController = navController,
         startDestination = "home",
@@ -436,5 +439,6 @@ private fun AppContent(viewModel: AppViewModel, requestedFilter: MutableStateFlo
                 snackbar = snackbar,
             )
         }
+    }
     }
 }

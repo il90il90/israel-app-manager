@@ -33,7 +33,10 @@ android {
         versionCode = versionProps.getProperty("VERSION_CODE").toInt()
         versionName = versionProps.getProperty("VERSION_NAME")
         buildConfigField("String", "CATALOG_REPO", "\"il90il90/israel-app-manager\"")
-        // -Piam.catalogBranch=... points a test build at another branch of the catalog.
+        // The catalog is the catalog.json asset of this fixed release, never an app release.
+        // -Piam.catalogTag=... points a test build at another release.
+        buildConfigField("String", "CATALOG_TAG", "\"${(findProperty("iam.catalogTag") as String?) ?: "catalog"}\"")
+        // The fallback copy on a branch. -Piam.catalogBranch=... points a test build elsewhere.
         buildConfigField("String", "CATALOG_BRANCH", "\"${(findProperty("iam.catalogBranch") as String?) ?: "catalog"}\"")
         vectorDrawables { useSupportLibrary = true }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

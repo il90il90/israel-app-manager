@@ -20,6 +20,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -30,10 +31,14 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.il90.appmanager.R
+import com.il90.appmanager.data.CategoryDef
 import com.il90.appmanager.data.Compatibility
+import com.il90.appmanager.data.DEFAULT_CATEGORY
+import com.il90.appmanager.data.nameOf
 import com.il90.appmanager.data.FormFactor
 import com.il90.appmanager.install.FailReason
 import com.il90.appmanager.ui.theme.LocalDarkTheme
+import com.il90.appmanager.util.appLanguage
 import com.il90.appmanager.util.ltr
 
 @Composable
@@ -49,19 +54,31 @@ fun Pill(text: String, container: Color, content: Color, modifier: Modifier = Mo
     }
 }
 
+/** The catalog's category registry, provided around the screens by MainActivity. */
+val LocalCategories = staticCompositionLocalOf<List<CategoryDef>> { emptyList() }
+
+/** A category's name: from the catalog's registry, else the built-in name, else the id. */
 @Composable
-fun categoryLabel(key: String): String = when (key.lowercase()) {
-    "ai" -> stringResource(R.string.cat_ai)
-    "video" -> stringResource(R.string.cat_video)
-    "personalization" -> stringResource(R.string.cat_personalization)
-    "devtools" -> stringResource(R.string.cat_devtools)
-    "communication" -> stringResource(R.string.cat_communication)
-    "photos" -> stringResource(R.string.cat_photos)
-    "sports" -> stringResource(R.string.cat_sports)
-    "tools" -> stringResource(R.string.cat_tools)
-    "kids" -> stringResource(R.string.cat_kids)
-    else -> key
+fun categoryLabel(key: String): String {
+    val builtIn = when (key.lowercase()) {
+        "ai" -> stringResource(R.string.cat_ai)
+        "video" -> stringResource(R.string.cat_video)
+        "personalization" -> stringResource(R.string.cat_personalization)
+        "devtools" -> stringResource(R.string.cat_devtools)
+        "communication" -> stringResource(R.string.cat_communication)
+        "photos" -> stringResource(R.string.cat_photos)
+        "sports" -> stringResource(R.string.cat_sports)
+        "tools" -> stringResource(R.string.cat_tools)
+        "kids" -> stringResource(R.string.cat_kids)
+        DEFAULT_CATEGORY -> stringResource(R.string.cat_other)
+        else -> null
+    }
+    return LocalCategories.current.nameOf(key, appLanguage()) { builtIn }
 }
+
+/** All of an app's categories, by name. */
+@Composable
+fun categoriesLabel(keys: List<String>): String = keys.map { categoryLabel(it) }.joinToString(", ")
 
 @Composable
 fun formFactorLabel(formFactor: String): String = when (formFactor) {

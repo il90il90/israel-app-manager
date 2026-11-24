@@ -182,6 +182,10 @@
     <string name="cat_sports">ספורט</string>
     <string name="cat_tools">כלים</string>
     <string name="cat_kids">ילדים</string>
+    <string name="cat_other">אחר</string>
+    <string name="section_screenshots">צילומי מסך</string>
+    <string name="screenshot_n">צילום מסך %1$d</string>
+    <string name="catalog_needs_update">הרשימה החדשה דורשת גרסה חדשה יותר של האפליקציה. מוצגת הרשימה האחרונה שהיא יכולה לקרוא.</string>
     <string name="foreign_tv_build">מיועדת ל-Android TV. היא מותקנת ופועלת גם במכשיר הזה, אבל חלק מהמסכים עשויים לצפות לשלט של טלוויזיה.</string>
     <string name="foreign_phone_build">מיועדת לטלפונים ולטאבלטים. היא מותקנת ופועלת גם במכשיר הזה; חלק מהמסכים עשויים לצפות למסך מגע, ועכבר או סמן של השלט יכולים לעזור.</string>
     <string name="foreign_other_build">מיועדת לסוג מכשיר אחר. היא מותקנת ופועלת גם כאן, אבל ייתכן שלא תתאים למסך הזה.</string>
