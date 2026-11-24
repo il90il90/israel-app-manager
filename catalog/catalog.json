@@ -1,5 +1,5 @@
 {
-  "$schema": "./catalog.schema.json",
+  "$schema": "../dashboard/schemas/catalog.schema.json",
   "schemaVersion": 2,
   "developer": "Israel",
   "contact": {

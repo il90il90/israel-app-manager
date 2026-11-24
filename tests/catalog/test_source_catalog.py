@@ -129,3 +129,13 @@ def test_the_shipped_catalog_migrated_every_app():
     registry = {c["id"] for c in catalog["categories"]}
     assert "other" in registry
     assert all(set(a["categories"]) <= registry for a in catalog["apps"])
+
+
+def test_json_schemas_accept_the_shipped_catalog_and_the_example():
+    jsonschema = pytest.importorskip("jsonschema")
+    load = lambda *p: json.load(open(os.path.join(ROOT, *p), encoding="utf-8"))
+    jsonschema.Draft202012Validator(load("dashboard", "schemas", "catalog.schema.json")).validate(load("catalog", "catalog.json"))
+    manifest_schema = load("dashboard", "schemas", "app-manager.schema.json")
+    jsonschema.Draft202012Validator(manifest_schema).validate(load("docs", "examples", "app-manager.json"))
+    clean, warnings = sc.check_manifest(load("docs", "examples", "app-manager.json"))
+    assert warnings == [] and clean["packageName"] == "com.example.weathernow"

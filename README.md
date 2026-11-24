@@ -24,28 +24,52 @@ Android 8.0 or newer, on phones, tablets, foldables, Chromebooks and Android TV 
 - Checks for new versions in the background and sends one notification per set of updates.
 - Updates itself the same way it updates the other apps.
 
-Nothing in the app is hard-coded: the list comes from this repository, so adding an app or
-publishing a new version of one needs no new version of the manager.
+Nothing in the app is hard-coded: the list of apps is a catalog the owner manages from a web
+dashboard, so adding an app or publishing a new version of one needs no new version of the manager.
 
 ## The apps
 
 Touchless · SeretGram · Wallify · TrustAPK · OneDial · Gallery Wall · WatchIPTV · ScoreUp ·
 Touchless Bridge · Screen Awake · TouchKey · Zoopli · אבג ABC · Israel TV
 
+## Catalog Management
+
+**[Open the Catalog Dashboard](https://il90il90.github.io/israel-app-manager/)** ·
+**[Catalog management guide](docs/CATALOG_MANAGEMENT.md)** ·
+[Guide for app developers](docs/DEVELOPER_GUIDE.md)
+
+- The catalog is one file, [`catalog/catalog.json`](catalog/catalog.json) (`schemaVersion` 2), and
+  only the repository owner can change it. Each app is either a **link** entry (a GitHub repository
+  whose [`app-manager.json`](docs/DEVELOPER_GUIDE.md#app-managerjson) and releases are read
+  automatically) or a **custom** entry (written by hand, with a GitHub, direct-APK or external-JSON
+  release). Apps can be in several categories from a central category registry.
+- The **Catalog Dashboard** is a static site on GitHub Pages (no server). The owner signs in with a
+  fine-grained personal access token limited to this repository, edits apps and categories, and
+  publishes. See the [guide](docs/CATALOG_MANAGEMENT.md) for setup, token creation, publishing,
+  rollback and troubleshooting.
+- The **Catalog** workflow validates every change and only then publishes the resolved catalog as
+  the `catalog.json` asset of the GitHub Release tagged **`catalog`**. That release is separate
+  from the app's own releases and is never marked "latest". If validation or the build fails, the
+  last good catalog stays published.
+- The app downloads
+  `https://github.com/il90il90/israel-app-manager/releases/download/catalog/catalog.json`,
+  validates it, and keeps the last good copy for offline use.
+
 ## How it works
 
-| Branch | What is on it |
+| Where | What is there |
 |---|---|
-| `main` | The Android app (`app/`), the list of apps (`catalog/apps.json`) and the tools. |
-| `catalog` | `catalog.json` and the icons the app downloads. Written by the **Catalog** workflow. |
-| `apks` | APKs of apps that have no public release page of their own (optional). |
+| `main` | The Android app (`app/`), the catalog (`catalog/catalog.json`), the dashboard (`dashboard/`), the tools and docs. |
+| Release `catalog` | The published `catalog.json`, `catalog-previous.json` (for rollback) and app icons. Written by the **Catalog** workflow. |
+| `catalog` branch | A copy of the published `catalog.json` for app versions up to 1.1.0. |
 | `release-inbox` | A signed build of the manager waiting to be published (see Releasing). |
+| GitHub Pages | The Catalog Dashboard, deployed by the **Dashboard** workflow from `dashboard/`. |
 
-The **Catalog** workflow asks GitHub for the newest release of every app, downloads the APKs once
-to read their version, size, checksum and icon, and commits the result to the `catalog` branch. It
-runs whenever `catalog/apps.json` changes, on a schedule, and when an app's release workflow sends
-it the `app-released` event. The app reads
-`https://raw.githubusercontent.com/il90il90/israel-app-manager/catalog/catalog.json`.
+The **Catalog** workflow resolves every app (its `app-manager.json`, its newest release), downloads
+new APKs once to read their version, size, checksum and icon, checks that Android accepts their
+signature, and publishes the result. It runs when `catalog/catalog.json` changes, on a schedule,
+when an app's release workflow sends the `app-released` event, and by hand (which can also roll
+back).
 
 **The app does not wait for it.** GitHub runs schedules when it has room, and hours can pass before
 the catalog notices a release. So the app also asks each app's releases page itself
@@ -57,25 +81,13 @@ What gets installed is always the newest release.
 
 ### Adding an app
 
-Add an entry to `catalog/apps.json` and push:
+Use the [dashboard](https://il90il90.github.io/israel-app-manager/): **Add app**, choose **Link**
+(a GitHub repository) or **Custom**, and publish. Editing `catalog/catalog.json` by hand works too;
+the same validation runs before anything is published. Third-party developers prepare their
+repository with the [developer guide](docs/DEVELOPER_GUIDE.md) and send the link for approval.
 
-```json
-{
-  "id": "my-app",
-  "name": "My App",
-  "category": "tools",
-  "tagline": { "en": "One line about it", "he": "שורה אחת עליה" },
-  "description": { "en": "A paragraph.", "he": "פסקה." },
-  "sources": [{ "repo": "il90il90/my-app-releases", "tag": "^v\\d", "asset": "\\.apk$" }]
-}
-```
-
-`tag` and `asset` are regular expressions that choose the releases and the files to take. The
-package name, versions, sizes, hashes, icon and accent colour are read from the APK. To use a
-hand-made icon instead, put `catalog/icons/<id>.png` next to `apps.json`.
-
-An app that has no public release page can be served from the `apks` branch instead; see
-[tools/catalog/README.md](tools/catalog/README.md).
+How the catalog was migrated from the earlier `apps.json`: [docs/CATALOG_MIGRATION.md](docs/CATALOG_MIGRATION.md).
+Catalog tools: [tools/catalog/README.md](tools/catalog/README.md).
 
 ## Google Play Protect
 
@@ -89,6 +101,11 @@ appeal and developer verification steps.
 ```bash
 ./gradlew :app:assembleDebug          # debug build, installs next to the released app
 ./gradlew :app:testDebugUnitTest :app:lintDebug
+
+npm run validate                      # validate catalog/catalog.json
+npm test                              # dashboard and validator unit tests (Node 22)
+python3 -m pytest tests/catalog       # catalog build and publish tools
+npm run test:e2e                      # dashboard end-to-end test (needs Playwright)
 ```
 
 ## Releasing
@@ -105,3 +122,8 @@ will not install it over the previous version. The key is not in this repository
      From then on the **Release** workflow builds, signs and publishes on every version bump.
 
 Either way the catalog is rebuilt afterwards and installed copies offer the update.
+
+## Contact & Support
+
+Questions, support, licenses for premium apps and app submissions: Telegram
+**[@YisraelCohen](https://t.me/YisraelCohen)** (<https://t.me/YisraelCohen>).

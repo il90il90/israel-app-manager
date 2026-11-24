@@ -1182,6 +1182,13 @@ function conflictDialog(conflicts, mine) {
 
 // ------------------------------------------------------------------ start
 async function start() {
+  // GitHub Pages cannot send an X-Frame-Options header and a <meta> CSP cannot forbid framing,
+  // so refuse to run inside a frame (clickjacking protection).
+  if (window.top !== window.self) {
+    clear(root);
+    root.append(h("div", { class: "boot" }, "This dashboard cannot be shown inside another page. ", h("a", { href: location.href, target: "_blank" }, "Open it directly.")));
+    return;
+  }
   const token = tokenStore.get();
   if (!token) return renderSignIn();
   clear(root);
