@@ -2,9 +2,12 @@ name: Release
 
 # Builds, signs and publishes a release in CI, tagged v<VERSION_NAME> from version.properties.
 #
-# It needs the release key as two repository secrets (see README, "Releasing"):
-#   IAM_KEYSTORE_BASE64    the keystore, base64 encoded
-#   IAM_KEYSTORE_PASSWORD  its password
+# It needs the release key, in one of two ways (see README, "Releasing"):
+#   KEYS_REPO_TOKEN        a fine-grained token with Contents: Read-only on the private
+#                          il90il90/israel-app-manager-keys repository (release.jks +
+#                          keystore.properties are read from there), or
+#   IAM_KEYSTORE_BASE64    the keystore, base64 encoded, and
+#   IAM_KEYSTORE_PASSWORD  its password.
 # Without them this workflow does nothing and releases are published through the
 # `release-inbox` branch instead (publish-inbox.yml).
 on:
@@ -29,12 +32,17 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       IAM_KEYSTORE_BASE64: ${{ secrets.IAM_KEYSTORE_BASE64 }}
       IAM_KEYSTORE_PASSWORD: ${{ secrets.IAM_KEYSTORE_PASSWORD }}
+      KEYS_REPO_TOKEN: ${{ secrets.KEYS_REPO_TOKEN }}
     steps:
       - name: Is the release key here?
         id: key
         run: |
-          if [ -n "$IAM_KEYSTORE_BASE64" ] && [ -n "$IAM_KEYSTORE_PASSWORD" ]; then
+          if [ -n "$KEYS_REPO_TOKEN" ]; then
             echo "present=true" >> "$GITHUB_OUTPUT"
+            echo "source=repo" >> "$GITHUB_OUTPUT"
+          elif [ -n "$IAM_KEYSTORE_BASE64" ] && [ -n "$IAM_KEYSTORE_PASSWORD" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+            echo "source=secrets" >> "$GITHUB_OUTPUT"
           else
             echo "present=false" >> "$GITHUB_OUTPUT"
             echo "::notice::No release key in this repository's secrets: nothing to do here. Releases come through the release-inbox branch."
@@ -57,10 +65,17 @@ jobs:
         if: steps.key.outputs.present == 'true' && steps.v.outputs.skip != 'true'
         run: |
           set -euo pipefail
-          printf '%s' "$IAM_KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/release.jks"
-          export IAM_KEYSTORE_FILE="$RUNNER_TEMP/release.jks"
-          ./gradlew --no-daemon :app:testDebugUnitTest :app:assembleRelease
-          rm -f "$RUNNER_TEMP/release.jks"
+          if [ "${{ steps.key.outputs.source }}" = "repo" ]; then
+            keys="$RUNNER_TEMP/keys"
+            git clone --quiet --depth 1 "https://x-access-token:${KEYS_REPO_TOKEN}@github.com/il90il90/israel-app-manager-keys.git" "$keys"
+            ./gradlew --no-daemon :app:testDebugUnitTest :app:assembleRelease "-Piam.keystoreDir=$keys"
+            rm -rf "$keys"
+          else
+            printf '%s' "$IAM_KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/release.jks"
+            export IAM_KEYSTORE_FILE="$RUNNER_TEMP/release.jks"
+            ./gradlew --no-daemon :app:testDebugUnitTest :app:assembleRelease
+            rm -f "$RUNNER_TEMP/release.jks"
+          fi
       - name: Publish
         if: steps.key.outputs.present == 'true' && steps.v.outputs.skip != 'true'
         run: |

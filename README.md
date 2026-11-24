@@ -118,8 +118,11 @@ will not install it over the previous version. The key is not in this repository
    - **From a machine that has the key**: `tools/release/make_release.sh <keys-dir>` builds and
      signs the APK and pushes it to `release-inbox`; the **Publish release** workflow checks the
      signature and creates the GitHub Release.
-   - **In CI**: add the repository secrets `IAM_KEYSTORE_BASE64` and `IAM_KEYSTORE_PASSWORD`.
-     From then on the **Release** workflow builds, signs and publishes on every version bump.
+   - **In CI**: add the repository secret `KEYS_REPO_TOKEN` (a fine-grained token with
+     Contents: Read-only on the private `il90il90/israel-app-manager-keys` repository), or the
+     secrets `IAM_KEYSTORE_BASE64` and `IAM_KEYSTORE_PASSWORD`. From then on the **Release**
+     workflow builds, signs and publishes on every version bump, with the notes in
+     `release/notes-<version>.md`.
 
 Either way the catalog is rebuilt afterwards and installed copies offer the update.
 
