@@ -41,6 +41,7 @@ fi
 work="$(mktemp -d)"
 trap 'rm -rf "$work"' EXIT
 cp "$apk" "$work/israel-app-manager-${version}.apk"
+if [ -z "$notes_file" ] && [ -f "release/notes-${version}.md" ]; then notes_file="release/notes-${version}.md"; fi
 if [ -n "$notes_file" ]; then notes="$(cat "$notes_file")"; else notes="$(git log -1 --pretty=%B)"; fi
 python3 - "$work/release.json" "$version" "$code" "$commit" "$notes" <<'PY'
 import json, sys

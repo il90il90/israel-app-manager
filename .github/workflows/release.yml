@@ -78,7 +78,8 @@ jobs:
           fi
           cp "$apk" IsraelAppManager.apk
           sha256sum "$apk" > "$apk.sha256"
-          notes="$(git log -1 --pretty=%B)"
+          # The notes are release/notes-<version>.md when there is one, else the commit message.
+          if [ -f "release/notes-${version}.md" ]; then notes="$(cat "release/notes-${version}.md")"; else notes="$(git log -1 --pretty=%B)"; fi
           gh release create "v$version" "$apk" "$apk.sha256" IsraelAppManager.apk \
             --target "$GITHUB_SHA" --title "Israel App Manager $version" --notes "$notes" --latest
           gh workflow run catalog.yml --ref main
