@@ -1,7 +1,7 @@
 {
  "schemaVersion": 2,
  "schema": 2,
- "generatedAt": "2026-11-25T07:03:11Z",
+ "generatedAt": "2026-11-25T07:35:04Z",
  "baseUrl": "https://github.com/il90il90/israel-app-manager/releases/download/catalog/",
  "dashboardUrl": "https://il90il90.github.io/israel-app-manager/",
  "announcement": null,
@@ -904,26 +904,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.17.0",
-     "versionCode": 37,
+     "versionName": "0.17.1",
+     "versionCode": 38,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.17.0.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.17.0/touchkey-0.17.0.apk",
+     "fileName": "touchkey-0.17.1.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.17.1/touchkey-0.17.1.apk",
      "size": 11988354,
-     "sha256": "38fba26732c1e80b661bca4803898204e98a3996239a1127bef4ff8b51c35209",
-     "assetId": 790459046,
-     "assetUpdatedAt": "2026-11-25T07:02:32Z"
+     "sha256": "a8f36d6fd9decb20a10043f13b8fe419e09b101a7e9c8c9dd4aafb23f522b997",
+     "assetId": 790552992,
+     "assetUpdatedAt": "2026-11-25T07:34:11Z"
     }
    ],
    "release": {
-    "tag": "v0.17.0",
-    "name": "TouchKey 0.17.0",
-    "notes": "## TouchKey 0.17.0\n\n**Keep the screen on** (in Popular and in Device)\n- Each press turns it on or off, only on, or only off.\n- For how long: until you turn it off, 1, 5, 15 or 30 minutes, 1 or 2 hours, or any hours and minutes.\n- On the screen, as you choose: a small floating window with the time left (✕ lets the screen sleep), and a\n  short note for a moment when it turns on or off.\n- \"Try it\" in the form turns it on right away. It ends by itself when the time is up.\n- It works like an app that keeps its own screen on, so it needs no permission.\n\n\nVersion 0.17.0 (build 37).\nSHA-256: 38fba26732c1e80b661bca4803898204e98a3996239a1127bef4ff8b51c35209",
-    "publishedAt": "2026-11-25T07:02:34Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.17.0"
+    "tag": "v0.17.1",
+    "name": "TouchKey 0.17.1",
+    "notes": "## TouchKey 0.17.1\n\nSimpler words for choices:\n- Keep the screen on: **Toggle · On · Off** (was \"Turns it on or off\"…).\n- Device settings: \"Toggle, On or Off\".\n- Conditions: **Charging · Wi-Fi · Screen · A setting · Headphones · In a call** (without \"or not\").\n- Tapping a button by name: **Exact · Contains · By its id**, and if it is missing: **Stop here · Go on**.\n- Timer: **Count down · Count up**.\n\n\nVersion 0.17.1 (build 38).\nSHA-256: a8f36d6fd9decb20a10043f13b8fe419e09b101a7e9c8c9dd4aafb23f522b997",
+    "publishedAt": "2026-11-25T07:34:12Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.17.1"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchkey-bf1f429b.png",
