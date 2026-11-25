@@ -1,7 +1,7 @@
 {
  "schemaVersion": 2,
  "schema": 2,
- "generatedAt": "2026-11-25T00:08:55Z",
+ "generatedAt": "2026-11-25T05:08:47Z",
  "baseUrl": "https://github.com/il90il90/israel-app-manager/releases/download/catalog/",
  "dashboardUrl": "https://il90il90.github.io/israel-app-manager/",
  "announcement": null,
@@ -904,26 +904,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.14.3",
-     "versionCode": 31,
+     "versionName": "0.15.0",
+     "versionCode": 32,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.14.3.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.14.3/touchkey-0.14.3.apk",
-     "size": 11922218,
-     "sha256": "9e3aadd663a5df14d3d19136f4483edacf900378c429a50f94d9e256c3f513c7",
-     "assetId": 789178001,
-     "assetUpdatedAt": "2026-11-24T22:53:12Z"
+     "fileName": "touchkey-0.15.0.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.15.0/touchkey-0.15.0.apk",
+     "size": 11938602,
+     "sha256": "cd8758ee680509f507076322c66c20e9caac5c3f1aea3def0ead67c5ad46a858",
+     "assetId": 790147693,
+     "assetUpdatedAt": "2026-11-25T05:08:09Z"
     }
    ],
    "release": {
-    "tag": "v0.14.3",
-    "name": "TouchKey 0.14.3",
-    "notes": "## TouchKey 0.14.3\n\n- **No more lag when opening TouchKey or scrolling triggers and actions.** Android ran TouchKey through its\n  interpreter (it compiles an app only when the phone is idle and charging, which an app updated often never\n  reaches). Now:\n  - the app carries a full compile profile for its own screens and Compose;\n  - an update through Power mode is compiled while it installs;\n  - with Power mode on, TouchKey has itself compiled once per version.\n- **Shorter explanations everywhere**: the If, the action list, triggers, forms and the home screen say only what\n  is needed. If's rules are called conditions, as in triggers.\n\n\nVersion 0.14.3 (build 31).\nSHA-256: 9e3aadd663a5df14d3d19136f4483edacf900378c429a50f94d9e256c3f513c7",
-    "publishedAt": "2026-11-24T22:53:14Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.14.3"
+    "tag": "v0.15.0",
+    "name": "TouchKey 0.15.0",
+    "notes": "## TouchKey 0.15.0\n\n**New triggers**\n- **Media**: starts playing, or stops (music, a video, a game). A short gap between songs is not a stop.\n- **Phone folds**: closed, or opened (on a foldable, from its hinge).\n\n**New steps**\n- **Show a notification** with your own title and text (\"Try it\" shows it at once).\n- **Reply to a notification**: WhatsApp, Messages and other apps with a Reply button get the words you wrote, sent\n  as if typed in the notification. In a notification trigger, \"Showing now\" has **Reply…** under such a\n  notification: write the answer and it becomes a step.\n- **Clear notifications**: every app's, or one app's.\n- **Copy text**: puts your words on the clipboard.\n\n**Easier to read**\n- The triggers list says when each trigger last ran: \"Last ran today 06:40 · 5 min ago\" (or \"Never ran\").\n- No warning triangle on a trigger that does nothing yet: only the \"Choose what it does\" button.\n- \"If & repeat\" moved to the end of the action tabs.\n- A notification's buttons wrap onto a second line instead of running off the screen.\n\n\nVersion 0.15.0 (build 32).\nSHA-256: cd8758ee680509f507076322c66c20e9caac5c3f1aea3def0ead67c5ad46a858",
+    "publishedAt": "2026-11-25T05:08:10Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.15.0"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchkey-bf1f429b.png",
