@@ -1,7 +1,7 @@
 {
  "schemaVersion": 2,
  "schema": 2,
- "generatedAt": "2026-11-25T16:23:57Z",
+ "generatedAt": "2026-11-25T16:44:05Z",
  "baseUrl": "https://github.com/il90il90/israel-app-manager/releases/download/catalog/",
  "dashboardUrl": "https://il90il90.github.io/israel-app-manager/",
  "announcement": null,
@@ -904,26 +904,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.17.4",
-     "versionCode": 41,
+     "versionName": "0.18.0",
+     "versionCode": 42,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.17.4.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.17.4/touchkey-0.17.4.apk",
-     "size": 11988354,
-     "sha256": "a9fe1e879321636e582c65a19b6c3278f4f037cc4564331a7494a9e96def35f8",
-     "assetId": 792230506,
-     "assetUpdatedAt": "2026-11-25T16:23:15Z"
+     "fileName": "touchkey-0.18.0.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.18.0/touchkey-0.18.0.apk",
+     "size": 12004742,
+     "sha256": "25665ca0b4f7c86d7ed5cdb08361d0554f3c144d6f84dc67ca717992ecb033f1",
+     "assetId": 792309123,
+     "assetUpdatedAt": "2026-11-25T16:43:17Z"
     }
    ],
    "release": {
-    "tag": "v0.17.4",
-    "name": "TouchKey 0.17.4",
-    "notes": "## TouchKey 0.17.4\n\n- **Fixed: voice typing added the field's placeholder to your words.** Some apps (Telegram, for one) report their\n  placeholder (\"Message\") as the text of an empty field, so it was sent before what you said. TouchKey now checks\n  whether the field is really empty (it asks the field to move its cursor; an empty one cannot) and types only what\n  you said. Real text already in a field is kept as before.\n\n- **No more scrolling sideways.** Every row of choices that ran off the right edge now wraps onto the next line:\n  the action tabs (all of them in sight), key, timer, voice typing, screen, message and HTTP choices, the device\n  picker in Backups, theme and colour in Settings, and the rest.\n- **Keys line up on the home screen.** Every key's tile is the same size, so the names start in one column; a long\n  label (\"BOOKMARK\") shrinks to fit instead of being cut. The key in \"You pressed…\" has its tile too, and the\n  picture of a press and of its app are the same size.\n\n\nVersion 0.17.4 (build 41).\nSHA-256: a9fe1e879321636e582c65a19b6c3278f4f037cc4564331a7494a9e96def35f8",
-    "publishedAt": "2026-11-25T16:23:17Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.17.4"
+    "tag": "v0.18.0",
+    "name": "TouchKey 0.18.0",
+    "notes": "## TouchKey 0.18.0\n\n**Apps side by side** (System, and Popular)\n- Choose the app for the top (left on a wide screen) and the one for the bottom (right); \"Swap the first two\"\n  turns them round. On a big screen (the Fold open, a tablet) a third place is offered.\n- With Power mode, TouchKey asks Android's window manager to put them side by side, then checks that they are.\n  Without it, it turns on the system's split screen and opens the second app beside the first.\n\n**Secure Folder app** (System, and Apps › Secure Folder)\n- Secure Folder keeps its apps hidden from other apps, so TouchKey opens Secure Folder and taps the app by its\n  name (after your fingerprint or PIN, if it asks). Type the name, or tap \"Read the apps in Secure Folder\" to pick\n  it from the names on its screen.\n\n**Tidier action list**\n- The tabs are an even grid of icons with their names (four to a row, six on a wide screen).\n- Every row is one line under its name; shorter descriptions.\n- Key tiles fit their names (\"BOOKMARK\" whole).\n\n\nVersion 0.18.0 (build 42).\nSHA-256: 25665ca0b4f7c86d7ed5cdb08361d0554f3c144d6f84dc67ca717992ecb033f1",
+    "publishedAt": "2026-11-25T16:43:18Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.18.0"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchkey-bf1f429b.png",
