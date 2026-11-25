@@ -1,7 +1,7 @@
 {
  "schemaVersion": 2,
  "schema": 2,
- "generatedAt": "2026-11-25T05:08:47Z",
+ "generatedAt": "2026-11-25T05:55:41Z",
  "baseUrl": "https://github.com/il90il90/israel-app-manager/releases/download/catalog/",
  "dashboardUrl": "https://il90il90.github.io/israel-app-manager/",
  "announcement": null,
@@ -123,26 +123,26 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.touchless",
-     "versionName": "0.2.632",
-     "versionCode": 686,
+     "versionName": "0.2.633",
+     "versionCode": 687,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "Touchless",
-     "fileName": "touchless-0.2.632.apk",
-     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.632/touchless-0.2.632.apk",
+     "fileName": "touchless-0.2.633.apk",
+     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.633/touchless-0.2.633.apk",
      "size": 40457151,
-     "sha256": "7dfa59eeab4fb8842341d2fa5b8d1b8f2a39471591e7df19b02352cdc827cfe1",
-     "assetId": 789350559,
-     "assetUpdatedAt": "2026-11-24T23:57:22Z"
+     "sha256": "93af74c5f93cebbe42907df7ae45b75deafc74c050e51f002308c48bcf0ca294",
+     "assetId": 790184012,
+     "assetUpdatedAt": "2026-11-25T05:21:56Z"
     }
    ],
    "release": {
-    "tag": "v0.2.632",
-    "name": "Touchless v0.2.632",
-    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.632",
-    "publishedAt": "2026-11-24T23:58:52Z",
-    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.632"
+    "tag": "v0.2.633",
+    "name": "Touchless v0.2.633",
+    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.633",
+    "publishedAt": "2026-11-25T05:23:35Z",
+    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.633"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchless-8327713a.png",
@@ -313,26 +313,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.wallify.debug",
-     "versionName": "0.8.8",
-     "versionCode": 8008,
+     "versionName": "0.8.9",
+     "versionCode": 8009,
      "minSdk": 24,
      "targetSdk": 36,
      "tvCapable": true,
      "label": "Wallify",
-     "fileName": "wallify-0.8.8.apk",
-     "url": "https://github.com/il90il90/Wallify-releases/releases/download/v0.8.8/wallify-0.8.8.apk",
-     "size": 38742237,
-     "sha256": "afd6a53b422f81e68ffba597b2625808573bc1c58c5069c92840ebd80b864cf8",
-     "assetId": 789165356,
-     "assetUpdatedAt": "2026-11-24T22:49:09Z"
+     "fileName": "wallify-0.8.9.apk",
+     "url": "https://github.com/il90il90/Wallify-releases/releases/download/v0.8.9/wallify-0.8.9.apk",
+     "size": 38767551,
+     "sha256": "12167d518d4afa7dcee89ff0e2071dba6defd5e3184278dd186b8d5b862077ce",
+     "assetId": 790177800,
+     "assetUpdatedAt": "2026-11-25T05:19:20Z"
     }
    ],
    "release": {
-    "tag": "v0.8.8",
-    "name": "Wallify 0.8.8",
-    "notes": "- From 0.8.8: the *Prayer* wallpapers (Mizrach, Facing Jerusalem, Zmanim, Shabbat, Hebrew Date) are shown only\n  with the developer options on (Settings: tap the version line ten times). Without them the row and its five\n  wallpapers are not listed - in the feed or among the loved ones. One already set as the wallpaper keeps working.\n- From 0.8.7: **wallpapers for Jewish prayer** - a new row, *Prayer*, with five (52 in all), in Hebrew by default.\n  **Mizrach**: a compass to Jerusalem - the Temple Mount: a golden arrow that turns with the phone, the sun and the\n  moon marked round the ring where they really are, the degrees and the distance; when the phone faces Jerusalem\n  the dial lights up and says so. **Facing Jerusalem**: the view from where you stand - the horizon with the\n  compass along it, the sun and the moon in their places in the sky, and Jerusalem as a walled city under a shaft\n  of light; when it is out of view a sign says which way to turn and by how much. **Zmanim**: the day's times -\n  dawn, sunrise, latest Shema and Shacharit, midday, Mincha, Plag, sunset, nightfall - with the next one framed and\n  counted down; by the Gra's reckoning or the Magen Avraham's. **Shabbat**: how long until candle lighting, its\n  time and when Shabbat goes out, and two candles that burn and flicker through Shabbat itself; 18, 20, 22, 30 or\n  40 minutes before sunset. **Hebrew Date**: the date in Hebrew letters under tonight's moon, turning at sunset,\n  with the days to Rosh Chodesh. The direction is the short way round the globe or one steady compass heading, as\n  you choose. Everything is worked out on the phone from the sun, the moon and the map; the times are computed and\n  approximate, and each wallpaper says that your community's calendar and custom come first.\n- From 0.8.6: the switch at the top of the feed reads **Live · Smart · Photos** - Smart is in the middle.\n- From 0.8.5: **the place wallpapers are alive.** Around Me, Signpost, Local Line and My Street were drawn once a\n  minute and did not answer the phone at all - fixed. They now turn with the phone (the map and the arrows point\n  the real way; the signpost's boards turn on their pole, narrow when they point straight ahead), lean with it\n  (the street sign hangs and swings, the boards sway, the map has depth) and move by themselves (a ring going out\n  from where you are that lights each place it passes, a light running down the line, boards stirring in the\n  wind). *Turn with the phone* is on by default, and a new *Motion* switch stills a scene for those who prefer it.\n  Following the phone is drawn smoothly only while the phone is being moved.\n- From 0.8.4: **four more wallpapers of where you are, and a range you choose** (47 in all). **Around Me**: a map\n  of what is round you under a night sky - each town where it really lies, its dot as big as the town. **Signpost**:\n  a crossroads signpost under the real sky of the hour, a board for each place pointing its way, with distance and\n  direction. **Local Line**: your place as the first station of a line, the places round you its stops, each with\n  an arrow and how far. **My Street**: the street you are on as a street sign, and the streets round it on a map.\n  All of them and City Radar have a *Range* in Customize - 500 m, 1, 2, 5, 10, 25, 50, 100 or 250 km: only what is\n  inside it is shown, and the wider it is the more there is. Up to 2 km they show streets (with *Precise location*;\n  the phone now learns the streets up to two kilometres round you, while Wallify is open), beyond that towns - or\n  choose with *Show*. A scene that has nothing in its range, or needs your precise place for streets, says so.\n  City Radar and the maps can be kept north-up (*Turn with the phone* off). Distances in Hebrew are written in\n  Hebrew.\n- From 0.8.3: **City Radar shows what is really near.** Instead of the world's capitals it now shows the towns\n  round you - from Netivot: Ofakim, Sderot, Rahat, Beersheba, Kiryat Gat, Ashkelon - each where it lies and how far,\n  with the distance of the outer ring written on it. *Show* in Customize chooses: *Towns nearby* (the default),\n  *Towns and villages*, *Big cities*, *Streets nearby* or *World cities* as before; *My country only* (on) keeps to\n  the country you are in. Names are in Hebrew for places in Israel when the wallpaper is in Hebrew. With *Precise\n  location* it also writes the street you are on, and *Streets nearby* puts the streets around you on the radar, in\n  metres. The 162,000 towns are inside the app (GeoNames, CC BY 4.0), so finding them uses no network; street names\n  come from the phone's own location service, asked only while Wallify is open.\n- From 0.8.2: **the day outside, on your wallpaper** - six more (43 in all), in *Sky & weather*. **Horizon**: the\n  sun rising and setting over the sea where it really is, its light lying on the water, the moon at night.\n  **Day and Night**: the whole day as a ring in the colours the sky has at each hour, with today's real sunrise and\n  sunset and the sun or moon riding it. **Window**: when it rains where you are, drops stand on the glass and run\n  down it - wipe them with a finger; city lights glow behind it at night. **Today Outside**: hills, pines and grass\n  under the real sky - rain, snow on the hills, grass bending in the wind, birds on a fair day. **Puddle**: rain\n  rings on still water. **Thermometer**: a glass thermometer with the real temperature.\n  *Window* and *Puddle* have a switch for drops in any weather.\n- From 0.8.1: **13 more smart wallpapers** (37 in all). *Liquid and playful*: Day Tank (the day draining away),\n  Storage Tank, Lava Lamp, Hourglass, Bubbles, Moonlit Sea, Fireflies. *Places*: City Radar (the nearest cities in\n  their true direction and distance), Far Away (the way and the distance to a city you miss), Globe, Golden Hour\n  (where the sun is, and when the light turns golden). *Calendar*: My Week, Countdown to a day you choose.\n- From 0.8.1: **your precise place** ",
-    "publishedAt": "2026-11-24T22:49:11Z",
-    "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.8.8"
+    "tag": "v0.8.9",
+    "name": "Wallify 0.8.9",
+    "notes": "- From 0.8.9: **wallpapers that feel the phone** - a new row, *Sensors*, with eleven (63 in all). **The Eye**: its\n  pupil opens in the dark and narrows in the light, it looks where the phone leans, and blinks at a touch or a hand\n  over the screen. **Bubble Level**: a real level - a vial for a phone on its edge, a round one for a phone lying\n  flat, green when it is level. **Barometer**: the air's pressure on a brass dial, and how high above the sea that\n  puts you. **Marbles**: glass marbles that roll to the low side and knock into each other. **Snow Globe**: shake\n  the phone and the snow flies; it settles by itself. **Magnet**: a magnet's field lines that widen, quicken and\n  redden as metal or a magnet comes near. **Kaleidoscope**: turn and tilt the phone to turn the glass. **Night\n  Light**: a hanging lamp that burns brighter the darker the room. **Bloom**: a flower that opens as a folding\n  phone is opened (to the light on other phones). **Fish Tank**: fish that drift to the low side and dart when\n  the phone is shaken. **Deep Space**: fly through the stars - tilt to steer, shake to jump. Each sensor is\n  listened to only while its wallpaper is on screen, and nothing it reads is kept or sent; a phone without a sensor\n  gets a plain line saying so. *Motion* off stills them.\n- From 0.8.8: the *Prayer* wallpapers (Mizrach, Facing Jerusalem, Zmanim, Shabbat, Hebrew Date) are shown only\n  with the developer options on (Settings: tap the version line ten times). Without them the row and its five\n  wallpapers are not listed - in the feed or among the loved ones. One already set as the wallpaper keeps working.\n- From 0.8.7: **wallpapers for Jewish prayer** - a new row, *Prayer*, with five (52 in all), in Hebrew by default.\n  **Mizrach**: a compass to Jerusalem - the Temple Mount: a golden arrow that turns with the phone, the sun and the\n  moon marked round the ring where they really are, the degrees and the distance; when the phone faces Jerusalem\n  the dial lights up and says so. **Facing Jerusalem**: the view from where you stand - the horizon with the\n  compass along it, the sun and the moon in their places in the sky, and Jerusalem as a walled city under a shaft\n  of light; when it is out of view a sign says which way to turn and by how much. **Zmanim**: the day's times -\n  dawn, sunrise, latest Shema and Shacharit, midday, Mincha, Plag, sunset, nightfall - with the next one framed and\n  counted down; by the Gra's reckoning or the Magen Avraham's. **Shabbat**: how long until candle lighting, its\n  time and when Shabbat goes out, and two candles that burn and flicker through Shabbat itself; 18, 20, 22, 30 or\n  40 minutes before sunset. **Hebrew Date**: the date in Hebrew letters under tonight's moon, turning at sunset,\n  with the days to Rosh Chodesh. The direction is the short way round the globe or one steady compass heading, as\n  you choose. Everything is worked out on the phone from the sun, the moon and the map; the times are computed and\n  approximate, and each wallpaper says that your community's calendar and custom come first.\n- From 0.8.6: the switch at the top of the feed reads **Live · Smart · Photos** - Smart is in the middle.\n- From 0.8.5: **the place wallpapers are alive.** Around Me, Signpost, Local Line and My Street were drawn once a\n  minute and did not answer the phone at all - fixed. They now turn with the phone (the map and the arrows point\n  the real way; the signpost's boards turn on their pole, narrow when they point straight ahead), lean with it\n  (the street sign hangs and swings, the boards sway, the map has depth) and move by themselves (a ring going out\n  from where you are that lights each place it passes, a light running down the line, boards stirring in the\n  wind). *Turn with the phone* is on by default, and a new *Motion* switch stills a scene for those who prefer it.\n  Following the phone is drawn smoothly only while the phone is being moved.\n- From 0.8.4: **four more wallpapers of where you are, and a range you choose** (47 in all). **Around Me**: a map\n  of what is round you under a night sky - each town where it really lies, its dot as big as the town. **Signpost**:\n  a crossroads signpost under the real sky of the hour, a board for each place pointing its way, with distance and\n  direction. **Local Line**: your place as the first station of a line, the places round you its stops, each with\n  an arrow and how far. **My Street**: the street you are on as a street sign, and the streets round it on a map.\n  All of them and City Radar have a *Range* in Customize - 500 m, 1, 2, 5, 10, 25, 50, 100 or 250 km: only what is\n  inside it is shown, and the wider it is the more there is. Up to 2 km they show streets (with *Precise location*;\n  the phone now learns the streets up to two kilometres round you, while Wallify is open), beyond that towns - or\n  choose with *Show*. A scene that has nothing in its range, or needs your precise place for streets, says so.\n  City Radar and the maps can be kept north-up (*Turn with the phone* off). Distances in Hebrew are written in\n  Hebrew.\n- From 0.8.3: **City Radar shows what is really near.** Instead of the world's capitals it now shows the towns\n  round you - from Netivot: Ofakim, Sderot, Rahat, Beersheba, Kiryat Gat, Ashkelon - each where it lies and how far,\n  with the distance of the outer ring written on it. *Show* in Customize chooses: *Towns nearby* (the default),\n  *Towns and villages*, *Big cities*, *Streets nearby* or *World cities* as before; *My country only* (on) keeps to\n  the country you are in. Names are in Hebrew for places in Israel when the wallpaper is in Hebrew. With *Precise\n  location* it also writes the street you are on, and *Streets nearby* puts the streets around you on the radar, in\n  metres. The 162,000 towns are inside the app (GeoNames, CC BY 4.0), so finding them uses no network; street names\n  come from the phone's own location service, asked only while Wallify is open.\n- From 0.8.2: *",
+    "publishedAt": "2026-11-25T05:19:21Z",
+    "url": "https://github.com/il90il90/Wallify-releases/releases/tag/v0.8.9"
    },
    "iconStyle": "adaptive",
    "icon": "icon-wallify-4b5cdc0d.png",
@@ -904,26 +904,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.15.0",
-     "versionCode": 32,
+     "versionName": "0.15.1",
+     "versionCode": 33,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.15.0.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.15.0/touchkey-0.15.0.apk",
-     "size": 11938602,
-     "sha256": "cd8758ee680509f507076322c66c20e9caac5c3f1aea3def0ead67c5ad46a858",
-     "assetId": 790147693,
-     "assetUpdatedAt": "2026-11-25T05:08:09Z"
+     "fileName": "touchkey-0.15.1.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.15.1/touchkey-0.15.1.apk",
+     "size": 11938634,
+     "sha256": "81029c107a20602450b083129942eb02810077a2bdaf7b520d4aca9ae3b54a3c",
+     "assetId": 790269279,
+     "assetUpdatedAt": "2026-11-25T05:54:25Z"
     }
    ],
    "release": {
-    "tag": "v0.15.0",
-    "name": "TouchKey 0.15.0",
-    "notes": "## TouchKey 0.15.0\n\n**New triggers**\n- **Media**: starts playing, or stops (music, a video, a game). A short gap between songs is not a stop.\n- **Phone folds**: closed, or opened (on a foldable, from its hinge).\n\n**New steps**\n- **Show a notification** with your own title and text (\"Try it\" shows it at once).\n- **Reply to a notification**: WhatsApp, Messages and other apps with a Reply button get the words you wrote, sent\n  as if typed in the notification. In a notification trigger, \"Showing now\" has **Reply…** under such a\n  notification: write the answer and it becomes a step.\n- **Clear notifications**: every app's, or one app's.\n- **Copy text**: puts your words on the clipboard.\n\n**Easier to read**\n- The triggers list says when each trigger last ran: \"Last ran today 06:40 · 5 min ago\" (or \"Never ran\").\n- No warning triangle on a trigger that does nothing yet: only the \"Choose what it does\" button.\n- \"If & repeat\" moved to the end of the action tabs.\n- A notification's buttons wrap onto a second line instead of running off the screen.\n\n\nVersion 0.15.0 (build 32).\nSHA-256: cd8758ee680509f507076322c66c20e9caac5c3f1aea3def0ead67c5ad46a858",
-    "publishedAt": "2026-11-25T05:08:10Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.15.0"
+    "tag": "v0.15.1",
+    "name": "TouchKey 0.15.1",
+    "notes": "## TouchKey 0.15.1\n\n- **Updates install again with Power mode.** 0.14.3 sent an extra profile file with the update, which the\n  install refused, and TouchKey then asked to \"Allow TouchKey to install apps\" even with Power mode on. The extra\n  file is gone (Android already compiles the update by the profile inside it), and if Power mode cannot install,\n  it now allows Android's installer by itself and says why.\n- **Start with the phone** (Settings, on by default): after every restart TouchKey's keys, triggers and timers\n  work without opening it. With Power mode on, TouchKey also takes itself out of battery optimisation (so Samsung\n  does not put it to sleep) and may install its own updates. Without Power mode, \"Allow\" asks Android once.\n- **The timer's floating window, your way**: small, medium or large; see-through; with or without its name, the\n  ✕ button and tap-to-pause; fixed or draggable; or touches pass through it to the app below.\n\n\nVersion 0.15.1 (build 33).\nSHA-256: 81029c107a20602450b083129942eb02810077a2bdaf7b520d4aca9ae3b54a3c",
+    "publishedAt": "2026-11-25T05:54:26Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.15.1"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchkey-bf1f429b.png",
