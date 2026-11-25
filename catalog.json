@@ -1,7 +1,7 @@
 {
  "schemaVersion": 2,
  "schema": 2,
- "generatedAt": "2026-11-25T06:25:32Z",
+ "generatedAt": "2026-11-25T06:50:00Z",
  "baseUrl": "https://github.com/il90il90/israel-app-manager/releases/download/catalog/",
  "dashboardUrl": "https://il90il90.github.io/israel-app-manager/",
  "announcement": null,
@@ -904,26 +904,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.16.0",
-     "versionCode": 35,
+     "versionName": "0.16.1",
+     "versionCode": 36,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.16.0.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.16.0/touchkey-0.16.0.apk",
-     "size": 11955590,
-     "sha256": "eb0a9a0f5f5d45c91589773760774af992c5d14a546cce65afe22815c1596717",
-     "assetId": 790352942,
-     "assetUpdatedAt": "2026-11-25T06:24:48Z"
+     "fileName": "touchkey-0.16.1.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.16.1/touchkey-0.16.1.apk",
+     "size": 11971974,
+     "sha256": "2044f0f717474349104e3e6e4b9b46826cd955edc4b4c59dc28a660c5704a76e",
+     "assetId": 790421683,
+     "assetUpdatedAt": "2026-11-25T06:49:22Z"
     }
    ],
    "release": {
-    "tag": "v0.16.0",
-    "name": "TouchKey 0.16.0",
-    "notes": "## TouchKey 0.16.0\n\n**Talk, then send** (in Voice typing, and the first ready-made start there)\n- A window says \"Listening…\" and shows your words, large, as you speak.\n- When you stop talking, a bar runs along its bottom. Speak again and the bar stops, and your words go on. When the\n  bar fills, the text is typed into the field that has the cursor and sent.\n- \"Send now\" sends at once, \"Keep talking\" stops the bar, ✕ cancels and types nothing.\n- Yours to change: how long the bar runs (1 to 15 seconds, or off), where the window sits (top, middle, bottom) or\n  the small bubble instead, and how it is sent: Enter, or tapping a button by its name (\"Send\" to start with; Enter\n  when there is no such button).\n\n\nVersion 0.16.0 (build 35).\nSHA-256: eb0a9a0f5f5d45c91589773760774af992c5d14a546cce65afe22815c1596717",
-    "publishedAt": "2026-11-25T06:24:49Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.16.0"
+    "tag": "v0.16.1",
+    "name": "TouchKey 0.16.1",
+    "notes": "## TouchKey 0.16.1\n\n- **Open a shortcut.** A key, a trigger or a home-screen button can open any app's shortcut: the ones an app shows\n  when its icon is pressed and held (a new tab, a camera mode, a new message…). Find them under **Open a shortcut**\n  at the top of Popular, in Apps › Shortcuts (by app, with each app's icon), by searching, or by pressing and\n  holding an app. Shortcuts that an app makes on request (a contact, a bookmark) are there too, under \"Make a\n  shortcut\".\n- \"Open an app\", \"Open a shortcut\" and \"Press another key\" are now at the top of Popular.\n- Shortcuts an app adds while it runs (recent chats) can only be seen by the home-screen app, so they are not listed.\n\n\nVersion 0.16.1 (build 36).\nSHA-256: 2044f0f717474349104e3e6e4b9b46826cd955edc4b4c59dc28a660c5704a76e",
+    "publishedAt": "2026-11-25T06:49:23Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.16.1"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchkey-bf1f429b.png",
