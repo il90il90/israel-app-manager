@@ -1,7 +1,7 @@
 {
  "schemaVersion": 2,
  "schema": 2,
- "generatedAt": "2026-11-25T07:35:04Z",
+ "generatedAt": "2026-11-25T14:36:14Z",
  "baseUrl": "https://github.com/il90il90/israel-app-manager/releases/download/catalog/",
  "dashboardUrl": "https://il90il90.github.io/israel-app-manager/",
  "announcement": null,
@@ -123,26 +123,26 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.touchless",
-     "versionName": "0.2.633",
-     "versionCode": 687,
+     "versionName": "0.2.635",
+     "versionCode": 689,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "Touchless",
-     "fileName": "touchless-0.2.633.apk",
-     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.633/touchless-0.2.633.apk",
-     "size": 40457151,
-     "sha256": "93af74c5f93cebbe42907df7ae45b75deafc74c050e51f002308c48bcf0ca294",
-     "assetId": 790184012,
-     "assetUpdatedAt": "2026-11-25T05:21:56Z"
+     "fileName": "touchless-0.2.635.apk",
+     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.635/touchless-0.2.635.apk",
+     "size": 40522763,
+     "sha256": "8450a792c9b1c74b9d0fbc80a7cffc2c760323436818aa239be628dba0675fab",
+     "assetId": 790994255,
+     "assetUpdatedAt": "2026-11-25T09:58:42Z"
     }
    ],
    "release": {
-    "tag": "v0.2.633",
-    "name": "Touchless v0.2.633",
-    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.633",
-    "publishedAt": "2026-11-25T05:23:35Z",
-    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.633"
+    "tag": "v0.2.635",
+    "name": "Touchless v0.2.635",
+    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.635",
+    "publishedAt": "2026-11-25T10:00:20Z",
+    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.635"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchless-8327713a.png",
@@ -904,26 +904,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.17.1",
-     "versionCode": 38,
+     "versionName": "0.17.2",
+     "versionCode": 39,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.17.1.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.17.1/touchkey-0.17.1.apk",
-     "size": 11988354,
-     "sha256": "a8f36d6fd9decb20a10043f13b8fe419e09b101a7e9c8c9dd4aafb23f522b997",
-     "assetId": 790552992,
-     "assetUpdatedAt": "2026-11-25T07:34:11Z"
+     "fileName": "touchkey-0.17.2.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.17.2/touchkey-0.17.2.apk",
+     "size": 11988358,
+     "sha256": "60c41bcb4dd97c2aba5f3f294ec03fa35bde7f48c7fe2f5c7b12907e93d26f04",
+     "assetId": 791902848,
+     "assetUpdatedAt": "2026-11-25T14:35:27Z"
     }
    ],
    "release": {
-    "tag": "v0.17.1",
-    "name": "TouchKey 0.17.1",
-    "notes": "## TouchKey 0.17.1\n\nSimpler words for choices:\n- Keep the screen on: **Toggle · On · Off** (was \"Turns it on or off\"…).\n- Device settings: \"Toggle, On or Off\".\n- Conditions: **Charging · Wi-Fi · Screen · A setting · Headphones · In a call** (without \"or not\").\n- Tapping a button by name: **Exact · Contains · By its id**, and if it is missing: **Stop here · Go on**.\n- Timer: **Count down · Count up**.\n\n\nVersion 0.17.1 (build 38).\nSHA-256: a8f36d6fd9decb20a10043f13b8fe419e09b101a7e9c8c9dd4aafb23f522b997",
-    "publishedAt": "2026-11-25T07:34:12Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.17.1"
+    "tag": "v0.17.2",
+    "name": "TouchKey 0.17.2",
+    "notes": "## TouchKey 0.17.2\n\n- **Fixed:** tapping a step to change it (Voice typing, for one) opened the list of every action, as if adding a\n  new one. It now opens that step's own form with what it has: Voice typing, Keep the screen on, If, Repeat, Show a\n  notification, Say something, a web address, typed or copied text, a shell command.\n- **Voice typing, redrawn:** the ready-made starts side by side with what the chosen one does; then three parts,\n  each in its own card: **Listening** (language, when it ends, pause, longest), **Sending** (after typing, the\n  button's name, send after a pause and the bar's length), **On the screen** (window or bubble, where, the words).\n  Every choice wraps onto the next line instead of running off the screen, and times read in seconds (1.5 s).\n\n\nVersion 0.17.2 (build 39).\nSHA-256: 60c41bcb4dd97c2aba5f3f294ec03fa35bde7f48c7fe2f5c7b12907e93d26f04",
+    "publishedAt": "2026-11-25T14:35:29Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.17.2"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchkey-bf1f429b.png",
