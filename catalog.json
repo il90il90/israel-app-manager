@@ -1,7 +1,7 @@
 {
  "schemaVersion": 2,
  "schema": 2,
- "generatedAt": "2026-11-25T16:44:05Z",
+ "generatedAt": "2026-11-25T16:58:10Z",
  "baseUrl": "https://github.com/il90il90/israel-app-manager/releases/download/catalog/",
  "dashboardUrl": "https://il90il90.github.io/israel-app-manager/",
  "announcement": null,
@@ -904,26 +904,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.18.0",
-     "versionCode": 42,
+     "versionName": "0.18.1",
+     "versionCode": 43,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.18.0.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.18.0/touchkey-0.18.0.apk",
+     "fileName": "touchkey-0.18.1.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.18.1/touchkey-0.18.1.apk",
      "size": 12004742,
-     "sha256": "25665ca0b4f7c86d7ed5cdb08361d0554f3c144d6f84dc67ca717992ecb033f1",
-     "assetId": 792309123,
-     "assetUpdatedAt": "2026-11-25T16:43:17Z"
+     "sha256": "05011230340241ac0f6f2edbd9bb43ed2331b435cc7662447b60c7aea41fd56f",
+     "assetId": 792356439,
+     "assetUpdatedAt": "2026-11-25T16:57:24Z"
     }
    ],
    "release": {
-    "tag": "v0.18.0",
-    "name": "TouchKey 0.18.0",
-    "notes": "## TouchKey 0.18.0\n\n**Apps side by side** (System, and Popular)\n- Choose the app for the top (left on a wide screen) and the one for the bottom (right); \"Swap the first two\"\n  turns them round. On a big screen (the Fold open, a tablet) a third place is offered.\n- With Power mode, TouchKey asks Android's window manager to put them side by side, then checks that they are.\n  Without it, it turns on the system's split screen and opens the second app beside the first.\n\n**Secure Folder app** (System, and Apps › Secure Folder)\n- Secure Folder keeps its apps hidden from other apps, so TouchKey opens Secure Folder and taps the app by its\n  name (after your fingerprint or PIN, if it asks). Type the name, or tap \"Read the apps in Secure Folder\" to pick\n  it from the names on its screen.\n\n**Tidier action list**\n- The tabs are an even grid of icons with their names (four to a row, six on a wide screen).\n- Every row is one line under its name; shorter descriptions.\n- Key tiles fit their names (\"BOOKMARK\" whole).\n\n\nVersion 0.18.0 (build 42).\nSHA-256: 25665ca0b4f7c86d7ed5cdb08361d0554f3c144d6f84dc67ca717992ecb033f1",
-    "publishedAt": "2026-11-25T16:43:18Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.18.0"
+    "tag": "v0.18.1",
+    "name": "TouchKey 0.18.1",
+    "notes": "## TouchKey 0.18.1\n\n**Secure Folder app**\n- \"Read the apps in Secure Folder\" now lists only the apps. Secure Folder's own title and buttons (search, menu)\n  are left out: TouchKey keeps the biggest group of same-sized tiles on its screen.\n\nEverything from 0.18.0 (apps side by side, Secure Folder apps, the tidier action list) is in this version too.\n\n\nVersion 0.18.1 (build 43).\nSHA-256: 05011230340241ac0f6f2edbd9bb43ed2331b435cc7662447b60c7aea41fd56f",
+    "publishedAt": "2026-11-25T16:57:25Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.18.1"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchkey-bf1f429b.png",
