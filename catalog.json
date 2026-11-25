@@ -1,7 +1,7 @@
 {
  "schemaVersion": 2,
  "schema": 2,
- "generatedAt": "2026-11-25T14:36:14Z",
+ "generatedAt": "2026-11-25T16:23:57Z",
  "baseUrl": "https://github.com/il90il90/israel-app-manager/releases/download/catalog/",
  "dashboardUrl": "https://il90il90.github.io/israel-app-manager/",
  "announcement": null,
@@ -904,26 +904,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.17.2",
-     "versionCode": 39,
+     "versionName": "0.17.4",
+     "versionCode": 41,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.17.2.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.17.2/touchkey-0.17.2.apk",
-     "size": 11988358,
-     "sha256": "60c41bcb4dd97c2aba5f3f294ec03fa35bde7f48c7fe2f5c7b12907e93d26f04",
-     "assetId": 791902848,
-     "assetUpdatedAt": "2026-11-25T14:35:27Z"
+     "fileName": "touchkey-0.17.4.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.17.4/touchkey-0.17.4.apk",
+     "size": 11988354,
+     "sha256": "a9fe1e879321636e582c65a19b6c3278f4f037cc4564331a7494a9e96def35f8",
+     "assetId": 792230506,
+     "assetUpdatedAt": "2026-11-25T16:23:15Z"
     }
    ],
    "release": {
-    "tag": "v0.17.2",
-    "name": "TouchKey 0.17.2",
-    "notes": "## TouchKey 0.17.2\n\n- **Fixed:** tapping a step to change it (Voice typing, for one) opened the list of every action, as if adding a\n  new one. It now opens that step's own form with what it has: Voice typing, Keep the screen on, If, Repeat, Show a\n  notification, Say something, a web address, typed or copied text, a shell command.\n- **Voice typing, redrawn:** the ready-made starts side by side with what the chosen one does; then three parts,\n  each in its own card: **Listening** (language, when it ends, pause, longest), **Sending** (after typing, the\n  button's name, send after a pause and the bar's length), **On the screen** (window or bubble, where, the words).\n  Every choice wraps onto the next line instead of running off the screen, and times read in seconds (1.5 s).\n\n\nVersion 0.17.2 (build 39).\nSHA-256: 60c41bcb4dd97c2aba5f3f294ec03fa35bde7f48c7fe2f5c7b12907e93d26f04",
-    "publishedAt": "2026-11-25T14:35:29Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.17.2"
+    "tag": "v0.17.4",
+    "name": "TouchKey 0.17.4",
+    "notes": "## TouchKey 0.17.4\n\n- **Fixed: voice typing added the field's placeholder to your words.** Some apps (Telegram, for one) report their\n  placeholder (\"Message\") as the text of an empty field, so it was sent before what you said. TouchKey now checks\n  whether the field is really empty (it asks the field to move its cursor; an empty one cannot) and types only what\n  you said. Real text already in a field is kept as before.\n\n- **No more scrolling sideways.** Every row of choices that ran off the right edge now wraps onto the next line:\n  the action tabs (all of them in sight), key, timer, voice typing, screen, message and HTTP choices, the device\n  picker in Backups, theme and colour in Settings, and the rest.\n- **Keys line up on the home screen.** Every key's tile is the same size, so the names start in one column; a long\n  label (\"BOOKMARK\") shrinks to fit instead of being cut. The key in \"You pressed…\" has its tile too, and the\n  picture of a press and of its app are the same size.\n\n\nVersion 0.17.4 (build 41).\nSHA-256: a9fe1e879321636e582c65a19b6c3278f4f037cc4564331a7494a9e96def35f8",
+    "publishedAt": "2026-11-25T16:23:17Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.17.4"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchkey-bf1f429b.png",
