@@ -1,7 +1,7 @@
 {
  "schemaVersion": 2,
  "schema": 2,
- "generatedAt": "2026-11-25T05:55:41Z",
+ "generatedAt": "2026-11-25T06:11:50Z",
  "baseUrl": "https://github.com/il90il90/israel-app-manager/releases/download/catalog/",
  "dashboardUrl": "https://il90il90.github.io/israel-app-manager/",
  "announcement": null,
@@ -904,26 +904,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.15.1",
-     "versionCode": 33,
+     "versionName": "0.15.2",
+     "versionCode": 34,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.15.1.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.15.1/touchkey-0.15.1.apk",
-     "size": 11938634,
-     "sha256": "81029c107a20602450b083129942eb02810077a2bdaf7b520d4aca9ae3b54a3c",
-     "assetId": 790269279,
-     "assetUpdatedAt": "2026-11-25T05:54:25Z"
+     "fileName": "touchkey-0.15.2.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.15.2/touchkey-0.15.2.apk",
+     "size": 11939206,
+     "sha256": "2ce7a4e5f38d36f5d9416231ed79f68db288f8ac51a11005d345908043d1a7c7",
+     "assetId": 790316027,
+     "assetUpdatedAt": "2026-11-25T06:11:09Z"
     }
    ],
    "release": {
-    "tag": "v0.15.1",
-    "name": "TouchKey 0.15.1",
-    "notes": "## TouchKey 0.15.1\n\n- **Updates install again with Power mode.** 0.14.3 sent an extra profile file with the update, which the\n  install refused, and TouchKey then asked to \"Allow TouchKey to install apps\" even with Power mode on. The extra\n  file is gone (Android already compiles the update by the profile inside it), and if Power mode cannot install,\n  it now allows Android's installer by itself and says why.\n- **Start with the phone** (Settings, on by default): after every restart TouchKey's keys, triggers and timers\n  work without opening it. With Power mode on, TouchKey also takes itself out of battery optimisation (so Samsung\n  does not put it to sleep) and may install its own updates. Without Power mode, \"Allow\" asks Android once.\n- **The timer's floating window, your way**: small, medium or large; see-through; with or without its name, the\n  ✕ button and tap-to-pause; fixed or draggable; or touches pass through it to the app below.\n\n\nVersion 0.15.1 (build 33).\nSHA-256: 81029c107a20602450b083129942eb02810077a2bdaf7b520d4aca9ae3b54a3c",
-    "publishedAt": "2026-11-25T05:54:26Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.15.1"
+    "tag": "v0.15.2",
+    "name": "TouchKey 0.15.2",
+    "notes": "## TouchKey 0.15.2\n\n- **Backups, by device.** The top of Backups lists your devices as cards, this one first. Tap a device to see\n  only its backups: its name (rename it there), \"Back up now\" for this device, its versions, and deleting another\n  device's backups.\n- **A tidier Settings screen**, in clear parts: Power and startup, Keys (timings, buzz, the pause safety),\n  Backup (Google Drive with its own icon, Back up now, every day, a file), Look, Tools, and About.\n\n\nVersion 0.15.2 (build 34).\nSHA-256: 2ce7a4e5f38d36f5d9416231ed79f68db288f8ac51a11005d345908043d1a7c7",
+    "publishedAt": "2026-11-25T06:11:10Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.15.2"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchkey-bf1f429b.png",
