@@ -1,7 +1,7 @@
 {
  "schemaVersion": 2,
  "schema": 2,
- "generatedAt": "2026-11-26T22:21:50Z",
+ "generatedAt": "2026-11-26T23:15:25Z",
  "baseUrl": "https://github.com/il90il90/israel-app-manager/releases/download/catalog/",
  "dashboardUrl": "https://il90il90.github.io/israel-app-manager/",
  "announcement": null,
@@ -123,26 +123,26 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.touchless",
-     "versionName": "0.2.654",
-     "versionCode": 719,
+     "versionName": "0.2.655",
+     "versionCode": 722,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "Touchless",
-     "fileName": "touchless-0.2.654.apk",
-     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.654/touchless-0.2.654.apk",
-     "size": 40971771,
-     "sha256": "c18cafdba3646d3803f0bda802183aed05f534dbbeeab5d754ac71e8252f2da3",
-     "assetId": 797754333,
-     "assetUpdatedAt": "2026-11-26T21:23:44Z"
+     "fileName": "touchless-0.2.655.apk",
+     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.655/touchless-0.2.655.apk",
+     "size": 40974787,
+     "sha256": "af15e2c08a0fa2fe75d3e0984ca761299f5886126b8ed631ab450db46ef62af7",
+     "assetId": 797992031,
+     "assetUpdatedAt": "2026-11-26T22:41:34Z"
     }
    ],
    "release": {
-    "tag": "v0.2.654",
-    "name": "Touchless v0.2.654",
-    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.654",
-    "publishedAt": "2026-11-26T21:25:07Z",
-    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.654"
+    "tag": "v0.2.655",
+    "name": "Touchless v0.2.655",
+    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.655",
+    "publishedAt": "2026-11-26T22:43:00Z",
+    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.655"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchless-8327713a.png",
@@ -904,26 +904,26 @@
       "x86_64"
      ],
      "packageName": "com.il90.touchkey",
-     "versionName": "0.18.3",
-     "versionCode": 45,
+     "versionName": "0.18.4",
+     "versionCode": 46,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "TouchKey",
-     "fileName": "touchkey-0.18.3.apk",
-     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.18.3/touchkey-0.18.3.apk",
-     "size": 12037510,
-     "sha256": "4a93195e6cb6cd1149d4c11a6b84073dd95ed43db42d3e5a204f14b6672ade05",
-     "assetId": 797931832,
-     "assetUpdatedAt": "2026-11-26T22:21:11Z"
+     "fileName": "touchkey-0.18.4.apk",
+     "url": "https://github.com/il90il90/touchkey-releases/releases/download/v0.18.4/touchkey-0.18.4.apk",
+     "size": 12053894,
+     "sha256": "1517a4ce62ecd251b4c7c1316578e89ae27f8e131d9442224a1448eb23866f6e",
+     "assetId": 798090167,
+     "assetUpdatedAt": "2026-11-26T23:14:48Z"
     }
    ],
    "release": {
-    "tag": "v0.18.3",
-    "name": "TouchKey 0.18.3",
-    "notes": "## TouchKey 0.18.3\n\n**Scroll** (Screen, and Popular)\n- \"Scroll down\" and \"Scroll up\" (one page), and \"Scroll…\" for any way: down, up, left or right; by pages (half\n  steps), pixels, a share of the screen, or all the way to the end; slow, normal or fast.\n- It scrolls as a finger would, from the middle of the screen, and holds at the end so the list stops where it\n  should. Then it checks that the screen really moved (\"Nothing moved\" when it is at the end already).\n- Needs \"TouchKey screen actions\" (or Power mode, which turns them on).\n\n**Remote and keyboard keys**\n- On a phone, a remote's or keyboard's Back, OK, Home and arrows are now picked up when you add a key, like any\n  other key. (On a TV they still move around the screen; pick them from the list.)\n\n**Search**\n- The search in \"Add an action\" covers everything: actions, AI, apps (including built-in ones), app shortcuts,\n  shortcuts apps make, and the screens of the apps it finds. ⋯ next to an app shows its shortcuts and screens.\n- \"Only when…\" and a trigger's \"When…\" list can be searched too.\n- \"Voice assistant\" is in the AI tab (the phone's own assistant, listening), with \"Text chat\" for the Assist key.\n\n\nVersion 0.18.3 (build 45).\nSHA-256: 4a93195e6cb6cd1149d4c11a6b84073dd95ed43db42d3e5a204f14b6672ade05",
-    "publishedAt": "2026-11-26T22:21:12Z",
-    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.18.3"
+    "tag": "v0.18.4",
+    "name": "TouchKey 0.18.4",
+    "notes": "## TouchKey 0.18.4\n\n**Search by voice** (a new Search tab in \"Add an action\")\n- Press the key, say what to look for, and it searches there: Google, YouTube, YouTube Music, Google Maps, Waze,\n  Spotify, Google Play, TikTok, Wikipedia, Amazon or Chrome, or \"Your own search\" with any address that has\n  {query} where the words go, opened in the app you choose.\n- ⚙ next to each one (or tapping the step later) changes how it listens, like voice typing: language, when it\n  ends, the longest it records, a window or a small bubble and where, the words as you speak, and \"Search after a\n  pause\" with a bar you stop by speaking again. A second press searches at once with what was heard.\n- Typing a name in the search (\"youtube\") finds \"Search YouTube\" too.\n\n**Smaller**\n- Scroll: the four ways have matching arrows.\n\n\nVersion 0.18.4 (build 46).\nSHA-256: 1517a4ce62ecd251b4c7c1316578e89ae27f8e131d9442224a1448eb23866f6e",
+    "publishedAt": "2026-11-26T23:14:50Z",
+    "url": "https://github.com/il90il90/touchkey-releases/releases/tag/v0.18.4"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchkey-bf1f429b.png",
