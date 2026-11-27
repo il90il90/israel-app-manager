@@ -1,7 +1,7 @@
 {
  "schemaVersion": 2,
  "schema": 2,
- "generatedAt": "2026-11-27T02:47:07Z",
+ "generatedAt": "2026-11-27T11:33:56Z",
  "baseUrl": "https://github.com/il90il90/israel-app-manager/releases/download/catalog/",
  "dashboardUrl": "https://il90il90.github.io/israel-app-manager/",
  "announcement": null,
@@ -123,26 +123,26 @@
       "armeabi-v7a"
      ],
      "packageName": "com.il90.touchless",
-     "versionName": "0.2.661",
-     "versionCode": 731,
+     "versionName": "0.2.670",
+     "versionCode": 740,
      "minSdk": 26,
      "targetSdk": 37,
      "tvCapable": true,
      "label": "Touchless",
-     "fileName": "touchless-0.2.661.apk",
-     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.661/touchless-0.2.661.apk",
-     "size": 41052522,
-     "sha256": "531c891549a71ca16b60323d4b1a7dd38219c9ba7c6e26f4bc58377148174057",
-     "assetId": 798354578,
-     "assetUpdatedAt": "2026-11-27T00:53:23Z"
+     "fileName": "touchless-0.2.670.apk",
+     "url": "https://github.com/il90il90/touchless-releases/releases/download/v0.2.670/touchless-0.2.670.apk",
+     "size": 41170018,
+     "sha256": "b4cc6ead36b3083d4b0db4bd9bc04073eb5161147c41b90af3c6da0ca69d0261",
+     "assetId": 799930883,
+     "assetUpdatedAt": "2026-11-27T10:00:41Z"
     }
    ],
    "release": {
-    "tag": "v0.2.661",
-    "name": "Touchless v0.2.661",
-    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.661",
-    "publishedAt": "2026-11-27T00:54:51Z",
-    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.661"
+    "tag": "v0.2.670",
+    "name": "Touchless v0.2.670",
+    "notes": "**Full Changelog**: https://github.com/il90il90/touchless-releases/compare/v0.2.395...v0.2.670",
+    "publishedAt": "2026-11-27T10:02:12Z",
+    "url": "https://github.com/il90il90/touchless-releases/releases/tag/v0.2.670"
    },
    "iconStyle": "adaptive",
    "icon": "icon-touchless-8327713a.png",
